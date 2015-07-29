@@ -1,6 +1,9 @@
 <?php $this->load->view('layouts/_include'); ?>
-
+<script>
+    //alert(language);
+</script>
 <body class="stretched">
+    <?php //echo $this->input->cookie('LANGUAGE'); ?>
 
     <div id="wrapper" class="clearfix">
 

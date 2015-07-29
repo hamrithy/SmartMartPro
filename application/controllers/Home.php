@@ -8,7 +8,10 @@
 		}
 
 		public function index(){
-			$this->load->view('index');
+			$this->load->model("Language");
+			$data['language'] = $this->Language->findByLanguage($this->input->cookie("LANGUAGE"));
+			$this->load->view('index', $data);
+			//echo json_encode($data);
 		}
 	}
 ?>

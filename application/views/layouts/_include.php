@@ -30,4 +30,9 @@
     <meta name="description" content="SmartMart Home | TSD Template">
     <meta name="viewport" content="width=device-width, initial-scale=1"> 
     <!-- END INFORMATION AND SEO INFORMATION -->
+
+    <script>
+        var language = '<?php echo $this->input->cookie('LANGUAGE'); ?>';
+        language = (language==null || language == '') ? 'english' : language;
+    </script>
 </head>

@@ -17,9 +17,9 @@
                             <li><a href="#">KHR</a></li>
                         </ul>
                     </li>
-                    <li><a href="#">EN</a>
+                    <li><a href="<?php echo base_url('language/english')?>">EN</a>
                         <ul>
-                            <li><a href="#"><img src="<?php echo base_url('public/style_front/images/icons/flags/french.png')?>" alt="French"> FR</a></li>
+                            <li><a href="<?php echo base_url('language/khmer')?>"><img src="<?php echo base_url('public/style_front/images/icons/flags/french.png')?>" alt="French"> KH</a></li>
                         </ul>
                     </li>
                     <li><a href="#">Login</a>
@@ -103,12 +103,12 @@
                 <div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
 
                     <ul>
-                        <li class="current"><a href="#"><div>Home</div><span>Lets Start</span></a>
+                        <li class="current"><a href="#"><div><?php echo lang('home') ?></div><span>Lets Start</span></a>
                             
                         </li>
                         <!-- Mega Menu
                         ============================================= -->
-                        <li class="mega-menu"><a href="#"><div>Product</div><span>Out of the Box</span></a>
+                        <li class="mega-menu"><a href="#"><div><?php echo lang('product') ?></div><span>Out of the Box</span></a>
                             <div class="mega-menu-content style-2 col-4 clearfix">
                                 <ul>
                                     <li class="mega-menu-title"><a href="#"><div>Footwear</div></a>
@@ -165,10 +165,10 @@
                             </div>
                         </li><!-- .mega-menu end -->
                         <!-- .mega-menu end -->
-                        <li><a href="#"><div>Graduation</div><span>Awesome Works</span></a></li>
-                        <li><a href="#"><div>Gift</div><span>Awesome Works</span></a></li>
-                        <li><a href="#"><div>Information</div><span>Latest News</span></a></li>
-                        <li><a href="#"><div>Contact</div><span>Get In Touch</span></a></li>
+                        <li><a href="#"><div><?php echo lang('graduation') ?></div><span>Awesome Works</span></a></li>
+                        <li><a href="#"><div><?php echo lang('gift') ?></div><span>Awesome Works</span></a></li>
+                        <li><a href="#"><div><?php echo lang('information') ?></div><span>Latest News</span></a></li>
+                        <li><a href="#"><div><?php echo lang('contact') ?></div><span>Get In Touch</span></a></li>
                     </ul>
 
                 <!-- Top Cart
