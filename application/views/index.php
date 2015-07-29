@@ -1,10 +1,4 @@
-    <?php $this->load->view('layouts/_include'); ?>
-
-    <!-- BEGIN WEBSITE INFORMATION AND SEO INFORMATION -->
-	<title>SmartMart | TSD Template</title>
-
-    <!-- END INFORMATION AND SEO INFORMATION -->
-</head>
+<?php $this->load->view('layouts/_include'); ?>
 
 <body class="stretched">
 
