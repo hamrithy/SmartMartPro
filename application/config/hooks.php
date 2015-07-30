@@ -19,7 +19,7 @@ $hook['post_controller'] = array(     // 'post_controller' indicated execution o
     'filepath' => 'hooks'         // Name of folder where Hook file is stored
 );
 
-$hook['post_controller_constructor'] = array(  // 'post_controller' indicated execution of hooks after controller is finished
+$hook['post_controller_constructor'] = array(  // 'post_controller_constrcutor' indicated execution of hooks after controller is finished
     'class' => 'Language_loader',             // Name of Class
     'function' => 'init',     				 // Name of function to be executed in from Class
     'filename' => 'language_loader.php',    // Name of the Hook file

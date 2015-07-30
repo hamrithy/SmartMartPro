@@ -23,7 +23,7 @@
                     <div class="container vertical-middle divcenter clearfix">
 
                         <div class="row center">
-                            <a href="javascript:;"><img src="<?php echo base_url('public/style_front/images/logo11111.png')?>" alt="Canvas Logo"></a>
+                            <a href="javascript:;"><img src="<?php echo base_url('public/style_front/images/logo.png')?>" alt="AIS Logo"></a>
                         </div>
 
                         <div class="panel panel-default divcenter noradius noborder" style="max-width: 400px;">
@@ -34,13 +34,11 @@
                                     <div class="col_full">
                                         <label for="login-form-username">Username:</label>
                                         <input type="text" id="username" name="username" value="" class="form-control not-dark" />
-                                        <?php echo form_error('username'); ?>
                                     </div>
 
                                     <div class="col_full">
                                         <label for="login-form-password">Password:</label>
                                         <input type="password" id="password" name="password" value="" class="form-control not-dark" />
-                                        <?php echo form_error('password'); ?>
                                     </div>
 
                                     <div class="col_full nobottommargin">
@@ -48,15 +46,18 @@
                                         <!-- <a href="#" class="fright">Forgot Password?</a> -->
                                     </div>
                                 </form>
-
                                 <div class="line line-sm"></div>
 
                                 <div class="center">
-                                    <strong><?php echo validation_errors(); ?></strong>
-                                    <h4 style="margin-bottom: 15px;">or Login with:</h4>
+                                    <strong style="color: red; font-weight: bold;">
+                                        <?php 
+                                            echo validation_errors();
+                                        ?>
+                                        </strong>
+                                    <!-- <h4 style="margin-bottom: 15px;">or Login with:</h4>
                                     <a href="javascript:;" class="button button-rounded si-facebook si-colored">Facebook</a>
                                     <span class="hidden-xs">or</span>
-                                    <a href="javascript:;" class="button button-rounded si-twitter si-colored">Twitter</a>
+                                    <a href="javascript:;" class="button button-rounded si-twitter si-colored">Twitter</a> -->
                                 </div>
                             </div>
                         </div>

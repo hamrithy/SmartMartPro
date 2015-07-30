@@ -6,6 +6,7 @@
 		public function __construct(){
 			parent::__construct();
 			$this->load->library('form_validation');
+			$this->load->helper('security');
 		}
 
 		private function isLoggedIn(){
@@ -38,44 +39,45 @@
 
 		public function authenticate(){
 			log_message('debug', "AUTHENTICATION");
-			$this->load->model('dto/DtoUser');
-			$this->load->model('dao/DaoUser');
-			$user = new DtoUser();
-			$userDao = new DaoUser();
-			$this->load->library('form_validation');
 
-			$this->form_validation->set_rules('username', 'Username', 'required');
-			$this->form_validation->set_rules('password', 'Password', 'required');
-					
+		   //This method will have the credentials validation
+		   	$this->load->library('form_validation');
+			 
+		   	$this->form_validation->set_rules('username', 'Username', 'trim|required|xss_clean');
+		   	$this->form_validation->set_rules('password', 'Password', 'trim|required|xss_clean|callback_authentication_user');
+
 			if ($this->form_validation->run() == FALSE){
 				log_message('debug', "FALSE");
 				$this->load->view('admin-kh4it/index','refresh');
 			}else{
-				log_message('debug', "TRUE");
-				$user->setUsername($this->input->post('username',TRUE));
-				$user->setPassword(md5($this->input->post('password', TRUE)));
-
-				$result = $userDao->login($user);
-				if($result)
-	  			{
-	    			foreach($result as $row)
-	     			{
-	     				log_message('debug', $row->username);
-	     				log_message('debug', $row->userid);
-	       				$user->setUsername($row->username);
-	         			$user->setUserid($row->userid);
-						$this->session->set_userdata('logged_in', $user);
-						$this->session->set_userdata('username', $this->encryption->encrypt($user->getUsername()));
-						$this->session->set_userdata('userid', $this->encryption->encrypt($user->getUserid()));	
-						log_message("debug",$this->encryption->decrypt($user->getUserid()));
-	     			}
-	     			redirect("admin/dashboard");
-	   			}else{
-	     			$this->form_validation->set_message('check_database', 'Invalid username or password');
-	     			redirect('admin/auth');
-	   			}			
+     			redirect("admin/dashboard");
 			}			
 		}
+
+		function authentication_user($password){
+			$this->load->model('dto/DtoUser');
+			$this->load->model('dao/DaoUser');
+			$user = new DtoUser();
+			$userDao = new DaoUser();
+
+			$user->setUsername($this->input->post('username',TRUE));
+			$user->setPassword(md5($this->input->post('password',TRUE)));
+		   	$result = $userDao->login($user);
+		 
+		   	if($result){
+		   		foreach($result as $row){
+       				$user->setUsername($row->username);
+         			$user->setUserid($row->userid);
+					$this->session->set_userdata('logged_in', $user);
+					$this->session->set_userdata('username', $this->encryption->encrypt($user->getUsername()));
+					$this->session->set_userdata('userid', $this->encryption->encrypt($user->getUserid()));	
+     			}
+		     	return TRUE;
+		   }else{
+		   		$this->form_validation->set_message('authentication_user', 'Invalid username or password. Please try again.');
+		     	return false;
+		   }
+	 	}
 	}
 
 ?>
