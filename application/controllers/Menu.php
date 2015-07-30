@@ -36,6 +36,12 @@
 			    ->set_output(json_encode($result));
 		}
 		
+
+		public function all(){
+			$this->load->model("dao/DaoMenu");
+			echo json_encode($this->DaoMenu->findAllMenus());
+			
+		}
 	}
 
 ?>

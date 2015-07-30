@@ -20,7 +20,6 @@ class Language extends CI_Controller{
                 );
         $this->input->set_cookie($cookie);
         //echo lang('hello');
-
         //print_r($this->input->cookie());
         //print_r($this->session->userdata($cookie));
         //echo json_encode($this->input->cookie("LANGUAGE"));
@@ -37,7 +36,6 @@ class Language extends CI_Controller{
                 );
         $this->input->set_cookie($cookie);
         //echo lang('hello');
-
         //print_r($this->input->cookie());
         //print_r($this->session->userdata($cookie));
         //echo json_encode($this->input->cookie("LANGUAGE"));
