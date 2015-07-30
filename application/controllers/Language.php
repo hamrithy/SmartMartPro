@@ -15,7 +15,7 @@ class Language extends CI_Controller{
         //$this->lang->load('smartmart', 'khmer');
         $cookie = array(
                     'name'   => 'LANGUAGE',
-                    'value'  => 'khmer',
+                    'value'  => 'kh',
                     'expire' => 604800
                 );
         $this->input->set_cookie($cookie);
@@ -32,7 +32,7 @@ class Language extends CI_Controller{
         //$this->lang->load('smartmart', 'english');
         $cookie = array(
                     'name'   => 'LANGUAGE',
-                    'value'  => 'english',
+                    'value'  => 'en',
                     'expire' => 604800
                 );
         $this->input->set_cookie($cookie);
