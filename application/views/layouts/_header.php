@@ -35,18 +35,18 @@
                                 </div>
                                 <label class="checkbox">
                                   <input type="checkbox" value="remember-me"> Remember me
-                                </label>
-                                <button class="btn btn-danger btn-block" type="submit">Sign in</button>
-                            </form>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <!-- END TOP LINKS -->
-        </div>
-        <!-- END TOP BAR RIGHT INFORMATION -->
-    </div>
-    <!-- END TOP BAR CONTAINER -->
+                              </label>
+                              <button class="btn btn-danger btn-block" type="submit">Sign in</button>
+                          </form>
+                      </div>
+                  </li>
+              </ul>
+          </div>
+          <!-- END TOP LINKS -->
+      </div>
+      <!-- END TOP BAR RIGHT INFORMATION -->
+  </div>
+  <!-- END TOP BAR CONTAINER -->
 </div>
 <!-- END TOP BAR -->
 
@@ -102,10 +102,10 @@
 
                 <div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
 
-                    <ul>
-                        <li class="current"><a href="#"><div><?php echo lang('home') ?></div><span>Lets Start</span></a>
-                            
-                        </li>
+                <ul>
+                    <li class="current"><a href="#"><div><?php echo lang('home') ?></div><span>Lets Start</span></a>
+                        
+                    </li>
                         <!-- Mega Menu
                         ============================================= -->
                         <li class="mega-menu"><a href="#"><div><?php echo lang('product') ?></div><span>Out of the Box</span></a>

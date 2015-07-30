@@ -1,7 +1,6 @@
 <?php $this->load->view('layouts/_include'); ?>
-<script>
-    //alert(language);
-</script>
+</head>
+<!-- END HEAD TAG -->
 <body class="stretched">
     <?php //echo $this->input->cookie('LANGUAGE'); ?>
 
