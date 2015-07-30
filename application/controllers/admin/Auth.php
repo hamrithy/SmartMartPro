@@ -5,6 +5,7 @@
 
 		public function __construct(){
 			parent::__construct();
+			$this->load->library('form_validation');
 		}
 
 		private function isLoggedIn(){
@@ -26,14 +27,13 @@
 		}
 		
 		private function login(){
-			$this->load->library('form_validation');
-			$this->load->view('login','refresh');
+			$this->load->view('admin-kh4it/index','refresh');
 		}
 
 		public function logout(){
 			$this->session->unset_userdata("logged_in");
 			session_destroy();
-			$this->login();
+			redirect('admin/auth');
 		}
 
 		public function authenticate(){
@@ -52,8 +52,8 @@
 				$this->load->view('admin-kh4it/index','refresh');
 			}else{
 				log_message('debug', "TRUE");
-				$user->setUsername($this->input->post('username'));
-				$user->setPassword(md5($this->input->post('password')));
+				$user->setUsername($this->input->post('username',TRUE));
+				$user->setPassword(md5($this->input->post('password', TRUE)));
 
 				$result = $userDao->login($user);
 				if($result)
@@ -72,7 +72,7 @@
 	     			redirect("admin/dashboard");
 	   			}else{
 	     			$this->form_validation->set_message('check_database', 'Invalid username or password');
-	     			$this->login();
+	     			redirect('admin/auth');
 	   			}			
 			}			
 		}

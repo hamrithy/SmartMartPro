@@ -22,7 +22,7 @@
                             <li><a href="<?php echo base_url('language/khmer')?>"><img src="<?php echo base_url('public/style_front/images/icons/flags/french.png')?>" alt="French"> KH</a></li>
                         </ul>
                     </li>
-                    <li><a href="#">Login</a>
+                    <li><a href="<?php echo site_url("admin/auth")?>">Login</a>
                         <div class="top-link-section">
                             <form id="top-login" role="form">
                                 <div class="input-group" id="top-login-username">
