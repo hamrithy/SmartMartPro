@@ -68,5 +68,8 @@ class DaoPage extends CI_Model{
 		$this->db->update('PAGES' , $data);
 	}
 		
+	public function countPages(){
+		return $this->db->count_all('PAGES');
+	}
 	
 }

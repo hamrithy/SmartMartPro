@@ -12,7 +12,7 @@
 			$data = array(
 				'serviceid'         => $s->getServiceid(),
 				'title'				=> $s->getTitle(),
-				'description'		=> $s->getDescription(),
+				'description'		=> str_replace(array("\r", "\n"), " ", $s->getDescription()), 
 				'linkto'			=> $s->getLinkto(),
 				'imageurl'			=> $s->getImageurl(),
 				'ordering'			=> $s->getOrdering()
@@ -46,7 +46,7 @@
 		public function updateService(DtoService $s){
 			$data = array(
 				'title'				=> $s->getTitle(),
-				'description'		=> $s->getDescription(),
+				'description'		=> str_replace(array("\r", "\n"), " ", $s->getDescription()), 
 				'linkto'			=> $s->getLinkto(),
 				'imageurl'			=> $s->getImageurl(),
 				'ordering'			=> $s->getOrdering()

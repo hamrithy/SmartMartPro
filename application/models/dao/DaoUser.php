@@ -61,7 +61,7 @@ class DaoUser extends CI_Model
 	function update_user(DtoUser $user){
 		$data = array(
 			"username" => $user->getUsername(),
-			"password" => $user->getPassword(),
+			"password" => md5($user->getPassword()),
 			"usertype" => $user->getUsertype(),
 			"active"   => $user->getActive()
 		);

@@ -8,14 +8,29 @@ class DaoFoodType extends CI_Model{
 
 	public function addFoodType(DtoFoodType $foodType){
 		$data = array("title" 		 => 	$foodType->getTitle(),
-					  "description"  =>		$foodType->getDescription()
+					  "description"  =>		str_replace(array("\r", "\n"), " ", $foodType->getDescription())
 			);
 		return $this->db->insert('FOODTYPES', $data);
 	}
 
 	public function deleteFoodType($id){
+		$this->load->model('dao/DaoMenu');
+		$this->db->trans_start();
 		$this->db->where('foodtypeid',$id);
-		return $this->db->delete('FOODTYPES');
+		$query = $this->db->get('FOODTYPES');
+
+		$this->db->where('foodtypeid',$id);
+		if($this->db->delete('FOODTYPES')){
+			//REMOVE FROM MENU that has that food type
+			if($this->DaoMenu->deleteMenuByTitle(str_replace(" ","",strtolower($query->row()->title)))){
+				$this->db->trans_commit();
+			}else{
+				$this->db->trans_rollback();
+			}
+		}else{
+			$this->db->trans_rollback();
+		}
+		$this->db->trans_complete();
 	}
 
 	public function getAllFoodTypes(){
@@ -43,9 +58,9 @@ class DaoFoodType extends CI_Model{
 	}
 
 	public function updateFoodType(DtoFoodType $foodType){
-		$data = array('title' 		=> $this->DtoFoodType->getTitle(),
-					  'description' => $this->DtoFoodType->getDescription(),
-					  'foodtypeid' 	=> $this->DtoFoodType->getFoodtypeid()
+		$data = array('title' 		=> $foodType->getTitle(),
+					  'description' => str_replace(array("\r", "\n"), " ", $foodType->getDescription()),
+					  'foodtypeid' 	=> $foodType->getFoodtypeid()
 		 );
 		$this->db->where('foodtypeid', $this->DtoFoodType->getFoodtypeid());
 		$this->db->update('FOODTYPES', $data);
@@ -56,8 +71,6 @@ class DaoFoodType extends CI_Model{
 		}
 	}
 	
-	
-	
 	public function listRecentFoodType($limit){
 		$this->db->select('foodtypeid,title, description');
 		$this->db->from('FOODTYPES');
@@ -65,5 +78,9 @@ class DaoFoodType extends CI_Model{
 		$this->db->order_by("foodtypeid","desc");
 		$query = $this->db->get();
 		return $query->result();
+	}
+
+	public function countFoodType(){
+		return $this->db->count_all('FOODTYPES');
 	}
 }

@@ -16,21 +16,21 @@ class DaoFood extends CI_Model{
 
 	public function addFoodItem(DtoFood $food){
 		$data = array('title' 			=>  $food->getTitle(),
-					  'description'  	=>  $food->getDescription(),
+					  'description'  	=>  str_replace(array("\r", "\n"), " ", $food->getDescription()),
 					  'thumbnailurl'	=>	$food->getThumbnailurl(),
 					  'promotiontype'	=>	$food->getPromotiontype(),
 					  'price'			=>	$food->getPrice(),
 					  'userid'			=>	$food->getUserid(),
 					  'foodtypeid'		=>	$food->getFoodTypeid(),
 					  'seotitle'		=>	$food->getSeotitle(),
-					  'seodescription'	=>	$food->getSeodescription()
+					  'seodescription'	=>	str_replace(array("\r", "\n"), " ", $food->getSeodescription())
 					);
 		return $this->db->insert('FOODS', $data);
 	}
 
 	public function updateFoodItem(DtoFood $food){
 		$data = array('title' 			=> 	$food->getTitle(),
-					  'description'		=>	$food->getDescription(),
+					  'description'		=>	str_replace(array("\r", "\n"), " ", $food->getDescription()),
 					  'thumbnailurl' 	=>	$food->getThumbnailurl(),
 					  'promotiontype'	=>	$food->getPromotiontype(),
 					  'price'			=>	$food->getPrice(),
@@ -38,7 +38,7 @@ class DaoFood extends CI_Model{
 					  'foodtypeid'		=>	$food->getFoodtypeid(),
 					  'foodid'			=>	$food->getFoodid(),
 					  'seotitle'		=>	$food->getSeotitle(),
-					  'seodescription'	=>	$food->getSeodescription()
+					  'seodescription'	=>	str_replace(array("\r", "\n"), " ", $food->getSeodescription())
 			);
 		$this->db->where('foodid',$food->getFoodid());
 		$this->db->update('FOODS', $data);
@@ -86,4 +86,13 @@ class DaoFood extends CI_Model{
 		return $query->result();
 	}
 
+	public function countFood(){
+		return $this->db->count_all('FOODS');
+	} 
+
+	public function getRecentFood(){
+		$this->db->limit(5);
+		$query = $this->db->get('FOODS');
+		return $query->result(); 
+	}
 }
