@@ -66,6 +66,14 @@ class DaoMenu extends CI_Model{
 			return false;
 		}
 	}
+
+	public function findAllMenus(){
+		$this->db->select($this->input->cookie("LANGUAGE").'title AS TITLE');
+		$this->db->from("MENUS");
+		$query = $this->db->get();
+		return $query->result_array();
+	}
+
 }
 
 ?>
