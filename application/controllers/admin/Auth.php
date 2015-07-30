@@ -19,7 +19,7 @@
 
 		public function index(){
 			if($this->isLoggedIn()){
-				redirect('admin/post/dashboard');
+				redirect('admin/dashboard');
 			}else{
 				$this->login();
 			}
@@ -69,7 +69,7 @@
 						$this->session->set_userdata('userid', $this->encryption->encrypt($user->getUserid()));	
 						log_message("debug",$this->encryption->decrypt($user->getUserid()));
 	     			}
-	     			redirect("admin/post");
+	     			redirect("admin/dashboard");
 	   			}else{
 	     			$this->form_validation->set_message('check_database', 'Invalid username or password');
 	     			$this->login();

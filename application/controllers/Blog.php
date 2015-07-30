@@ -27,7 +27,7 @@
 			$search = $this->input->post('search');
 			$offset = ($pageNo-1)*$limit;
 			$data["posts"] = $this->DaoPost->listPostLimit($limit, $offset , $search);
-			$data["total"] = $this->DaoPost->getAllPostCount();
+			$data["total"] = $this->DaoPost->getAllPostCount($search);
 			echo json_encode($data);
 		}
 		
@@ -38,9 +38,21 @@
 			$data["postDetail"] = $this->DaoPost->getPost($this->DtoPost);
 			$this->load->view("front/post",$data);
 		}
-		
-		
-		
-		
+
+		public function getBlogDetails($id){
+			$data["title"] = "Blog Details";
+			$data["page"] = "Blog";
+			$this->DtoPost->setPostid($id);
+			$data["postDetail"] = $this->DaoPost->getPostById($this->DtoPost);
+			echo json_encode($data);			
+		}
+
+		public function rightSidePro(){
+			$data["recentPost"] = $this->DaoPost->listPostLimit(5,0,'');
+			$data["recentFood"] = $this->DaoFood->listRecentFood(5);
+			$data["recentFoodType"] = $this->DaoFoodType->listRecentFoodType(5);
+			echo json_encode($data);
+		}
+
 	}
 ?>

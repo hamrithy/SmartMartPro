@@ -33,7 +33,7 @@
 			$this->DtoFood->setThumbnailurl($this->input->post('thumbnailurl'));
 			$this->DtoFood->setUserid($this->encryption->decrypt($this->session->userdata('userid')));
 			$this->DaoFood->addFoodItem($this->DtoFood);
-			$this->index();
+			redirect("admin/fooditem");
 		}
 
 		 public function listfooditems(){
@@ -66,12 +66,13 @@
 			$this->DtoFood->setFoodid($id);
 			$this->DtoFood->setUserid($this->encryption->decrypt($this->session->userdata('userid')));
 			$this->DaoFood->updateFoodItem($this->DtoFood);
-			$this->index();
+			redirect("admin/fooditem");
 		
 		}
 
 		public function deleteFoodItem($id){
 			$this->DaoFood->deleteFoodItem($id);
+			redirect("admin/fooditem");
 		}
 	}
 

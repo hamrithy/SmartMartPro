@@ -27,20 +27,43 @@
 			
 			$user = new DtoUser();
 			$userDao = new DaoUser();
+			$this->load->library('form_validation');
+			$this->load->helper('form');
 
-			$user->setUsername($this->input->post('username'));
-			$user->setPassword($this->input->post('password'));
-			$user->setUsertype($this->input->post('usertype'));
-			$user->setActive($this->input->post("status"));
-			
-			if($userDao->check_duplicate_user_by_username($user->getUsername())>0){
-				$data["ERROR"] = true;
-				$data["ERR_MSG"] = "User already exist.";
+			$this->form_validation->set_rules('username', 'Username', 'required|trim');
+			$this->form_validation->set_rules('password', 'Password', 'required|trim');
+			$this->form_validation->set_rules('confirm_password', 'Confirm Password', 'required|trim');
+			$this->form_validation->set_rules('usertype', 'User Type', 'required|trim');
+			$this->form_validation->set_rules('status', 'Status', 'required|trim');
+					
+			if ($this->form_validation->run() == FALSE){
+				echo json_encode(array(
+										"ERROR"=> true ,
+										"ERR_MSG"=>validation_errors()
+									));
 			}else{
-				$userDao->create_new_user($user);
-				$data["SUCCESS"] = true;
+				if($this->input->post('password')!=$this->input->post('confirm_password')){
+					echo json_encode(array(
+										"ERROR"=> true,
+										"ERR_MSG"=>"Your password are mismatch. Please enter again."
+									));
+				}else{
+					$user->setUsername($this->input->post('username'));
+					$user->setPassword($this->input->post('password'));
+					$user->setUsertype($this->input->post('usertype'));
+					$user->setActive($this->input->post("status"));
+					
+					if($userDao->check_duplicate_user_by_username($user->getUsername())>0){
+						$data["ERROR"] = true;
+						$data["ERR_MSG"] = "User already exist.";
+					}else{
+						$userDao->create_new_user($user);
+						$data["ERROR"] = false;
+						$data["ERR_MSG"] = "User has been inserted sucessfully.";
+					}
+					echo json_encode($data);
+				}
 			}
-			echo json_encode($data);
 		}
 
 		public function deleteUser($user_id){
@@ -58,19 +81,45 @@
 			
 			$user = new DtoUser();
 			$userDao = new DaoUser();
-			$user->setUserid($this->input->post('userid'));
-			$user->setUsername($this->input->post('username'));
-			$user->setPassword($this->input->post('password'));
-			$user->setUsertype($this->input->post('usertype'));
-			$user->setActive($this->input->post("status"));
-			
-			if($userDao->update_user($user)){
-				$data["ERROR"] = false;
-				$data["ERR_MSG"] = "Your user cannot update.";
+
+			$this->load->library('form_validation');
+			$this->load->helper('form');
+
+			$this->form_validation->set_rules('userid', 'Userid', 'required|trim|numeric');
+			$this->form_validation->set_rules('username', 'Username', 'required|trim');
+			$this->form_validation->set_rules('password', 'Password', 'required|trim');
+			$this->form_validation->set_rules('confirm_password', 'Confirm Password', 'required|trim');
+			$this->form_validation->set_rules('usertype', 'User Type', 'required|trim');
+			$this->form_validation->set_rules('status', 'Status', 'required|trim');
+					
+			if ($this->form_validation->run() == FALSE){
+				echo json_encode(array(
+										"ERROR"=> true ,
+										"ERR_MSG"=>validation_errors()
+									));
 			}else{
-				$data["ERROR"] = true;
+				if($this->input->post('password')!=$this->input->post('confirm_password')){
+					echo json_encode(array(
+										"ERROR"=> true,
+										"ERR_MSG"=>"Your password are mismatch. Please enter again."
+									));
+				}else{
+					$user->setUserid($this->input->post('userid'));
+					$user->setUsername($this->input->post('username'));
+					$user->setPassword($this->input->post('password'));
+					$user->setUsertype($this->input->post('usertype'));
+					$user->setActive($this->input->post("status"));
+					
+					if($userDao->update_user($user)){
+						$data["ERROR"] = false;
+						$data["ERR_MSG"] = "Your user has been updated.";
+					}else{
+						$data["ERROR"] = true;
+						$data["ERR_MSG"] = "Your user has not been updated.";
+					}
+					echo json_encode($data);
+				}
 			}
-			echo json_encode($data);
 		}
 
 		public function updateUserStatusPro(){

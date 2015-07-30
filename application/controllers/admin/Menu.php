@@ -33,12 +33,13 @@
 			$this->DtoMenu->setSubof($this->input->post('txtSubof'));
 
 			$this->DaoMenu->addMenu($this->DtoMenu);
-			$this->index();
+			redirect("admin/menu");
 		}
 
 		public function deletemenu($id){
 			$this->load->model('dao/DaoMenu');
 			$this->DaoMenu->deletemenu($id);
+			redirect("admin/menu");
 		}
 
 		public function getmenu($id){
@@ -60,7 +61,7 @@
 			$this->DtoMenu->setSubof($this->input->post('txtSubof'));
 
 			$this->DaoMenu->updateMenu($this->DtoMenu);
-			$this->index();
+			redirect("admin/menu");
 		}
 
 

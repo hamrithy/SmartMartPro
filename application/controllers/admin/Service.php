@@ -27,7 +27,7 @@
 	
 			$this->DaoService->addService($this->DtoService);
 			$this->index();
-			redirect('admin/service/listservice');
+			redirect('admin/service');
 
 
 		}
@@ -43,6 +43,7 @@
 
 			$this->DtoService->setServiceid($id);
 			$this->DaoService->deleteService($this->DtoService);
+			redirect('admin/service');
 		}
 
 		public function getService($id){
@@ -66,11 +67,9 @@
 			$this->DtoService->setLinkto($this->input->post('txtlinkto'));
 			$this->DtoService->setImageurl($this->input->post('txtimage'));
 			$this->DtoService->setOrdering($this->input->post('txtorder'));
-			
 
 			$this->DaoService->updateService($this->DtoService);
-			$this->index();
-			redirect('admin/service/listservice');
+			redirect('admin/service');
 		}
 
 

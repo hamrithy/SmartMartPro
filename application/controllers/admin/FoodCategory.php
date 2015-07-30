@@ -15,7 +15,7 @@
 		}
 
 		public function listFoodType(){
-			$this->load->view('admin-kh4it/listfoodcategory');
+			$this->actionListFoodCategories();
 		}
 
 		public function listfoodcategory(){
@@ -27,24 +27,30 @@
 		}
 
 		public function actionListFoodCategories(){
-			$result = $this->DaoFoodType->getAllFoodTypes();
-			header('Content-Type:application/json' );
-			echo json_encode($result);
+			$data['listFoodTypes'] = $this->DaoFoodType->getAllFoodTypes();
+			$this->load->view('admin-kh4it/listfoodcategory', $data);
 		}
 
 		public function actionDeleteFoodType($id){
-			if($this->DaoFoodType->deleteFoodType($id)){
-				echo 'success';
-			}else{
-				echo 'error';
-			}
+			$this->DaoFoodType->deleteFoodType($id);
+			redirect("admin/foodcategory");
 		}
 		
 		public function actionAddFoodType(){
 			$this->DtoFoodType->setTitle($this->input->post('title'));
 			$this->DtoFoodType->setDescription($this->input->post('description'));
 			$this->DaoFoodType->addFoodType($this->DtoFoodType);
-			$this->index();
+
+			// ADD TO MENU
+			$this->load->model('dao/DaoMenu');
+			$this->load->model('dto/DtoMenu');
+
+			$this->DtoMenu->setTitle($this->input->post('title'));
+			$this->DtoMenu->setLinkto("/menu/foods/".str_replace(" ","",strtolower($this->input->post('title'))));
+			$this->DtoMenu->setOrdering("1");
+			$this->DtoMenu->setSubof("3");
+			$this->DaoMenu->addMenu($this->DtoMenu);
+			redirect("admin/foodcategory");
 		}
 
 		public function actionGetFoodType($id){
@@ -57,7 +63,7 @@
 			$this->DtoFoodType->setTitle($this->input->post('title'));
 			$this->DtoFoodType->setDescription($this->input->post('description'));
 			$status = $this->DaoFoodType->updateFoodType($this->DtoFoodType);
-			$this->index();
+			redirect("admin/foodcategory");
 		}
 	}
 

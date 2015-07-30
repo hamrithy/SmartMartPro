@@ -30,7 +30,7 @@
 			$this->DtoPage->setSeotitle($this->input->post("txtseotitle"));
 			$this->DtoPage->setSeodescription($this->input->post("txtseodescription"));
 			$this->DaoPage->addPage($this->DtoPage);
-			$this->index();
+			redirect("admin/page");
 		}
 		
 		public function listPagePro(){
@@ -41,6 +41,7 @@
 		public function deletePage($id){
 			$this->DtoPage->setPageid($id);
 			$this->DaoPage->deletePage($this->DtoPage);
+			redirect("admin/page");
 		}
 		
 		public function getPage($id){
@@ -57,7 +58,7 @@
 			$this->DtoPage->setSeodescription($this->input->post("txtseodescription"));
 			$this->DtoPage->setUserid($this->encryption->decrypt($this->session->userdata("userid")));
 			$this->DaoPage->updatePage($this->DtoPage);
-			$this->index();
+			redirect("admin/page");
 		}
 
 	

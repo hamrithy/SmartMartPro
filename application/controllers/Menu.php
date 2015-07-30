@@ -29,6 +29,13 @@
 			$this->load->view("front/fooddetail", $data);
 		}
 		
+		public function getfood(){
+			$result = $this->DaoFood->getFoodDetails($this->input->post('id'));
+			$this->output
+			    ->set_content_type('application/json')
+			    ->set_output(json_encode($result));
+		}
+		
 	}
 
 ?>
