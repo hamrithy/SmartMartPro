@@ -27,7 +27,7 @@
 		
 		private function login(){
 			$this->load->library('form_validation');
-			$this->load->view('admin-kh4it/index','refresh');
+			$this->load->view('login','refresh');
 		}
 
 		public function logout(){
