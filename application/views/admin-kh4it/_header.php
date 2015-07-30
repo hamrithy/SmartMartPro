@@ -116,7 +116,7 @@
 					
 					<!-- Begin Logo brand -->
 					<div class="logo-brand">
-						<a href="#"><img alt="Cafe Chateau" src="<?php echo base_url(); ?>public/upload/logo2.png" style="margin-top: 5px;" ></a>
+						<a href="<?php echo site_url("admin/");?>"><img alt="Cafe Chateau" src="<?php echo base_url(); ?>public/upload/logo2.png" style="margin-top: 5px;" ></a>
 					</div><!-- /.logo-brand -->
 					<!-- End Logo brand -->
 					

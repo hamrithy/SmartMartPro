@@ -122,7 +122,7 @@
 					<div class="col-sm-12">
 					
 					<div>
-						<form action="<?php echo site_url();?>/admin/post/addpostpro" id="frmpost" name="frmpost" method="post" class="form-horizontal" role="form">
+						<form action="addpostpro" id="frmpost" name="frmpost" method="post" class="form-horizontal" role="form">
 							
 								<div class="form-group">
 									<label class="col-lg-2 control-label">Title<span class="required">*</span></label>

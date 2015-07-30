@@ -52,7 +52,34 @@
 		<![endif]-->
 		
 		<!--  CSS (REQUIRED ALL PAGE)-->
-		<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+	<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+	<style>
+		.modal {
+		    display:    none;
+		    position:   fixed;
+		    z-index:    1000;
+		    top:        0;
+		    left:       0;
+		    height:     100%;
+		    width:      100%;
+		    background: rgba( 255, 255, 255, .8 ) 
+		                url('http://i.stack.imgur.com/FhHRx.gif') 
+		                50% 50% 
+		                no-repeat;
+		}
+
+		/* When the body has the loading class, we turn
+		   the scrollbar off with overflow:hidden */
+		body.loading {
+		    overflow: hidden;   
+		}
+
+		/* Anytime the body has the loading class, our
+		   modal element will be visible */
+		body.loading .modal {
+		    display: block;
+		}
+	</style>
 
 	</head>
  
@@ -136,8 +163,8 @@
 									<label class="col-lg-3 control-label">User Type<span class="required">*</span></label>
 									<div class="col-lg-5">
 										<select class="form-control" name="usertype" id="USERTYPE">
-											<option value="0">Admin</option>
-											<option value="1">User</option>
+											<option value="1">Admin</option>
+											<option value="2">User</option>
 										</select>
 									</div>
 								</div>
@@ -261,37 +288,50 @@
 	<script src="<?php echo base_url(); ?>/public/assets/js/apps.js"></script>
 	<script type="text/javascript">
 		$(function(){
+			$body = $("body");
+			$(document).on({
+			    ajaxStart: function() { $body.addClass("loading");    },
+			    ajaxStop: function() { $body.removeClass("loading"); }    
+			});
 			$("#btnSave").click(function(){
-				$.ajax({
-					type: "POST",
-					url: '<?php  echo site_url()?>/admin/user/adduserpro',
-					dataType: 'json',
-					data: {
-						username: $("#USERNAME").val(), 
-						password: $("#PASSWORD").val(),
-						usertype: $("#USERTYPE").val(),
-						status: $("#STATUS").val()
-					},
-					success: function(data){
-						<?php if(isset($DUP_MSG)) {?>
-								<div class="alert alert-warning alert-bold-border fade in alert-dismissable"> 
-									<?php echo $DUP_MSG; ?>
-								</div>
-							<?php } ?>
-						console.log("DATA:",data);
-						if(data["ERROR"]==true){
-							$("#MESSAGE").html('<div class="alert alert-warning alert-bold-border fade in alert-dismissable">'+data["ERR_MSG"]+'</div>');
-							$("#MESSAGE").fadeIn(1000);
-							$("#MESSAGE").fadeOut(5000);
-						}else{
-							$("#MESSAGE").html('<div class="alert alert-warning alert-bold-border fade in alert-dismissable">You have been inserted successfully.</div>');
-							$("#MESSAGE").fadeIn(1000);
-							$("#MESSAGE").fadeOut(5000,function(){
-								location.href= "<?php echo site_url('admin/user');?>";
-							});
+				if($("#PASSWORD").val()!=$("#CONFIRM_PASSWORD").val()){
+					$("#MESSAGE").html('<div class="alert alert-warning alert-bold-border fade in alert-dismissable">Your password are mismatch. Please enter again.</div>');
+					$("#MESSAGE").fadeIn(1000);
+					$("#MESSAGE").fadeOut(5000);
+					return;
+				}else{
+					$.ajax({
+						type: "POST",
+						url: '<?php  echo site_url()?>/admin/user/adduserpro',
+						dataType: 'json',
+						data: {
+							username: $("#USERNAME").val(), 
+							password: $("#PASSWORD").val(),
+							confirm_password: $("#CONFIRM_PASSWORD").val(),
+							usertype: $("#USERTYPE").val(),
+							status: $("#STATUS").val()
+						},
+						success: function(data){
+/*							<?php if(isset($DUP_MSG)) {?>
+									<div class="alert alert-warning alert-bold-border fade in alert-dismissable"> 
+										<?php echo $DUP_MSG; ?>
+									</div>
+								<?php } ?>*/
+							console.log("DATA:",data);
+							if(data["ERROR"]==true){
+								$("#MESSAGE").html('<div class="alert alert-warning alert-bold-border fade in alert-dismissable">'+data["ERR_MSG"]+'</div>');
+								$("#MESSAGE").fadeIn(1000);
+								$("#MESSAGE").fadeOut(5000);
+							}else{
+								$("#MESSAGE").html('<div class="alert alert-warning alert-bold-border fade in alert-dismissable">You have been inserted successfully.</div>');
+								$("#MESSAGE").fadeIn(1000);
+								$("#MESSAGE").fadeOut(5000,function(){
+									location.href= "<?php echo site_url('admin/user');?>";
+								});
+							}
 						}
-					}
-				});
+					});
+				}
 			});
 		});		
 

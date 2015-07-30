@@ -87,7 +87,7 @@
 								  <div class="panel-heading">
 									<h1 class="panel-title">
 									<i class="fa fa-tasks"></i>
-										<a href="index.act"  >
+										<a href="<?php echo site_url()?>/admin/service"  >
 										List Services
 										
 										</a>
@@ -120,7 +120,7 @@
 									<td><?php echo $s->linkto; ?></td>							
 									<td><?php echo $s->ordering; ?></td>
 									<td>
-										<button value="<?php echo $s->serviceid ?>" onclick="deletedata(this)" class="btn btn-danger">Delete</button>
+										<a href="<?php echo site_url()?>/admin/service/deleteservicepro/<?php echo $s->serviceid ?>" style="margin-right:3px" onclick="return confirm('Do you want to delete?');"  class="btn btn-danger">Delete</a> 
 										<a href="<?php  echo site_url()?>/admin/service/getService/<?php  echo $s->serviceid ?>" class="btn btn-primary" >Update</a>
 									</td>
 								</tr>
@@ -226,17 +226,6 @@
 			    } ); 
 		    } 
 		); 
-
-		function deletedata(btn){
-			if (confirm("Are you sure you want to delete?") == true) {
-				$.post('<?php  echo site_url()?>/admin/service/deleteServicePro/'+btn.value ,function(data){
-					var row = btn.parentNode.parentNode;
-					row.parentNode.removeChild(row);
-				});
-			} 
-		}
-		
-		
 		</script>
 	</body>
 </html>

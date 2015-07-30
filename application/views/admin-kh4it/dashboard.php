@@ -5,7 +5,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 		<meta name="author" content="Vuthea Chheang">
-		<title>List Food Category</title>
+		<title>Dashboard</title>
  
 	<!-- BOOTSTRAP CSS (REQUIRED ALL PAGE)-->
 	<link href="<?php echo base_url(); ?>/public/assets/css/bootstrap.min.css" rel="stylesheet">
@@ -91,7 +91,7 @@
 						<strong>Welcome!</strong>
 					</p>
 					<p class="text-muted">
-						Khmer Academy is the first website that provides you the e-learning in Khmer language. Khmer Academy will help you to have many advantages with our learning contents such as saving your time and your money. 
+						Welcome to Coffee Chateau, we provide the best food and drink to all customers. And the good services to the client. Best environment to disussing.
 					</p>
 				</div>
 				<!-- END EXAMPLE ALERT -->
@@ -105,9 +105,9 @@
 					<div class="row">
 						<div class="col-xs-6">
 							<div class="tiles facebook-tile text-center">
-								<i class="fa fa-user icon-lg-size"></i>
+								<i class="fa fa-cutlery icon-lg-size"></i>
 								<h4>
-									<a href="#">3364 Users</a>
+									<a href="#"><?php echo $countFoods; ?> Foods</a>
 								</h4>
 							</div>
 							<!-- /.tiles .facebook-tile -->
@@ -115,9 +115,9 @@
 						<!-- /.col-xs-6 -->
 						<div class="col-xs-6">
 							<div class="tiles twitter-tile text-center">
-								<i class="fa fa-toggle-right icon-lg-size"></i>
+								<i class="fa fa-dashboard icon-lg-size"></i>
 								<h4>
-									<a href="#">54 Playlists</a>
+									<a href="<?php echo site_url()?>/admin/foodcategory"><?php echo $countFoodCategories; ?> Categories</a>
 								</h4>
 							</div>
 							<!-- /.tiles .twitter-tile -->
@@ -127,7 +127,7 @@
 							<div class="tiles dribbble-tile text-center">
 								<i class="fa fa-comments icon-lg-size"></i>
 								<h4>
-									<a href="#">88 Questions</a>
+									<a href="<?php echo site_url()?>/admin/post"><?php echo $countPosts; ?> Posts</a>
 								</h4>
 							</div>
 							<!-- /.tiles .dribbble-tile -->
@@ -135,9 +135,9 @@
 						<!-- /.col-xs-6 -->
 						<div class="col-xs-6">
 							<div class="tiles linkedin-tile text-center">
-								<i class="fa fa-film icon-lg-size"></i>
+								<i class="fa fa-credit-card icon-lg-size"></i>
 								<h4>
-									<a href="#">554 Videos</a>
+									<a href="<?php echo site_url()?>/admin/page"><?php echo $countPages; ?> Pages</a>
 								</h4>
 							</div>
 							<!-- /.tiles .dribbble-tile -->
@@ -149,120 +149,33 @@
 
 
 					<h4 class="small-title">
-						<strong><i class="fa fa-users"></i>New users</strong>
+						<strong><i class="fa  fa-cutlery"></i>Recent Post</strong>
 					</h4>
 
 				
 
 					<!-- BEGIN USER CARD LONG -->
+					<?php foreach($recentFoods as $row){ ?>
 					<div class="the-box bg-success no-border">
 						<div class="media user-card-sm">
-							<a href="#" class="pull-left"> <img alt="Avatar" src="../uploads/user/avatar.jpg" class="media-object img-circle">
+							<a href="#" class="pull-left"> <img alt="Avatar" src="<?php echo $row->thumbnailurl; ?>" class="media-object img-circle">
 							</a>
 							<div class="media-body">
-								<h4 class="media-heading">Admin</h4>
-								<p class="text-success">admin@gmail.com</p>
+								<h4 class="media-heading"><?php echo $row->title; ?></h4>
+								<p class="text-success">$ <?php echo $row->price; ?></p>
 							</div>
 							<div class="right-button">
-								<a class="btn btn-success active" href="user.act" title="View" data-toggle="tooltip">
+								<a class="btn btn-success active" target="_blank" href="<?php echo base_url(); ?>menu" title="View" data-toggle="tooltip">
 									<i class="fa fa-check"></i>
 								</a>
 							</div>
 							<!-- /.right-button -->
 						</div>
 					</div>
+					<?php } ?>
 					<!-- /.the-box .no-border -->
-					<!-- BEGIN USER CARD LONG -->
-
 				
-
-					<!-- BEGIN USER CARD LONG -->
-					<div class="the-box bg-success no-border">
-						<div class="media user-card-sm">
-							<a href="#" class="pull-left"> <img alt="Avatar" src="../uploads/user/1230.png" class="media-object img-circle">
-							</a>
-							<div class="media-body">
-								<h4 class="media-heading">Menghok</h4>
-								<p class="text-success">menghok.heak@gmail.com</p>
-							</div>
-							<div class="right-button">
-								<a class="btn btn-success active" href="user.act" title="View" data-toggle="tooltip">
-									<i class="fa fa-check"></i>
-								</a>
-							</div>
-							<!-- /.right-button -->
-						</div>
-					</div>
-					<!-- /.the-box .no-border -->
-					<!-- BEGIN USER CARD LONG -->
-
-				
-
-					<!-- BEGIN USER CARD LONG -->
-					<div class="the-box bg-success no-border">
-						<div class="media user-card-sm">
-							<a href="#" class="pull-left"> <img alt="Avatar" src="../uploads/user/avatar.jpg" class="media-object img-circle">
-							</a>
-							<div class="media-body">
-								<h4 class="media-heading">Ponreay</h4>
-								<p class="text-success">ponreay@gmail.com</p>
-							</div>
-							<div class="right-button">
-								<a class="btn btn-success active" href="user.act" title="View" data-toggle="tooltip">
-									<i class="fa fa-check"></i>
-								</a>
-							</div>
-							<!-- /.right-button -->
-						</div>
-					</div>
-					<!-- /.the-box .no-border -->
-					<!-- BEGIN USER CARD LONG -->
-
-				
-
-					<!-- BEGIN USER CARD LONG -->
-					<div class="the-box bg-success no-border">
-						<div class="media user-card-sm">
-							<a href="#" class="pull-left"> <img alt="Avatar" src="../uploads/user/avatar.jpg" class="media-object img-circle">
-							</a>
-							<div class="media-body">
-								<h4 class="media-heading">Rady</h4>
-								<p class="text-success">sonnsorady@gmail.com</p>
-							</div>
-							<div class="right-button">
-								<a class="btn btn-success active" href="user.act" title="View" data-toggle="tooltip">
-									<i class="fa fa-check"></i>
-								</a>
-							</div>
-							<!-- /.right-button -->
-						</div>
-					</div>
-					<!-- /.the-box .no-border -->
-					<!-- BEGIN USER CARD LONG -->
-
-				
-
-					<!-- BEGIN USER CARD LONG -->
-					<div class="the-box bg-success no-border">
-						<div class="media user-card-sm">
-							<a href="#" class="pull-left"> <img alt="Avatar" src="../uploads/user/1480.jpg" class="media-object img-circle">
-							</a>
-							<div class="media-body">
-								<h4 class="media-heading">sonita</h4>
-								<p class="text-success">saksonita@gmail.com</p>
-							</div>
-							<div class="right-button">
-								<a class="btn btn-success active" href="user.act" title="View" data-toggle="tooltip">
-									<i class="fa fa-check"></i>
-								</a>
-							</div>
-							<!-- /.right-button -->
-						</div>
-					</div>
-					<!-- /.the-box .no-border -->
-					<!-- BEGIN USER CARD LONG -->
-
-					
+			
 					
 					
 					
@@ -275,21 +188,20 @@
 				<div class="col-lg-8">
 
 					<div id="list_videos_in_category">
-						
-						
+					
+						<?php foreach($recentPosts as $row){ ?>	
 						<div class="the-box no-border store-list view-category">
 							<div class="media">
-								<a target="_blank" href="../elearning/play.act?v=11" class="pull-left"><img style="width: 196px; height: 110px" src="https://i.ytimg.com/vi/g1dNbTBvEHc/mqdefault.jpg" class="store-image" alt="image"></a>
+								<a target="_blank" href="<?php echo site_url()?>/blog/detail/<?php echo $row->postid ?>" class="pull-left"><img style="width: 196px; height: 110px" src="<?php echo $row->thumbnailurl; ?>" class="store-image" alt="image"></a>
 								<div class="clearfix visible-xs"></div>
 								<div class="media-body">
 									<a href="#"></a>
 									<h4 style="padding: 0px; margin: 0px" class="media-heading">
-										<a href="../elearning/play.act?v=11"><strong class="text-black">Introduction, Syntax, Selectors &amp; How to Apply</strong></a>
+										<a target="_blank" href="<?php echo site_url()?>/blog/detail/<?php echo $row->postid ?>"><strong class="text-black"><?php echo $row->title; ?></strong></a>
 									</h4>
 									<ul style="list-style: none; padding: 0px; margin: 0px;">
-										<li><a class="text-muted small" href="#">by
-												Admin</a></li>
-										<li class="text-muted small">2015-01-13 - 1831 views</li>
+										<li class="text-muted small">&nbsp;</li>
+										<li class="text-muted small"><?php echo $row->postdate; ?></li>
 										<li class="text-muted small"></li>
 									</ul>
 								</div>
@@ -297,99 +209,7 @@
 							</div>
 							<!-- /.media -->
 						</div>
-						
-						
-						
-						<div class="the-box no-border store-list view-category">
-							<div class="media">
-								<a target="_blank" href="../elearning/play.act?v=12" class="pull-left"><img style="width: 196px; height: 110px" src="https://i.ytimg.com/vi/SRyrY2XgvZw/mqdefault.jpg" class="store-image" alt="image"></a>
-								<div class="clearfix visible-xs"></div>
-								<div class="media-body">
-									<a href="#"></a>
-									<h4 style="padding: 0px; margin: 0px" class="media-heading">
-										<a href="../elearning/play.act?v=12"><strong class="text-black">Backgrounds, Texts &amp; Fonts</strong></a>
-									</h4>
-									<ul style="list-style: none; padding: 0px; margin: 0px;">
-										<li><a class="text-muted small" href="#">by
-												Admin</a></li>
-										<li class="text-muted small">2015-01-13 - 605 views</li>
-										<li class="text-muted small"></li>
-									</ul>
-								</div>
-								<!-- /.media-body -->
-							</div>
-							<!-- /.media -->
-						</div>
-						
-						
-						
-						<div class="the-box no-border store-list view-category">
-							<div class="media">
-								<a target="_blank" href="../elearning/play.act?v=13" class="pull-left"><img style="width: 196px; height: 110px" src="https://i.ytimg.com/vi/_BZcx7OWqB4/mqdefault.jpg" class="store-image" alt="image"></a>
-								<div class="clearfix visible-xs"></div>
-								<div class="media-body">
-									<a href="#"></a>
-									<h4 style="padding: 0px; margin: 0px" class="media-heading">
-										<a href="../elearning/play.act?v=13"><strong class="text-black">Links, List, Tables &amp; Box Model</strong></a>
-									</h4>
-									<ul style="list-style: none; padding: 0px; margin: 0px;">
-										<li><a class="text-muted small" href="#">by
-												Admin</a></li>
-										<li class="text-muted small">2015-01-13 - 591 views</li>
-										<li class="text-muted small"></li>
-									</ul>
-								</div>
-								<!-- /.media-body -->
-							</div>
-							<!-- /.media -->
-						</div>
-						
-						
-						
-						<div class="the-box no-border store-list view-category">
-							<div class="media">
-								<a target="_blank" href="../elearning/play.act?v=14" class="pull-left"><img style="width: 196px; height: 110px" src="https://i.ytimg.com/vi/P3FkjYaUwmk/mqdefault.jpg" class="store-image" alt="image"></a>
-								<div class="clearfix visible-xs"></div>
-								<div class="media-body">
-									<a href="#"></a>
-									<h4 style="padding: 0px; margin: 0px" class="media-heading">
-										<a href="../elearning/play.act?v=14"><strong class="text-black">Borders, Outline, Margin &amp; Padding</strong></a>
-									</h4>
-									<ul style="list-style: none; padding: 0px; margin: 0px;">
-										<li><a class="text-muted small" href="#">by
-												Admin</a></li>
-										<li class="text-muted small">2015-04-01 - 523 views</li>
-										<li class="text-muted small"></li>
-									</ul>
-								</div>
-								<!-- /.media-body -->
-							</div>
-							<!-- /.media -->
-						</div>
-						
-						
-						
-						<div class="the-box no-border store-list view-category">
-							<div class="media">
-								<a target="_blank" href="../elearning/play.act?v=15" class="pull-left"><img style="width: 196px; height: 110px" src="https://i.ytimg.com/vi/al5q5kl3I-Y/mqdefault.jpg" class="store-image" alt="image"></a>
-								<div class="clearfix visible-xs"></div>
-								<div class="media-body">
-									<a href="#"></a>
-									<h4 style="padding: 0px; margin: 0px" class="media-heading">
-										<a href="../elearning/play.act?v=15"><strong class="text-black">Dimension, Display, Positioning, Floating Align &amp; Combinators</strong></a>
-									</h4>
-									<ul style="list-style: none; padding: 0px; margin: 0px;">
-										<li><a class="text-muted small" href="#">by
-												Admin</a></li>
-										<li class="text-muted small">2015-01-13 - 585 views</li>
-										<li class="text-muted small"></li>
-									</ul>
-								</div>
-								<!-- /.media-body -->
-							</div>
-							<!-- /.media -->
-						</div>
-						
+						<?php } ?>
 						
 						
 					</div>

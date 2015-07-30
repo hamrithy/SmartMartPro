@@ -87,7 +87,7 @@
 								  <div class="panel-heading">
 									<h1 class="panel-title">
 									<i class="fa fa-tasks"></i>
-										<a href="index.act"  >
+										<a href="<?php echo site_url()?>/admin/fooditem"  >
 										List Foods
 										
 										</a>
@@ -104,7 +104,8 @@
 								<tr>
 									<th>Food ID</th>
 									<th>Titile</th>
-									<th>Price</th>									
+									<th>Price</th>		
+									<th>Promotion Type</th>							
 									<th>Action</th>
 								</tr>
 							</thead>
@@ -114,9 +115,20 @@
 								<tr>
 									<td><?php echo $row->foodid; ?></td>
 									<td><?php echo $row->food_title; ?></td>
-									<td><?php echo $row->price; ?></td>									
+									<td><?php echo $row->price; ?></td>	
 									<td>
-										<button  value="<?php  echo $row->foodid ?>" onclick='deleteData(this)' class="btn btn-danger">Delete</button>
+										<?php 
+											if($row->promotiontype == 0){
+												echo 'Normal';
+											}elseif ($row->promotiontype == 1) {
+												echo 'Best Offer';
+											}else{
+												echo 'Best Hot';
+											}
+										?>
+									</td>								
+									<td>
+										<a  href="<?php echo site_url()?>/admin/fooditem/deletefooditem/<?php echo $row->foodid ?>" style="margin-right:3px" onclick="return confirm('Do you want to delete?');"  class="btn btn-danger">Delete</a>
 										<a href='<?php  echo site_url()?>/admin/fooditem/getFood/<?php echo $row->foodid ?>' class='btn btn-primary'>Update</a>
 									</td>
 								</tr>
@@ -214,15 +226,6 @@
 
 	<!-- MAIN APPS JS -->
 	<script src="<?php echo base_url(); ?>/public/assets/js/apps.js"></script>
-		<script>
-		function deleteData(btn){
-			if (confirm("Are you sure you want to delete?") == true) {
-				$.post('<?php  echo site_url()?>/admin/fooditem/deletefooditem/'+btn.value,function(){
-					var row = btn.parentNode.parentNode;
-					row.parentNode.removeChild(row);
-				});
-			}
-		}	
-		</script>
+	
 	</body>
 </html>

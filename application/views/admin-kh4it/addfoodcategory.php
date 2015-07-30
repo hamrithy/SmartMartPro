@@ -105,13 +105,13 @@
 								<div class="form-group">
 									<label class="col-lg-2 control-label">Title<span class="required">*</span></label>
 									<div class="col-lg-10">
-										<input type="text" required class="form-control" name="title" id="title"/>
+										<input type="text" required class="form-control" required name="title" id="title"/>
 									</div>
 								</div>
 								<div class="form-group">
 									<label class="col-lg-2 control-label">Description<span class="required">*</span></label>
 									<div class="col-lg-10">
-										<textarea class="form-control summernote-lg" name="description" id="description"> </textarea>
+										<textarea class="form-control" name="description" required id="description"></textarea>
 									</div>
 								</div>
 								
@@ -163,7 +163,6 @@
 						$("#description").val("<?php echo $s->description ?>");
 						document.frmfoodtype.action="<?php echo site_url();?>/admin/foodcategory/actionupdatefoodcategory/<?php echo $s->foodtypeid ?>";
 					<?php } ?>
-
 				});
 				<?php } ?>
 		</script>
@@ -237,6 +236,14 @@
 
 	<!-- MAIN APPS JS -->
 	<script src="<?php echo base_url(); ?>/public/assets/js/apps.js"></script>
+		<script src="<?php echo base_url(); ?>/public/assets/ckeditor/ckeditor.js"></script>
+	
+		<script> 
 
+		CKEDITOR.replace( 'description' ,
+			{ filebrowserBrowseUrl : '<?php echo base_url(); ?>/public/responsivefilemanager/filemanager/dialog.php?type=2&editor=ckeditor&fldr=', 
+			filebrowserUploadUrl : '<?php echo base_url(); ?>/public/responsivefilemanager/filemanager/dialog.php?type=2&editor=ckeditor&fldr=', 
+			filebrowserImageBrowseUrl : '<?php echo base_url(); ?>/public/responsivefilemanager/filemanager/dialog.php?type=1&editor=ckeditor&fldr=' }); 
+	</script>
 	</body>
 </html>

@@ -126,15 +126,15 @@
 						<form action="<?php echo site_url();?>/admin/page/addpagepro" id="frmpage" name="frmpage" method="post" class="form-horizontal" role="form">
 						
 								<div class="form-group">
-									<label class="col-lg-1 control-label">Title<span class="required">*</span></label>
-									<div class="col-lg-11">
+									<label class="col-lg-2 control-label">Title<span class="required">*</span></label>
+									<div class="col-lg-10">
 										<input type="text" class="form-control" name="txttitle" id="txttitle" value="" />
 										<input type="hidden" class="form-control" name="txtpageid" id="txtpageid" value="" />
 									</div>
 								</div> 	
 								<div class="form-group">
-									<label class="col-lg-1 control-label">Description<span class="required">*</span></label>
-									<div class="col-lg-11">
+									<label class="col-lg-2 control-label">Description<span class="required">*</span></label>
+									<div class="col-lg-10">
 										<textarea class="form-control" name="txtdescription" id="txtdescription">
 											<?php 
 												if($mPage != null ){

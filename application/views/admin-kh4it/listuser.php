@@ -87,7 +87,7 @@
 								  <div class="panel-heading">
 									<h1 class="panel-title">
 									<i class="fa fa-tasks"></i>
-										<a href="index.act"  >
+										<a href="<?php echo site_url()?>/admin/user"  >
 										List Users
 										
 										</a>

@@ -87,7 +87,7 @@
 								  <div class="panel-heading">
 									<h1 class="panel-title">
 									<i class="fa fa-tasks"></i>
-										<a href="index.act"  >
+										<a href="<?php echo site_url()?>/admin/post"  >
 										List Posts
 										
 										</a>
@@ -118,9 +118,7 @@
 									<td><?php echo $v->postdate; ?></td>									
 									<td><?php echo $v->username; ?></td>
 									<td>
-										<!-- <a  href="<?php // echo site_url()?>/admin/post/deletepost/<?php  //echo $v->postid ?>" style="margin-right:3px" onclick="return confirm('Do you want to delete?');"  class="btn btn-danger">Delete</a> -->
-										
-										<button  value="<?php  echo $v->postid ?>" onclick='deleteData(this)' class="btn btn-danger">Delete</button>
+										<a  href="<?php echo site_url()?>/admin/post/deletepost/<?php echo $v->postid ?>" style="margin-right:3px" onclick="return confirm('Do you want to delete?');"  class="btn btn-danger">Delete</a> 
 										<a  href="<?php  echo site_url()?>/admin/post/getpost/<?php  echo $v->postid ?>"  class="btn btn-primary">Update</a>
 									</td>
 								</tr>
@@ -218,17 +216,7 @@
 
 	<!-- MAIN APPS JS -->
 	<script src="<?php echo base_url(); ?>/public/assets/js/apps.js"></script>
-		
-		<script>
-		function deleteData(btn){
-			if (confirm("Are you sure you want to delete?") == true) {
-				$.post('<?php  echo site_url()?>/admin/post/deletepost/'+btn.value,function(){
-					var row = btn.parentNode.parentNode;
-					row.parentNode.removeChild(row);
-				});
-			}
-		}	
-		</script>
+	
 		
 	</body>
 </html>

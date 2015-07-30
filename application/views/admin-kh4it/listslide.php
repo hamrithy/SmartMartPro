@@ -87,7 +87,7 @@
 								  <div class="panel-heading">
 									<h1 class="panel-title">
 									<i class="fa fa-tasks"></i>
-										<a href="index.act"  >
+										<a href="<?php echo site_url()?>/admin/slide"  >
 										List Slides
 										
 										</a>
@@ -120,7 +120,7 @@
 									<td><?php echo $s->linkto; ?></td>							
 									<td><?php echo $s->ordering; ?></td>
 									<td>
-										<button value="<?php echo $s->slideid ?>" onclick="deletedata(this)" class="btn btn-danger">Delete</button>
+										<a  href="<?php echo site_url()?>/admin/slide/deleteSlidePro/<?php echo $s->slideid ?>" style="margin-right:3px" onclick="return confirm('Do you want to delete?');"  class="btn btn-danger">Delete</a>
 										<a href="<?php  echo site_url()?>/admin/slide/getSlide/<?php  echo $s->slideid ?>" class="btn btn-primary" >Update</a>
 									</td>
 								</tr>
@@ -226,17 +226,6 @@
 			    } ); 
 		    } 
 		); 
-
-		function deletedata(btn){
-			if (confirm("Are you sure you want to delete?") == true) {
-				$.post('<?php  echo site_url()?>/admin/slide/deleteSlidePro/'+btn.value ,function(data){
-					var row = btn.parentNode.parentNode;
-					row.parentNode.removeChild(row);
-				});
-			} 
-		}
-		
-		
 		</script>
 	</body>
 </html>

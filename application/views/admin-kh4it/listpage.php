@@ -87,7 +87,7 @@
 								  <div class="panel-heading">
 									<h1 class="panel-title">
 									<i class="fa fa-tasks"></i>
-										<a href="index.act"  >
+										<a href="<?php echo site_url()?>/admin/page"  >
 										List Pages
 										
 										</a>
@@ -118,7 +118,7 @@
 									<td><?php echo $p->createddate ?></td>									
 									<td><?php echo $p->username ?></td>
 									<td>
-										<button value="<?php  echo $p->pageid ?>" onclick='deleteData(this)' style="margin-right:3px"  class="btn btn-danger">Delete</button>
+										<a  href="<?php echo site_url()?>/admin/page/deletepage/<?php echo $p->pageid ?>" style="margin-right:3px" onclick="return confirm('Do you want to delete?');"  class="btn btn-danger">Delete</a>
 										<a  href="<?php  echo site_url()?>/admin/page/getpage/<?php  echo $p->pageid ?>"  class="btn btn-primary">Update</a>
 									</td>
 								</tr>
@@ -217,16 +217,7 @@
 	<!-- MAIN APPS JS -->
 	<script src="<?php echo base_url(); ?>/public/assets/js/apps.js"></script>
 		
-	<script type="text/javascript">
-		function deleteData(btn){
-			if (confirm("Are you sure you want to delete?") == true) {
-				$.post('<?php  echo site_url()?>/admin/page/deletepage/'+btn.value,function(){
-					var row = btn.parentNode.parentNode;
-					row.parentNode.removeChild(row);
-				});
-			}
-		}	
-	</script>	
+
 		
 	</body>
 </html>

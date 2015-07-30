@@ -7,7 +7,7 @@
 								  <div class="panel-heading">
 									<h3 class="panel-title">
 									<i class="fa fa-tachometer"></i>
-										<a href="#"  >
+										<a href="<?php echo site_url("admin/");?>"  >
 										Dashboard
 										
 										</a>

@@ -152,7 +152,7 @@
 								<div class="form-group">
 									<label class="col-lg-2 control-label">Description<span class="required">*</span></label>
 									<div class="col-lg-10">
-										<textarea class="form-control summernote-lg" name="description" id="description"> </textarea>
+										<textarea class="form-control" name="description" id="description"></textarea>
 									</div>
 								</div>
 								
@@ -238,13 +238,13 @@
 						$("#btnsave").text("Edit");
 						$("#title").val("<?php echo $s->title ?>");
 						$("#price").val("<?php echo $s->price ?>");
-						$("#promotiontype").val("<?php echo $s->promotiontype ?>");
-						$("#foodtypeid").val("<?php echo $s->foodtypeid ?>");
-						$("#description").val("<?php echo $s->description ?>");
-						$("#seotitle").val("<?php echo $s->seotitle ?>");
-						$("#seodescription").val("<?php echo $s->seodescription ?>");
-						$("#thumbnailurl").val("<?php echo $s->thumbnailurl ?>");
-						$("#description").val("<?php echo $s->description ?>");
+						$("#promotiontype").val('<?php echo $s->promotiontype ?>');
+						$("#foodtypeid").val('<?php echo $s->foodtypeid ?>');
+						$("#description").val('<?php echo $s->description ?>');
+						$("#seotitle").val('<?php echo $s->seotitle ?>');
+						$("#seodescription").val('<?php echo $s->seodescription ?>');
+						$("#thumbnailurl").val('<?php echo $s->thumbnailurl ?>');
+						$("#description").val('<?php echo $s->description ?>');
 						$("#myimagedemo").attr("src", $("#thumbnailurl").val() );
 						document.frmfooditem.action="<?php echo site_url();?>/admin/fooditem/actionupdatefooditem/<?php echo $s->foodid ?>";
 					<?php } ?>
@@ -323,6 +323,14 @@
 
 	<!-- MAIN APPS JS -->
 	<script src="<?php echo base_url(); ?>/public/assets/js/apps.js"></script>
+			<script src="<?php echo base_url(); ?>/public/assets/ckeditor/ckeditor.js"></script>
+	
+		<script> 
 
+		CKEDITOR.replace( 'description' ,
+			{ filebrowserBrowseUrl : '<?php echo base_url(); ?>/public/responsivefilemanager/filemanager/dialog.php?type=2&editor=ckeditor&fldr=', 
+			filebrowserUploadUrl : '<?php echo base_url(); ?>/public/responsivefilemanager/filemanager/dialog.php?type=2&editor=ckeditor&fldr=', 
+			filebrowserImageBrowseUrl : '<?php echo base_url(); ?>/public/responsivefilemanager/filemanager/dialog.php?type=1&editor=ckeditor&fldr=' }); 
+	</script>
 	</body>
 </html>
