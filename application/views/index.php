@@ -1,4 +1,8 @@
+
 <?php $this->load->view('layouts/_include'); ?>
+<!-- BEGIN CUSTOMIZATION STYLE -->
+
+<!-- END CUSTOMIZATION STYLE -->
 </head>
 <!-- END HEAD TAG -->
 <body class="stretched">
