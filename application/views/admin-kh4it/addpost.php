@@ -110,87 +110,135 @@
 				<div class="container-fluid">
 					
 				<br/>				
-					<div class="panel panel-primary">
-							  <div class="panel-heading">
-								<h3 class="panel-title" id="formtitle">Form Add Post </h3>
-							  </div>
-							  <div class="panel-body">
 					
 					
-					<div class="row">
 					
-					<div class="col-sm-12">
-					
-					<div>
-						<form action="addpostpro" id="frmpost" name="frmpost" method="post" class="form-horizontal" role="form">
-							
-								<div class="form-group">
-									<label class="col-lg-2 control-label">Title<span class="required">*</span></label>
-									<div class="col-lg-10">
-										<input type="text" class="form-control" name="txttitle" id="txttitle" value="" required="required"/>
-										<input type="hidden" class="form-control" name="txtpostid" id="txtpostid" />
-									</div>
-								</div> 
-								
-								<div class="form-group">
-									<label class="col-lg-2 control-label">Short Description<span class="required">*</span></label>
-									<div class="col-lg-10">
-										<textarea class="form-control" name="txtshortdescription" id="txtshortdescription"></textarea>
-									</div>
-								</div>								
-								<div class="form-group">
-									<label class="col-lg-2 control-label">Description<span class="required">*</span></label>
-									<div class="col-lg-10">
-										<textarea class="form-control" name="txtdescription" id="txtdescription">
-											<?php 
-												if($getPost != null ){
-													foreach($getPost as $v){
-													echo $v->longdescription;
-													}
-												}
-											?>
-										 </textarea>
-									</div>
+					<form role="form" action="../kshrd-admin/post_news.hrd" enctype="multipart/form-data" method="post" accept-charset="UTF-8">
+						
+						<!-- Tab -->
+						<div class="col-sm-8">
+							<div class="panel with-nav-tabs panel-info">
+							  	<div class="panel-heading">
+									<ul class="nav nav-tabs">
+										<li class=""><a href="#panel-home-2" data-toggle="tab"><img src="<?php echo base_url()?>/public/assets/img/eng.png"> English</a></li>
+										<li class="active"><a href="#panel-profile-2" data-toggle="tab"><img src="<?php echo base_url()?>/public/assets/img/kh.png"> Khmer</a></li>
+									</ul>
 								</div>
-								
-								<div class="form-group">
-									<label class="col-lg-2 control-label">SEO Title<span class="required">*</span></label>
-									<div class="col-lg-10">
-										<input type="text" class="form-control" name="txtseotitle" id="txtseotitle" value="" required="required"/>
-									</div>
-								</div>
-								
-								<div class="form-group">
-									<label class="col-lg-2 control-label">SEO Description<span class="required">*</span></label>
-									<div class="col-lg-10">
-										<textarea class="form-control" name="txtseodescription" id="txtseodescription"></textarea>
-									</div>
-								</div>
-								
-								<div class="form-group">
-									<label class="col-lg-2 control-label">Thumnail Image<span class="required">*</span></label>
-									<div class="col-lg-5">
-										  <input type="text" value="" class="form-control" id="txtfile" name="txtfile" onchange="myimagechange()">
-									</div>
-									<div class="col-lg-1">
-										 <a type="button" class="btn btn-primary" data-target="#myModal" href="javascript:;" data-toggle="modal">Select</a>
+								<div class="collapse in" id="panel-collapse-2">
+										 <div class="panel-body">
+												<div class="tab-content">
+													<div id="panel-home-2" class="tab-pane fade">
+														
+														<!-- Put Control Englist here -->
+														<div class="form-group">
+															<label>Title<span class="required">*</span></label>
+															<input type="text" class="form-control" name="txtentitle" id="txttitle" required />
+														</div>
+														
+														<div class="form-group">
+															<label>Description<span class="required">*</span></label>
+															<textarea class="form-control" name="txtendescription" id="txtendescription">
+																	
+															</textarea>
+														</div>
+														
+													
+														
+														
+														
+														
+													</div>
+													<div id="panel-profile-2" class="tab-pane fade  active in">
+														
+														<!-- Put Control Khmer here -->
+														<div class="form-group">
+															<label>ចំណងជើង<span class="required">*</span></label>
+															<input type="text" class="form-control" name="txtkhtitle" id="txtkhtitle" required />
+														</div>
+														
+														<div class="form-group">
+															<label>លំអិត<span class="required">*</span></label>
+															<textarea class="form-control" name="txtkhdescription" id="txtkhdescription">
+																	
+															</textarea>
+														</div>
+													
+													
+														
+														
+													</div><!-- /.tab-pane fade -->
+												</div><!-- /.tab-content -->
+										  </div><!-- /.panel-body -->
+									<div class="panel-footer">SmartMart</div>
+								</div><!-- /.collapse in -->
+							</div><!-- /.panel .panel-info -->
+						</div>
+						<!-- /Tab -->
+						
+						<!-- left -->
+						<div class="col-sm-4">
+									<div class="form-group">
+										<label>Category</label>
+										<select class="form-control" name="category" id="category">
+											<option value="1">SportEvent</option>
+											<option value="2">WorkShop</option>
+										</select>								
 									</div>
 									
-								</div> 
-								<div class="form-group">
-									<label class="col-lg-2 control-label">Demo Image</label>
-									<div class="col-lg-6">
-										<img src="<?php echo base_url(); ?>/public/upload/slider-background.jpg" class="img-responsive" id="myimagedemo"/>
+									<div class="form-group">
+										<label>SEO Title<span class="required">*</span></label>
+										<input type="text" class="form-control" name="txtseotitle" id="txtseotitle" value="" required="required"/>
 									</div>
-								</div>
-								<script>
-									function myimagechange(){
-										
-										$("#myimagedemo").attr("src", $("#txtfile").val() );
-									}
-
-								</script>
-
+									
+									<div class="form-group">
+										<label>SEO Description<span class="required">*</span></label>
+										<textarea class="form-control" name="txtseodescription" id="txtseodescription"></textarea>
+									</div>
+									
+									
+									
+									<script>
+											function myimagechange(){
+												$("#myimagedemo").attr("src", $("#txtfile").val() );
+											}
+									</script>
+									
+									<div class="form-group">
+										<div style="height: 10px"></div>
+										<div class="form-group">
+											<div class="input-group">
+												<input type="text" readonly="readonly"   class="form-control" id="txtfile" name="txtfile" onchange="myimagechange()">
+												
+												<span class="input-group-btn"> 
+													<a type="button" class="btn btn-default btn-file" data-target="#myModal" href="javascript:;" data-toggle="modal">Browse ... </a>	
+												</span>
+												
+											</div>
+											<!-- /.input-group -->
+										</div>
+									</div>
+									
+									<div class="form-group">
+										<button type="submit" class="btn btn-success">Save</button>
+										<button class="btn btn-danger">Cancel</button>
+									</div>
+									
+									<div class="form-group">
+										<label>Image</label>
+									    <img src="<?php echo base_url(); ?>/public/upload/slider-background.jpg" class="img-responsive" id="myimagedemo"/>
+									</div>
+									
+									
+									
+								</div><!-- /.col-sm-4 -->
+								<!-- /left -->
+						
+					
+							
+						</form>
+					
+					
+					
 						<!-- code for popup file manager -->		
 						<div class="modal fade" id="myModal">
 							<div class="modal-dialog modal-lg">
@@ -205,28 +253,8 @@
 							  </div><!-- /.modal-content -->
 							</div><!-- /.modal-dialog -->
 						</div><!-- /.modal -->	
-							
-							
-							
-
-							<div class="form-group">
-							
-								<div class="col-lg-9 col-lg-offset-3">
-									
-									<input type="submit" id="btnsave" class="btn btn-info" value="Save"/>
-								</div>
-							</div>
-							
-						</form>
-					</div><!-- /.the-box -->
 						
-					</div><!-- /.col-sm-8 -->
 						
-				
-					</div><!-- /.row -->
-					</div>
-					</div>
-					
 				
 				</div><!-- /.container-fluid -->
 				
@@ -318,13 +346,17 @@
 	<script src="<?php echo base_url(); ?>/public/assets/ckeditor/ckeditor.js"></script>
 	
 	<script> 
-
-		CKEDITOR.replace( 'txtdescription' ,
+		CKEDITOR.replace( 'txtendescription' ,
 			{ filebrowserBrowseUrl : '<?php echo base_url(); ?>/public/responsivefilemanager/filemanager/dialog.php?type=2&editor=ckeditor&fldr=', 
 			filebrowserUploadUrl : '<?php echo base_url(); ?>/public/responsivefilemanager/filemanager/dialog.php?type=2&editor=ckeditor&fldr=', 
 			filebrowserImageBrowseUrl : '<?php echo base_url(); ?>/public/responsivefilemanager/filemanager/dialog.php?type=1&editor=ckeditor&fldr=' }); 
 	</script>
-		
+	<script> 
+		CKEDITOR.replace( 'txtkhdescription' ,
+			{ filebrowserBrowseUrl : '<?php echo base_url(); ?>/public/responsivefilemanager/filemanager/dialog.php?type=2&editor=ckeditor&fldr=', 
+			filebrowserUploadUrl : '<?php echo base_url(); ?>/public/responsivefilemanager/filemanager/dialog.php?type=2&editor=ckeditor&fldr=', 
+			filebrowserImageBrowseUrl : '<?php echo base_url(); ?>/public/responsivefilemanager/filemanager/dialog.php?type=1&editor=ckeditor&fldr=' }); 
+	</script>
 		
 	</body>
 </html>
