@@ -18,8 +18,8 @@
 			$this->load->view('admin-kh4it/theme-editor', $data);
 		}
 
-		public function showfile($fname){
-			$name = $fname;
+		public function showfile($location, $fname){
+			$name = $location."/".$fname;
 			$path_to_view = get_view_path($name); 
 			$files = read_file(''.$path_to_view .'');
 			$filename = $name .".php";

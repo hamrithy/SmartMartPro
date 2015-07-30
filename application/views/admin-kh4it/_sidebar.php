@@ -24,7 +24,7 @@
 								  <div class="panel-heading">
 									<h3 class="panel-title">
 										<a href="#accordion-1-child-6" data-toggle="collapse" data-parent="#accordion-1" class="block-collapse">
-										Posts
+										Products
 										<span class="right-content">
 											<span class="right-icon"><i class="glyphicon glyphicon-plus icon-collapse"></i></span>
 										</span>
@@ -33,8 +33,8 @@
 								  </div>
 									<div class="collapse" id="accordion-1-child-6">
 									  <div class="panel-body">
-										<i ></i>&nbsp;<a href="<?php echo site_url("admin/post/listposts");?>">List Posts</a><br><br>
-										<i ></i>&nbsp;<a href="<?php echo site_url("admin/post/addpost");?>">Add Posts</a><br><br>
+										<i ></i>&nbsp;<a href="<?php echo site_url("admin/post/listposts");?>">List Products</a><br><br>
+										<i ></i>&nbsp;<a href="<?php echo site_url("admin/post/addpost");?>">Add Product</a><br><br>
 										
 									  </div><!-- /.panel-body -->
 									</div><!-- /.collapse in -->
@@ -107,7 +107,7 @@
 								  <div class="panel-heading">
 									<h3 class="panel-title">
 										<a href="#accordion-1-child-9" data-toggle="collapse" data-parent="#accordion-1" class="block-collapse collapsed">
-										Food Item
+										Categories
 										<span class="right-content">
 											<span class="right-icon">
 												<i class="glyphicon glyphicon-plus icon-collapse"></i>
@@ -117,11 +117,9 @@
 									</h3>
 								  </div>
 									<div class="collapse" id="accordion-1-child-9">
-									  <div class="panel-body">
-										<i ></i>&nbsp;<a href="<?php echo site_url("admin/fooditem/listfooditems");?>">List Food Item</a><br><br>
-										<i ></i>&nbsp;<a href="<?php echo site_url("admin/fooditem/addfooditem");?>">Add Item</a><br><br>
-										<i ></i>&nbsp;<a href="<?php echo site_url("admin/foodcategory/listfoodtype");?>">List Food Category</a><br><br>
-										<i ></i>&nbsp;<a href="<?php echo site_url("admin/foodcategory/addfoodcategory");?>">Add Food Cateogry</a><br><br>
+									  <div class="panel-body">										
+										<i ></i>&nbsp;<a href="<?php echo site_url("admin/foodcategory/listfoodtype");?>">List Category</a><br><br>
+										<i ></i>&nbsp;<a href="<?php echo site_url("admin/foodcategory/addfoodcategory");?>">Add Cateogry</a><br><br>
 										
 									  </div><!-- /.panel-body -->
 									</div><!-- /.collapse in -->
