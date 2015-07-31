@@ -103,7 +103,7 @@
                 <div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
 
                 <ul>
-                    <li class="current"><a href="#"><div><?php echo lang('home') ?></div><span>Lets Start</span></a>
+                    <li class="current"><a href="<?php echo site_url('contact')?>"><div><?php echo lang('home') ?></div><span>Lets Start</span></a>
                         
                     </li>
                         <!-- Mega Menu
@@ -165,10 +165,10 @@
                             </div>
                         </li><!-- .mega-menu end -->
                         <!-- .mega-menu end -->
-                        <li><a href="#"><div><?php echo lang('graduation') ?></div><span>Awesome Works</span></a></li>
-                        <li><a href="#"><div><?php echo lang('gift') ?></div><span>Awesome Works</span></a></li>
-                        <li><a href="#"><div><?php echo lang('information') ?></div><span>Latest News</span></a></li>
-                        <li><a href="#"><div><?php echo lang('contact') ?></div><span>Get In Touch</span></a></li>
+                        <li><a href="<?php echo site_url('home')?>"><div><?php echo lang('graduation') ?></div><span>Awesome Works</span></a></li>
+                        <li><a href="<?php echo site_url('home')?>"><div><?php echo lang('gift') ?></div><span>Awesome Works</span></a></li>
+                        <li><a href="<?php echo site_url('home')?>"><div><?php echo lang('information') ?></div><span>Latest News</span></a></li>
+                        <li><a href="<?php echo site_url('contact')?>"><div><?php echo lang('contact') ?></div><span>Get In Touch</span></a></li>
                     </ul>
 
                 <!-- Top Cart

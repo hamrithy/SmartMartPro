@@ -10,7 +10,7 @@
 		public function index(){
 			$data["page"] = "ContactUs";
 			$data["title"] = "Contact Us";
-			$this->load->view('front/contact', $data);
+			$this->load->view('contact', $data);
 		}
 
 		public function sendEmail(){
