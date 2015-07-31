@@ -10,7 +10,6 @@ class DtoMenu {
 	private $title;
 	private $description;
 	
-	
 	public function getMenuid(){
 		return $this->menuid;
 	}

@@ -5,6 +5,7 @@ class DtoCategory{
 	private $languagename;
 	private $logo;
 	
+	
 	public function getLanguageid(){
 		return $this->languageid;
 	}
