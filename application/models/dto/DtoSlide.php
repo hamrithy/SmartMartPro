@@ -3,13 +3,17 @@
 class DtoSlide{
 
 	private $slideid;
+	private $userid;
+	private $ordering;
+	private $type;
+	private $linkto;
+	
+	private $languageid;
 	private $title;
 	private $caption;
-	private $linkto;
+	private $description;
+	private $createddate;
 	private $imageurl;
-	private $ordering;
-	private $userid;
-	
 	
 	public function getSlideid(){
 		return $this->slideid;
@@ -17,6 +21,46 @@ class DtoSlide{
 	
 	public function setSlideid($slideid){
 		$this->slideid = $slideid;
+	}
+	
+	public function getUserid(){
+		return $this->userid;
+	}
+	
+	public function setUserid($userid){
+		$this->userid = $userid;
+	}
+	
+	public function getOrdering(){
+		return $this->ordering;
+	}
+	
+	public function setOrdering($ordering){
+		$this->ordering = $ordering;
+	}
+	
+	public function getType(){
+		return $this->type;
+	}
+	
+	public function setType($type){
+		$this->type = $type;
+	}
+	
+	public function getLinkto(){
+		return $this->linkto;
+	}
+	
+	public function setLinkto($linkto){
+		$this->linkto = $linkto;
+	}
+	
+	public function getLanguageid(){
+		return $this->languageid;
+	}
+	
+	public function setLanguageid($languageid){
+		$this->languageid = $languageid;
 	}
 	
 	public function getTitle(){
@@ -35,12 +79,20 @@ class DtoSlide{
 		$this->caption = $caption;
 	}
 	
-	public function getLinkto(){
-		return $this->linkto;
+	public function getDescription(){
+		return $this->description;
 	}
 	
-	public function setLinkto($linkto){
-		$this->linkto = $linkto;
+	public function setDescription($description){
+		$this->description = $description;
+	}
+	
+	public function getCreateddate(){
+		return $this->createddate;
+	}
+	
+	public function setCreateddate($createddate){
+		$this->createddate = $createddate;
 	}
 	
 	public function getImageurl(){
@@ -49,22 +101,6 @@ class DtoSlide{
 	
 	public function setImageurl($imageurl){
 		$this->imageurl = $imageurl;
-	}
-	
-	public function getOrdering(){
-		return $this->ordering;
-	}
-	
-	public function setOrdering($ordering){
-		$this->ordering = $ordering;
-	}
-	
-	public function getUserid(){
-		return $this->userid;
-	}
-	
-	public function setUserid($userid){
-		$this->userid = $userid;
 	}
 	
 	
