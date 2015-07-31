@@ -22,7 +22,7 @@
                 <h1>Contact</h1>
                 <span>Get in Touch with Us</span>
                 <ol class="breadcrumb">
-                    <li><a href="#">Home</a></li>
+                    <li><a href="<?php echo site_url('')?>">Home</a></li>
                     <li class="active">Contact</li>
                 </ol>
             </div>

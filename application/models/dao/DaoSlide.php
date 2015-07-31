@@ -5,10 +5,15 @@
 			parent::__construct();
 
 			$this->load->database();
-			$this->load->model('dto/DtoSlide');
+			$this->load->model('dto/Dtoslide');
 		}
-
-		public function addSlide(DtoSlide $s){
+		/*
+			0: slide
+			1: sub slide
+			2: partner
+			3: feature
+		*/
+/*		public function addSlide(DtoSlide $s){
 			$data = array(
 				'slideid'          	=> $s->getSlideid(),
 				'title'				=> $s->getTitle(),
@@ -20,18 +25,18 @@
 
 				);
 			$this->db->insert('SLIDES', $data);
-		}
+		}*/
 
 		public function listSlide(){
-			$this->db->select('s.slideid , s.title, s.caption, s.linkto , s.imageurl, s.ordering , u.userid, u.username');
+			$this->db->select('s.slideid, s.ordering, s.type, sd.title, sd.languageid, sd.caption, sd.description, sd.imageurl');
 			$this->db->from('SLIDES s');
-			$this->db->join('USERS u', 's.userid = u.userid');
+			$this->db->join('SLIDERDETAIL sd', 's.slideid = sd.slideid');
 			$this->db->order_by('s.ordering', 'desc');
 			$query = $this->db->get();
 			return $query->result();
 		}
 
-		public function deleteSlide(DtoSlide $s){
+/*		public function deleteSlide(DtoSlide $s){
 			$this->db->where('slideid', $s->getSlideid());
 			$this->db->delete('SLIDES');
 		}
@@ -58,7 +63,7 @@
 				);
 			$this->db->where('slideid', $s->getSlideid());
 			$this->db->update('SLIDES', $data);
-		}
+		}*/
 
 	}
 
