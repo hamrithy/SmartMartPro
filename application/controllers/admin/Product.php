@@ -26,7 +26,10 @@
 			$this->DtoProduct->setUserid($this->encryption->decrypt($this->session->userdata("userid")));
 			$this->DtoProduct->setSeodescription($this->input->post("SEODescription"));
 			$this->DtoProduct->setProductDetails($this->input->post("ProductDetails"));
-			$result = $this->DaoProduct->addNewProduct($this->DtoProduct);
+			
+			$data["product"] = (array) $this->DtoProduct;
+			
+			$result = $this->DaoProduct->addNewProduct($data["product"]);
 			echo json_encode($result);
 		}
 	}	
