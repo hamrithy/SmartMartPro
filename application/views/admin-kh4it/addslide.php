@@ -56,7 +56,7 @@
 
 	</head>
  
-	<body class="tooltips">
+<body class="tooltips">
 	
 		
 		<!--
@@ -69,38 +69,36 @@
 			<?php $this->load->view('admin-kh4it/_header') ?>
 			<!-- END TOP NAV -->
 			
-			
+			<script type="text/javascript">
+			$(document).ready(function() {
+
+						<?php
+						$getPost = $getPost;
+						if($getPost != null ){
+							foreach($getPost as $v){
+							?>
+							document.title= "Edit Post";
+							$("#formtitle").text("Form Edit Post");
+							$("#txtpostid").val("<?php echo $v->postid?>");
+							$("#txttitle").val("<?php echo $v->title?>");
+							$("#txtshortdescription").val("<?php echo $v->shortdescription ?>");
+							$("#txtseodescription").val("<?php echo $v->seodescription ?>");
+							$("#txtseotitle").val("<?php echo $v->seotitle ?>");
+							$("#txtfile").val("<?php echo $v->thumbnailurl?>");
+							$("#myimagedemo").fadeIn("fast").attr('src', '<?php echo $v->thumbnailurl ?>'  );
+							document.frmpost.action="<?php echo site_url();?>/admin/post/updatepost";
+							<?php
+							 }
+						}
+						 ?>
+			});
+		  	</script>
 			
 			<!-- BEGIN SIDEBAR LEFT -->
 			<?php $this->load->view('admin-kh4it/_sidebar') ?>
 			<!-- END SIDEBAR LEFT -->
 			
-			
-			<script>
-				<?php if($getSlide !=null){ ?>
-				$(document).ready(function(){
-					<?php 
-						foreach ($getSlide as $s){
-					?>
-						document.title = "Edit Slide";
-						$("#formtitle").text("Form Edit Slide");
-						$("#btnsave").val("Edit");
-						$("#txttitle").val("<?php echo $s->title ?>");
-						$("#txtcaption").val("<?php echo $s->caption ?>");
-						$("#txtlinkto").val("<?php echo $s->linkto ?>");
-						$("#txtimage").val("<?php echo $s->imageurl ?>");
-						$("#txtorder").val("<?php echo $s->ordering ?>");
-						$("#myimagedemo").fadeIn("slow").attr('src', '<?php echo $s->imageurl ?>'  );
-						document.frmpost.action="<?php echo site_url();?>/admin/slide/updateSlidePro/<?php echo $s->slideid ?>";
-					<?php } ?>
-
-				});
-				<?php } ?>
-			</script>
-		
-			
-			
-			
+	
 			<!-- BEGIN PAGE CONTENT -->
 			<div class="page-content">
 				
@@ -108,75 +106,159 @@
 				<div class="container-fluid">
 					
 				<br/>				
-					<div class="panel panel-danger">
-							  <div class="panel-heading">
-								<h3 class="panel-title" id="formtitle">Form Add Slide </h3>
-							  </div>
-							  <div class="panel-body">
 					
 					
-					<div class="row">
 					
-					<div class="col-sm-12">
-					
-					<div>
-						<form id="frmpost" name="frmpost" method="post" action="addSlidePro" class="form-horizontal" role="form">
-							
-								<div class="form-group">
-									<label class="col-sm-2 control-label">Title<span class="required">*</span></label>
-									<div class="col-sm-10">
-										<input type="text" class="form-control" name="txttitle" id="txttitle" required />
-									</div>
-								</div> 
-								
-								<div class="form-group">
-									<label class="col-sm-2 control-label">Caption<span class="required">*</span></label>
-									<div class="col-sm-10">
-										<textarea class="form-control" name="txtcaption" id="txtcaption" required></textarea>
-									</div>
-								</div>								
-								<div class="form-group">
-									<label class="col-sm-2 control-label">Link<span class="required">*</span></label>
-									<div class="col-sm-10">
-										<input type="text" class="form-control" name="txtlinkto" id="txtlinkto" required/>
-									</div>
+					<form role="form" action="" method="post" accept-charset="UTF-8">
+						
+						<!-- Tab -->
+						<div class="col-sm-8">
+							<div class="panel with-nav-tabs panel-info">
+							  	<div class="panel-heading">
+									<ul class="nav nav-tabs">
+										<li class=""><a href="#panel-home-2" data-toggle="tab"><img src="<?php echo base_url()?>/public/assets/img/eng.png"> English</a></li>
+										<li class="active"><a href="#panel-profile-2" data-toggle="tab"><img src="<?php echo base_url()?>/public/assets/img/kh.png"> Khmer</a></li>
+									</ul>
 								</div>
-								
-								<div class="form-group">
-									<label class="col-sm-2 control-label">Background Image<span class="required">*</span></label>
-									<div class="col-sm-5">
-										  <input type="text" value="" class="form-control" id="txtimage" name="txtimage" onchange="myimagechange()" required>
-									</div>
-									<div class="col-sm-1">
-										 <a type="button" class="btn btn-primary" data-target="#myModal" href="javascript:;" data-toggle="modal">Select</a>
-									</div>
-									
-								</div> 
-								<div class="form-group">
-									<label class="col-sm-2 control-label">Demo Image</label>
-									<div class="col-sm-6">
-										<img src="<?php echo base_url(); ?>/public/upload/slider-background.jpg" class="img-responsive" id="myimagedemo"/>
-									</div>
-								</div>
-								<div class="form-group">
-									<label class="col-sm-2 control-label">Order<span class="required" required>*</span></label>
-									<div class="col-sm-4">
-										<input type="text" id="txtorder" name="txtorder">
-									</div>
-									
-								</div> 							
-							
+								<div class="collapse in" id="panel-collapse-2">
+										 <div class="panel-body">
+												<div class="tab-content">
+													<div id="panel-home-2" class="tab-pane fade">
+														
+														<!-- Put Control Englist here -->
+														<div class="form-group">
+															<label>Title<span class="required">*</span></label>
+															<input type="text" class="form-control" name="entitle" id="entitle" required />
+														</div>
+														<div class="form-group">
+															<label>Caption<span class="required">*</span></label>
+															<textarea class="form-control" name="encaption" id="encaption"></textarea>
+														</div>
+														<div class="form-group">
+															<label>Description<span class="required">*</span></label>
+															<textarea class="form-control" name="endescription" id="endescription">
+															</textarea>
+														</div>
+																<script>
+														function myimagechange(){
+															$("#myimagedemo").attr("src", $("#enfile").val() );
+														}
+													</script>
+													
+													<div class="form-group">
+														<div style="height: 10px"></div>
+														<div class="form-group">
+															<div class="input-group">
+																<input type="text" readonly="readonly"   class="form-control" id="enfile" name="enfile" onchange="myimagechange()">
+																
+																<span class="input-group-btn"> 
+																	<a type="button" class="btn btn-default btn-file" data-target="#myModal" href="javascript:;" data-toggle="modal">Browse...</a>	
+																</span>
+																
+															</div>
+															<!-- /.input-group -->
+														</div>
+													</div>
+													<div class="form-group">
+													<label>Image</label>
+												   		 <img src="<?php echo base_url(); ?>/public/upload/slider-background.jpg" class="img-responsive" id="myimagedemo"/>
+													</div>
+													</div>
 
-							<div class="form-group">
-							
-								<div class="col-sm-9 col-sm-offset-3">
+
+													<div id="panel-profile-2" class="tab-pane fade  active in">
+														
+														<!-- Put Control Khmer here -->
+														<div class="form-group">
+															<label>ចំណងជើង<span class="required">*</span></label>
+															<input type="text" class="form-control" name="khtitle" id="khtitle" required />
+														</div>
+															<div class="form-group">
+															<label>ចំណងជើង<span class="required">*</span></label>
+															<textarea class="form-control" name="khcaption" id="khcaption"></textarea>
+														</div>
+														<div class="form-group">
+															<label>លំអិត<span class="required">*</span></label>
+															<textarea class="form-control" name="khdescription" id="khdescription">
+															</textarea>
+														</div>
+													<script>
+														function myimagechange(){
+															$("#myimagedemo").attr("src", $("#khfile").val() );
+														}
+													</script>
+													
+													<div class="form-group">
+														<div style="height: 10px"></div>
+														<div class="form-group">
+															<div class="input-group">
+																<input type="text" readonly="readonly"   class="form-control" id="khfile" name="khfile" onchange="myimagechange()">
+																
+																<span class="input-group-btn"> 
+																	<a type="button" class="btn btn-default btn-file" data-target="#myModal" href="javascript:;" data-toggle="modal">រុករក...</a>	
+																</span>
+																
+															</div>
+															<!-- /.input-group -->
+														</div>
+													</div>
+													<div class="form-group">
+													<label>រូបភាព</label>
+												   		 <img src="<?php echo base_url(); ?>/public/upload/slider-background.jpg" class="img-responsive" id="myimagedemo"/>
+													</div>
+													</div><!-- /.tab-pane fade -->
+													
+												</div><!-- /.tab-content -->
+										  </div><!-- /.panel-body -->
+									<div class="panel-footer">SmartMart</div>
+								</div><!-- /.collapse in -->
+							</div><!-- /.panel .panel-info -->
+						</div>
+						<!-- /Tab -->
+						
+						<!-- left -->
+						<div class="col-sm-4">
+									<div class="form-group">
+										<label>Type</label>
+										<select class="form-control" name="category" id="category">
+											<option value="0">Slide</option>
+											<option value="1">Sub Slide</option>
+											<option value="2">Partner</option>
+											<option value="3">Feature</option>
+											
+										</select>								
+									</div>
 									
-									<input type="submit" id="btnsave" class="btn btn-info" value="Save"/>
-								</div>
-							</div>
+									<div class="form-group">
+										<label>Odering<span class="required">*</span></label>
+										<input type="text" class="form-control" name="txtseotitle" id="txtseotitle" value="" required="required"/>
+									</div>
+									
+								
+									
+									
+									
+									
+									
+									<div class="form-group">
+										<button type="submit" class="btn btn-success">Save</button>
+										<button class="btn btn-danger">Cancel</button>
+									</div>
+									
+									
+									
+									
+									
+								</div><!-- /.col-sm-4 -->
+								<!-- /left -->
+						
+					
 							
 						</form>
-
+					
+					
+					
+						<!-- code for popup file manager -->		
 						<div class="modal fade" id="myModal">
 							<div class="modal-dialog modal-lg">
 							  <div class="modal-content">
@@ -185,32 +267,17 @@
 							      <h4 class="modal-title">File Manager</h4>
 							    </div>
 							    <div class="modal-body">
-							      <iframe width="900" height="400" src="<?php echo base_url(); ?>/public/responsivefilemanager/filemanager/dialog.php?type=2&field_id=txtimage'&fldr=" frameborder="0" style="overflow: scroll; overflow-x: hidden; overflow-y: scroll; "></iframe>
+							      <iframe width="900" height="400" src="<?php echo base_url(); ?>/public/responsivefilemanager/filemanager/dialog.php?type=2&field_id=txtfile'&fldr=" frameborder="0" style="overflow: scroll; overflow-x: hidden; overflow-y: scroll; "></iframe>
 							    </div>
 							  </div><!-- /.modal-content -->
 							</div><!-- /.modal-dialog -->
-						</div><!-- /.modal -->
-
-
-					</div><!-- /.the-box -->
+						</div><!-- /.modal -->	
 						
-					</div><!-- /.col-sm-8 -->
 						
-				
-					</div><!-- /.row -->
-					</div>
-					</div>
-					
 				
 				</div><!-- /.container-fluid -->
 				
-				<script>
-					function myimagechange(){
-						
-						$("#myimagedemo").attr("src", $("#txtimage").val() );
-					}
-
-				</script>
+				
 				
 			<!-- BEGIN FOOTER -->
 				<?php $this->load->view('admin-kh4it/_footer') ?>
@@ -295,6 +362,21 @@
 
 	<!-- MAIN APPS JS -->
 	<script src="<?php echo base_url(); ?>/public/assets/js/apps.js"></script>
-
+	<script src="<?php echo base_url(); ?>/public/assets/ckeditor/ckeditor.js"></script>
+	
+	<script> 
+		CKEDITOR.replace( 'endescription' ,
+			{ filebrowserBrowseUrl : '<?php echo base_url(); ?>/public/responsivefilemanager/filemanager/dialog.php?type=2&editor=ckeditor&fldr=', 
+			filebrowserUploadUrl : '<?php echo base_url(); ?>/public/responsivefilemanager/filemanager/dialog.php?type=2&editor=ckeditor&fldr=', 
+			filebrowserImageBrowseUrl : '<?php echo base_url(); ?>/public/responsivefilemanager/filemanager/dialog.php?type=1&editor=ckeditor&fldr=' }); 
+	</script>
+	
+	<script> 
+		CKEDITOR.replace( 'khdescription' ,
+			{ filebrowserBrowseUrl : '<?php echo base_url(); ?>/public/responsivefilemanager/filemanager/dialog.php?type=2&editor=ckeditor&fldr=', 
+			filebrowserUploadUrl : '<?php echo base_url(); ?>/public/responsivefilemanager/filemanager/dialog.php?type=2&editor=ckeditor&fldr=', 
+			filebrowserImageBrowseUrl : '<?php echo base_url(); ?>/public/responsivefilemanager/filemanager/dialog.php?type=1&editor=ckeditor&fldr=' }); 
+	</script>
+		
 	</body>
 </html>

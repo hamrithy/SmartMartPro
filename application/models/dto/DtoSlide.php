@@ -5,16 +5,14 @@ class DtoSlide{
 	private $slideid;
 	private $userid;
 	private $ordering;
-	private $type;
-	private $linkto;
-	
 	private $languageid;
 	private $title;
 	private $caption;
-	private $description;
-	private $createddate;
+	private $type;
 	private $imageurl;
-	
+	private $createdate;
+	private $description;
+
 	public function getSlideid(){
 		return $this->slideid;
 	}
@@ -45,14 +43,6 @@ class DtoSlide{
 	
 	public function setType($type){
 		$this->type = $type;
-	}
-	
-	public function getLinkto(){
-		return $this->linkto;
-	}
-	
-	public function setLinkto($linkto){
-		$this->linkto = $linkto;
 	}
 	
 	public function getLanguageid(){
