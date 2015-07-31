@@ -6,21 +6,29 @@ class DaoProduct extends CI_Model{
 		parent::__construct();
 	}
 
-	public function addNewProduct($product){
+	public function addNewProduct(DtoProduct $products){
+		$this->load->model("dto/DtoProduct");
+		$this->db->trans_begin();
 		$product = array(
-						"categoryid" => $product->getCategoryid(),
-						"userid" => $product->getUserid(),
-						//"thumbnail" => $product->getThumbnail(),
-						"seotitle" => $product->getSeotitle(),
-						"seodescription" => $product->getSeodescription()
+						"categoryid" => $products->getCategoryid(),
+						"userid" => $products->getUserid(),
+						"seotitle" => $products->getSeotitle(),
+						"seodescription" => $products->getSeodescription()
 					);
 		$this->db->insert("PRODUCTS",$product);
-		foreach($product->getProductDetails() as $pro){
+		$productID = $this->db->insert_id();
+		
+		foreach($products->getProductDetails() as $pro){
+			$pro["productid"] = $productID;
 			$this->db->insert("PRODUCTDETAIL",$pro);
 		}
-		$this->db->trans_commit();
-		$this->db->trans_complete();
-		return true;
+		if($this->db->trans_status()===FALSE){
+			$this->db->trans_rollback();
+			return FALSE;
+		}else{
+			$this->db->trans_commit();
+			return TRUE;
+		}
 	}
 }
 

@@ -7,7 +7,7 @@
 		private $userid;
 		private $seotitle;
 		private $seodescription;
-		private $productDetail;
+		private $productDetail = array();
 		
 		public function getProductid(){
 			return $this->productid;
@@ -61,8 +61,8 @@
 			return $this->productDetail;
 		}
 
-		public function setProductDetails($productDetails){
-			$this->productDetail = $productDetails;
+		public function setProductDetails($productDetail){
+			$this->productDetail = $productDetail;
 		}
 	}
 

@@ -348,10 +348,12 @@
 				Thumbnail: "TEST.png",
 				ProductDetails:[
 					{
+							"languageid": "1",
 							"title": "KHMER",
 							"description": "KHMER DESCRIPTION"
 					},
 					{
+							"languageid":"2",
 							"title": "ENGLISH",
 							"description": "ENGLISH DESCRIPTION"
 					}
