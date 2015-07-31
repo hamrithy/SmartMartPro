@@ -2,28 +2,13 @@
 class DtoPage {
 
 	private $pageid;
-	private $title;
-	private $body;
-	private $createddate;
 	private $userid;
 	private $seotitle;
 	private $seodescription;
 	
-	public function setSeotitle($seotitle){
-		$this->seotitle = $seotitle;
-	}
-	
-	public function getSeotitle(){
-		return $this->seotitle;
-	}
-	
-	public function setSeodescription($seodescription){
-		$this->seodescription = $seodescription;
-	}
-	
-	public function getSeodescription(){
-		return $this->seodescription;
-	}
+	private $title;
+	private $languageid;
+	private $description;
 	
 	public function getPageid(){
 		return $this->pageid;
@@ -31,6 +16,30 @@ class DtoPage {
 	
 	public function setPageid($pageid){
 		$this->pageid = $pageid;
+	}
+	
+	public function getUserid(){
+		return $this->userid;
+	}
+	
+	public function setUserid($userid){
+		$this->userid = $userid;
+	}
+	
+	public function getSeotitle(){
+		return $this->seotitle;
+	}
+	
+	public function setSeotitle($seotitle){
+		$this->seotitle = $seotitle;
+	}
+	
+	public function getSeodescription(){
+		return $this->seodescription;
+	}
+	
+	public function setSeodescription($seodescription){
+		$this->seodescription = $seodescription;
 	}
 	
 	public function getTitle(){
@@ -41,28 +50,20 @@ class DtoPage {
 		$this->title = $title;
 	}
 	
-	public function getBody(){
-		return $this->body;
+	public function getLanguageid(){
+		return $this->languageid;
 	}
 	
-	public function setBody($body){
-		$this->body = $body;
+	public function setLanguageid($languageid){
+		$this->languageid = $languageid;
 	}
 	
-	public function getCreateddate(){
-		return $this->createddate;
+	public function getDescription(){
+		return $this->description;
 	}
 	
-	public function setCreateddate($createddate){
-		$this->createddate = $createddate;
-	}
-	
-	public function getUserid(){
-		return $this->userid;
-	}
-	
-	public function setUserid($userid){
-		$this->userid = $userid;
+	public function setDescription($description){
+		$this->description = $description;
 	}
 	
 }
