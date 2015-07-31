@@ -5,7 +5,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 		<meta name="author" content="Vuthea Chheang">
-		<title>List Food Category</title>
+		<title>List POSTs</title>
  
 	<!-- BOOTSTRAP CSS (REQUIRED ALL PAGE)-->
 	<link href="<?php echo base_url(); ?>/public/assets/css/bootstrap.min.css" rel="stylesheet">
@@ -87,8 +87,8 @@
 								  <div class="panel-heading">
 									<h1 class="panel-title">
 									<i class="fa fa-tasks"></i>
-										<a href="<?php echo site_url()?>/admin/foodcategory"  >
-										List Foods Category
+										<a href="<?php echo site_url()?>/admin/product"  >
+										List Posts
 										
 										</a>
 									</h1>
@@ -99,23 +99,32 @@
 					<!-- BEGIN DATA TABLE -->
 					<div class="the-box">
 						<div class="table-responsive">
-							<table class='table table-striped table-hover' id='datatable-example'>
+						<table class="table table-striped table-hover" id="datatable-example">
+							<thead class="the-box dark full">
 								<tr>
-									<td>Id</td>
-									<td>Title</td>
-									<td>Action</td>
+									<th>Post ID</th>
+									<th>Titile</th>
+									<th>Posted Date</th>									
+									<th>Posted By</th>
+									<th>Action</th>
 								</tr>
-								<?php foreach($listFoodTypes as $row){ ?>
+							</thead>
+							<tbody>
+						
+							<?php /// foreach ($listPost as $v){ ?>
 								<tr>
-									<td><?php echo $row->foodtypeid; ?></td>
-									<td><?php echo $row->title; ?></td>
+									<td><?php //echo $v->postid; ?></td>
+									<td><?php ///echo $v->title; ?></td>
+									<td><?php //echo $v->postdate; ?></td>									
+									<td><?php //echo $v->username; ?></td>
 									<td>
-										<a  href="<?php echo site_url()?>/admin/foodcategory/actiondeletefoodtype/<?php echo $row->foodtypeid ?>" style="margin-right:3px" onclick="return confirm('Do you want to delete?');"  class="btn btn-danger">Delete</a>
-										<a href='<?php  echo site_url()?>/admin/foodcategory/actiongetfoodtype/<?php echo $row->foodtypeid; ?>' class='btn btn-primary' >Update</a>
+										<a  href="<?php echo site_url()?>/admin/post/deletepost/<?php //echo $v->postid ?>" style="margin-right:3px" onclick="return confirm('Do you want to delete?');"  class="btn btn-danger">Delete</a> 
+										<a  href="<?php  echo site_url()?>/admin/post/getpost/<?php // echo $v->postid ?>"  class="btn btn-primary">Update</a>
 									</td>
 								</tr>
-								<?php } ?>
-							</table>
+							<?php //} ?>
+							</tbody>
+						</table>
 						</div><!-- /.table-responsive -->
 					</div><!-- /.the-box .default -->
 					<!-- END DATA TABLE -->
@@ -207,6 +216,7 @@
 
 	<!-- MAIN APPS JS -->
 	<script src="<?php echo base_url(); ?>/public/assets/js/apps.js"></script>
+	
 		
 	</body>
 </html>
