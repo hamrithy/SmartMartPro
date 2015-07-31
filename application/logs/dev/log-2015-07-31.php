@@ -1173,3 +1173,449 @@ DEBUG - 2015-07-31 06:46:58 --> Global POST, GET and COOKIE data sanitized
 INFO - 2015-07-31 06:46:58 --> Input Class Initialized
 INFO - 2015-07-31 06:46:58 --> Language Class Initialized
 ERROR - 2015-07-31 06:46:58 --> 404 Page Not Found: Public/assets
+INFO - 2015-07-31 11:06:56 --> Config Class Initialized
+INFO - 2015-07-31 11:06:56 --> Hooks Class Initialized
+DEBUG - 2015-07-31 11:06:56 --> UTF-8 Support Enabled
+INFO - 2015-07-31 11:06:56 --> Utf8 Class Initialized
+INFO - 2015-07-31 11:06:57 --> URI Class Initialized
+INFO - 2015-07-31 11:06:57 --> Router Class Initialized
+INFO - 2015-07-31 11:06:57 --> Output Class Initialized
+INFO - 2015-07-31 11:06:57 --> Security Class Initialized
+DEBUG - 2015-07-31 11:06:57 --> Global POST, GET and COOKIE data sanitized
+INFO - 2015-07-31 11:06:57 --> Input Class Initialized
+INFO - 2015-07-31 11:06:57 --> Language Class Initialized
+INFO - 2015-07-31 11:06:57 --> Loader Class Initialized
+INFO - 2015-07-31 11:06:57 --> Helper loaded: url_helper
+INFO - 2015-07-31 11:06:57 --> Helper loaded: language_helper
+INFO - 2015-07-31 11:06:57 --> Database Driver Class Initialized
+INFO - 2015-07-31 11:06:58 --> Session: Class initialized using 'files' driver.
+DEBUG - 2015-07-31 11:06:58 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2015-07-31 11:06:58 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2015-07-31 11:06:58 --> Encryption Class Initialized
+INFO - 2015-07-31 11:06:58 --> Controller Class Initialized
+DEBUG - 2015-07-31 11:06:58 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2015-07-31 11:06:58 --> Language_loader...
+INFO - 2015-07-31 11:06:58 --> Language file loaded: language/english/smartmart_lang.php
+DEBUG - 2015-07-31 11:06:58 --> IF Language_loader...english
+INFO - 2015-07-31 11:06:58 --> File loaded: D:\wamp\www\SmartMartPro\application\views\admin-kh4it/_header.php
+INFO - 2015-07-31 11:06:58 --> File loaded: D:\wamp\www\SmartMartPro\application\views\admin-kh4it/_sidebar.php
+ERROR - 2015-07-31 11:06:58 --> Severity: Notice --> Undefined variable: listSlide D:\wamp\www\SmartMartPro\application\views\admin-kh4it\listslide.php 115
+ERROR - 2015-07-31 11:06:58 --> Severity: Warning --> Invalid argument supplied for foreach() D:\wamp\www\SmartMartPro\application\views\admin-kh4it\listslide.php 115
+INFO - 2015-07-31 11:06:58 --> File loaded: D:\wamp\www\SmartMartPro\application\views\admin-kh4it/_footer.php
+INFO - 2015-07-31 11:06:58 --> File loaded: D:\wamp\www\SmartMartPro\application\views\admin-kh4it/listslide.php
+INFO - 2015-07-31 11:06:58 --> Final output sent to browser
+DEBUG - 2015-07-31 11:06:58 --> Total execution time: 1.4111
+INFO - 2015-07-31 11:06:59 --> Config Class Initialized
+INFO - 2015-07-31 11:06:59 --> Hooks Class Initialized
+DEBUG - 2015-07-31 11:06:59 --> UTF-8 Support Enabled
+INFO - 2015-07-31 11:06:59 --> Utf8 Class Initialized
+INFO - 2015-07-31 11:06:59 --> URI Class Initialized
+INFO - 2015-07-31 11:06:59 --> Router Class Initialized
+INFO - 2015-07-31 11:06:59 --> Output Class Initialized
+INFO - 2015-07-31 11:06:59 --> Security Class Initialized
+DEBUG - 2015-07-31 11:06:59 --> Global POST, GET and COOKIE data sanitized
+INFO - 2015-07-31 11:06:59 --> Input Class Initialized
+INFO - 2015-07-31 11:06:59 --> Language Class Initialized
+INFO - 2015-07-31 11:06:59 --> Loader Class Initialized
+INFO - 2015-07-31 11:06:59 --> Helper loaded: url_helper
+INFO - 2015-07-31 11:06:59 --> Helper loaded: language_helper
+INFO - 2015-07-31 11:06:59 --> Database Driver Class Initialized
+INFO - 2015-07-31 11:07:00 --> Session: Class initialized using 'files' driver.
+DEBUG - 2015-07-31 11:07:00 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2015-07-31 11:07:01 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2015-07-31 11:07:01 --> Encryption Class Initialized
+INFO - 2015-07-31 11:07:01 --> Controller Class Initialized
+DEBUG - 2015-07-31 11:07:01 --> Language_loader...
+INFO - 2015-07-31 11:07:01 --> Language file loaded: language/english/smartmart_lang.php
+DEBUG - 2015-07-31 11:07:01 --> IF Language_loader...english
+INFO - 2015-07-31 11:07:01 --> File loaded: D:\wamp\www\SmartMartPro\application\views\layouts/_include.php
+INFO - 2015-07-31 11:07:01 --> File loaded: D:\wamp\www\SmartMartPro\application\views\layouts/_header.php
+INFO - 2015-07-31 11:07:01 --> File loaded: D:\wamp\www\SmartMartPro\application\views\layouts/_footer.php
+INFO - 2015-07-31 11:07:01 --> File loaded: D:\wamp\www\SmartMartPro\application\views\404.php
+INFO - 2015-07-31 11:07:01 --> Final output sent to browser
+DEBUG - 2015-07-31 11:07:01 --> Total execution time: 1.3221
+INFO - 2015-07-31 11:07:01 --> Config Class Initialized
+INFO - 2015-07-31 11:07:01 --> Hooks Class Initialized
+DEBUG - 2015-07-31 11:07:01 --> UTF-8 Support Enabled
+INFO - 2015-07-31 11:07:01 --> Utf8 Class Initialized
+INFO - 2015-07-31 11:07:01 --> URI Class Initialized
+INFO - 2015-07-31 11:07:01 --> Router Class Initialized
+INFO - 2015-07-31 11:07:01 --> Output Class Initialized
+INFO - 2015-07-31 11:07:01 --> Security Class Initialized
+DEBUG - 2015-07-31 11:07:01 --> Global POST, GET and COOKIE data sanitized
+INFO - 2015-07-31 11:07:01 --> Input Class Initialized
+INFO - 2015-07-31 11:07:01 --> Language Class Initialized
+INFO - 2015-07-31 11:07:01 --> Loader Class Initialized
+INFO - 2015-07-31 11:07:01 --> Helper loaded: url_helper
+INFO - 2015-07-31 11:07:01 --> Helper loaded: language_helper
+INFO - 2015-07-31 11:07:01 --> Database Driver Class Initialized
+INFO - 2015-07-31 11:07:02 --> Session: Class initialized using 'files' driver.
+DEBUG - 2015-07-31 11:07:02 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2015-07-31 11:07:02 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2015-07-31 11:07:02 --> Encryption Class Initialized
+INFO - 2015-07-31 11:07:02 --> Controller Class Initialized
+DEBUG - 2015-07-31 11:07:02 --> Language_loader...
+INFO - 2015-07-31 11:07:02 --> Language file loaded: language/english/smartmart_lang.php
+DEBUG - 2015-07-31 11:07:02 --> IF Language_loader...english
+INFO - 2015-07-31 11:07:02 --> File loaded: D:\wamp\www\SmartMartPro\application\views\layouts/_include.php
+INFO - 2015-07-31 11:07:02 --> File loaded: D:\wamp\www\SmartMartPro\application\views\layouts/_header.php
+INFO - 2015-07-31 11:07:02 --> File loaded: D:\wamp\www\SmartMartPro\application\views\layouts/_footer.php
+INFO - 2015-07-31 11:07:02 --> File loaded: D:\wamp\www\SmartMartPro\application\views\404.php
+INFO - 2015-07-31 11:07:02 --> Final output sent to browser
+DEBUG - 2015-07-31 11:07:02 --> Total execution time: 1.2431
+INFO - 2015-07-31 11:07:16 --> Config Class Initialized
+INFO - 2015-07-31 11:07:16 --> Hooks Class Initialized
+DEBUG - 2015-07-31 11:07:16 --> UTF-8 Support Enabled
+INFO - 2015-07-31 11:07:16 --> Utf8 Class Initialized
+INFO - 2015-07-31 11:07:16 --> URI Class Initialized
+INFO - 2015-07-31 11:07:16 --> Router Class Initialized
+INFO - 2015-07-31 11:07:16 --> Output Class Initialized
+INFO - 2015-07-31 11:07:16 --> Security Class Initialized
+DEBUG - 2015-07-31 11:07:16 --> Global POST, GET and COOKIE data sanitized
+INFO - 2015-07-31 11:07:16 --> Input Class Initialized
+INFO - 2015-07-31 11:07:16 --> Language Class Initialized
+INFO - 2015-07-31 11:07:16 --> Loader Class Initialized
+INFO - 2015-07-31 11:07:16 --> Helper loaded: url_helper
+INFO - 2015-07-31 11:07:16 --> Helper loaded: language_helper
+INFO - 2015-07-31 11:07:16 --> Database Driver Class Initialized
+INFO - 2015-07-31 11:07:17 --> Session: Class initialized using 'files' driver.
+DEBUG - 2015-07-31 11:07:17 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2015-07-31 11:07:17 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2015-07-31 11:07:17 --> Encryption Class Initialized
+INFO - 2015-07-31 11:07:17 --> Controller Class Initialized
+DEBUG - 2015-07-31 11:07:17 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2015-07-31 11:07:17 --> Language_loader...
+INFO - 2015-07-31 11:07:17 --> Language file loaded: language/english/smartmart_lang.php
+DEBUG - 2015-07-31 11:07:17 --> IF Language_loader...english
+INFO - 2015-07-31 11:07:17 --> File loaded: D:\wamp\www\SmartMartPro\application\views\admin-kh4it/_header.php
+ERROR - 2015-07-31 11:07:17 --> Severity: Notice --> Undefined variable: getPost D:\wamp\www\SmartMartPro\application\views\admin-kh4it\addslide.php 76
+INFO - 2015-07-31 11:07:17 --> File loaded: D:\wamp\www\SmartMartPro\application\views\admin-kh4it/_sidebar.php
+INFO - 2015-07-31 11:07:17 --> File loaded: D:\wamp\www\SmartMartPro\application\views\admin-kh4it/_footer.php
+INFO - 2015-07-31 11:07:17 --> File loaded: D:\wamp\www\SmartMartPro\application\views\admin-kh4it/addslide.php
+INFO - 2015-07-31 11:07:17 --> Final output sent to browser
+DEBUG - 2015-07-31 11:07:17 --> Total execution time: 1.2731
+INFO - 2015-07-31 11:07:19 --> Config Class Initialized
+INFO - 2015-07-31 11:07:19 --> Hooks Class Initialized
+DEBUG - 2015-07-31 11:07:19 --> UTF-8 Support Enabled
+INFO - 2015-07-31 11:07:19 --> Utf8 Class Initialized
+INFO - 2015-07-31 11:07:19 --> URI Class Initialized
+INFO - 2015-07-31 11:07:19 --> Router Class Initialized
+INFO - 2015-07-31 11:07:19 --> Output Class Initialized
+INFO - 2015-07-31 11:07:19 --> Security Class Initialized
+DEBUG - 2015-07-31 11:07:19 --> Global POST, GET and COOKIE data sanitized
+INFO - 2015-07-31 11:07:19 --> Input Class Initialized
+INFO - 2015-07-31 11:07:19 --> Language Class Initialized
+INFO - 2015-07-31 11:07:19 --> Loader Class Initialized
+INFO - 2015-07-31 11:07:19 --> Helper loaded: url_helper
+INFO - 2015-07-31 11:07:19 --> Helper loaded: language_helper
+INFO - 2015-07-31 11:07:19 --> Database Driver Class Initialized
+INFO - 2015-07-31 11:07:20 --> Session: Class initialized using 'files' driver.
+DEBUG - 2015-07-31 11:07:20 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2015-07-31 11:07:20 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2015-07-31 11:07:20 --> Encryption Class Initialized
+INFO - 2015-07-31 11:07:20 --> Controller Class Initialized
+DEBUG - 2015-07-31 11:07:20 --> Language_loader...
+INFO - 2015-07-31 11:07:20 --> Language file loaded: language/english/smartmart_lang.php
+DEBUG - 2015-07-31 11:07:20 --> IF Language_loader...english
+INFO - 2015-07-31 11:07:20 --> File loaded: D:\wamp\www\SmartMartPro\application\views\layouts/_include.php
+INFO - 2015-07-31 11:07:20 --> File loaded: D:\wamp\www\SmartMartPro\application\views\layouts/_header.php
+INFO - 2015-07-31 11:07:20 --> File loaded: D:\wamp\www\SmartMartPro\application\views\layouts/_footer.php
+INFO - 2015-07-31 11:07:20 --> File loaded: D:\wamp\www\SmartMartPro\application\views\404.php
+INFO - 2015-07-31 11:07:20 --> Final output sent to browser
+DEBUG - 2015-07-31 11:07:20 --> Total execution time: 1.2961
+INFO - 2015-07-31 11:07:27 --> Config Class Initialized
+INFO - 2015-07-31 11:07:27 --> Hooks Class Initialized
+DEBUG - 2015-07-31 11:07:27 --> UTF-8 Support Enabled
+INFO - 2015-07-31 11:07:27 --> Utf8 Class Initialized
+INFO - 2015-07-31 11:07:27 --> URI Class Initialized
+INFO - 2015-07-31 11:07:27 --> Router Class Initialized
+INFO - 2015-07-31 11:07:27 --> Output Class Initialized
+INFO - 2015-07-31 11:07:27 --> Security Class Initialized
+DEBUG - 2015-07-31 11:07:27 --> Global POST, GET and COOKIE data sanitized
+INFO - 2015-07-31 11:07:27 --> Input Class Initialized
+INFO - 2015-07-31 11:07:27 --> Language Class Initialized
+INFO - 2015-07-31 11:07:27 --> Loader Class Initialized
+INFO - 2015-07-31 11:07:27 --> Helper loaded: url_helper
+INFO - 2015-07-31 11:07:27 --> Helper loaded: language_helper
+INFO - 2015-07-31 11:07:27 --> Database Driver Class Initialized
+INFO - 2015-07-31 11:07:28 --> Session: Class initialized using 'files' driver.
+DEBUG - 2015-07-31 11:07:28 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2015-07-31 11:07:28 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2015-07-31 11:07:28 --> Encryption Class Initialized
+INFO - 2015-07-31 11:07:28 --> Controller Class Initialized
+DEBUG - 2015-07-31 11:07:28 --> Language_loader...
+INFO - 2015-07-31 11:07:28 --> Language file loaded: language/english/smartmart_lang.php
+DEBUG - 2015-07-31 11:07:28 --> IF Language_loader...english
+INFO - 2015-07-31 11:07:28 --> File loaded: D:\wamp\www\SmartMartPro\application\views\layouts/_include.php
+INFO - 2015-07-31 11:07:28 --> File loaded: D:\wamp\www\SmartMartPro\application\views\layouts/_header.php
+INFO - 2015-07-31 11:07:28 --> File loaded: D:\wamp\www\SmartMartPro\application\views\layouts/_footer.php
+INFO - 2015-07-31 11:07:28 --> File loaded: D:\wamp\www\SmartMartPro\application\views\404.php
+INFO - 2015-07-31 11:07:28 --> Final output sent to browser
+DEBUG - 2015-07-31 11:07:28 --> Total execution time: 1.2061
+INFO - 2015-07-31 11:10:31 --> Config Class Initialized
+INFO - 2015-07-31 11:10:31 --> Hooks Class Initialized
+DEBUG - 2015-07-31 11:10:31 --> UTF-8 Support Enabled
+INFO - 2015-07-31 11:10:31 --> Utf8 Class Initialized
+INFO - 2015-07-31 11:10:31 --> URI Class Initialized
+INFO - 2015-07-31 11:10:31 --> Router Class Initialized
+INFO - 2015-07-31 11:10:31 --> Output Class Initialized
+INFO - 2015-07-31 11:10:31 --> Security Class Initialized
+DEBUG - 2015-07-31 11:10:31 --> Global POST, GET and COOKIE data sanitized
+INFO - 2015-07-31 11:10:31 --> Input Class Initialized
+INFO - 2015-07-31 11:10:31 --> Language Class Initialized
+INFO - 2015-07-31 11:10:31 --> Loader Class Initialized
+INFO - 2015-07-31 11:10:31 --> Helper loaded: url_helper
+INFO - 2015-07-31 11:10:31 --> Helper loaded: language_helper
+INFO - 2015-07-31 11:10:31 --> Database Driver Class Initialized
+INFO - 2015-07-31 11:10:32 --> Session: Class initialized using 'files' driver.
+DEBUG - 2015-07-31 11:10:32 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2015-07-31 11:10:32 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2015-07-31 11:10:32 --> Encryption Class Initialized
+INFO - 2015-07-31 11:10:32 --> Controller Class Initialized
+DEBUG - 2015-07-31 11:10:32 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2015-07-31 11:10:32 --> Language_loader...
+INFO - 2015-07-31 11:10:32 --> Language file loaded: language/english/smartmart_lang.php
+DEBUG - 2015-07-31 11:10:32 --> IF Language_loader...english
+INFO - 2015-07-31 11:10:32 --> File loaded: D:\wamp\www\SmartMartPro\application\views\admin-kh4it/_header.php
+ERROR - 2015-07-31 11:10:32 --> Severity: Notice --> Undefined variable: getPost D:\wamp\www\SmartMartPro\application\views\admin-kh4it\addslide.php 76
+INFO - 2015-07-31 11:10:32 --> File loaded: D:\wamp\www\SmartMartPro\application\views\admin-kh4it/_sidebar.php
+INFO - 2015-07-31 11:10:32 --> File loaded: D:\wamp\www\SmartMartPro\application\views\admin-kh4it/_footer.php
+INFO - 2015-07-31 11:10:32 --> File loaded: D:\wamp\www\SmartMartPro\application\views\admin-kh4it/addslide.php
+INFO - 2015-07-31 11:10:32 --> Final output sent to browser
+DEBUG - 2015-07-31 11:10:32 --> Total execution time: 1.3541
+INFO - 2015-07-31 11:10:34 --> Config Class Initialized
+INFO - 2015-07-31 11:10:34 --> Hooks Class Initialized
+DEBUG - 2015-07-31 11:10:34 --> UTF-8 Support Enabled
+INFO - 2015-07-31 11:10:34 --> Utf8 Class Initialized
+INFO - 2015-07-31 11:10:34 --> URI Class Initialized
+INFO - 2015-07-31 11:10:34 --> Router Class Initialized
+INFO - 2015-07-31 11:10:34 --> Output Class Initialized
+INFO - 2015-07-31 11:10:34 --> Security Class Initialized
+DEBUG - 2015-07-31 11:10:34 --> Global POST, GET and COOKIE data sanitized
+INFO - 2015-07-31 11:10:34 --> Input Class Initialized
+INFO - 2015-07-31 11:10:34 --> Language Class Initialized
+INFO - 2015-07-31 11:10:34 --> Loader Class Initialized
+INFO - 2015-07-31 11:10:34 --> Helper loaded: url_helper
+INFO - 2015-07-31 11:10:34 --> Helper loaded: language_helper
+INFO - 2015-07-31 11:10:34 --> Database Driver Class Initialized
+INFO - 2015-07-31 11:10:35 --> Session: Class initialized using 'files' driver.
+DEBUG - 2015-07-31 11:10:35 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2015-07-31 11:10:35 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2015-07-31 11:10:35 --> Encryption Class Initialized
+INFO - 2015-07-31 11:10:35 --> Controller Class Initialized
+DEBUG - 2015-07-31 11:10:35 --> Language_loader...
+INFO - 2015-07-31 11:10:35 --> Language file loaded: language/english/smartmart_lang.php
+DEBUG - 2015-07-31 11:10:35 --> IF Language_loader...english
+INFO - 2015-07-31 11:10:35 --> File loaded: D:\wamp\www\SmartMartPro\application\views\layouts/_include.php
+INFO - 2015-07-31 11:10:35 --> File loaded: D:\wamp\www\SmartMartPro\application\views\layouts/_header.php
+INFO - 2015-07-31 11:10:35 --> File loaded: D:\wamp\www\SmartMartPro\application\views\layouts/_footer.php
+INFO - 2015-07-31 11:10:35 --> File loaded: D:\wamp\www\SmartMartPro\application\views\404.php
+INFO - 2015-07-31 11:10:35 --> Final output sent to browser
+DEBUG - 2015-07-31 11:10:35 --> Total execution time: 1.2011
+INFO - 2015-07-31 11:10:44 --> Config Class Initialized
+INFO - 2015-07-31 11:10:44 --> Hooks Class Initialized
+DEBUG - 2015-07-31 11:10:44 --> UTF-8 Support Enabled
+INFO - 2015-07-31 11:10:44 --> Utf8 Class Initialized
+INFO - 2015-07-31 11:10:44 --> URI Class Initialized
+INFO - 2015-07-31 11:10:44 --> Router Class Initialized
+INFO - 2015-07-31 11:10:44 --> Output Class Initialized
+INFO - 2015-07-31 11:10:44 --> Security Class Initialized
+DEBUG - 2015-07-31 11:10:44 --> Global POST, GET and COOKIE data sanitized
+INFO - 2015-07-31 11:10:44 --> Input Class Initialized
+INFO - 2015-07-31 11:10:44 --> Language Class Initialized
+INFO - 2015-07-31 11:10:44 --> Loader Class Initialized
+INFO - 2015-07-31 11:10:44 --> Helper loaded: url_helper
+INFO - 2015-07-31 11:10:44 --> Helper loaded: language_helper
+INFO - 2015-07-31 11:10:44 --> Database Driver Class Initialized
+INFO - 2015-07-31 11:10:45 --> Session: Class initialized using 'files' driver.
+DEBUG - 2015-07-31 11:10:45 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2015-07-31 11:10:45 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2015-07-31 11:10:45 --> Encryption Class Initialized
+INFO - 2015-07-31 11:10:45 --> Controller Class Initialized
+DEBUG - 2015-07-31 11:10:45 --> Language_loader...
+INFO - 2015-07-31 11:10:45 --> Language file loaded: language/english/smartmart_lang.php
+DEBUG - 2015-07-31 11:10:45 --> IF Language_loader...english
+INFO - 2015-07-31 11:10:45 --> File loaded: D:\wamp\www\SmartMartPro\application\views\layouts/_include.php
+INFO - 2015-07-31 11:10:45 --> File loaded: D:\wamp\www\SmartMartPro\application\views\layouts/_header.php
+INFO - 2015-07-31 11:10:45 --> File loaded: D:\wamp\www\SmartMartPro\application\views\layouts/_footer.php
+INFO - 2015-07-31 11:10:45 --> File loaded: D:\wamp\www\SmartMartPro\application\views\404.php
+INFO - 2015-07-31 11:10:45 --> Final output sent to browser
+DEBUG - 2015-07-31 11:10:45 --> Total execution time: 1.1911
+INFO - 2015-07-31 11:11:34 --> Config Class Initialized
+INFO - 2015-07-31 11:11:34 --> Hooks Class Initialized
+DEBUG - 2015-07-31 11:11:34 --> UTF-8 Support Enabled
+INFO - 2015-07-31 11:11:34 --> Utf8 Class Initialized
+INFO - 2015-07-31 11:11:34 --> URI Class Initialized
+INFO - 2015-07-31 11:11:34 --> Router Class Initialized
+INFO - 2015-07-31 11:11:34 --> Output Class Initialized
+INFO - 2015-07-31 11:11:34 --> Security Class Initialized
+DEBUG - 2015-07-31 11:11:34 --> Global POST, GET and COOKIE data sanitized
+INFO - 2015-07-31 11:11:34 --> Input Class Initialized
+INFO - 2015-07-31 11:11:34 --> Language Class Initialized
+INFO - 2015-07-31 11:11:34 --> Loader Class Initialized
+INFO - 2015-07-31 11:11:34 --> Helper loaded: url_helper
+INFO - 2015-07-31 11:11:34 --> Helper loaded: language_helper
+INFO - 2015-07-31 11:11:34 --> Database Driver Class Initialized
+INFO - 2015-07-31 11:11:35 --> Session: Class initialized using 'files' driver.
+DEBUG - 2015-07-31 11:11:35 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2015-07-31 11:11:35 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2015-07-31 11:11:35 --> Encryption Class Initialized
+INFO - 2015-07-31 11:11:35 --> Controller Class Initialized
+DEBUG - 2015-07-31 11:11:35 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2015-07-31 11:11:35 --> Language_loader...
+INFO - 2015-07-31 11:11:35 --> Language file loaded: language/english/smartmart_lang.php
+DEBUG - 2015-07-31 11:11:35 --> IF Language_loader...english
+INFO - 2015-07-31 11:11:35 --> File loaded: D:\wamp\www\SmartMartPro\application\views\admin-kh4it/_header.php
+ERROR - 2015-07-31 11:11:35 --> Severity: Notice --> Undefined variable: getPost D:\wamp\www\SmartMartPro\application\views\admin-kh4it\addslide.php 76
+INFO - 2015-07-31 11:11:35 --> File loaded: D:\wamp\www\SmartMartPro\application\views\admin-kh4it/_sidebar.php
+INFO - 2015-07-31 11:11:35 --> File loaded: D:\wamp\www\SmartMartPro\application\views\admin-kh4it/_footer.php
+INFO - 2015-07-31 11:11:35 --> File loaded: D:\wamp\www\SmartMartPro\application\views\admin-kh4it/addslide.php
+INFO - 2015-07-31 11:11:35 --> Final output sent to browser
+DEBUG - 2015-07-31 11:11:35 --> Total execution time: 1.3871
+INFO - 2015-07-31 11:11:37 --> Config Class Initialized
+INFO - 2015-07-31 11:11:37 --> Hooks Class Initialized
+DEBUG - 2015-07-31 11:11:37 --> UTF-8 Support Enabled
+INFO - 2015-07-31 11:11:37 --> Utf8 Class Initialized
+INFO - 2015-07-31 11:11:37 --> URI Class Initialized
+INFO - 2015-07-31 11:11:37 --> Router Class Initialized
+INFO - 2015-07-31 11:11:37 --> Output Class Initialized
+INFO - 2015-07-31 11:11:37 --> Security Class Initialized
+DEBUG - 2015-07-31 11:11:37 --> Global POST, GET and COOKIE data sanitized
+INFO - 2015-07-31 11:11:37 --> Input Class Initialized
+INFO - 2015-07-31 11:11:37 --> Language Class Initialized
+INFO - 2015-07-31 11:11:37 --> Loader Class Initialized
+INFO - 2015-07-31 11:11:37 --> Helper loaded: url_helper
+INFO - 2015-07-31 11:11:37 --> Helper loaded: language_helper
+INFO - 2015-07-31 11:11:37 --> Database Driver Class Initialized
+INFO - 2015-07-31 11:11:39 --> Session: Class initialized using 'files' driver.
+DEBUG - 2015-07-31 11:11:39 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2015-07-31 11:11:39 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2015-07-31 11:11:39 --> Encryption Class Initialized
+INFO - 2015-07-31 11:11:39 --> Controller Class Initialized
+DEBUG - 2015-07-31 11:11:39 --> Language_loader...
+INFO - 2015-07-31 11:11:39 --> Language file loaded: language/english/smartmart_lang.php
+DEBUG - 2015-07-31 11:11:39 --> IF Language_loader...english
+INFO - 2015-07-31 11:11:39 --> File loaded: D:\wamp\www\SmartMartPro\application\views\layouts/_include.php
+INFO - 2015-07-31 11:11:39 --> File loaded: D:\wamp\www\SmartMartPro\application\views\layouts/_header.php
+INFO - 2015-07-31 11:11:39 --> File loaded: D:\wamp\www\SmartMartPro\application\views\layouts/_footer.php
+INFO - 2015-07-31 11:11:39 --> File loaded: D:\wamp\www\SmartMartPro\application\views\404.php
+INFO - 2015-07-31 11:11:39 --> Final output sent to browser
+DEBUG - 2015-07-31 11:11:39 --> Total execution time: 1.2951
+INFO - 2015-07-31 11:11:46 --> Config Class Initialized
+INFO - 2015-07-31 11:11:46 --> Hooks Class Initialized
+DEBUG - 2015-07-31 11:11:46 --> UTF-8 Support Enabled
+INFO - 2015-07-31 11:11:46 --> Utf8 Class Initialized
+INFO - 2015-07-31 11:11:46 --> URI Class Initialized
+INFO - 2015-07-31 11:11:46 --> Router Class Initialized
+INFO - 2015-07-31 11:11:46 --> Output Class Initialized
+INFO - 2015-07-31 11:11:46 --> Security Class Initialized
+DEBUG - 2015-07-31 11:11:46 --> Global POST, GET and COOKIE data sanitized
+INFO - 2015-07-31 11:11:46 --> Input Class Initialized
+INFO - 2015-07-31 11:11:46 --> Language Class Initialized
+INFO - 2015-07-31 11:11:46 --> Loader Class Initialized
+INFO - 2015-07-31 11:11:46 --> Helper loaded: url_helper
+INFO - 2015-07-31 11:11:46 --> Helper loaded: language_helper
+INFO - 2015-07-31 11:11:46 --> Database Driver Class Initialized
+INFO - 2015-07-31 11:11:47 --> Session: Class initialized using 'files' driver.
+DEBUG - 2015-07-31 11:11:47 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2015-07-31 11:11:47 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2015-07-31 11:11:47 --> Encryption Class Initialized
+INFO - 2015-07-31 11:11:47 --> Controller Class Initialized
+DEBUG - 2015-07-31 11:11:47 --> Language_loader...
+INFO - 2015-07-31 11:11:47 --> Language file loaded: language/english/smartmart_lang.php
+DEBUG - 2015-07-31 11:11:47 --> IF Language_loader...english
+INFO - 2015-07-31 11:11:47 --> File loaded: D:\wamp\www\SmartMartPro\application\views\layouts/_include.php
+INFO - 2015-07-31 11:11:47 --> File loaded: D:\wamp\www\SmartMartPro\application\views\layouts/_header.php
+INFO - 2015-07-31 11:11:48 --> File loaded: D:\wamp\www\SmartMartPro\application\views\layouts/_footer.php
+INFO - 2015-07-31 11:11:48 --> File loaded: D:\wamp\www\SmartMartPro\application\views\404.php
+INFO - 2015-07-31 11:11:48 --> Final output sent to browser
+DEBUG - 2015-07-31 11:11:48 --> Total execution time: 1.1701
+INFO - 2015-07-31 11:15:56 --> Config Class Initialized
+INFO - 2015-07-31 11:15:56 --> Hooks Class Initialized
+DEBUG - 2015-07-31 11:15:56 --> UTF-8 Support Enabled
+INFO - 2015-07-31 11:15:56 --> Utf8 Class Initialized
+INFO - 2015-07-31 11:15:56 --> URI Class Initialized
+INFO - 2015-07-31 11:15:56 --> Router Class Initialized
+INFO - 2015-07-31 11:15:56 --> Output Class Initialized
+INFO - 2015-07-31 11:15:56 --> Security Class Initialized
+DEBUG - 2015-07-31 11:15:56 --> Global POST, GET and COOKIE data sanitized
+INFO - 2015-07-31 11:15:56 --> Input Class Initialized
+INFO - 2015-07-31 11:15:56 --> Language Class Initialized
+INFO - 2015-07-31 11:15:56 --> Loader Class Initialized
+INFO - 2015-07-31 11:15:56 --> Helper loaded: url_helper
+INFO - 2015-07-31 11:15:56 --> Helper loaded: language_helper
+INFO - 2015-07-31 11:15:56 --> Database Driver Class Initialized
+INFO - 2015-07-31 11:15:57 --> Session: Class initialized using 'files' driver.
+DEBUG - 2015-07-31 11:15:57 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2015-07-31 11:15:57 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2015-07-31 11:15:57 --> Encryption Class Initialized
+INFO - 2015-07-31 11:15:57 --> Controller Class Initialized
+DEBUG - 2015-07-31 11:15:57 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2015-07-31 11:15:57 --> Language_loader...
+INFO - 2015-07-31 11:15:57 --> Language file loaded: language/english/smartmart_lang.php
+DEBUG - 2015-07-31 11:15:57 --> IF Language_loader...english
+INFO - 2015-07-31 11:15:57 --> File loaded: D:\wamp\www\SmartMartPro\application\views\admin-kh4it/_header.php
+ERROR - 2015-07-31 11:15:57 --> Severity: Notice --> Undefined variable: getPost D:\wamp\www\SmartMartPro\application\views\admin-kh4it\addslide.php 76
+INFO - 2015-07-31 11:15:57 --> File loaded: D:\wamp\www\SmartMartPro\application\views\admin-kh4it/_sidebar.php
+INFO - 2015-07-31 11:15:57 --> File loaded: D:\wamp\www\SmartMartPro\application\views\admin-kh4it/_footer.php
+INFO - 2015-07-31 11:15:57 --> File loaded: D:\wamp\www\SmartMartPro\application\views\admin-kh4it/addslide.php
+INFO - 2015-07-31 11:15:57 --> Final output sent to browser
+DEBUG - 2015-07-31 11:15:57 --> Total execution time: 1.3161
+INFO - 2015-07-31 11:15:59 --> Config Class Initialized
+INFO - 2015-07-31 11:15:59 --> Hooks Class Initialized
+DEBUG - 2015-07-31 11:15:59 --> UTF-8 Support Enabled
+INFO - 2015-07-31 11:15:59 --> Utf8 Class Initialized
+INFO - 2015-07-31 11:15:59 --> URI Class Initialized
+INFO - 2015-07-31 11:15:59 --> Router Class Initialized
+INFO - 2015-07-31 11:15:59 --> Output Class Initialized
+INFO - 2015-07-31 11:15:59 --> Security Class Initialized
+DEBUG - 2015-07-31 11:15:59 --> Global POST, GET and COOKIE data sanitized
+INFO - 2015-07-31 11:15:59 --> Input Class Initialized
+INFO - 2015-07-31 11:15:59 --> Language Class Initialized
+INFO - 2015-07-31 11:15:59 --> Loader Class Initialized
+INFO - 2015-07-31 11:15:59 --> Helper loaded: url_helper
+INFO - 2015-07-31 11:15:59 --> Helper loaded: language_helper
+INFO - 2015-07-31 11:15:59 --> Database Driver Class Initialized
+INFO - 2015-07-31 11:16:00 --> Session: Class initialized using 'files' driver.
+DEBUG - 2015-07-31 11:16:00 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2015-07-31 11:16:00 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2015-07-31 11:16:00 --> Encryption Class Initialized
+INFO - 2015-07-31 11:16:00 --> Controller Class Initialized
+DEBUG - 2015-07-31 11:16:00 --> Language_loader...
+INFO - 2015-07-31 11:16:00 --> Language file loaded: language/english/smartmart_lang.php
+DEBUG - 2015-07-31 11:16:00 --> IF Language_loader...english
+INFO - 2015-07-31 11:16:00 --> File loaded: D:\wamp\www\SmartMartPro\application\views\layouts/_include.php
+INFO - 2015-07-31 11:16:00 --> File loaded: D:\wamp\www\SmartMartPro\application\views\layouts/_header.php
+INFO - 2015-07-31 11:16:00 --> File loaded: D:\wamp\www\SmartMartPro\application\views\layouts/_footer.php
+INFO - 2015-07-31 11:16:00 --> File loaded: D:\wamp\www\SmartMartPro\application\views\404.php
+INFO - 2015-07-31 11:16:00 --> Final output sent to browser
+DEBUG - 2015-07-31 11:16:00 --> Total execution time: 1.2411
+INFO - 2015-07-31 11:16:17 --> Config Class Initialized
+INFO - 2015-07-31 11:16:17 --> Hooks Class Initialized
+DEBUG - 2015-07-31 11:16:17 --> UTF-8 Support Enabled
+INFO - 2015-07-31 11:16:17 --> Utf8 Class Initialized
+INFO - 2015-07-31 11:16:17 --> URI Class Initialized
+INFO - 2015-07-31 11:16:17 --> Router Class Initialized
+INFO - 2015-07-31 11:16:17 --> Output Class Initialized
+INFO - 2015-07-31 11:16:17 --> Security Class Initialized
+DEBUG - 2015-07-31 11:16:17 --> Global POST, GET and COOKIE data sanitized
+INFO - 2015-07-31 11:16:17 --> Input Class Initialized
+INFO - 2015-07-31 11:16:17 --> Language Class Initialized
+INFO - 2015-07-31 11:16:17 --> Loader Class Initialized
+INFO - 2015-07-31 11:16:17 --> Helper loaded: url_helper
+INFO - 2015-07-31 11:16:17 --> Helper loaded: language_helper
+INFO - 2015-07-31 11:16:17 --> Database Driver Class Initialized
+INFO - 2015-07-31 11:16:19 --> Session: Class initialized using 'files' driver.
+DEBUG - 2015-07-31 11:16:19 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2015-07-31 11:16:19 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2015-07-31 11:16:19 --> Encryption Class Initialized
+INFO - 2015-07-31 11:16:19 --> Controller Class Initialized
+DEBUG - 2015-07-31 11:16:19 --> Language_loader...
+INFO - 2015-07-31 11:16:19 --> Language file loaded: language/english/smartmart_lang.php
+DEBUG - 2015-07-31 11:16:19 --> IF Language_loader...english
+INFO - 2015-07-31 11:16:19 --> File loaded: D:\wamp\www\SmartMartPro\application\views\layouts/_include.php
+INFO - 2015-07-31 11:16:19 --> File loaded: D:\wamp\www\SmartMartPro\application\views\layouts/_header.php
+INFO - 2015-07-31 11:16:19 --> File loaded: D:\wamp\www\SmartMartPro\application\views\layouts/_footer.php
+INFO - 2015-07-31 11:16:19 --> File loaded: D:\wamp\www\SmartMartPro\application\views\404.php
+INFO - 2015-07-31 11:16:19 --> Final output sent to browser
+DEBUG - 2015-07-31 11:16:19 --> Total execution time: 1.2021
