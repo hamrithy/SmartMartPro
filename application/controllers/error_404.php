@@ -11,7 +11,7 @@ class ERROR_404 extends CI_Controller
         $this->output->set_status_header('404'); 
         $data['title'] = 'ERROR 404';
         $data['page'] = '';
-        $this->load->view('front/error_404',$data);//loading in my template 
+        $this->load->view('404',$data);//loading in my template 
     } 
 } 
 ?> 
