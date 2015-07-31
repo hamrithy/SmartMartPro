@@ -2,15 +2,19 @@
 	class DtoProduct{
 		
 		private $productid;
+		private $categoryid;
+		private $userid;
+		private $seotitle;
+		private $seodescription;
+		
 		private $entitle;
 		private $endescription;
 		private $khtitle;
 		private $khdescription;
 		private $createdate;
-		private $seotitle;
-		private $seodescription;
+		
 		private $thumbnail;
-		private $userid;
+		
 
 		public function getProductid(){
 			return $this->productid;
