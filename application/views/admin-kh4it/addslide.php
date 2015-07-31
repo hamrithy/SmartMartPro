@@ -70,7 +70,7 @@
 			<!-- END TOP NAV -->
 			
 			<script type="text/javascript">
-			$(document).ready(function() {
+			/*$(document).ready(function() {
 
 						<?php
 						$getPost = $getPost;
@@ -91,7 +91,7 @@
 							 }
 						}
 						 ?>
-			});
+			});*/
 		  	</script>
 			
 			<!-- BEGIN SIDEBAR LEFT -->
@@ -140,7 +140,7 @@
 															</textarea>
 														</div>
 																<script>
-														function myimagechange(){
+														function myimageenchange(){
 															$("#myimagedemo").attr("src", $("#enfile").val() );
 														}
 													</script>
@@ -149,10 +149,10 @@
 														<div style="height: 10px"></div>
 														<div class="form-group">
 															<div class="input-group">
-																<input type="text" readonly="readonly"   class="form-control" id="enfile" name="enfile" onchange="myimagechange()">
+																<input type="text" readonly="readonly"   class="form-control" id="enfile" name="enfile" onchange="myimageenchange()">
 																
 																<span class="input-group-btn"> 
-																	<a type="button" class="btn btn-default btn-file" data-target="#myModal" href="javascript:;" data-toggle="modal">Browse...</a>	
+																	<a type="button" class="btn btn-default btn-file" data-target="#myModal1" href="javascript:;" data-toggle="modal">Browse...</a>	
 																</span>
 																
 															</div>
@@ -184,7 +184,7 @@
 														</div>
 													<script>
 														function myimagechange(){
-															$("#myimagedemo").attr("src", $("#khfile").val() );
+															$("#myimagedemo1").attr("src", $("#khfile").val() );
 														}
 													</script>
 													
@@ -204,7 +204,7 @@
 													</div>
 													<div class="form-group">
 													<label>រូបភាព</label>
-												   		 <img src="<?php echo base_url(); ?>/public/upload/slider-background.jpg" class="img-responsive" id="myimagedemo"/>
+												   		 <img src="<?php echo base_url(); ?>/public/upload/slider-background.jpg" class="img-responsive" id="myimagedemo1"/>
 													</div>
 													</div><!-- /.tab-pane fade -->
 													
@@ -233,21 +233,11 @@
 										<label>Odering<span class="required">*</span></label>
 										<input type="text" class="form-control" name="txtseotitle" id="txtseotitle" value="" required="required"/>
 									</div>
-									
-								
-									
-									
-									
-									
-									
+
 									<div class="form-group">
 										<button type="submit" class="btn btn-success">Save</button>
 										<button class="btn btn-danger">Cancel</button>
-									</div>
-									
-									
-									
-									
+									</div>	
 									
 								</div><!-- /.col-sm-4 -->
 								<!-- /left -->
@@ -267,12 +257,25 @@
 							      <h4 class="modal-title">File Manager</h4>
 							    </div>
 							    <div class="modal-body">
-							      <iframe width="900" height="400" src="<?php echo base_url(); ?>/public/responsivefilemanager/filemanager/dialog.php?type=2&field_id=txtfile'&fldr=" frameborder="0" style="overflow: scroll; overflow-x: hidden; overflow-y: scroll; "></iframe>
+							      <iframe width="900" height="400" src="<?php echo base_url(); ?>/public/responsivefilemanager/filemanager/dialog.php?type=2&field_id=khfile'&fldr=" frameborder="0" style="overflow: scroll; overflow-x: hidden; overflow-y: scroll; "></iframe>
 							    </div>
 							  </div><!-- /.modal-content -->
 							</div><!-- /.modal-dialog -->
 						</div><!-- /.modal -->	
-						
+						<!-- code for popup file manager -->		
+						<div class="modal fade" id="myModal1">
+							<div class="modal-dialog modal-lg">
+							  <div class="modal-content">
+							    <div class="modal-header">
+							      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+							      <h4 class="modal-title">File Manager</h4>
+							    </div>
+							    <div class="modal-body">
+							      <iframe width="900" height="400" src="<?php echo base_url(); ?>/public/responsivefilemanager/filemanager/dialog.php?type=2&field_id=enfile'&fldr=" frameborder="0" style="overflow: scroll; overflow-x: hidden; overflow-y: scroll; "></iframe>
+							    </div>
+							  </div><!-- /.modal-content -->
+							</div><!-- /.modal-dialog -->
+						</div><!-- /.modal -->	
 						
 				
 				</div><!-- /.container-fluid -->
