@@ -103,7 +103,7 @@
                 <div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
 
                 <ul>
-                    <li class="current"><a href="<?php echo site_url('contact')?>"><div><?php echo lang('home') ?></div><span>Lets Start</span></a>
+                    <li class="current"><a href="<?php echo site_url('home')?>"><div><?php echo lang('home') ?></div><span>Lets Start</span></a>
                         
                     </li>
                         <!-- Mega Menu
