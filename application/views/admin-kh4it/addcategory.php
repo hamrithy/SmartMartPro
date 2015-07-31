@@ -5,7 +5,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 		<meta name="author" content="Vuthea Chheang">
-		<title>Add Post</title>
+		<title>Add Category</title>
  
 	<!-- BOOTSTRAP CSS (REQUIRED ALL PAGE)-->
 	<link href="<?php echo base_url(); ?>/public/assets/css/bootstrap.min.css" rel="stylesheet">
@@ -113,7 +113,7 @@
 					
 					
 					
-					<form role="form" action="../kshrd-admin/post_news.hrd" enctype="multipart/form-data" method="post" accept-charset="UTF-8">
+					<form role="form" action="addcategorypro" enctype="multipart/form-data" method="post" accept-charset="UTF-8">
 						
 						<!-- Tab -->
 						<div class="col-sm-8">
@@ -142,11 +142,7 @@
 															</textarea>
 														</div>
 														
-													
-														
-														
-														
-														
+		
 													</div>
 													<div id="panel-profile-2" class="tab-pane fade  active in">
 														
@@ -178,84 +174,29 @@
 						<!-- left -->
 						<div class="col-sm-4">
 									<div class="form-group">
-										<label>Category</label>
+										<label>Parent</label>
 										<select class="form-control" name="category" id="category">
+											<option></option>
 											<option value="1">SportEvent</option>
 											<option value="2">WorkShop</option>
 										</select>								
 									</div>
 									
 									<div class="form-group">
-										<label>SEO Title<span class="required">*</span></label>
-										<input type="text" class="form-control" name="txtseotitle" id="txtseotitle" value="" required="required"/>
-									</div>
-									
-									<div class="form-group">
-										<label>SEO Description<span class="required">*</span></label>
-										<textarea class="form-control" name="txtseodescription" id="txtseodescription"></textarea>
-									</div>
-									
-									
-									
-									<script>
-											function myimagechange(){
-												$("#myimagedemo").attr("src", $("#txtfile").val() );
-											}
-									</script>
-									
-									<div class="form-group">
-										<div style="height: 10px"></div>
-										<div class="form-group">
-											<div class="input-group">
-												<input type="text" readonly="readonly"   class="form-control" id="txtfile" name="txtfile" onchange="myimagechange()">
-												
-												<span class="input-group-btn"> 
-													<a type="button" class="btn btn-default btn-file" data-target="#myModal" href="javascript:;" data-toggle="modal">Browse ... </a>	
-												</span>
-												
-											</div>
-											<!-- /.input-group -->
-										</div>
-									</div>
-									
+										<label>Ordering<span class="required">*</span></label>
+										<input type="text" class="form-control" name="txtorder" id="txtorder" value="" required="required"/>
+									</div>									
 									<div class="form-group">
 										<button type="submit" class="btn btn-success">Save</button>
 										<button class="btn btn-danger">Cancel</button>
-									</div>
-									
-									<div class="form-group">
-										<label>Image</label>
-									    <img src="<?php echo base_url(); ?>/public/upload/slider-background.jpg" class="img-responsive" id="myimagedemo"/>
-									</div>
-									
-									
-									
+									</div>		
 								</div><!-- /.col-sm-4 -->
 								<!-- /left -->
 						
 					
 							
 						</form>
-					
-					
-					
-						<!-- code for popup file manager -->		
-						<div class="modal fade" id="myModal">
-							<div class="modal-dialog modal-lg">
-							  <div class="modal-content">
-							    <div class="modal-header">
-							      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-							      <h4 class="modal-title">File Manager</h4>
-							    </div>
-							    <div class="modal-body">
-							      <iframe width="900" height="400" src="<?php echo base_url(); ?>/public/responsivefilemanager/filemanager/dialog.php?type=2&field_id=txtfile'&fldr=" frameborder="0" style="overflow: scroll; overflow-x: hidden; overflow-y: scroll; "></iframe>
-							    </div>
-							  </div><!-- /.modal-content -->
-							</div><!-- /.modal-dialog -->
-						</div><!-- /.modal -->	
-						
-						
-				
+
 				</div><!-- /.container-fluid -->
 				
 				

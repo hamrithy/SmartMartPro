@@ -5,7 +5,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 		<meta name="author" content="Vuthea Chheang">
-		<title>List POSTs</title>
+		<title>List Categories</title>
  
 	<!-- BOOTSTRAP CSS (REQUIRED ALL PAGE)-->
 	<link href="<?php echo base_url(); ?>/public/assets/css/bootstrap.min.css" rel="stylesheet">
@@ -88,7 +88,7 @@
 									<h1 class="panel-title">
 									<i class="fa fa-tasks"></i>
 										<a href="<?php echo site_url()?>/admin/product"  >
-										List Posts
+										List Categories
 										
 										</a>
 									</h1>
@@ -102,10 +102,10 @@
 						<table class="table table-striped table-hover" id="datatable-example">
 							<thead class="the-box dark full">
 								<tr>
-									<th>Post ID</th>
+									<th>ID</th>
 									<th>Titile</th>
-									<th>Posted Date</th>									
-									<th>Posted By</th>
+									<th>Parent</th>									
+									<th>Order</th>
 									<th>Action</th>
 								</tr>
 							</thead>
