@@ -428,7 +428,7 @@
                                         <div class="iportfolio">
                                             <div class="portfolio-image">
                                                 <a href="#">
-                                                    <img src="images/portfolio/4/3.jpg" alt="Mac Sunglasses">
+                                                    <img src="<?php echo base_url('public/style_front/images/portfolio/4/3.jpg')?>" alt="Mac Sunglasses">
                                                 </a>
                                                 <div class="portfolio-overlay">
                                                     <a href="http://vimeo.com/89396394" class="center-icon" data-lightbox="iframe"><i class="icon-line-play"></i></a>
