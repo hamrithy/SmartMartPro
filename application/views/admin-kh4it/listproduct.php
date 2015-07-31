@@ -111,18 +111,18 @@
 							</thead>
 							<tbody>
 						
-							<?php foreach ($listPost as $v){ ?>
+							<?php /// foreach ($listPost as $v){ ?>
 								<tr>
-									<td><?php echo $v->postid; ?></td>
-									<td><?php echo $v->title; ?></td>
-									<td><?php echo $v->postdate; ?></td>									
-									<td><?php echo $v->username; ?></td>
+									<td><?php //echo $v->postid; ?></td>
+									<td><?php ///echo $v->title; ?></td>
+									<td><?php //echo $v->postdate; ?></td>									
+									<td><?php //echo $v->username; ?></td>
 									<td>
-										<a  href="<?php echo site_url()?>/admin/post/deletepost/<?php echo $v->postid ?>" style="margin-right:3px" onclick="return confirm('Do you want to delete?');"  class="btn btn-danger">Delete</a> 
-										<a  href="<?php  echo site_url()?>/admin/post/getpost/<?php  echo $v->postid ?>"  class="btn btn-primary">Update</a>
+										<a  href="<?php echo site_url()?>/admin/post/deletepost/<?php //echo $v->postid ?>" style="margin-right:3px" onclick="return confirm('Do you want to delete?');"  class="btn btn-danger">Delete</a> 
+										<a  href="<?php  echo site_url()?>/admin/post/getpost/<?php // echo $v->postid ?>"  class="btn btn-primary">Update</a>
 									</td>
 								</tr>
-							<?php } ?>
+							<?php //} ?>
 							</tbody>
 						</table>
 						</div><!-- /.table-responsive -->
