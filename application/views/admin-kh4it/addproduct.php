@@ -73,30 +73,7 @@
 			<?php $this->load->view('admin-kh4it/_header') ?>
 			<!-- END TOP NAV -->
 			
-			<script type="text/javascript">
-			$(document).ready(function() {
-
-						<?php
-						$getPost = $getPost;
-						if($getPost != null ){
-							foreach($getPost as $v){
-							?>
-							document.title= "Edit Post";
-							$("#formtitle").text("Form Edit Post");
-							$("#txtpostid").val("<?php echo $v->postid?>");
-							$("#txttitle").val("<?php echo $v->title?>");
-							$("#txtshortdescription").val("<?php echo $v->shortdescription ?>");
-							$("#txtseodescription").val("<?php echo $v->seodescription ?>");
-							$("#txtseotitle").val("<?php echo $v->seotitle ?>");
-							$("#txtfile").val("<?php echo $v->thumbnailurl?>");
-							$("#myimagedemo").fadeIn("fast").attr('src', '<?php echo $v->thumbnailurl ?>'  );
-							document.frmpost.action="<?php echo site_url();?>/admin/post/updatepost";
-							<?php
-							 }
-						}
-						 ?>
-			});
-		  	</script>
+			<!-- DELETE -->
 			
 			<!-- BEGIN SIDEBAR LEFT -->
 			<?php $this->load->view('admin-kh4it/_sidebar') ?>
@@ -358,6 +335,35 @@
 			filebrowserUploadUrl : '<?php echo base_url(); ?>/public/responsivefilemanager/filemanager/dialog.php?type=2&editor=ckeditor&fldr=', 
 			filebrowserImageBrowseUrl : '<?php echo base_url(); ?>/public/responsivefilemanager/filemanager/dialog.php?type=1&editor=ckeditor&fldr=' }); 
 	</script>
+
+	<script>
+		$.ajax({
+			type: "POST",
+			url: '<?php  echo site_url()?>/admin/product/addproductpro',
+			dataType: 'json',
+			data: {
+				CategoryID: "1",
+				SEOTitle: "CLOTHES SEO TITLE",
+				SEODescription: "CLOTHES DESCRIPITON SEO",
+				Thumbnail: "TEST.png",
+				ProductDetails:[
+					{
+							"title": "KHMER",
+							"description": "KHMER DESCRIPTION"
+					},
+					{
+							"title": "ENGLISH",
+							"description": "ENGLISH DESCRIPTION"
+					}
+				]
+			},
+			success: function(data){
+				console.log("DATA:",data);
+			}
+		});
+	</script>
+
+
 		
 	</body>
 </html>

@@ -56,8 +56,13 @@
 		public function setSeodescription($seodescription){
 			$this->seodescription = $seodescription;
 		}
-		
-		
-	
+
+		public function getProductDetails(){
+			return $this->productDetail;
+		}
+
+		public function setProductDetails($productDetails){
+			$this->productDetail = $productDetails;
+		}
 	}
 
