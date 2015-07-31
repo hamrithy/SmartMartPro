@@ -3,7 +3,7 @@
 			<div class="sidebar-left sidebar-nicescroller light-color" style="padding-top: 10px;">
 				<div class="col-sm-12">
 							<div id="accordion-1" class="panel-group">
-								<div class="panel panel-primary">
+								<div class="panel panel-info">
 								  <div class="panel-heading">
 									<h3 class="panel-title">
 									<i class="fa fa-tachometer"></i>
