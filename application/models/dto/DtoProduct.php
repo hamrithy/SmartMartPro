@@ -7,6 +7,7 @@
 		private $userid;
 		private $seotitle;
 		private $seodescription;
+		private $productDetail = array();
 		
 		public function getProductid(){
 			return $this->productid;
