@@ -126,7 +126,7 @@
 									</div><!-- /.collapse in -->
 								</div><!-- /.panel panel-default -->
 								
-								
+								<?php if($this->session->userdata('usertype')=="1"){ ?>
 								<br/>
 								<h4 class="small-title">
 									<strong><i class="fa fa-user"></i> User Section</strong>
@@ -177,10 +177,11 @@
 									  </div><!-- /.panel-body -->
 									</div><!-- /.collapse in -->
 								</div><!-- /.panel panel-default -->
+							<?php } ?>				
 								
 								
 							</div><!-- /.panel-group -->
-							
+
 						
 							
 							

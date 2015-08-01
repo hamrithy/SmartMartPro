@@ -55,29 +55,36 @@
 		}
 
 		function authentication_user($password){
-			$this->load->model('dto/DtoUser');
-			$this->load->model('dao/DaoUser');
-			$user = new DtoUser();
-			$userDao = new DaoUser();
+			try{
+				log_message('debug',"AUTHENTICATION");		
+				$this->load->model('dto/DtoUser');
+				$this->load->model('dao/DaoUser');
+				$user = new DtoUser();
+				$userDao = new DaoUser();
 
-			$user->setUsername($this->input->post('username',TRUE));
-			$user->setPassword(md5($this->input->post('password',TRUE)));
-		   	$result = $userDao->login($user);
-		 
-		   	if($result){
-		   		foreach($result as $row){
-       				$user->setUsername($row->username);
-         			$user->setUserid($row->userid);
-					$this->session->set_userdata('logged_in', $user);
-					$this->session->set_userdata('username', $this->encryption->encrypt($user->getUsername()));
-					$this->session->set_userdata('userid', $this->encryption->encrypt($user->getUserid()));	
-     			}
-		     	return TRUE;
-		   }else{
-		   		$this->form_validation->set_message('authentication_user', 'Invalid username or password. Please try again.');
-		     	return false;
-		   }
-	 	}
+				$user->setUsername($this->input->post('username',TRUE));
+				$user->setPassword(md5($this->input->post('password',TRUE)));
+			   	$result = $userDao->login($user);
+			   	if($result){
+			   		foreach($result as $row){
+	       				$user->setUsername($row->username);
+	         			$user->setUserid($row->userid);
+	         			$user->setUsertype($row->usertype);
+						$this->session->set_userdata('logged_in', $user);
+						$this->session->set_userdata('username', $this->encryption->encrypt($user->getUsername()));
+						$this->session->set_userdata('userid', $this->encryption->encrypt($user->getUserid()));
+						$this->session->set_userdata('usertype', $user->getUsertype());
+						
+			     		return TRUE;
+	     			}
+			   }else{
+			   		$this->form_validation->set_message('authentication_user', 'Invalid username or password. Please try again.');
+			     	return false;
+			   }
+			 }catch(Exception $ex){
+
+			 	log_message('debug',$ex->getMessage());
+			 }
+		 }
 	}
-
 ?>

@@ -92,7 +92,7 @@ class DaoUser extends CI_Model
 	}
 
 	function login(DtoUser $user){
-		$this->db->select('userid, username');
+		$this->db->select('userid, username, usertype');
 		$this->db->from('USERS');
 		$this->db->where('username', $user->getUsername());
 		$this->db->where('password', md5($user->getPassword()));

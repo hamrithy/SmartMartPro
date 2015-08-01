@@ -23,8 +23,13 @@
                             <li><a href="<?php echo base_url('language/english')?>"><img src="<?php echo base_url('public/style_front/images/icons/flags/english.png')?>" alt="English"> EN</a></li>
                         </ul>
                     </li>
-                    <li><a href="<?php echo site_url("admin/auth")?>">Login</a>
-                        <div class="top-link-section">
+                    <li>
+                        <?php   if(!$this->session->userdata("logged_in")){ ?>
+                                    <a href="<?php echo site_url('admin/auth')?>">Login</a>
+                        <?php   }else{ ?>
+                                    <a href="<?php echo site_url('admin/dashboard')?>"><strong><?php echo $this->encryption->decrypt($this->session->userdata("username"));?></strong></a>
+                        <?php   } ?>
+                        <!-- <div class="top-link-section">
                             <form id="top-login" role="form">
                                 <div class="input-group" id="top-login-username">
                                     <span class="input-group-addon"><i class="icon-user"></i></span>
@@ -39,7 +44,7 @@
                               </label>
                               <button class="btn btn-danger btn-block" type="submit">Sign in</button>
                           </form>
-                      </div>
+                      </div> -->
                   </li>
               </ul>
           </div>
