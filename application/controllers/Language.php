@@ -24,7 +24,7 @@ class Language extends CI_Controller{
         //print_r($this->session->userdata($cookie));
         //echo json_encode($this->input->cookie("LANGUAGE"));
         //echo json_encode($this->input->cookie("LANGUAGE"));
-        redirect('home');
+        redirect($_SERVER['HTTP_REFERER']);
     }
 
     public function english(){
@@ -40,7 +40,7 @@ class Language extends CI_Controller{
         //print_r($this->session->userdata($cookie));
         //echo json_encode($this->input->cookie("LANGUAGE"));
         //echo json_encode($this->input->cookie("LANGUAGE"));
-        redirect('home');
+        redirect($_SERVER['HTTP_REFERER']);
     }
 }
 ?>

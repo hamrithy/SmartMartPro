@@ -17,9 +17,10 @@
                             <li><a href="#">KHR</a></li>
                         </ul>
                     </li>
-                    <li><a href="<?php echo base_url('language/english')?>">EN</a>
+                    <li><a href="javascript:;"><?php echo $this->input->cookie("LANGUAGE")?></a>
                         <ul>
-                            <li><a href="<?php echo base_url('language/khmer')?>"><img src="<?php echo base_url('public/style_front/images/icons/flags/french.png')?>" alt="French"> KH</a></li>
+                            <li><a href="<?php echo base_url('language/khmer')?>"><img src="<?php echo base_url('public/style_front/images/icons/flags/khmer.png')?>" alt="Khmer"> KH</a></li>
+                            <li><a href="<?php echo base_url('language/english')?>"><img src="<?php echo base_url('public/style_front/images/icons/flags/english.png')?>" alt="English"> EN</a></li>
                         </ul>
                     </li>
                     <li><a href="<?php echo site_url("admin/auth")?>">Login</a>
