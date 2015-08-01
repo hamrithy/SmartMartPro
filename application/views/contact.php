@@ -1,3 +1,4 @@
+<!-- INCLUDE THE CSS STYLE FILE AND JAVASCRIPT FILE -->
 <?php $this->load->view('layouts/_include'); ?>
 <!-- BEGIN CUSTOMIZATION STYLE -->
 
