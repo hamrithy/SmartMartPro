@@ -103,7 +103,7 @@
 							<thead class="the-box dark full">
 								<tr>
 									<th>Title</th>
-									<th>Link To</th>									
+									<th>Description</th>							
 									<th>Ordering</th>
 									<th>Sub Of</th>
 									<th>Action</th>
@@ -111,15 +111,15 @@
 							</thead>
 							<tbody>
 						
-							<?php foreach($listMenu as $v){ ?>
+							<?php foreach($menus as $menu){ ?>
 								<tr>
-									<td><?php echo $v->title; ?></td>
-									<td><?php echo $v->linkto; ?></td>
-									<td><?php echo $v->ordering; ?></td>						
-									<td><?php echo $v->suboftitle; ?></td>
+									<td><?php echo $menu->title; ?></td>
+									<td><?php echo $menu->description; ?></td>
+									<td><?php echo $menu->ordering; ?></td>						
+									<td><?php echo $menu->suboftitle; ?></td>
 									<td>
-										<a  href="<?php echo site_url()?>/admin/menu/deletemenu/<?php echo $v->menuid ?>" style="margin-right:3px" onclick="return confirm('Do you want to delete?');"  class="btn btn-danger">Delete</a>
-										<a  href="<?php  echo site_url()?>/admin/menu/getmenu/<?php  echo $v->menuid ?>"  class="btn btn-primary">Update</a>
+										<a  href="<?php echo site_url()?>admin/menu/deletemenu/<?php echo $menu->menuid ?>" style="margin-right:3px" onclick="return confirm('Do you want to delete?');"  class="btn btn-danger">Delete</a>
+										<a  href="<?php  echo site_url()?>admin/menu/getmenu/<?php  echo $menu->menuid ?>"  class="btn btn-primary">Update</a>
 									</td>
 								</tr>
 							<?php } ?>
@@ -216,6 +216,5 @@
 
 	<!-- MAIN APPS JS -->
 	<script src="<?php echo base_url(); ?>/public/assets/js/apps.js"></script>
-		
 	</body>
 </html>

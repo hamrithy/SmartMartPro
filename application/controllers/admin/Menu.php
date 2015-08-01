@@ -13,27 +13,26 @@
 
 		public function listmenu(){
 			$this->load->model("dao/DaoMenu");
-			$data["listMenu"] = $this->DaoMenu->listMenu();
+			$data["menus"] = $this->DaoMenu->getAllMenus();
+			//echo json_encode($data);
 			$this->load->view('admin-kh4it/listmenu', $data);
 		}
 
 		public function addmenu(){
-			$this->load->model('dao/DaoMenu');
-			$data["topMenu"] = $this->DaoMenu->listTopMenu();
-			$this->load->view('admin-kh4it/addmenu', $data);
+			//$this->load->model('dao/DaoMenu');
+			//$data["topMenu"] = $this->DaoMenu->listTopMenu();
+			$this->load->view('admin-kh4it/addmenu');
 		}
 
 		public function addmenupro(){
 			$this->load->model('dao/DaoMenu');
 			$this->load->model('dto/DtoMenu');
-
-			$this->DtoMenu->setTitle($this->input->post('txtTitle'));
-			$this->DtoMenu->setLinkto($this->input->post('txtLinkto'));
-			$this->DtoMenu->setOrdering($this->input->post('txtOrdering'));
-			$this->DtoMenu->setSubof($this->input->post('txtSubof'));
-
-			$this->DaoMenu->addMenu($this->DtoMenu);
-			redirect("admin/menu");
+			
+			$this->DtoMenu->setOrdering($this->input->post('ordering'));
+			$this->DtoMenu->setSubof($this->input->post('subof'));
+			$this->DtoMenu->setMenuDetails($this->input->post('menuDetails'));
+			$result = $this->DaoMenu->addNewMenu($this->DtoMenu);
+			echo json_encode($result);
 		}
 
 		public function deletemenu($id){

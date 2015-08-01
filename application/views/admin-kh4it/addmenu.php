@@ -244,21 +244,32 @@
 	<script src="<?php echo base_url(); ?>/public/assets/js/apps.js"></script>
 
 	<script>
-		<?php 
-			if($menu!=null){
-				foreach ($menu as $v) {
-		?>
-			$("#txtMenuid").val("<?php echo $v->menuid?>");
-			$("#txtTitle").val("<?php echo $v->title?>");
-			$("#txtLinkto").val("<?php echo $v->linkto?>");
-			$("#txtOrdering").val("<?php echo $v->ordering?>");
-			$("#txtSubof").val("<?php echo $v->subof?>");
-			document.frmmenu.action="<?php echo site_url();?>/admin/menu/updatemenu";
-		<?php
-				}
+		$.ajax({
+			type: "POST",
+			url: '<?php  echo site_url()?>admin/menu/addmenupro',
+			dataType: 'json',
+			data: {
+				ordering: 	"1",
+				subof: 		"",
+				linkto: 	"/contact",
+			
+				menuDetails:[
+					{
+							"languageid": "1",
+							"title": "ទំនាក់ទំនងយើងខ្ញុំ",
+							"description": "ទំនាក់ទំនង"
+					},
+					{
+							"languageid":"2",
+							"title": "Contact Us",
+							"description": "Contact Us"
+					}
+				]
+			},
+			success: function(data){
+				console.log("DATA:",data);
 			}
-		?>
+		});
 	</script>
-
 	</body>
 </html>

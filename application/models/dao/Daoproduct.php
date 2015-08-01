@@ -4,10 +4,10 @@ class DaoProduct extends CI_Model{
 
 	public function DaoCategory(){
 		parent::__construct();
+		$this->load->model("dto/DtoProduct");
 	}
 
 	public function addNewProduct(DtoProduct $products){
-		$this->load->model("dto/DtoProduct");
 		$this->db->trans_begin();
 		$product = array(
 						"categoryid" => $products->getCategoryid(),

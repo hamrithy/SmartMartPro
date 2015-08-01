@@ -6,9 +6,10 @@ class DtoMenu {
 	private $ordering;
 	private $subof;
 	
-	private $languageid;
+	private $menuDetails;
+/*	private $languageid;
 	private $title;
-	private $description;
+	private $description;*/
 	
 	
 	public function getMenuid(){
@@ -43,28 +44,12 @@ class DtoMenu {
 		$this->subof = $subof;
 	}
 	
-	public function getLanguageid(){
-		return $this->languageid;
+	public function setMenuDetails($menuDetails){
+		$this->menuDetails = $menuDetails;
 	}
 	
-	public function setLanguageid($languageid){
-		$this->languageid = $languageid;
-	}
-	
-	public function getTitle(){
-		return $this->title;
-	}
-	
-	public function setTitle($title){
-		$this->title = $title;
-	}
-	
-	public function getDescription(){
-		return $this->description;
-	}
-	
-	public function setDescription($description){
-		$this->description = $description;
+	public function getMenuDetails(){
+		return $this->menuDetails;
 	}
 	
 }

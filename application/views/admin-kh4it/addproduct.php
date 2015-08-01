@@ -339,7 +339,7 @@
 	<script>
 		$.ajax({
 			type: "POST",
-			url: '<?php  echo site_url()?>/admin/product/addproductpro',
+			url: '<?php  echo site_url()?>admin/product/addproductpro',
 			dataType: 'json',
 			data: {
 				CategoryID: "1",
