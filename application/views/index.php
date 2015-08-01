@@ -46,6 +46,16 @@
                                             <img src="<?php echo base_url('public/style_front/images/shop/slider/4.jpg')?>" alt="Shop Image">
                                         </a>
                                     </div>
+                                    <div class="slide">
+                                        <a href="javascript:;">
+                                            <img src="<?php echo base_url('public/style_front/images/shop/slider/3.jpg')?>" alt="Shop Image">
+                                        </a>
+                                    </div>
+                                    <div class="slide">
+                                        <a href="javascript:;">
+                                            <img src="<?php echo base_url('public/style_front/images/shop/slider/4.jpg')?>" alt="Shop Image">
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>

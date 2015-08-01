@@ -29,7 +29,7 @@
                         <?php   }else{ ?>
                                     <a href="<?php echo site_url('admin/dashboard')?>"><strong><?php echo $this->encryption->decrypt($this->session->userdata("username"));?></strong></a>
                         <?php   } ?>
-                        <!-- <div class="top-link-section">
+                        <div class="top-link-section">
                             <form id="top-login" role="form">
                                 <div class="input-group" id="top-login-username">
                                     <span class="input-group-addon"><i class="icon-user"></i></span>
@@ -44,7 +44,7 @@
                               </label>
                               <button class="btn btn-danger btn-block" type="submit">Sign in</button>
                           </form>
-                      </div> -->
+                      </div>
                   </li>
               </ul>
           </div>
