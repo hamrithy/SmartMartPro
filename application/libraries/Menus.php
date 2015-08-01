@@ -6,7 +6,7 @@ class Menus{
 	private $menuId 	= 'id="main_navigation_bar" class="main-nav to-right responsive-nav"';
 	private $classMenu  = 'clean-list clearfix';
 	private $classParent= '';
-	private $tableName = 'MENUS';
+	//private $tableName = 'MENUS';
 
 	function __construct(){
 		$this->CI = & get_instance();
@@ -15,8 +15,12 @@ class Menus{
 	function generateMenu($currentSelected){
 		$navigation = array();
 
-		$query = $this->CI->db->get($this->tableName);
-
+		$sql = "SELECT DISTINCT(A.menuid),A.title, A.linkto, A.ordering, A.subof, A.status,(CASE WHEN B.menuid IS NOT NULL THEN 1 ELSE 0 END) AS parent 
+			    FROM MENUS A 
+				LEFT JOIN (SELECT menuid, subof FROM MENUS) B 
+				ON A.menuid = B.subof
+				ORDER BY A.subof,A.ordering"; 
+		$query = $this->CI->db->query($sql);
 		if($query->num_rows() >0){
 
 			foreach($query->result() as $row){
@@ -26,6 +30,7 @@ class Menus{
                 $navigation[$row->menuid]['ordering'] = $row->ordering;
                 $navigation[$row->menuid]['subof']    = $row->subof;
                 $navigation[$row->menuid]['status']   = $row->status;
+                $navigation[$row->menuid]['parent']   = $row->parent;
 			}
 		}
 		
@@ -43,7 +48,7 @@ class Menus{
 					}else{
 						$strClassCurrent = "";
 					}
-					if($this->isParent($menu['menuid'])==true){
+					if($menu['parent']==true){
 						$strHTML .= "\t\t\t".'<li class="menu-item-has-children '.$strClassCurrent.'">'.anchor($menu['linkto'], '<span>'.$menu['title'].'</span>');
 					}else{
 						$strHTML .= "\t\t\t\t".'<li class='.$strClassCurrent.'>'.anchor($menu['linkto'], '<span>'.$menu['title'].'</span>');
@@ -73,7 +78,7 @@ class Menus{
 			if($menu['status'] && $menu['subof']==$parentId){
 				$hasSub = true;
 
-				if($this->isParent($menu['menuid'])==true){
+				if($menu['parent']==true){
 					$strHTML .= "\t\t\t\t\t\t".'<li>'.anchor($menu['linkto'], '<span>'.$menu['title'].'</span>');
 				}else{
 					$strHTML .= "\t\t\t\t\t\t".'<li>'.anchor($menu['linkto'], '<span>'.$menu['title'].'</span>');
@@ -87,20 +92,6 @@ class Menus{
 		$strHTML .= "\t\t\t\t\t".'</ul>'."\n";
 
 		return ($hasSub) ? $strHTML : '';
-	}
-
-	function isParent($id){
-		$this->CI->db->select('menuid');
-		$this->CI->db->from($this->tableName);
-		$this->CI->db->where('subof', $id);
-		$query = $this->CI->db->get();
-		if($query->num_rows()>0){	
-			$query->free_result();
-			return true;
-		}else{
-			$query->free_result();
-			return false;
-		}
 	}
 }
 ?>
