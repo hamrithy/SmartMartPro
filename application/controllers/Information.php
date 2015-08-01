@@ -13,6 +13,9 @@
 			$this->load->view('information', $data);
 		}
 
+		public function showPageDetails($id){
+			$this->load->view("information_details");
+		}
 	}
 
 ?>

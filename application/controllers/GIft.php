@@ -13,6 +13,10 @@
 			$this->load->view('gift', $data);
 		}
 
+		public function showPageDetails($id){
+			$this->load->view("information_details");
+		}
+
 	}
 
 ?>s

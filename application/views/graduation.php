@@ -57,7 +57,7 @@
                                     <a href="<?php echo base_url('public/style_front/images/blog/full/17.jpg')?>" data-lightbox="image"><img class="image_fade" src="<?php echo base_url('public/style_front/images/blog/standard/17.jpg')?>" alt="Standard Post with Image"></a>
                                 </div>
                                 <div class="entry-title">
-                                    <h2><a href="blog-single.html">This is a Standard post with a Preview Image</a></h2>
+                                    <h2><a href="<?php echo site_url('information/1')?>">This is a Standard post with a Preview Image</a></h2>
                                 </div>
                                 <ul class="entry-meta clearfix">
                                     <li><a href="#"><i class="icon-user"></i> admin</a></li>
@@ -67,7 +67,7 @@
                                 </ul>
                                 <div class="entry-content">
                                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, asperiores quod est tenetur in. Eligendi, deserunt, blanditiis est quisquam doloribus voluptate id aperiam ea ipsum magni aut perspiciatis rem voluptatibus officia eos rerum deleniti quae nihil facilis repellat atque vitae voluptatem libero at eveniet veritatis ab facere.</p>
-                                    <a href="blog-single.html"class="more-link">Read More</a>
+                                    <a href="<?php echo site_url('information/1')?>"class="more-link">Read More</a>
                                 </div>
                             </div>
 

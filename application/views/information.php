@@ -57,7 +57,7 @@
                                     <a href="<?php echo base_url('public/style_front/images/blog/full/17.jpg')?>" data-lightbox="image"><img class="image_fade" src="<?php echo base_url('public/style_front/images/blog/standard/17.jpg')?>" alt="Standard Post with Image"></a>
                                 </div>
                                 <div class="entry-title">
-                                    <h2><a href="blog-single.html">This is a Standard post with a Preview Image</a></h2>
+                                    <h2><a href="<?php echo site_url('information/1')?>">This is a Standard post with a Preview Image</a></h2>
                                 </div>
                                 <ul class="entry-meta clearfix">
                                     <li><a href="#"><i class="icon-user"></i> admin</a></li>
@@ -67,7 +67,7 @@
                                 </ul>
                                 <div class="entry-content">
                                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, asperiores quod est tenetur in. Eligendi, deserunt, blanditiis est quisquam doloribus voluptate id aperiam ea ipsum magni aut perspiciatis rem voluptatibus officia eos rerum deleniti quae nihil facilis repellat atque vitae voluptatem libero at eveniet veritatis ab facere.</p>
-                                    <a href="blog-single.html"class="more-link">Read More</a>
+                                    <a href="<?php echo site_url('information/1')?>"class="more-link">Read More</a>
                                 </div>
                             </div>
 
@@ -80,7 +80,7 @@
                                     <iframe src="http://player.vimeo.com/video/87701971" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
                                 </div>
                                 <div class="entry-title">
-                                    <h2><a href="blog-single-full.html">This is a Standard post with an Embedded Video</a></h2>
+                                    <h2><a href="<?php echo site_url('information/1')?>">This is a Standard post with an Embedded Video</a></h2>
                                 </div>
                                 <ul class="entry-meta clearfix">
                                     <li><a href="#"><i class="icon-user"></i> admin</a></li>
@@ -90,7 +90,7 @@
                                 </ul>
                                 <div class="entry-content">
                                     <p>Asperiores, tenetur, blanditiis, quaerat odit ex exercitationem pariatur quibusdam veritatis quisquam laboriosam esse beatae hic perferendis velit deserunt soluta iste repellendus officia in neque veniam debitis placeat quo unde reprehenderit eum facilis vitae. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil, reprehenderit!</p>
-                                    <a href="blog-single-full.html"class="more-link">Read More</a>
+                                    <a href="<?php echo site_url('information/1')?>"class="more-link">Read More</a>
                                 </div>
                             </div>
 
@@ -121,7 +121,7 @@
                                 </ul>
                                 <div class="entry-content">
                                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione, voluptatem, dolorem animi nisi autem blanditiis enim culpa reiciendis et explicabo tenetur voluptate rerum molestiae eaque possimus exercitationem eligendi fuga. Maiores, sunt eveniet doloremque porro hic exercitationem distinctio sequi adipisci. Nulla, fuga perferendis voluptatum beatae voluptate architecto laboriosam provident deserunt. Saepe!</p>
-                                    <a href="blog-single-small.html"class="more-link">Read More</a>
+                                    <a href="<?php echo site_url('information/1')?>"class="more-link">Read More</a>
                                 </div>
                             </div>
 
@@ -173,7 +173,7 @@
                                 </ul>
                                 <div class="entry-content">
                                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione, voluptatem, dolorem animi nisi autem blanditiis enim culpa reiciendis et explicabo tenetur voluptate rerum molestiae eaque possimus exercitationem eligendi fuga. Maiores, sunt eveniet doloremque porro hic exercitationem distinctio sequi adipisci. Nulla, fuga perferendis voluptatum beatae voluptate architecto laboriosam provident deserunt. Saepe!</p>
-                                    <a href="blog-single-thumbs.html"class="more-link">Read More</a>
+                                    <a href="<?php echo site_url('information/1')?>"class="more-link">Read More</a>
                                 </div>
                             </div>
 
@@ -235,7 +235,7 @@
                                 </ul>
                                 <div class="entry-content">
                                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione, voluptatem, dolorem animi nisi autem blanditiis enim culpa reiciendis et explicabo tenetur voluptate rerum molestiae eaque possimus exercitationem eligendi fuga. Maiores, sunt eveniet doloremque porro hic exercitationem distinctio sequi adipisci. Nulla, fuga perferendis voluptatum beatae voluptate architecto laboriosam provident deserunt. Saepe!</p>
-                                    <a href="blog-single.html"class="more-link">Read More</a>
+                                    <a href="<?php echo site_url('information/1')?>"class="more-link">Read More</a>
                                 </div>
                             </div>
 
