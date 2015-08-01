@@ -28,48 +28,14 @@
             </div>
 
         </section><!-- #page-title end -->
-
-        <!-- Google Map
-        ============================================= -->
-        <section id="google-map" class="gmap slider-parallax"></section>
-
-        <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
-        <script type="text/javascript" src="<?php echo base_url('public/style_front/js/jquery.gmap.js');?>"></script>
-
-        <script type="text/javascript">
-
-            $('#google-map').gMap({
-
-                address: 'Phnom Penh, Cambodia',
-                maptype: 'ROADMAP',
-                zoom: 14,
-                markers: [
-                    {
-                        address: "Phnom Penh, Cambodia",
-                        html: '',
-                        icon: {
-                            image: "<?php echo base_url('public/style_front/images/icons/map-icon-red.png')?>",
-                            iconsize: [32, 39],
-                            iconanchor: [32,39]
-                        }
-                    }
-                ],
-                doubleclickzoom: false,
-                controls: {
-                    panControl: true,
-                    zoomControl: true,
-                    mapTypeControl: true,
-                    scaleControl: false,
-                    streetViewControl: false,
-                    overviewMapControl: false
-                }
-
-            });
-
-        </script><!-- Google Map End -->
-
-        <!-- Content
-        ============================================= -->
+        <!-- BEGIN GOOGLE MAP -->
+        <section id="google-map" class="gmap slider-parallax">
+            <div class="gmap-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3909.0735697958407!2d104.90781285!3d11.54658025!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3109511db3ecf735%3A0x5cf67bd86b8a5463!2sAmerican+International+School!5e0!3m2!1sen!2s!4v1433996719629" height="480" width="100%" style="border:0"></iframe>
+            </div>
+        </section>
+        <!-- END GOOGLE MAP -->
+        <!-- BEGIN CONTENT -->
         <section id="content">
 
             <div class="content-wrap">
@@ -226,7 +192,8 @@
 
             </div>
 
-        </section><!-- #content end -->
+        </section>
+        <!-- END CONTENT -->
 
         <!-- BEGGIN FOOTER SECTION -->
         <?php $this->load->view('layouts/_footer'); ?>
