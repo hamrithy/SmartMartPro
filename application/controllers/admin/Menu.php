@@ -19,9 +19,9 @@
 		}
 
 		public function addmenu(){
-			//$this->load->model('dao/DaoMenu');
-			//$data["topMenu"] = $this->DaoMenu->listTopMenu();
-			$this->load->view('admin-kh4it/addmenu');
+			$this->load->model('dao/DaoMenu');
+			$data["topMenu"] = $this->DaoMenu->listTopMenu();
+			$this->load->view('admin-kh4it/addmenu', $data);
 		}
 
 		public function addmenupro(){
@@ -37,7 +37,7 @@
 
 		public function deletemenu($id){
 			$this->load->model('dao/DaoMenu');
-			$this->DaoMenu->deletemenu($id);
+			$this->DaoMenu->deleteMenu($id);
 			redirect("admin/menu");
 		}
 
@@ -52,18 +52,15 @@
 		public function updatemenu(){
 			$this->load->model('dao/DaoMenu');
 			$this->load->model('dto/DtoMenu');
-
+			//$this->DtoMenu->setTitle($this->input->post('txtTitle'));
+			//$this->DtoMenu->setLinkto($this->input->post('txtLinkto'));
 			$this->DtoMenu->setMenuid($this->input->post('txtMenuid'));
-			$this->DtoMenu->setTitle($this->input->post('txtTitle'));
-			$this->DtoMenu->setLinkto($this->input->post('txtLinkto'));
 			$this->DtoMenu->setOrdering($this->input->post('txtOrdering'));
 			$this->DtoMenu->setSubof($this->input->post('txtSubof'));
-
-			$this->DaoMenu->updateMenu($this->DtoMenu);
+			$this->DtoMenu->setMenuDetails($this->input->post('menuDetails'));
+			$languageID = $this->input->post('languageID');
+			$this->DaoMenu->updateMenu($this->DtoMenu, $languageID);
 			redirect("admin/menu");
 		}
-
-
 	}
-
 ?>

@@ -103,7 +103,7 @@
 							<thead class="the-box dark full">
 								<tr>
 									<th>Title</th>
-									<th>Description</th>							
+									<th>Linkto</th>							
 									<th>Ordering</th>
 									<th>Sub Of</th>
 									<th>Action</th>
@@ -114,7 +114,7 @@
 							<?php foreach($menus as $menu){ ?>
 								<tr>
 									<td><?php echo $menu->title; ?></td>
-									<td><?php echo $menu->description; ?></td>
+									<td><?php echo $menu->linkto; ?></td>
 									<td><?php echo $menu->ordering; ?></td>						
 									<td><?php echo $menu->suboftitle; ?></td>
 									<td>

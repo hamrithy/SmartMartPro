@@ -100,7 +100,97 @@
 					<div class="col-sm-12">
 					
 					<div>
-						<form id="frmmenu" name="frmmenu" method="post" action="addmenupro" class="form-horizontal">
+						<form role="form" id="frmAddMenu" action="<?php echo site_url('admin/menu/addmenupro')?>" enctype="multipart/form-data" method="post" accept-charset="UTF-8">
+						
+						<!-- Tab -->
+						<div class="col-sm-8">
+							<div class="panel with-nav-tabs panel-info">
+							  	<div class="panel-heading">
+									<ul class="nav nav-tabs">
+										<li class=""><a href="#panel-home-2" data-toggle="tab"><img src="<?php echo base_url()?>/public/assets/img/eng.png"> English</a></li>
+										<li class="active"><a href="#panel-profile-2" data-toggle="tab"><img src="<?php echo base_url()?>/public/assets/img/kh.png"> Khmer</a></li>
+									</ul>
+								</div>
+								<div class="collapse in" id="panel-collapse-2">
+										 <div class="panel-body">
+												<div class="tab-content">
+													<div id="panel-home-2" class="tab-pane fade">
+														
+														<!-- Put Control Englist here -->
+														<div class="form-group">
+															<input type="hidden" id="languageid" value="2" />
+															<label>Title<span class="required">*</span></label>
+															<input type="text" class="form-control" name="txtentitle" id="txtTitle" required />
+														</div>
+														
+														<div class="form-group">
+															<label>Description<span class="required">*</span></label>
+															<textarea class="form-control" name="txtendescription" id="txtDescription">
+																	
+															</textarea>
+														</div>
+														
+		
+													</div>
+													<div id="panel-profile-2" class="tab-pane fade  active in">
+														
+														<!-- Put Control Khmer here -->
+														<div class="form-group">
+															<input type="hidden" id="languageid" value="1" />
+															<label>ចំណងជើង<span class="required">*</span></label>
+															<input type="text" class="form-control" name="txtkhtitle" id="txtTitle" required />
+														</div>
+														
+														<div class="form-group">
+															<label>លំអិត<span class="required">*</span></label>
+															<textarea class="form-control" name="txtkhdescription" id="txtDescription">
+																	
+															</textarea>
+														</div>
+													
+													
+														
+														
+													</div><!-- /.tab-pane fade -->
+												</div><!-- /.tab-content -->
+										  </div><!-- /.panel-body -->
+									<div class="panel-footer">SmartMart</div>
+								</div><!-- /.collapse in -->
+							</div><!-- /.panel .panel-info -->
+						</div>
+						<!-- /Tab -->
+						
+						<!-- left -->
+						<div class="col-sm-4">
+									<div class="form-group">
+										<label>Subof</label>
+										<select class="form-control" name="subof" id="subof">
+											<?php 
+												if(count($topMenu)>0){
+													echo '<option value="">-------</option>';
+												}
+												foreach($topMenu as $menu) {
+													echo '<option value="'.$menu->menuid.'">'.$menu->title.'</option>';
+												}	
+											?>
+										</select>								
+									</div>
+									
+									<div class="form-group">
+										<label>Ordering<span class="required">*</span></label>
+										<input type="text" class="form-control" name="txtorder" id="txtOrder" value="1" required="required"/>
+									</div>									
+									<div class="form-group">
+										<button type="submit" class="btn btn-success">Save</button>
+										<button class="btn btn-danger">Cancel</button>
+									</div>		
+								</div><!-- /.col-sm-4 -->
+								<!-- /left -->
+						
+					
+							
+						</form>
+						<!-- <form id="frmmenu" name="frmmenu" method="post" action="addmenupro" class="form-horizontal">
 							<fieldset>
 								<input type="hidden" name="txtMenuid" id="txtMenuid" />
 								<div class="form-group">
@@ -144,7 +234,7 @@
 								</div>
 							</div>
 							
-						</form>
+						</form> -->
 					</div><!-- /.the-box -->
 						
 					</div><!-- /.col-sm-8 -->
@@ -242,33 +332,44 @@
 
 	<!-- MAIN APPS JS -->
 	<script src="<?php echo base_url(); ?>/public/assets/js/apps.js"></script>
+	<script type="text/javascript">
 
-	<script>
-		$.ajax({
-			type: "POST",
-			url: '<?php  echo site_url()?>admin/menu/addmenupro',
-			dataType: 'json',
-			data: {
-				ordering: 	"1",
-				subof: 		"",
-				linkto: 	"/contact",
-			
-				menuDetails:[
-					{
-							"languageid": "1",
-							"title": "ទំនាក់ទំនងយើងខ្ញុំ",
-							"description": "ទំនាក់ទំនង"
+		$(function(){
+			$("form#frmAddMenu").submit(function(e){
+				e.preventDefault();
+				var data = [];
+				$('.tab-content .tab-pane').each(function(index, value){
+					data.push({
+						"languageid" : $(this).find("#languageid").val(),
+						"title" 	 : $(this).find("#txtTitle").val(),
+						"description": $(this).find("#txtDescription").val()
+					});
+				});
+				console.log(data);
+				$.ajax({
+					type: "POST",
+					url: $("form#frmAddMenu").attr("action"),
+					dataType: 'json',
+					data: {
+						ordering: 	$("#txtOrder").val(),
+						subof: 		$("#subof").val(),
+						linkto: 	"/contact",
+						menuDetails: data
 					},
-					{
-							"languageid":"2",
-							"title": "Contact Us",
-							"description": "Contact Us"
+					success: function(data){
+						if(data==true){
+							alert("You have been inserted successfully.");
+							location.href= "<?php echo site_url('admin/menu')?>";
+						}else{
+							alert("You have not been inserted successfully.");
+						}
+						console.log("DATA:",data);
+					},
+					error: function(data){
+						console.log("DATA:",data);
 					}
-				]
-			},
-			success: function(data){
-				console.log("DATA:",data);
-			}
+				});
+			});
 		});
 	</script>
 	</body>

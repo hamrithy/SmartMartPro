@@ -28,7 +28,7 @@ class DaoMenu extends CI_Model{
 	}
 	
 	public function getAllMenus(){
-		$this->db->select('DISTINCT(A.menuid),A.subof, A.ordering, C.title, C.description, C.languageid,, (SELECT title FROM MENUDETAIL WHERE menuid=A.subof AND languageid=1) AS suboftitle');
+		$this->db->select('DISTINCT(A.menuid),A.subof, A.ordering, A.linkto, C.title, C.description, C.languageid,, (SELECT title FROM MENUDETAIL WHERE menuid=A.subof AND languageid=1) AS suboftitle');
 		$this->db->from('MENUS A');
 		$this->db->join('MENUS B', 'A.subof=B.menuid', 'left');
 		$this->db->join('MENUDETAIL C', 'A.menuid=C.menuid');
@@ -39,8 +39,56 @@ class DaoMenu extends CI_Model{
 		return $query->result();
 	}
 	
-	public function updateMenu(DtoMenu $menu){
-		
+	public function updateMenu(DtoMenu $menu, $languageid){
+		$this->db->trans_begin();
+
+		// UPDATE MENU
+		$menu = array(
+					"ordering"	=> $menu->getOrdering(),
+					"subof"		=> $menu->getSubof());
+		$this->db->where('menuid', $menu->getMenuid());
+		$this->db->update('MENU', $menu);
+
+		// UDPDATE MAIN MENU
+		$this->db->where('menuid', $menuid);
+		$this->db->where('languageid', $languageid);
+		$this->db->update('MENUS', $menu->getMenuDetails());
+		if($this->db->trans_status()===FALSE){
+			$this->db->trans_rollback();
+			return FALSE;
+		}else{
+			$this->db->trans_commit();
+			return TRUE;
+		}
+	}
+
+	public function deleteMenu($menuid){
+		$this->db->trans_begin();
+
+		// DELETE ALL DETAILS
+		$this->db->where('menuid', $menuid);
+		$this->db->delete('MENUDETAIL');
+
+		// DELETE MAIN
+		$this->db->where('menuid', $menuid);
+		$this->db->delete('MENUS');
+		if($this->db->trans_status()===FALSE){
+			$this->db->trans_rollback();
+			return FALSE;
+		}else{
+			$this->db->trans_commit();
+			return TRUE;
+		}
+	}
+
+	public function listTopMenu($languageid=1){
+		$this->db->select('A.menuid, B.title');
+		$this->db->from('MENUS A');
+		$this->db->join('MENUDETAIL B','A.menuid = B.menuid');
+		$this->db->where('A.subof', null);
+		$this->db->where('B.languageid', $languageid);
+		$query = $this->db->get();
+		return $query->result();
 	}
 
 	/*public function addMenu(DtoMenu $menu){
