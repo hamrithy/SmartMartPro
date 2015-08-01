@@ -34,6 +34,7 @@ $lang['total_download'] = 'TOTAL DOWNLOADS';
 $lang['client'] = 'CLIENT';
 $lang['recent_post'] = 'RECENT POST';
 $lang['blog_roll'] = 'BLOGROLL';
+$lang['lang_abbr'] = "en";
 
 
 
