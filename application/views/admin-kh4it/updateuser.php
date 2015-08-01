@@ -137,18 +137,16 @@
 									<div class="col-lg-5">
 										<select class="form-control" name="usertype" id="USERTYPE">
 											<?php 
-												if($result->usertype==1){?>
+												if($result->usertype=="Admin"){?>
 													<option value="1" selected>Admin</option>
 													<option value="2">User</option>		
 												<?php
-												}else{?>
+												}else if($result->usertype=="User"){?>
 													<option value="1">Admin</option>
 													<option value="2" selected>User</option>
 												<?php
 												 }
 											?>
-											<option value="1">Admin</option>
-											<option value="2">User</option>
 										</select>
 									</div>
 								</div>
@@ -159,11 +157,11 @@
 									<div class="col-lg-5">
 										<select class="form-control" name="status" id="STATUS">
 											<?php 
-												if($result->active==1){?>
+												if($result->active=="1"){?>
 													<option value="1" selected>Active</option>
 													<option value="0">Inactive</option>		
 												<?php
-												}else{?>
+												}else if($result->active=="0"){?>
 													<option value="1">Active</option>
 													<option value="0" selected>Inactive</option>
 												<?php

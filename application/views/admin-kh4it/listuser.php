@@ -229,14 +229,14 @@
 	<script>
 		$(function(){
 			$(document).on('click', '.btnUpdate', function(){
-				location.href= '<?php  echo site_url()?>/admin/user/updateuser/'+$(this).parents("tr").find("#USERID").html();
+				location.href= '<?php  echo site_url()?>admin/user/updateuser/'+$(this).parents("tr").find("#USERID").html();
 			});
 
 			$(document).on('click', '#ACTIVE a', function(){
 				_this = $(this);
 				$.ajax({
 					type: "POST",
-					url: '<?php  echo site_url()?>/admin/user/updateuserstatuspro',
+					url: '<?php  echo site_url()?>admin/user/updateuserstatuspro',
 					dataType: 'json',
 					data: {
 						userid: _this.parents('tr').find("#USERID").html(),
