@@ -10,6 +10,7 @@ class DtoCategory{
 	private $languageid;
 	private $title;
 	private $description;
+	private $categorydetail=array();
 	
 	
 	public function getCategoryid(){
@@ -75,7 +76,13 @@ class DtoCategory{
 	public function setDescription($description){
 		$this->description = $description;
 	}
+	public function getCategorydetail(){
+		return $this->categorydetail;
+	}
 	
+	public function setCategorydetail($detail){
+		$this->categorydetail = $detail;
+	}
 	
 	
 	
