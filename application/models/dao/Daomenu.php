@@ -32,7 +32,9 @@ class DaoMenu extends CI_Model{
 		$this->db->from('MENUS A');
 		$this->db->join('MENUS B', 'A.subof=B.menuid', 'left');
 		$this->db->join('MENUDETAIL C', 'A.menuid=C.menuid');
+		//$this->db->group_by('A.subof,A.ordering');
 		$this->db->where('C.languageid',1);
+		//$this->db->order_by('A.subof,A.ordering');
 		$query = $this->db->get();
 		return $query->result();
 	}

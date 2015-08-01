@@ -17,7 +17,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | environments.
 |
 */
-$config['base_url'] = 'https://cid-darapenhchet-1.c9.io/smartmartpro/';
+$config['base_url'] = 'http://localhost/smartmartpro/';
 /*
 |--------------------------------------------------------------------------
 | Index File
