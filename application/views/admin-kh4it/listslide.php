@@ -105,23 +105,23 @@
 									<th>ID</th>
 									<th>Titile</th>
 									<th>Image</th>	
-									<th>Link</th>								
 									<th>Order</th>
+									<td>Type</td>
 									<th>Action</th>
 								</tr>
 							</thead>
 							<tbody>
 						
-							<?php foreach ($listSlide as $s){ ?>
+							<?php foreach ($listSlides as $s){ ?>
 								<tr>
-									<td><?php echo $s->slideid; ?></td>
+									<td><?php echo $s->sliderid; ?></td>
 									<td><?php echo $s->title; ?></td>									
 									<td><img src="<?php echo $s->imageurl; ?>" class="img-responsive" style="height: 60px;"/></td>		
-									<td><?php echo $s->linkto; ?></td>							
 									<td><?php echo $s->ordering; ?></td>
+									<td><?php echo $s->type; ?></td>
 									<td>
-										<a  href="<?php echo site_url()?>/admin/slide/deleteSlidePro/<?php echo $s->slideid ?>" style="margin-right:3px" onclick="return confirm('Do you want to delete?');"  class="btn btn-danger">Delete</a>
-										<a href="<?php  echo site_url()?>/admin/slide/getSlide/<?php  echo $s->slideid ?>" class="btn btn-primary" >Update</a>
+										<a  href="<?php echo site_url()?>/admin/slide/deleteSlidePro/<?php echo $s->sliderid ?>" style="margin-right:3px" onclick="return confirm('Do you want to delete?');"  class="btn btn-danger">Delete</a>
+										<a href="<?php  echo site_url()?>/admin/slide/getSlide/<?php  echo $s->sliderid ?>" class="btn btn-primary" >Update</a>
 									</td>
 								</tr>
 							<?php } ?>

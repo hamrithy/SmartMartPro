@@ -4,6 +4,8 @@
 
 		public function __construct(){
 			parent::__construct();
+			$this->load->model('dao/DaoSlide');
+			$this->load->model('dto/DtoSlide');
 		}
 
 		public function index(){
@@ -15,7 +17,7 @@
 		}
 
 		public function listSlides(){
-			$this->load->view('admin-kh4it/listslide');
+			$this->actionListSlides();
 		}
 
 		public function actionAddSlide(){
@@ -23,7 +25,8 @@
 		}
 
 		public function actionListSlides(){
-			
+			$data['listSlides'] = $this->DaoSlide->getAllSlides();
+			$this->load->view('admin-kh4it/listslide', $data);
 		}
 
 

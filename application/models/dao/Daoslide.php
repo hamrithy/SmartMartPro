@@ -27,10 +27,10 @@
 			$this->db->insert('SLIDES', $data);
 		}*/
 
-		public function listSlide(){
-			$this->db->select('s.slideid, s.ordering, s.type, sd.title, sd.languageid, sd.caption, sd.description, sd.imageurl');
-			$this->db->from('SLIDES s');
-			$this->db->join('SLIDERDETAIL sd', 's.slideid = sd.slideid');
+		public function getAllSlides(){
+			$this->db->select('s.sliderid, s.ordering, s.type, sd.title, sd.languageid, sd.caption, sd.description, sd.imageurl');
+			$this->db->from('SLIDERS s');
+			$this->db->join('SLIDERDETAIL sd', 's.sliderid = sd.sliderid');
 			$this->db->order_by('s.ordering', 'desc');
 			$query = $this->db->get();
 			return $query->result();
