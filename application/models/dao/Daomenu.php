@@ -10,6 +10,7 @@ class DaoMenu extends CI_Model{
 	public function addNewMenu(DtoMenu $menus){
 		$this->db->trans_begin();
 		$this->db->insert("MENUS",array("ordering" 	=> $menus->getOrdering(),
+										"linkto" 	=> $menus->getLinkto(),
 										"subof" 	=> ($menus->getSubof()=="") ? null : $menus->getSubof()
 										));
 		$menuID = $this->db->insert_id();
@@ -46,6 +47,7 @@ class DaoMenu extends CI_Model{
 		// UPDATE MENU
 		$menu = array(
 					"ordering"	=> $menus->getOrdering(),
+					"linkto"	=> $menus->getLinkto(),
 					"subof"		=> ($menus->getSubof()=="") ? null : $menus->getSubof());
 		$this->db->where('menuid', $menuid);
 		$this->db->update('MENUS', $menu);

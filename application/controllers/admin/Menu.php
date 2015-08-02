@@ -21,7 +21,14 @@
 		public function addmenu(){
 			$this->load->model('dao/DaoMenu');
 			$data["topMenu"] = $this->DaoMenu->listTopMenu();
+			$data["menus"] = false;
 			$this->load->view('admin-kh4it/addmenu', $data);
+		}
+
+		public function updatemenu(){
+			$this->load->model('dao/DaoMenu');
+			$data["topMenu"] = $this->DaoMenu->listTopMenu();
+			$this->load->view('admin-kh4it/updatemenu', $data);
 		}
 
 		public function addmenupro(){
@@ -30,6 +37,7 @@
 			
 			$this->DtoMenu->setOrdering($this->input->post('ordering'));
 			$this->DtoMenu->setSubof($this->input->post('subof'));
+			$this->DtoMenu->setLinkto($this->input->post('linkto'));
 			$this->DtoMenu->setMenuDetails($this->input->post('menuDetails'));
 			$result = $this->DaoMenu->addNewMenu($this->DtoMenu);
 			echo json_encode($result);
@@ -55,6 +63,7 @@
 			$this->DtoMenu->setOrdering($this->input->post('ordering'));
 			$this->DtoMenu->setSubof($this->input->post('subof'));
 			$this->DtoMenu->setMenuid($this->input->post('menuid'));
+			$this->DtoMenu->setLinkto($this->input->post('linkto'));
 			$this->DtoMenu->setMenuDetails($this->input->post('menuDetails'));
 			$result = $this->DaoMenu->updateMenu($this->DtoMenu);
 			echo json_encode($result);
