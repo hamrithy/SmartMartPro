@@ -108,7 +108,7 @@
 
                 <div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
 
-
+                <!-- BEGIN MAIN MENU -->
                 <ul id="MAIN_MENU">
                     <script type="text/javascript">
                         var menus = eval('<?php $this->menus->generateMenu()?>');
@@ -131,7 +131,7 @@
                                     str += '<li class="mega-menu sub-menu '+current+'">'+
                                                 '<a href="<?php echo site_url()?>'+value.linkto+'">'+
                                                     '<div>'+value.title+'</div>'+
-                                                    '<span>Lets Start</span>'+
+                                                    '<span>'+value.description+'</span>'+
                                                 '</a>';
                                     menuid = value.menuid;
                                     $.each(menus,function(key,value){
@@ -175,6 +175,7 @@
                         }
                     </script>
                 </ul>
+                <!-- END MAIN MENU -->
 
                 <!-- Top Cart
                 ============================================= -->
@@ -224,7 +225,8 @@
 
             </div>
 
-        </nav><!-- #primary-menu end -->
+        </nav>
+        <!-- PRIMARY END MENU -->
 
     </div>
     <!-- END NAVIGATION AND SEARCH -->

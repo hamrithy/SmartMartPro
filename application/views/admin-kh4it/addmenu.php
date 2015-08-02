@@ -378,6 +378,7 @@
 				if($menus){
 					foreach($menus as $menu){?>
 						var languageName = '<?php echo $menu->languagename ?>';
+						$("#subof").val("<?php echo $menu->subof?>");
 						$("#menuid").val("<?php echo $menu->menuid?>");
 						$("#txtLinkto").val("<?php echo $menu->linkto?>");
 						$("."+languageName).find("#txtTitle").val($.trim('<?php echo trim($menu->title)?>'));
