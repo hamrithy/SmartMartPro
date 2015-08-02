@@ -138,8 +138,8 @@
 														<div class="form-group">
 															<label>Description<span class="required">*</span></label>
 															<textarea class="form-control" name="txtendescription" id="txtendescription">
-																	
 															</textarea>
+															<div id="mmtext"></div>
 														</div>
 														
 		
@@ -174,11 +174,10 @@
 						<!-- left -->
 						<div class="col-sm-4">
 									<div class="form-group">
-										<label>Parent</label>
+										<label>SubOf</label>
 										<select class="form-control" name="txtcategory" id="txtcategory">
-											<option></option>
-											<option value="1">SportEvent</option>
-											<option value="2">WorkShop</option>
+											<option value="">Root</option>
+											
 										</select>								
 									</div>
 									
@@ -187,7 +186,7 @@
 										<input type="text" class="form-control" name="txtorder" id="txtorder" value="" required="required"/>
 									</div>									
 									<div class="form-group">
-										<button type="button" id="btnaddcats" class="btn btn-success">Save</button>
+										<button type="submit" id="btnaddcats" class="btn btn-success" onclick="addcategorypro()">Save</button>
 										<button class="btn btn-danger">Cancel</button>
 									</div>		
 								</div><!-- /.col-sm-4 -->
@@ -300,7 +299,10 @@
 			filebrowserImageBrowseUrl : '<?php echo base_url(); ?>/public/responsivefilemanager/filemanager/dialog.php?type=1&editor=ckeditor&fldr=' }); 
 	</script>
 	<script>
-		$("#btnaddcats").click(function(){
+	function addcategorypro(){
+		$("#frmcategory").submit(function(e){
+			e.preventDefault();
+			
 			$.ajax({
 			type: "POST",
 			url: '<?php  echo site_url()?>admin/category/addcategorypro',
@@ -312,21 +314,83 @@
 					{
 							"languageid": "1",
 							"title": $("#txtkhtitle").val(),
-							"description": $("#txtkhdescription").html()
+							"description": CKEDITOR.instances.txtkhdescription.getData()
 					},
 					{
 							"languageid":"2",
 							"title": $("#txtentitle").val(),
-							"description": $("#txtendescription").html()
+							"description": CKEDITOR.instances.txtendescription.getData()
 					}
 				]
 			},
 			success: function(data){
+				window.location.href="<?php echo site_url("admin/category");?>";
 				console.log("DATA:",data);
 			}
 		});
 		});
+	}
 		
+
+		$.post("<?php  echo site_url()?>admin/category/showcategory", function(data){
+			for(var i=0; i<data.length; i++){
+				$("#txtcategory").append(new Option(""+data[i].title+"", ""+data[i].categoryid+""));
+			}	
+		});
+		
+	</script>
+
+	<script>
+		<?php if($catid != null){ ?>
+			
+			$.post("<?php  echo site_url()?>admin/category/getcategory/<?php echo $catid ?>",function(data){
+				$("#btnaddcats").attr("onclick","frmcategoryupdate("+data[0].categoryid+")");
+				$("#txtorder").val(data[0].ordering);
+				$('#txtcategory option[value='+data[0].subof+']').prop('selected', true);
+				//setvalue for en
+				$("#txtentitle").val(data[1].title);
+				CKEDITOR.instances.txtendescription.setData(data[1].description);
+
+				//setvalue for kh
+				$("#txtkhtitle").val(data[0].title);
+				CKEDITOR.instances.txtkhdescription.setData(data[0].description);
+			});
+
+		<?php } ?>
+		function frmcategoryupdate(id){
+			var cid= id;
+			$("#frmcategory").submit(function(e){
+				e.preventDefault();
+				
+				$.ajax({
+					type: "POST",
+					url: '<?php  echo site_url()?>admin/category/updatecategorypro',
+					dataType: 'json',
+					data: {
+						categoryid : cid,
+						txtorder: $("#txtorder").val(),
+						txtcategory: $("#txtcategory").val(),
+						CategoryDetail:[
+							{
+									"languageid": "1",
+									"title": $("#txtkhtitle").val(),
+									"description": CKEDITOR.instances.txtkhdescription.getData()
+							},
+							{
+									"languageid":"2",
+									"title": $("#txtentitle").val(),
+									"description": CKEDITOR.instances.txtendescription.getData()
+							}
+						]
+					},
+					success: function(data){
+						window.location.href="<?php echo site_url("admin/category");?>";
+						console.log("DATA:",data);
+					}
+				});
+
+			});
+		}
 	</script>
 		
 	</body>
