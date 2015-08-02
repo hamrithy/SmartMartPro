@@ -349,8 +349,8 @@
 					data: {
 						menuid : 	$("#menuid").val(),
 						ordering: 	$("#txtOrder").val(),
-						//subof: 		$("#subof").val(),
-						//linkto: 	"/contact",
+						subof: 		$("#subof").val(),
+						linkto: 	"/contact",
 						menuDetails: data
 					},
 					success: function(data){
@@ -376,6 +376,7 @@
 						$("."+languageName).find("#txtTitle").val($.trim('<?php echo trim($menu->title)?>'));
 						$("."+languageName).find("#txtDescription").val($.trim('<?php echo trim($menu->description)?>'));
 						document.frmAddMenu.action="<?php echo site_url('admin/menu/updatemenupro')?>";
+						$("#txtOrder").val("<?php echo $menu->ordering?>");
 					<?php
 					}?>
 					document.title = "Update Menu";
