@@ -279,7 +279,7 @@
 
                             <div class="spost clearfix">
                                 <div class="entry-image">
-                                    <a href="javascript:;"><img src="<?php echo base_url('public/style_front/images/shop/small/8.jpg')?>" alt="Image"></a>
+                                    <a href="<?php echo site_url('product/1')?>"><img src="<?php echo base_url('public/style_front/images/shop/small/8.jpg')?>" alt="Image"></a>
                                 </div>
                                 <div class="entry-c">
                                     <div class="entry-title">

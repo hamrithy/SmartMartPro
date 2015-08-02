@@ -49,7 +49,7 @@
 
                         <h3>Send us an Email</h3>
 
-                        <div id="contact-form-result" data-notify-type="success" data-notify-msg="<i class=icon-ok-sign></i> Message Sent Successfully!"></div>
+                        <div id="contact-form-result" data-notify-type="success" data-notify-msg="<i class=icon-ok-sign></i> Your Email Sent Successfully!"></div>
 
                         <form class="nobottommargin" id="contact_form" name="contact_form" action="<?php echo base_url('contact/sendemail')?>" method="post">
 
