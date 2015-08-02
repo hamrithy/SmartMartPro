@@ -21,7 +21,14 @@
 		public function addmenu(){
 			$this->load->model('dao/DaoMenu');
 			$data["topMenu"] = $this->DaoMenu->listTopMenu();
+			$data["menus"] = false;
 			$this->load->view('admin-kh4it/addmenu', $data);
+		}
+
+		public function updatemenu(){
+			$this->load->model('dao/DaoMenu');
+			$data["topMenu"] = $this->DaoMenu->listTopMenu();
+			$this->load->view('admin-kh4it/updatemenu', $data);
 		}
 
 		public function addmenupro(){
@@ -30,6 +37,7 @@
 			
 			$this->DtoMenu->setOrdering($this->input->post('ordering'));
 			$this->DtoMenu->setSubof($this->input->post('subof'));
+			$this->DtoMenu->setLinkto($this->input->post('linkto'));
 			$this->DtoMenu->setMenuDetails($this->input->post('menuDetails'));
 			$result = $this->DaoMenu->addNewMenu($this->DtoMenu);
 			echo json_encode($result);
@@ -43,24 +51,22 @@
 
 		public function getmenu($id){
 			$this->load->model("dao/DaoMenu");
-			
-			$data["menu"] = $this->DaoMenu->getMenu($id);
+			$data["menus"] = $this->DaoMenu->getMenuById($id);
 			$data["topMenu"] = $this->DaoMenu->listTopMenu();
-			$this->load->view("admin-kh4it/addmenu" , $data);
+			$this->load->view("admin-kh4it/addmenu", $data);
 		}
 
-		public function updatemenu(){
+		public function updatemenupro(){
 			$this->load->model('dao/DaoMenu');
 			$this->load->model('dto/DtoMenu');
-			//$this->DtoMenu->setTitle($this->input->post('txtTitle'));
-			//$this->DtoMenu->setLinkto($this->input->post('txtLinkto'));
-			$this->DtoMenu->setMenuid($this->input->post('txtMenuid'));
-			$this->DtoMenu->setOrdering($this->input->post('txtOrdering'));
-			$this->DtoMenu->setSubof($this->input->post('txtSubof'));
+			
+			$this->DtoMenu->setOrdering($this->input->post('ordering'));
+			$this->DtoMenu->setSubof($this->input->post('subof'));
+			$this->DtoMenu->setMenuid($this->input->post('menuid'));
+			$this->DtoMenu->setLinkto($this->input->post('linkto'));
 			$this->DtoMenu->setMenuDetails($this->input->post('menuDetails'));
-			$languageID = $this->input->post('languageID');
-			$this->DaoMenu->updateMenu($this->DtoMenu, $languageID);
-			redirect("admin/menu");
+			$result = $this->DaoMenu->updateMenu($this->DtoMenu);
+			echo json_encode($result);
 		}
 	}
 ?>

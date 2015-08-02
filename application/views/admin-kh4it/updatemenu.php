@@ -53,7 +53,6 @@
 		
 		<!--  CSS (REQUIRED ALL PAGE)-->
 		<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-	
 	</head>
  
 	<body class="tooltips">
@@ -103,36 +102,18 @@
 						<form role="form" name="frmAddMenu" id="frmAddMenu" action="<?php echo site_url('admin/menu/addmenupro')?>" enctype="multipart/form-data" method="post" accept-charset="UTF-8">
 						
 						<!-- Tab -->
+
 						<div class="col-sm-8">
 							<div class="panel with-nav-tabs panel-info">
 							  	<div class="panel-heading">
 									<ul class="nav nav-tabs">
-										<li class=""><a href="#panel-home-2" data-toggle="tab"><img src="<?php echo base_url()?>/public/assets/img/eng.png"> English</a></li>
-										<li class="active"><a href="#panel-profile-2" data-toggle="tab"><img src="<?php echo base_url()?>/public/assets/img/kh.png"> Khmer</a></li>
+										<li class="active" style="float:right;  "><a href="#panel-profile-2" data-toggle="tab"><select class="form-control" name="subof" id="subof"><option><img src="<?php echo base_url()?>/public/assets/img/kh.png">Khmer</option><option><img src="<?php echo base_url()?>/public/assets/img/kh.png">English</option></select></a></li>
 									</ul>
 								</div>
 								<div class="collapse in" id="panel-collapse-2">
 										 <div class="panel-body">
 												<div class="tab-content">
 													<input type="hidden" id="menuid" />
-													<div id="panel-home-2" class="tab-pane fade ENGLISH">
-														
-														<!-- Put Control Englist here -->
-														<div class="form-group">
-															<input type="hidden" class="" id="languageid" value="2" />
-															<label>Title<span class="required">*</span></label>
-															<input type="text" class="form-control" name="txtentitle" id="txtTitle" required />
-														</div>
-														
-														<div class="form-group">
-															<label>Description<span class="required">*</span></label>
-															<textarea class="form-control" name="txtendescription" id="txtDescription">
-																	
-															</textarea>
-														</div>
-														
-		
-													</div>
 													<div id="panel-profile-2" class="tab-pane fade  active in KHMER">
 														
 														<!-- Put Control Khmer here -->
@@ -336,7 +317,6 @@
 	<script type="text/javascript">
 
 		$(function(){
-			var action = "inserted";
 			$("form#frmAddMenu").submit(function(e){
 				e.preventDefault();
 				var data = [];
@@ -361,10 +341,10 @@
 					},
 					success: function(data){
 						if(data==true){
-							alert("You have been "+action+" successfully.");
+							alert("You have been inserted successfully.");
 							location.href= "<?php echo site_url('admin/menu')?>";
 						}else{
-							alert("You have not been "+action+" successfully.");
+							alert("You have not been inserted successfully.");
 						}
 						console.log("SUCCESSDATA:",data);
 					},
@@ -375,11 +355,10 @@
 			});
 
 			<?php
-				if($menus){
+				if($menus!=null){
 					foreach($menus as $menu){?>
 						var languageName = '<?php echo $menu->languagename ?>';
 						$("#menuid").val("<?php echo $menu->menuid?>");
-						$("#txtLinkto").val("<?php echo $menu->linkto?>");
 						$("."+languageName).find("#txtTitle").val($.trim('<?php echo trim($menu->title)?>'));
 						$("."+languageName).find("#txtDescription").val($.trim('<?php echo trim($menu->description)?>'));
 						document.frmAddMenu.action="<?php echo site_url('admin/menu/updatemenupro')?>";
@@ -387,7 +366,6 @@
 					<?php
 					}?>
 					document.title = "Update Menu";
-					action="updated";
 				<?php
 				}
 			?>

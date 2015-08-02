@@ -10,6 +10,7 @@ class DaoMenu extends CI_Model{
 	public function addNewMenu(DtoMenu $menus){
 		$this->db->trans_begin();
 		$this->db->insert("MENUS",array("ordering" 	=> $menus->getOrdering(),
+										"linkto" 	=> $menus->getLinkto(),
 										"subof" 	=> ($menus->getSubof()=="") ? null : $menus->getSubof()
 										));
 		$menuID = $this->db->insert_id();
@@ -28,7 +29,7 @@ class DaoMenu extends CI_Model{
 	}
 	
 	public function getAllMenus(){
-		$this->db->select('DISTINCT(A.menuid),A.subof, A.ordering, A.linkto, C.title, C.description, C.languageid,, (SELECT title FROM MENUDETAIL WHERE menuid=A.subof AND languageid=1) AS suboftitle');
+		$this->db->select('DISTINCT(A.menuid),A.subof, A.ordering, A.linkto, C.title, C.description, C.languageid, (SELECT title FROM MENUDETAIL WHERE menuid=A.subof AND languageid=1) AS suboftitle');
 		$this->db->from('MENUS A');
 		$this->db->join('MENUS B', 'A.subof=B.menuid', 'left');
 		$this->db->join('MENUDETAIL C', 'A.menuid=C.menuid');
@@ -39,20 +40,23 @@ class DaoMenu extends CI_Model{
 		return $query->result();
 	}
 	
-	public function updateMenu(DtoMenu $menu, $languageid){
+	public function updateMenu(DtoMenu $menus){
 		$this->db->trans_begin();
 
+		$menuid = $menus->getMenuid();
 		// UPDATE MENU
 		$menu = array(
-					"ordering"	=> $menu->getOrdering(),
-					"subof"		=> $menu->getSubof());
-		$this->db->where('menuid', $menu->getMenuid());
-		$this->db->update('MENU', $menu);
-
-		// UDPDATE MAIN MENU
+					"ordering"	=> $menus->getOrdering(),
+					"linkto"	=> $menus->getLinkto(),
+					"subof"		=> ($menus->getSubof()=="") ? null : $menus->getSubof());
 		$this->db->where('menuid', $menuid);
-		$this->db->where('languageid', $languageid);
-		$this->db->update('MENUS', $menu->getMenuDetails());
+		$this->db->update('MENUS', $menu);
+		// UDPDATE MAIN MENU
+		foreach($menus->getMenuDetails() as $menuDetails){
+			$this->db->where('menuid', $menuid);
+			$this->db->where('languageid', $menuDetails['languageid']);
+			$this->db->update('MENUDETAIL', $menuDetails);
+		}
 		if($this->db->trans_status()===FALSE){
 			$this->db->trans_rollback();
 			return FALSE;
@@ -89,6 +93,17 @@ class DaoMenu extends CI_Model{
 		$this->db->where('B.languageid', $languageid);
 		$query = $this->db->get();
 		return $query->result();
+	}
+
+	public function getMenuById($id){
+		$this->db->select('A.menuid,A.subof, A.ordering, A.linkto, C.title, C.description, C.languageid,D.languagename');
+		$this->db->from('MENUS A');
+		$this->db->join('MENUS B', 'A.subof=B.menuid', 'left');
+		$this->db->join('MENUDETAIL C', 'A.menuid=C.menuid');
+		$this->db->join("LANGUAGES D", 'C.languageid = D.languageid');
+		$this->db->where('A.menuid',$id);
+		$query = $this->db->get();
+		return $query->result();	
 	}
 
 	/*public function addMenu(DtoMenu $menu){
