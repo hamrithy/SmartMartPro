@@ -176,7 +176,11 @@
 									<div class="form-group">
 										<label>Ordering<span class="required">*</span></label>
 										<input type="text" class="form-control" name="txtorder" id="txtOrder" value="1" required="required"/>
-									</div>									
+									</div>					
+									<div class="form-group">
+										<label>Link To<span class="required">*</span></label>
+										<input type="text" class="form-control" name="txtLinkto" id="txtLinkto" value="#" required="required"/>
+									</div>													
 									<div class="form-group">
 										<button type="submit" class="btn btn-success">Save</button>
 										<button class="btn btn-danger">Cancel</button>
@@ -350,7 +354,7 @@
 						menuid : 	$("#menuid").val(),
 						ordering: 	$("#txtOrder").val(),
 						subof: 		$("#subof").val(),
-						linkto: 	"/contact",
+						linkto: 	$("#txtLinkto").val(),
 						menuDetails: data
 					},
 					success: function(data){
