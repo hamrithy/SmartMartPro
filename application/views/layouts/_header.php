@@ -125,7 +125,6 @@
                                 var current = '';
                                 console.log(value);
                                 if(value.level=="0"){
-                                    alert(value.menuid);
                                     if(currentMenuID == value.menuid){
                                         current = 'current';
                                     }
@@ -143,10 +142,8 @@
                                                             '<li class="mega-menu-title"><a href="#"><div>'+value.title+'</div></a>';
 
                                             $.each(menus,function(key,value){
-                                                alert(value.level + " =2 " + menuidLevel1  + "=" + value.menuid);
                                                 if((value.level=="2") && (menuidLevel1==value.subof)){
                                                     countLevel2++;
-                                                    alert(1);
                                                     countLevel2++;
                                                     strLevel2 +='<li>'+
                                                                     '<a href="#">'+
@@ -155,9 +152,7 @@
                                                                 '</li>';
                                                 }
                                             });
-                                            alert(countLevel2);
                                             if(countLevel2>0){
-                                                alert(strLevel2);
                                                 strLevel1 += '<ul>'+ strLevel2 + '</ul>';
                                                 strLevel2 ="";
                                             }
@@ -178,7 +173,6 @@
                             console.log(str);
                             $("#MAIN_MENU").html(str);
                         }
-                        //alert(menus);
                     </script>
                 </ul>
 
