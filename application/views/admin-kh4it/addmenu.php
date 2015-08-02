@@ -53,7 +53,6 @@
 		
 		<!--  CSS (REQUIRED ALL PAGE)-->
 		<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-
 	</head>
  
 	<body class="tooltips">
@@ -100,7 +99,7 @@
 					<div class="col-sm-12">
 					
 					<div>
-						<form role="form" id="frmAddMenu" action="<?php echo site_url('admin/menu/addmenupro')?>" enctype="multipart/form-data" method="post" accept-charset="UTF-8">
+						<form role="form" name="frmAddMenu" id="frmAddMenu" action="<?php echo site_url('admin/menu/addmenupro')?>" enctype="multipart/form-data" method="post" accept-charset="UTF-8">
 						
 						<!-- Tab -->
 						<div class="col-sm-8">
@@ -114,11 +113,12 @@
 								<div class="collapse in" id="panel-collapse-2">
 										 <div class="panel-body">
 												<div class="tab-content">
-													<div id="panel-home-2" class="tab-pane fade">
+													<input type="hidden" id="menuid" />
+													<div id="panel-home-2" class="tab-pane fade ENGLISH">
 														
 														<!-- Put Control Englist here -->
 														<div class="form-group">
-															<input type="hidden" id="languageid" value="2" />
+															<input type="hidden" class="" id="languageid" value="2" />
 															<label>Title<span class="required">*</span></label>
 															<input type="text" class="form-control" name="txtentitle" id="txtTitle" required />
 														</div>
@@ -132,7 +132,7 @@
 														
 		
 													</div>
-													<div id="panel-profile-2" class="tab-pane fade  active in">
+													<div id="panel-profile-2" class="tab-pane fade  active in KHMER">
 														
 														<!-- Put Control Khmer here -->
 														<div class="form-group">
@@ -147,10 +147,7 @@
 																	
 															</textarea>
 														</div>
-													
-													
-														
-														
+						
 													</div><!-- /.tab-pane fade -->
 												</div><!-- /.tab-content -->
 										  </div><!-- /.panel-body -->
@@ -253,8 +250,7 @@
 				<?php $this->load->view('admin-kh4it/_footer') ?>
 				
 			<!-- END FOOTER -->
-				
-				
+
 			</div><!-- /.page-content -->
 		</div><!-- /.wrapper -->
 		<!-- END PAGE CONTENT -->
@@ -351,9 +347,10 @@
 					url: $("form#frmAddMenu").attr("action"),
 					dataType: 'json',
 					data: {
+						menuid : 	$("#menuid").val(),
 						ordering: 	$("#txtOrder").val(),
 						subof: 		$("#subof").val(),
-						linkto: 	"/contact",
+						//linkto: 	"/contact",
 						menuDetails: data
 					},
 					success: function(data){
@@ -370,7 +367,22 @@
 					}
 				});
 			});
+
+			<?php
+				if($menus!=null){
+					foreach($menus as $menu){?>
+						var languageName = '<?php echo $menu->languagename ?>';
+						$("#menuid").val("<?php echo $menu->menuid?>");
+						$("."+languageName).find("#txtTitle").val($.trim('<?php echo trim($menu->title)?>'));
+						$("."+languageName).find("#txtDescription").val($.trim('<?php echo trim($menu->description)?>'));
+						document.frmAddMenu.action="<?php echo site_url('admin/menu/updatemenupro/'.$menu->menuid)?>";
+					<?php
+					}?>
+					document.title = "Update Menu";
+				<?php
+				}
+			?>
 		});
 	</script>
 	</body>
-</html>
+</html>P
