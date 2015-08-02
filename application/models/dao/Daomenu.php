@@ -91,6 +91,7 @@ class DaoMenu extends CI_Model{
 		$this->db->join('MENUDETAIL B','A.menuid = B.menuid');
 		//$this->db->where('A.subof', null);
 		$this->db->where('B.languageid', $languageid);
+		$this->db->where('A.level<',"2");
 		$query = $this->db->get();
 		return $query->result();
 	}
