@@ -4,8 +4,7 @@ class DtoCategory{
 	private $categoryid;
 	private $ordering;
 	private $subof;
-	private $seotitle;
-	private $seodescription;
+
 	
 	private $languageid;
 	private $title;
@@ -35,22 +34,6 @@ class DtoCategory{
 	
 	public function setSubof($subof){
 		$this->subof = $subof;
-	}
-	
-	public function getSeotitle(){
-		return $this->seotitle;
-	}
-	
-	public function setSeotitle($seotitle){
-		$this->seotitle = $seotitle;
-	}
-	
-	public function getSeodescription(){
-		return $this->seodescription;
-	}
-	
-	public function setSeodescription($seodescription){
-		$this->seodescription = $seodescription;
 	}
 	
 	public function getLanguageid(){

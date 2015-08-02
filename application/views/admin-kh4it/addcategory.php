@@ -74,7 +74,7 @@
 			<!-- END TOP NAV -->
 			
 			<script type="text/javascript">
-			$(document).ready(function() {
+			/*$(document).ready(function() {
 
 						<?php
 						$getPost = $getPost;
@@ -95,7 +95,7 @@
 							 }
 						}
 						 ?>
-			});
+			});*/
 		  	</script>
 			
 			<!-- BEGIN SIDEBAR LEFT -->
@@ -113,7 +113,7 @@
 					
 					
 					
-					<form role="form" action="addcategorypro" enctype="multipart/form-data" method="post" accept-charset="UTF-8">
+					<form role="form" id="frmcategory" method="post" accept-charset="UTF-8">
 						
 						<!-- Tab -->
 						<div class="col-sm-8">
@@ -132,7 +132,7 @@
 														<!-- Put Control Englist here -->
 														<div class="form-group">
 															<label>Title<span class="required">*</span></label>
-															<input type="text" class="form-control" name="txtentitle" id="txttitle" required />
+															<input type="text" class="form-control" name="txtentitle" id="txtentitle" required />
 														</div>
 														
 														<div class="form-group">
@@ -175,7 +175,7 @@
 						<div class="col-sm-4">
 									<div class="form-group">
 										<label>Parent</label>
-										<select class="form-control" name="category" id="category">
+										<select class="form-control" name="txtcategory" id="txtcategory">
 											<option></option>
 											<option value="1">SportEvent</option>
 											<option value="2">WorkShop</option>
@@ -187,7 +187,7 @@
 										<input type="text" class="form-control" name="txtorder" id="txtorder" value="" required="required"/>
 									</div>									
 									<div class="form-group">
-										<button type="submit" class="btn btn-success">Save</button>
+										<button type="button" id="btnaddcats" class="btn btn-success">Save</button>
 										<button class="btn btn-danger">Cancel</button>
 									</div>		
 								</div><!-- /.col-sm-4 -->
@@ -298,6 +298,35 @@
 			{ filebrowserBrowseUrl : '<?php echo base_url(); ?>/public/responsivefilemanager/filemanager/dialog.php?type=2&editor=ckeditor&fldr=', 
 			filebrowserUploadUrl : '<?php echo base_url(); ?>/public/responsivefilemanager/filemanager/dialog.php?type=2&editor=ckeditor&fldr=', 
 			filebrowserImageBrowseUrl : '<?php echo base_url(); ?>/public/responsivefilemanager/filemanager/dialog.php?type=1&editor=ckeditor&fldr=' }); 
+	</script>
+	<script>
+		$("#btnaddcats").click(function(){
+			$.ajax({
+			type: "POST",
+			url: '<?php  echo site_url()?>admin/category/addcategorypro',
+			dataType: 'json',
+			data: {
+				txtorder: $("#txtorder").val(),
+				txtcategory: $("#txtcategory").val(),
+				CategoryDetail:[
+					{
+							"languageid": "1",
+							"title": $("#txtkhtitle").val(),
+							"description": $("#txtkhdescription").html()
+					},
+					{
+							"languageid":"2",
+							"title": $("#txtentitle").val(),
+							"description": $("#txtendescription").html()
+					}
+				]
+			},
+			success: function(data){
+				console.log("DATA:",data);
+			}
+		});
+		});
+		
 	</script>
 		
 	</body>
