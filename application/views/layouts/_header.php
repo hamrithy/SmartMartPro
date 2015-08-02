@@ -139,14 +139,14 @@
                                             menuidLevel1 = value.menuid;
                                             countLevel1++;
                                             strLevel1 +='<ul>'+
-                                                            '<li class="mega-menu-title"><a href="#"><div>'+value.title+'</div></a>';
+                                                            '<li class="mega-menu-title"><a href="'+value.linkto+'"><div>'+value.title+'</div></a>';
 
                                             $.each(menus,function(key,value){
                                                 if((value.level=="2") && (menuidLevel1==value.subof)){
                                                     countLevel2++;
                                                     countLevel2++;
                                                     strLevel2 +='<li>'+
-                                                                    '<a href="#">'+
+                                                                    '<a href="'+value.linkto+'">'+
                                                                         '<div>'+value.title+'</div>'+
                                                                     '</a>'
                                                                 '</li>';
