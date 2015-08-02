@@ -19,7 +19,7 @@ class Menus{
 		$this->CI->db->from("MENUS A");
 		$this->CI->db->join("MENUS B", "A.subof =  B.menuid", "left");
 		$this->CI->db->join("MENUDETAIL C", "A.menuid = C.menuid");
-		$this->CI->db->where("C.languageid",1);
+		$this->CI->db->where("C.languageid", lang('lang_id'));
 		$this->CI->db->order_by("A.subof, A.ordering");
 		$query = $this->CI->db->get();
 		if($query->num_rows() >0){

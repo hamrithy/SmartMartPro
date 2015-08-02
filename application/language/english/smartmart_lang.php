@@ -35,6 +35,7 @@ $lang['client'] = 'CLIENT';
 $lang['recent_post'] = 'RECENT POST';
 $lang['blog_roll'] = 'BLOGROLL';
 $lang['lang_abbr'] = "en";
+$lang['lang_id'] = '2';
 
 
 

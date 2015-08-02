@@ -8,5 +8,6 @@ $lang['gift']= 'Gift';
 $lang['information']= 'ពត៌មាន';
 $lang['contact']= 'ទំនាក់ទំនង';
 $lang['lang_abbr'] = "kh";
+$lang['lang_id'] = '1';
 
 ?>
