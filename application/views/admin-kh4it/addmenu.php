@@ -342,9 +342,9 @@
 				var data = [];
 				$('.tab-content .tab-pane').each(function(index, value){
 					data.push({
-						"languageid" : $(this).find("#languageid").val(),
-						"title" 	 : $(this).find("#txtTitle").val(),
-						"description": $(this).find("#txtDescription").val()
+						"languageid" : $.trim($(this).find("#languageid").val()),
+						"title" 	 : $.trim($(this).find("#txtTitle").val()),
+						"description": $.trim($(this).find("#txtDescription").val())
 					});
 				});
 				console.log(data);
@@ -353,10 +353,10 @@
 					url: $("form#frmAddMenu").attr("action"),
 					dataType: 'json',
 					data: {
-						menuid : 	$("#menuid").val(),
-						ordering: 	$("#txtOrder").val(),
-						subof: 		$("#subof").val(),
-						linkto: 	$("#txtLinkto").val(),
+						menuid : 	$.trim($("#menuid").val()),
+						ordering: 	$.trim($("#txtOrder").val()),
+						subof: 		$.trim($("#subof").val()),
+						linkto: 	$.trim($("#txtLinkto").val()),
 						menuDetails: data
 					},
 					success: function(data){

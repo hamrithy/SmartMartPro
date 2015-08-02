@@ -89,7 +89,7 @@ class DaoMenu extends CI_Model{
 		$this->db->select('A.menuid, B.title');
 		$this->db->from('MENUS A');
 		$this->db->join('MENUDETAIL B','A.menuid = B.menuid');
-		$this->db->where('A.subof', null);
+		//$this->db->where('A.subof', null);
 		$this->db->where('B.languageid', $languageid);
 		$query = $this->db->get();
 		return $query->result();

@@ -108,79 +108,74 @@
 
                 <div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
 
-
-                <ul id="MAIN_MENU">
-                    <script type="text/javascript">
-                        var menus = eval('<?php $this->menus->generateMenu()?>');
-                        if(menus!=null || menus!=""){
-                            var str = '';
-                            var strLevel1 = '<div class="mega-menu-content style-2 col-4 clearfix">';
-                            var strLevel2 = '';
-                            var countLevel1 = 0;
-                            var countLevel2 = 0;
-                            var menuid;
-                            var menuidLevel1;
-                            var currentMenuID = "1";
-                            $.each(menus,function(key,value){
-                                var current = '';
-                                console.log(value);
-                                if(value.level=="0"){
-                                    alert(value.menuid);
-                                    if(currentMenuID == value.menuid){
-                                        current = 'current';
-                                    }
-                                    str += '<li class="mega-menu sub-menu '+current+'">'+
-                                                '<a href="<?php echo site_url()?>'+value.linkto+'">'+
-                                                    '<div>'+value.title+'</div>'+
-                                                    '<span>Lets Start</span>'+
-                                                '</a>';
-                                    menuid = value.menuid;
-                                    $.each(menus,function(key,value){
-                                        if((value.level=="1") && (menuid==value.subof)){
-                                            menuidLevel1 = value.menuid;
-                                            countLevel1++;
-                                            strLevel1 +='<ul>'+
-                                                            '<li class="mega-menu-title"><a href="#"><div>'+value.title+'</div></a>';
-
-                                            $.each(menus,function(key,value){
-                                                alert(value.level + " =2 " + menuidLevel1  + "=" + value.menuid);
-                                                if((value.level=="2") && (menuidLevel1==value.subof)){
-                                                    countLevel2++;
-                                                    alert(1);
-                                                    countLevel2++;
-                                                    strLevel2 +='<li>'+
-                                                                    '<a href="#">'+
-                                                                        '<div>'+value.title+'</div>'+
-                                                                    '</a>'
-                                                                '</li>';
-                                                }
-                                            });
-                                            alert(countLevel2);
-                                            if(countLevel2>0){
-                                                alert(strLevel2);
-                                                strLevel1 += '<ul>'+ strLevel2 + '</ul>';
-                                                strLevel2 ="";
-                                            }
-                                                    
-                                            strLevel1 +='   </li>';
-                                            strLevel1 +='</ul>';
-                                        }
-                                    });
-                                    if(countLevel1>0){
-                                        strLevel1 +='</div>';
-                                        str +=strLevel1;
-                                        strLevel1="";
-                                    }
-
-                                    str +='</li>'
-                                }
-                            });
-                            console.log(str);
-                            $("#MAIN_MENU").html(str);
-                        }
-                        //alert(menus);
-                    </script>
-                </ul>
+                <ul>
+                    <li class="current"><a href="<?php echo site_url('home')?>"><div><?php echo lang('home') ?></div><span>Lets Start</span></a>
+                        
+                    </li>
+                        <!-- Mega Menu
+                        ============================================= -->
+                        <li class="mega-menu"><a href="#"><div><?php echo lang('product') ?></div><span>Out of the Box</span></a>
+                            <div class="mega-menu-content style-2 col-4 clearfix">
+                                <ul>
+                                    <li class="mega-menu-title"><a href="#"><div>Footwear</div></a>
+                                        <ul>
+                                            <li><a href="#"><div>Casual Shoes</div></a></li>
+                                            <li><a href="#"><div>Formal Shoes</div></a></li>
+                                            <li><a href="#"><div>Sports shoes</div></a></li>
+                                            <li><a href="#"><div>Flip Flops</div></a></li>
+                                            <li><a href="#"><div>Slippers</div></a></li>
+                                            <li><a href="#"><div>Sports Sandals</div></a></li>
+                                            <li><a href="#"><div>Party Shoes</div></a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <ul>
+                                    <li class="mega-menu-title"><a href="#"><div>Clothing</div></a>
+                                        <ul>
+                                            <li><a href="#"><div>Casual Shirts</div></a></li>
+                                            <li><a href="#"><div>T-Shirts</div></a></li>
+                                            <li><a href="#"><div>Collared Tees</div></a></li>
+                                            <li><a href="#"><div>Pants / Trousers</div></a></li>
+                                            <li><a href="#"><div>Ethnic Wear</div></a></li>
+                                            <li><a href="#"><div>Jeans</div></a></li>
+                                            <li><a href="#"><div>Sweamwear</div></a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <ul>
+                                    <li class="mega-menu-title"><a href="#"><div>Accessories</div></a>
+                                        <ul>
+                                            <li><a href="#"><div>Bags &amp; Backpacks</div></a></li>
+                                            <li><a href="#"><div>Watches</div></a></li>
+                                            <li><a href="#"><div>Sunglasses</div></a></li>
+                                            <li><a href="#"><div>Wallets</div></a></li>
+                                            <li><a href="#"><div>Caps &amp; Hats</div></a></li>
+                                            <li><a href="#"><div>Jewellery</div></a></li>
+                                            <li><a href="#"><div>Belts, Ties</div></a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <ul>
+                                    <li class="mega-menu-title"><a href="#"><div>New Arrivals</div></a>
+                                        <ul>
+                                            <li><a href="#"><div>T-Shirts</div></a></li>
+                                            <li><a href="#"><div>Formal Shoes</div></a></li>
+                                            <li><a href="#"><div>Accessories</div></a></li>
+                                            <li><a href="#"><div>Watches</div></a></li>
+                                            <li><a href="#"><div>Perfumes</div></a></li>
+                                            <li><a href="#"><div>Belts, Ties</div></a></li>
+                                            <li><a href="#"><div>Formal Shirts</div></a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li><!-- .mega-menu end -->
+                        <!-- .mega-menu end -->
+                        <li><a href="<?php echo site_url('graduation')?>"><div><?php echo lang('graduation') ?></div><span>Awesome Works</span></a></li>
+                        <li><a href="<?php echo site_url('gift')?>"><div><?php echo lang('gift') ?></div><span>Awesome Works</span></a></li>
+                        <li><a href="<?php echo site_url('information')?>"><div><?php echo lang('information') ?></div><span>Latest News</span></a></li>
+                        <li><a href="<?php echo site_url('contact')?>"><div><?php echo lang('contact') ?></div><span>Get In Touch</span></a></li>
+                    </ul>
 
                 <!-- Top Cart
                 ============================================= -->
