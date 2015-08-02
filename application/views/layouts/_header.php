@@ -123,7 +123,6 @@
                             var currentMenuID = "1";
                             $.each(menus,function(key,value){
                                 var current = '';
-                                console.log(value);
                                 if(value.level=="0"){
                                     if(currentMenuID == value.menuid){
                                         current = 'current';
@@ -170,7 +169,6 @@
                                     str +='</li>'
                                 }
                             });
-                            console.log(str);
                             $("#MAIN_MENU").html(str);
                         }
                     </script>

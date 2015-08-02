@@ -333,6 +333,7 @@
 
 	<!-- MAIN APPS JS -->
 	<script src="<?php echo base_url(); ?>/public/assets/js/apps.js"></script>
+
 	<script type="text/javascript">
 
 		$(function(){
