@@ -58,7 +58,6 @@
 			$this->DtoMenu->setMenuDetails($this->input->post('menuDetails'));
 			$result = $this->DaoMenu->updateMenu($this->DtoMenu);
 			echo json_encode($result);
-			//redirect("admin/menu");
 		}
 	}
 ?>

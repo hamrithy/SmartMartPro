@@ -349,7 +349,7 @@
 					data: {
 						menuid : 	$("#menuid").val(),
 						ordering: 	$("#txtOrder").val(),
-						subof: 		$("#subof").val(),
+						//subof: 		$("#subof").val(),
 						//linkto: 	"/contact",
 						menuDetails: data
 					},
@@ -360,10 +360,10 @@
 						}else{
 							alert("You have not been inserted successfully.");
 						}
-						console.log("DATA:",data);
+						console.log("SUCCESSDATA:",data);
 					},
 					error: function(data){
-						console.log("DATA:",data);
+						console.log("SUCCESSDATA:",data);
 					}
 				});
 			});
@@ -375,7 +375,7 @@
 						$("#menuid").val("<?php echo $menu->menuid?>");
 						$("."+languageName).find("#txtTitle").val($.trim('<?php echo trim($menu->title)?>'));
 						$("."+languageName).find("#txtDescription").val($.trim('<?php echo trim($menu->description)?>'));
-						document.frmAddMenu.action="<?php echo site_url('admin/menu/updatemenupro/'.$menu->menuid)?>";
+						document.frmAddMenu.action="<?php echo site_url('admin/menu/updatemenupro')?>";
 					<?php
 					}?>
 					document.title = "Update Menu";

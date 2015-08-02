@@ -39,21 +39,20 @@ class DaoMenu extends CI_Model{
 		return $query->result();
 	}
 	
-	public function updateMenu(DtoMenu $menu){
+	public function updateMenu(DtoMenu $menus){
 		$this->db->trans_begin();
 
-		$menuid = $menu->getMenuid();
+		$menuid = $menus->getMenuid();
 		// UPDATE MENU
 		$menu = array(
-					"ordering"	=> $menu->getOrdering(),
-					"subof"		=> ($menu->getSubof()=="") ? null : $menu->getSubof());
+					"ordering"	=> $menus->getOrdering(),
+					"subof"		=> ($menus->getSubof()=="") ? null : $menus->getSubof());
 		$this->db->where('menuid', $menuid);
 		$this->db->update('MENUS', $menu);
-
-		print_r($menu);
 		// UDPDATE MAIN MENU
-		foreach($menu->getMenuDetails() as $menuDetails){
+		foreach($menus->getMenuDetails() as $menuDetails){
 			$this->db->where('menuid', $menuid);
+			$this->db->where('languageid', $menuDetails['languageid']);
 			$this->db->update('MENUDETAIL', $menuDetails);
 		}
 		if($this->db->trans_status()===FALSE){
