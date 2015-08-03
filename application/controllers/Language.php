@@ -16,7 +16,13 @@ class Language extends CI_Controller{
                     'value'  => 'kh',
                     'expire' => 604800
                 );
+        $cookie_languageID = array(
+                    'name'   => 'LANGUAGE_ID',
+                    'value'  => '1',
+                    'expire' => 604800
+                );
         $this->input->set_cookie($cookie);
+        $this->input->set_cookie($cookie_languageID);
         redirect($_SERVER['HTTP_REFERER']);
     }
 
@@ -26,7 +32,13 @@ class Language extends CI_Controller{
                     'value'  => 'en',
                     'expire' => 604800
                 );
+        $cookie_languageID = array(
+                    'name'   => 'LANGUAGE_ID',
+                    'value'  => '2',
+                    'expire' => 604800
+                );
         $this->input->set_cookie($cookie);
+        $this->input->set_cookie($cookie_languageID);
         redirect($_SERVER['HTTP_REFERER']);
     }
 }
