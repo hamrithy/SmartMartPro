@@ -366,11 +366,11 @@
 
 		 $.ajax({
              type: "POST",
-             url: '<?php  echo site_url()?>/category/showcategory',
+             url: '<?php  echo site_url()?>/admin/category/lstCategorypro',
              dataType: 'json',
              success: function(data){ 
                  $("#listCategory").empty();
-                 $("#tmplCategory").tmpl(data.recentPost).appendTo("#listCategory");
+                 $("#tmplCategory").tmpl(data.lstCategory).appendTo("#listCategory");
                  console.log("DATA:",data); 
              },
              error: function(data){
