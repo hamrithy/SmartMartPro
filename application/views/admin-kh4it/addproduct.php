@@ -90,7 +90,7 @@
 					
 					
 					
-					<form role="form" action="#" enctype="multipart/form-data" method="post" accept-charset="UTF-8">
+					<form role="form" id="frmAddProduct" action="#" enctype="multipart/form-data" method="post" accept-charset="UTF-8">
 						
 						<!-- Tab -->
 						<div class="col-sm-8">
@@ -109,11 +109,11 @@
 														<!-- Put Control Englist here -->
 														<div class="form-group">
 															<label>Title<span class="required">*</span></label>
-															<input type="text" class="form-control" name="txtentitle" id="txttitle" required />
+															<input type="text" class="form-control" name="txtentitle" id="txtentitle" required />
 														</div>
 														
 														<div class="form-group">
-															<label>Description<span class="required">*</span></label>
+															<label>Description</label>
 															<textarea class="form-control" name="txtendescription" id="txtendescription">
 																	
 															</textarea>
@@ -134,7 +134,7 @@
 														</div>
 														
 														<div class="form-group">
-															<label>លំអិត<span class="required">*</span></label>
+															<label>លំអិត</label>
 															<textarea class="form-control" name="txtkhdescription" id="txtkhdescription">
 																	
 															</textarea>
@@ -195,7 +195,7 @@
 									</div>
 									
 									<div class="form-group">
-										<button type="submit" class="btn btn-success">Save</button>
+										<button type="submit" id="btSave" class="btn btn-success">Save</button>
 										<button class="btn btn-danger">Cancel</button>
 									</div>
 									
@@ -336,33 +336,38 @@
 	</script>
 
 	<script>
-		/*$.ajax({
-			type: "POST",
-			url: '<?php  echo site_url()?>admin/product/addproductpro',
-			dataType: 'json',
-			data: {
-				CategoryID: "1",
-				SEOTitle: "CLOTHES SEO TITLE",
-				SEODescription: "CLOTHES DESCRIPITON SEO",
-				Thumbnail: "TEST.png",
-				ProductDetails:[
-					{
-							"languageid": "1",
-							"title": "KHMER",
-							"description": "KHMER DESCRIPTION"
-					},
-					{
-							"languageid":"2",
-							"title": "ENGLISH",
-							"description": "ENGLISH DESCRIPTION"
-					}
-				]
-			},
-			success: function(data){
-				console.log("DATA:",data);
-			}
+		$("form#frmAddProduct").submit(function(e){
+			e.preventDefault();
+			$.ajax({
+				type: "POST",
+				url: '<?php  echo site_url()?>admin/product/addproductpro',
+				dataType: 'json',
+				data: {
+					CategoryID: $("#listCategory").val(),
+					SEOTitle: $.trim($("#txtseotitle").val()),
+					SEODescription: $.trim($("#txtseodescription").val()),  
+					Thumbnail: $.trim($("#txtfile").val()),
+					ProductDetails:[
+						{
+								"languageid": "1",
+								"title": $.trim($("#txtkhtitle").val()),  
+								"description": $.trim($("#txtkhdescription").val()), 
+						},
+						{
+								"languageid":"2",
+								"title": $.trim($("#txtentitle").val()),  
+								"description": $.trim($("#txtendescription").val()), 
+						}
+					]
+				},
+				success: function(data){
+					console.log("DATA:",data);
+				}
+			});
+		
+
 		});
-		*/
+		
 
 		 $.ajax({
              type: "POST",
