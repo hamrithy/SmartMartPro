@@ -5,13 +5,23 @@ class DtoSlide{
 	private $slideid;
 	private $userid;
 	private $ordering;
+	private $type;
+
 	private $languageid;
 	private $title;
 	private $caption;
-	private $type;
 	private $imageurl;
 	private $createdate;
 	private $description;
+	private $sliderdetail = array();
+
+	public function getSliderdetail(){
+		return $this->sliderdetail;
+	}
+	
+	public function setSliderdetail($detail){
+		$this->sliderdetail = $detail;
+	}
 
 	public function getSlideid(){
 		return $this->slideid;

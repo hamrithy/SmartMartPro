@@ -4,6 +4,8 @@
 
 		public function __construct(){
 			parent::__construct();
+			$this->load->library('encryption');
+			$this->load->library('session');
 			$this->load->model('dao/DaoSlide');
 			$this->load->model('dto/DtoSlide');
 		}
@@ -21,7 +23,12 @@
 		}
 
 		public function actionAddSlide(){
-
+			$this->DtoSlide->setUserid($this->encryption->decrypt($this->session->userdata('userid')));
+			$this->DtoSlide->setType($this->input->post('type'));
+			$this->DtoSlide->setOrdering($this->input->post('ordering'));
+			$this->DtoSlide->setSliderdetail($this->input->post('SliderDetail'));
+			$result = $this->DaoSlide->addSlide($this->DtoSlide);
+			echo json_encode($result);
 		}
 
 		public function actionListSlides(){

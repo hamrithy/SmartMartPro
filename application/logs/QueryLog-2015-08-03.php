@@ -643,3 +643,583 @@ WHERE `C`.`languageid` = '2'
 ORDER BY `A`.`subof`, `A`.`ordering` 
  Execution Time:0.3305580616
 
+SELECT DISTINCT(A.menuid), `A`.`subof`, `A`.`ordering`, `A`.`linkto`, `C`.`title`, `C`.`description`, `A`.`level`
+FROM `MENUS` `A`
+LEFT JOIN `MENUS` `B` ON `A`.`subof` =  `B`.`menuid`
+JOIN `MENUDETAIL` `C` ON `A`.`menuid` = `C`.`menuid`
+WHERE `C`.`languageid` = '2'
+ORDER BY `A`.`subof`, `A`.`ordering` 
+ Execution Time:0.28201603889465
+
+SELECT DISTINCT(A.menuid), `A`.`subof`, `A`.`ordering`, `A`.`linkto`, `C`.`title`, `C`.`description`, `A`.`level`
+FROM `MENUS` `A`
+LEFT JOIN `MENUS` `B` ON `A`.`subof` =  `B`.`menuid`
+JOIN `MENUDETAIL` `C` ON `A`.`menuid` = `C`.`menuid`
+WHERE `C`.`languageid` = '2'
+ORDER BY `A`.`subof`, `A`.`ordering` 
+ Execution Time:0.33301997184753
+
+SELECT DISTINCT(A.menuid), `A`.`subof`, `A`.`ordering`, `A`.`linkto`, `C`.`title`, `C`.`description`, `A`.`level`
+FROM `MENUS` `A`
+LEFT JOIN `MENUS` `B` ON `A`.`subof` =  `B`.`menuid`
+JOIN `MENUDETAIL` `C` ON `A`.`menuid` = `C`.`menuid`
+WHERE `C`.`languageid` = '2'
+ORDER BY `A`.`subof`, `A`.`ordering` 
+ Execution Time:0.34101891517639
+
+SELECT DISTINCT(A.menuid), `A`.`subof`, `A`.`ordering`, `A`.`linkto`, `C`.`title`, `C`.`description`, `A`.`level`
+FROM `MENUS` `A`
+LEFT JOIN `MENUS` `B` ON `A`.`subof` =  `B`.`menuid`
+JOIN `MENUDETAIL` `C` ON `A`.`menuid` = `C`.`menuid`
+WHERE `C`.`languageid` = '2'
+ORDER BY `A`.`subof`, `A`.`ordering` 
+ Execution Time:0.3110179901123
+
+SELECT DISTINCT(A.menuid), `A`.`subof`, `A`.`ordering`, `A`.`linkto`, `C`.`title`, `C`.`description`, `A`.`level`
+FROM `MENUS` `A`
+LEFT JOIN `MENUS` `B` ON `A`.`subof` =  `B`.`menuid`
+JOIN `MENUDETAIL` `C` ON `A`.`menuid` = `C`.`menuid`
+WHERE `C`.`languageid` = '2'
+ORDER BY `A`.`subof`, `A`.`ordering` 
+ Execution Time:0.33502006530762
+
+SELECT DISTINCT(A.menuid), `A`.`subof`, `A`.`ordering`, `A`.`linkto`, `C`.`title`, `C`.`description`, `A`.`level`
+FROM `MENUS` `A`
+LEFT JOIN `MENUS` `B` ON `A`.`subof` =  `B`.`menuid`
+JOIN `MENUDETAIL` `C` ON `A`.`menuid` = `C`.`menuid`
+WHERE `C`.`languageid` = '2'
+ORDER BY `A`.`subof`, `A`.`ordering` 
+ Execution Time:0.33001899719238
+
+SELECT DISTINCT(A.menuid), `A`.`subof`, `A`.`ordering`, `A`.`linkto`, `C`.`title`, `C`.`description`, `A`.`level`
+FROM `MENUS` `A`
+LEFT JOIN `MENUS` `B` ON `A`.`subof` =  `B`.`menuid`
+JOIN `MENUDETAIL` `C` ON `A`.`menuid` = `C`.`menuid`
+WHERE `C`.`languageid` = '2'
+ORDER BY `A`.`subof`, `A`.`ordering` 
+ Execution Time:0.32501912117004
+
+SELECT DISTINCT(A.menuid), `A`.`subof`, `A`.`ordering`, `A`.`linkto`, `C`.`title`, `C`.`description`, `A`.`level`
+FROM `MENUS` `A`
+LEFT JOIN `MENUS` `B` ON `A`.`subof` =  `B`.`menuid`
+JOIN `MENUDETAIL` `C` ON `A`.`menuid` = `C`.`menuid`
+WHERE `C`.`languageid` = '2'
+ORDER BY `A`.`subof`, `A`.`ordering` 
+ Execution Time:0.32101798057556
+
+SELECT DISTINCT(A.menuid), `A`.`subof`, `A`.`ordering`, `A`.`linkto`, `C`.`title`, `C`.`description`, `A`.`level`
+FROM `MENUS` `A`
+LEFT JOIN `MENUS` `B` ON `A`.`subof` =  `B`.`menuid`
+JOIN `MENUDETAIL` `C` ON `A`.`menuid` = `C`.`menuid`
+WHERE `C`.`languageid` = '2'
+ORDER BY `A`.`subof`, `A`.`ordering` 
+ Execution Time:0.30401802062988
+
+SELECT DISTINCT(A.menuid), `A`.`subof`, `A`.`ordering`, `A`.`linkto`, `C`.`title`, `C`.`description`, `A`.`level`
+FROM `MENUS` `A`
+LEFT JOIN `MENUS` `B` ON `A`.`subof` =  `B`.`menuid`
+JOIN `MENUDETAIL` `C` ON `A`.`menuid` = `C`.`menuid`
+WHERE `C`.`languageid` = '2'
+ORDER BY `A`.`subof`, `A`.`ordering` 
+ Execution Time:0.31701803207397
+
+SELECT DISTINCT(A.menuid), `A`.`subof`, `A`.`ordering`, `A`.`linkto`, `C`.`title`, `C`.`description`, `A`.`level`
+FROM `MENUS` `A`
+LEFT JOIN `MENUS` `B` ON `A`.`subof` =  `B`.`menuid`
+JOIN `MENUDETAIL` `C` ON `A`.`menuid` = `C`.`menuid`
+WHERE `C`.`languageid` = '2'
+ORDER BY `A`.`subof`, `A`.`ordering` 
+ Execution Time:0.28301596641541
+
+SELECT DISTINCT(A.menuid), `A`.`subof`, `A`.`ordering`, `A`.`linkto`, `C`.`title`, `C`.`description`, `A`.`level`
+FROM `MENUS` `A`
+LEFT JOIN `MENUS` `B` ON `A`.`subof` =  `B`.`menuid`
+JOIN `MENUDETAIL` `C` ON `A`.`menuid` = `C`.`menuid`
+WHERE `C`.`languageid` = '2'
+ORDER BY `A`.`subof`, `A`.`ordering` 
+ Execution Time:0.37502217292786
+
+SELECT DISTINCT(A.menuid), `A`.`subof`, `A`.`ordering`, `A`.`linkto`, `C`.`title`, `C`.`description`, `A`.`level`
+FROM `MENUS` `A`
+LEFT JOIN `MENUS` `B` ON `A`.`subof` =  `B`.`menuid`
+JOIN `MENUDETAIL` `C` ON `A`.`menuid` = `C`.`menuid`
+WHERE `C`.`languageid` = '2'
+ORDER BY `A`.`subof`, `A`.`ordering` 
+ Execution Time:0.35902094841003
+
+SELECT DISTINCT(A.menuid), `A`.`subof`, `A`.`ordering`, `A`.`linkto`, `C`.`title`, `C`.`description`, `A`.`level`
+FROM `MENUS` `A`
+LEFT JOIN `MENUS` `B` ON `A`.`subof` =  `B`.`menuid`
+JOIN `MENUDETAIL` `C` ON `A`.`menuid` = `C`.`menuid`
+WHERE `C`.`languageid` = '2'
+ORDER BY `A`.`subof`, `A`.`ordering` 
+ Execution Time:0.31501793861389
+
+SELECT DISTINCT(A.menuid), `A`.`subof`, `A`.`ordering`, `A`.`linkto`, `C`.`title`, `C`.`description`, `A`.`level`
+FROM `MENUS` `A`
+LEFT JOIN `MENUS` `B` ON `A`.`subof` =  `B`.`menuid`
+JOIN `MENUDETAIL` `C` ON `A`.`menuid` = `C`.`menuid`
+WHERE `C`.`languageid` = '2'
+ORDER BY `A`.`subof`, `A`.`ordering` 
+ Execution Time:0.25601506233215
+
+SELECT DISTINCT(A.menuid), `A`.`subof`, `A`.`ordering`, `A`.`linkto`, `C`.`title`, `C`.`description`, `A`.`level`
+FROM `MENUS` `A`
+LEFT JOIN `MENUS` `B` ON `A`.`subof` =  `B`.`menuid`
+JOIN `MENUDETAIL` `C` ON `A`.`menuid` = `C`.`menuid`
+WHERE `C`.`languageid` = '2'
+ORDER BY `A`.`subof`, `A`.`ordering` 
+ Execution Time:0.25001406669617
+
+SELECT DISTINCT(A.menuid), `A`.`subof`, `A`.`ordering`, `A`.`linkto`, `C`.`title`, `C`.`description`, `A`.`level`
+FROM `MENUS` `A`
+LEFT JOIN `MENUS` `B` ON `A`.`subof` =  `B`.`menuid`
+JOIN `MENUDETAIL` `C` ON `A`.`menuid` = `C`.`menuid`
+WHERE `C`.`languageid` = '2'
+ORDER BY `A`.`subof`, `A`.`ordering` 
+ Execution Time:0.28801703453064
+
+SELECT `s`.`sliderid`, `s`.`ordering`, `s`.`type`, `sd`.`title`, `sd`.`languageid`, `sd`.`caption`, `sd`.`description`, `sd`.`imageurl`
+FROM `SLIDERS` `s`
+JOIN `SLIDERDETAIL` `sd` ON `s`.`sliderid` = `sd`.`sliderid`
+ORDER BY `s`.`ordering` DESC 
+ Execution Time:0.25401496887207
+
+SELECT DISTINCT(A.menuid), `A`.`subof`, `A`.`ordering`, `A`.`linkto`, `C`.`title`, `C`.`description`, `A`.`level`
+FROM `MENUS` `A`
+LEFT JOIN `MENUS` `B` ON `A`.`subof` =  `B`.`menuid`
+JOIN `MENUDETAIL` `C` ON `A`.`menuid` = `C`.`menuid`
+WHERE `C`.`languageid` = '2'
+ORDER BY `A`.`subof`, `A`.`ordering` 
+ Execution Time:0.23801302909851
+
+SELECT DISTINCT(A.menuid), `A`.`subof`, `A`.`ordering`, `A`.`linkto`, `C`.`title`, `C`.`description`, `A`.`level`
+FROM `MENUS` `A`
+LEFT JOIN `MENUS` `B` ON `A`.`subof` =  `B`.`menuid`
+JOIN `MENUDETAIL` `C` ON `A`.`menuid` = `C`.`menuid`
+WHERE `C`.`languageid` = '2'
+ORDER BY `A`.`subof`, `A`.`ordering` 
+ Execution Time:0.26501607894897
+
+SELECT DISTINCT(A.menuid), `A`.`subof`, `A`.`ordering`, `A`.`linkto`, `C`.`title`, `C`.`description`, `A`.`level`
+FROM `MENUS` `A`
+LEFT JOIN `MENUS` `B` ON `A`.`subof` =  `B`.`menuid`
+JOIN `MENUDETAIL` `C` ON `A`.`menuid` = `C`.`menuid`
+WHERE `C`.`languageid` = '2'
+ORDER BY `A`.`subof`, `A`.`ordering` 
+ Execution Time:0.25701403617859
+
+SELECT DISTINCT(A.menuid), `A`.`subof`, `A`.`ordering`, `A`.`linkto`, `C`.`title`, `C`.`description`, `A`.`level`
+FROM `MENUS` `A`
+LEFT JOIN `MENUS` `B` ON `A`.`subof` =  `B`.`menuid`
+JOIN `MENUDETAIL` `C` ON `A`.`menuid` = `C`.`menuid`
+WHERE `C`.`languageid` = '2'
+ORDER BY `A`.`subof`, `A`.`ordering` 
+ Execution Time:0.25501489639282
+
+SELECT DISTINCT(A.menuid), `A`.`subof`, `A`.`ordering`, `A`.`linkto`, `C`.`title`, `C`.`description`, `A`.`level`
+FROM `MENUS` `A`
+LEFT JOIN `MENUS` `B` ON `A`.`subof` =  `B`.`menuid`
+JOIN `MENUDETAIL` `C` ON `A`.`menuid` = `C`.`menuid`
+WHERE `C`.`languageid` = '2'
+ORDER BY `A`.`subof`, `A`.`ordering` 
+ Execution Time:0.25701403617859
+
+SELECT DISTINCT(A.menuid), `A`.`subof`, `A`.`ordering`, `A`.`linkto`, `C`.`title`, `C`.`description`, `A`.`level`
+FROM `MENUS` `A`
+LEFT JOIN `MENUS` `B` ON `A`.`subof` =  `B`.`menuid`
+JOIN `MENUDETAIL` `C` ON `A`.`menuid` = `C`.`menuid`
+WHERE `C`.`languageid` = '2'
+ORDER BY `A`.`subof`, `A`.`ordering` 
+ Execution Time:0.25801491737366
+
+SELECT DISTINCT(A.menuid), `A`.`subof`, `A`.`ordering`, `A`.`linkto`, `C`.`title`, `C`.`description`, `A`.`level`
+FROM `MENUS` `A`
+LEFT JOIN `MENUS` `B` ON `A`.`subof` =  `B`.`menuid`
+JOIN `MENUDETAIL` `C` ON `A`.`menuid` = `C`.`menuid`
+WHERE `C`.`languageid` = '2'
+ORDER BY `A`.`subof`, `A`.`ordering` 
+ Execution Time:0.27101588249207
+
+SELECT DISTINCT(A.menuid), `A`.`subof`, `A`.`ordering`, `A`.`linkto`, `C`.`title`, `C`.`description`, `A`.`level`
+FROM `MENUS` `A`
+LEFT JOIN `MENUS` `B` ON `A`.`subof` =  `B`.`menuid`
+JOIN `MENUDETAIL` `C` ON `A`.`menuid` = `C`.`menuid`
+WHERE `C`.`languageid` = '2'
+ORDER BY `A`.`subof`, `A`.`ordering` 
+ Execution Time:0.25701522827148
+
+SELECT DISTINCT(A.menuid), `A`.`subof`, `A`.`ordering`, `A`.`linkto`, `C`.`title`, `C`.`description`, `A`.`level`
+FROM `MENUS` `A`
+LEFT JOIN `MENUS` `B` ON `A`.`subof` =  `B`.`menuid`
+JOIN `MENUDETAIL` `C` ON `A`.`menuid` = `C`.`menuid`
+WHERE `C`.`languageid` = '2'
+ORDER BY `A`.`subof`, `A`.`ordering` 
+ Execution Time:0.24101305007935
+
+SELECT DISTINCT(A.menuid), `A`.`subof`, `A`.`ordering`, `A`.`linkto`, `C`.`title`, `C`.`description`, `A`.`level`
+FROM `MENUS` `A`
+LEFT JOIN `MENUS` `B` ON `A`.`subof` =  `B`.`menuid`
+JOIN `MENUDETAIL` `C` ON `A`.`menuid` = `C`.`menuid`
+WHERE `C`.`languageid` = '2'
+ORDER BY `A`.`subof`, `A`.`ordering` 
+ Execution Time:0.26201486587524
+
+SELECT DISTINCT(A.menuid), `A`.`subof`, `A`.`ordering`, `A`.`linkto`, `C`.`title`, `C`.`description`, `A`.`level`
+FROM `MENUS` `A`
+LEFT JOIN `MENUS` `B` ON `A`.`subof` =  `B`.`menuid`
+JOIN `MENUDETAIL` `C` ON `A`.`menuid` = `C`.`menuid`
+WHERE `C`.`languageid` = '2'
+ORDER BY `A`.`subof`, `A`.`ordering` 
+ Execution Time:0.26401519775391
+
+SELECT DISTINCT(A.menuid), `A`.`subof`, `A`.`ordering`, `A`.`linkto`, `C`.`title`, `C`.`description`, `A`.`level`
+FROM `MENUS` `A`
+LEFT JOIN `MENUS` `B` ON `A`.`subof` =  `B`.`menuid`
+JOIN `MENUDETAIL` `C` ON `A`.`menuid` = `C`.`menuid`
+WHERE `C`.`languageid` = '2'
+ORDER BY `A`.`subof`, `A`.`ordering` 
+ Execution Time:0.26501488685608
+
+SELECT DISTINCT(A.menuid), `A`.`subof`, `A`.`ordering`, `A`.`linkto`, `C`.`title`, `C`.`description`, `A`.`level`
+FROM `MENUS` `A`
+LEFT JOIN `MENUS` `B` ON `A`.`subof` =  `B`.`menuid`
+JOIN `MENUDETAIL` `C` ON `A`.`menuid` = `C`.`menuid`
+WHERE `C`.`languageid` = '2'
+ORDER BY `A`.`subof`, `A`.`ordering` 
+ Execution Time:0.24901390075684
+
+SELECT DISTINCT(A.menuid), `A`.`subof`, `A`.`ordering`, `A`.`linkto`, `C`.`title`, `C`.`description`, `A`.`level`
+FROM `MENUS` `A`
+LEFT JOIN `MENUS` `B` ON `A`.`subof` =  `B`.`menuid`
+JOIN `MENUDETAIL` `C` ON `A`.`menuid` = `C`.`menuid`
+WHERE `C`.`languageid` = '2'
+ORDER BY `A`.`subof`, `A`.`ordering` 
+ Execution Time:0.23601293563843
+
+SELECT DISTINCT(A.menuid), `A`.`subof`, `A`.`ordering`, `A`.`linkto`, `C`.`title`, `C`.`description`, `A`.`level`
+FROM `MENUS` `A`
+LEFT JOIN `MENUS` `B` ON `A`.`subof` =  `B`.`menuid`
+JOIN `MENUDETAIL` `C` ON `A`.`menuid` = `C`.`menuid`
+WHERE `C`.`languageid` = '2'
+ORDER BY `A`.`subof`, `A`.`ordering` 
+ Execution Time:0.24301385879517
+
+SELECT DISTINCT(A.menuid), `A`.`subof`, `A`.`ordering`, `A`.`linkto`, `C`.`title`, `C`.`description`, `A`.`level`
+FROM `MENUS` `A`
+LEFT JOIN `MENUS` `B` ON `A`.`subof` =  `B`.`menuid`
+JOIN `MENUDETAIL` `C` ON `A`.`menuid` = `C`.`menuid`
+WHERE `C`.`languageid` = '2'
+ORDER BY `A`.`subof`, `A`.`ordering` 
+ Execution Time:0.22901296615601
+
+SELECT DISTINCT(A.menuid), `A`.`subof`, `A`.`ordering`, `A`.`linkto`, `C`.`title`, `C`.`description`, `A`.`level`
+FROM `MENUS` `A`
+LEFT JOIN `MENUS` `B` ON `A`.`subof` =  `B`.`menuid`
+JOIN `MENUDETAIL` `C` ON `A`.`menuid` = `C`.`menuid`
+WHERE `C`.`languageid` = '2'
+ORDER BY `A`.`subof`, `A`.`ordering` 
+ Execution Time:0.24301409721375
+
+SELECT DISTINCT(A.menuid), `A`.`subof`, `A`.`ordering`, `A`.`linkto`, `C`.`title`, `C`.`description`, `A`.`level`
+FROM `MENUS` `A`
+LEFT JOIN `MENUS` `B` ON `A`.`subof` =  `B`.`menuid`
+JOIN `MENUDETAIL` `C` ON `A`.`menuid` = `C`.`menuid`
+WHERE `C`.`languageid` = '2'
+ORDER BY `A`.`subof`, `A`.`ordering` 
+ Execution Time:0.26701521873474
+
+SELECT DISTINCT(A.menuid), `A`.`subof`, `A`.`ordering`, `A`.`linkto`, `C`.`title`, `C`.`description`, `A`.`level`
+FROM `MENUS` `A`
+LEFT JOIN `MENUS` `B` ON `A`.`subof` =  `B`.`menuid`
+JOIN `MENUDETAIL` `C` ON `A`.`menuid` = `C`.`menuid`
+WHERE `C`.`languageid` = '2'
+ORDER BY `A`.`subof`, `A`.`ordering` 
+ Execution Time:0.23501420021057
+
+SELECT DISTINCT(A.menuid), `A`.`subof`, `A`.`ordering`, `A`.`linkto`, `C`.`title`, `C`.`description`, `A`.`level`
+FROM `MENUS` `A`
+LEFT JOIN `MENUS` `B` ON `A`.`subof` =  `B`.`menuid`
+JOIN `MENUDETAIL` `C` ON `A`.`menuid` = `C`.`menuid`
+WHERE `C`.`languageid` = '2'
+ORDER BY `A`.`subof`, `A`.`ordering` 
+ Execution Time:0.28501605987549
+
+SELECT DISTINCT(A.menuid), `A`.`subof`, `A`.`ordering`, `A`.`linkto`, `C`.`title`, `C`.`description`, `A`.`level`
+FROM `MENUS` `A`
+LEFT JOIN `MENUS` `B` ON `A`.`subof` =  `B`.`menuid`
+JOIN `MENUDETAIL` `C` ON `A`.`menuid` = `C`.`menuid`
+WHERE `C`.`languageid` = '2'
+ORDER BY `A`.`subof`, `A`.`ordering` 
+ Execution Time:0.34201884269714
+
+SELECT DISTINCT(A.menuid), `A`.`subof`, `A`.`ordering`, `A`.`linkto`, `C`.`title`, `C`.`description`, `A`.`level`
+FROM `MENUS` `A`
+LEFT JOIN `MENUS` `B` ON `A`.`subof` =  `B`.`menuid`
+JOIN `MENUDETAIL` `C` ON `A`.`menuid` = `C`.`menuid`
+WHERE `C`.`languageid` = '2'
+ORDER BY `A`.`subof`, `A`.`ordering` 
+ Execution Time:0.35902094841003
+
+SELECT DISTINCT(A.menuid), `A`.`subof`, `A`.`ordering`, `A`.`linkto`, `C`.`title`, `C`.`description`, `A`.`level`
+FROM `MENUS` `A`
+LEFT JOIN `MENUS` `B` ON `A`.`subof` =  `B`.`menuid`
+JOIN `MENUDETAIL` `C` ON `A`.`menuid` = `C`.`menuid`
+WHERE `C`.`languageid` = '2'
+ORDER BY `A`.`subof`, `A`.`ordering` 
+ Execution Time:0.31901812553406
+
+SELECT DISTINCT(A.menuid), `A`.`subof`, `A`.`ordering`, `A`.`linkto`, `C`.`title`, `C`.`description`, `A`.`level`
+FROM `MENUS` `A`
+LEFT JOIN `MENUS` `B` ON `A`.`subof` =  `B`.`menuid`
+JOIN `MENUDETAIL` `C` ON `A`.`menuid` = `C`.`menuid`
+WHERE `C`.`languageid` = '2'
+ORDER BY `A`.`subof`, `A`.`ordering` 
+ Execution Time:0.28901600837708
+
+SELECT DISTINCT(A.menuid), `A`.`subof`, `A`.`ordering`, `A`.`linkto`, `C`.`title`, `C`.`description`, `A`.`level`
+FROM `MENUS` `A`
+LEFT JOIN `MENUS` `B` ON `A`.`subof` =  `B`.`menuid`
+JOIN `MENUDETAIL` `C` ON `A`.`menuid` = `C`.`menuid`
+WHERE `C`.`languageid` = '2'
+ORDER BY `A`.`subof`, `A`.`ordering` 
+ Execution Time:0.32001900672913
+
+SELECT DISTINCT(A.menuid), `A`.`subof`, `A`.`ordering`, `A`.`linkto`, `C`.`title`, `C`.`description`, `A`.`level`
+FROM `MENUS` `A`
+LEFT JOIN `MENUS` `B` ON `A`.`subof` =  `B`.`menuid`
+JOIN `MENUDETAIL` `C` ON `A`.`menuid` = `C`.`menuid`
+WHERE `C`.`languageid` = '2'
+ORDER BY `A`.`subof`, `A`.`ordering` 
+ Execution Time:0.3370189666748
+
+SELECT DISTINCT(A.menuid), `A`.`subof`, `A`.`ordering`, `A`.`linkto`, `C`.`title`, `C`.`description`, `A`.`level`
+FROM `MENUS` `A`
+LEFT JOIN `MENUS` `B` ON `A`.`subof` =  `B`.`menuid`
+JOIN `MENUDETAIL` `C` ON `A`.`menuid` = `C`.`menuid`
+WHERE `C`.`languageid` = '2'
+ORDER BY `A`.`subof`, `A`.`ordering` 
+ Execution Time:0.30201697349548
+
+SELECT DISTINCT(A.menuid), `A`.`subof`, `A`.`ordering`, `A`.`linkto`, `C`.`title`, `C`.`description`, `A`.`level`
+FROM `MENUS` `A`
+LEFT JOIN `MENUS` `B` ON `A`.`subof` =  `B`.`menuid`
+JOIN `MENUDETAIL` `C` ON `A`.`menuid` = `C`.`menuid`
+WHERE `C`.`languageid` = '2'
+ORDER BY `A`.`subof`, `A`.`ordering` 
+ Execution Time:0.28101587295532
+
+SELECT DISTINCT(A.menuid), `A`.`subof`, `A`.`ordering`, `A`.`linkto`, `C`.`title`, `C`.`description`, `A`.`level`
+FROM `MENUS` `A`
+LEFT JOIN `MENUS` `B` ON `A`.`subof` =  `B`.`menuid`
+JOIN `MENUDETAIL` `C` ON `A`.`menuid` = `C`.`menuid`
+WHERE `C`.`languageid` = '2'
+ORDER BY `A`.`subof`, `A`.`ordering` 
+ Execution Time:0.26701498031616
+
+SELECT DISTINCT(A.menuid), `A`.`subof`, `A`.`ordering`, `A`.`linkto`, `C`.`title`, `C`.`description`, `A`.`level`
+FROM `MENUS` `A`
+LEFT JOIN `MENUS` `B` ON `A`.`subof` =  `B`.`menuid`
+JOIN `MENUDETAIL` `C` ON `A`.`menuid` = `C`.`menuid`
+WHERE `C`.`languageid` = '2'
+ORDER BY `A`.`subof`, `A`.`ordering` 
+ Execution Time:0.25901389122009
+
+SELECT DISTINCT(A.menuid), `A`.`subof`, `A`.`ordering`, `A`.`linkto`, `C`.`title`, `C`.`description`, `A`.`level`
+FROM `MENUS` `A`
+LEFT JOIN `MENUS` `B` ON `A`.`subof` =  `B`.`menuid`
+JOIN `MENUDETAIL` `C` ON `A`.`menuid` = `C`.`menuid`
+WHERE `C`.`languageid` = '2'
+ORDER BY `A`.`subof`, `A`.`ordering` 
+ Execution Time:0.26701498031616
+
+SELECT DISTINCT(A.menuid), `A`.`subof`, `A`.`ordering`, `A`.`linkto`, `C`.`title`, `C`.`description`, `A`.`level`
+FROM `MENUS` `A`
+LEFT JOIN `MENUS` `B` ON `A`.`subof` =  `B`.`menuid`
+JOIN `MENUDETAIL` `C` ON `A`.`menuid` = `C`.`menuid`
+WHERE `C`.`languageid` = '2'
+ORDER BY `A`.`subof`, `A`.`ordering` 
+ Execution Time:0.28601598739624
+
+SELECT DISTINCT(A.menuid), `A`.`subof`, `A`.`ordering`, `A`.`linkto`, `C`.`title`, `C`.`description`, `A`.`level`
+FROM `MENUS` `A`
+LEFT JOIN `MENUS` `B` ON `A`.`subof` =  `B`.`menuid`
+JOIN `MENUDETAIL` `C` ON `A`.`menuid` = `C`.`menuid`
+WHERE `C`.`languageid` = '2'
+ORDER BY `A`.`subof`, `A`.`ordering` 
+ Execution Time:0.27501606941223
+
+SELECT DISTINCT(A.menuid), `A`.`subof`, `A`.`ordering`, `A`.`linkto`, `C`.`title`, `C`.`description`, `A`.`level`
+FROM `MENUS` `A`
+LEFT JOIN `MENUS` `B` ON `A`.`subof` =  `B`.`menuid`
+JOIN `MENUDETAIL` `C` ON `A`.`menuid` = `C`.`menuid`
+WHERE `C`.`languageid` = '2'
+ORDER BY `A`.`subof`, `A`.`ordering` 
+ Execution Time:0.28101587295532
+
+SELECT DISTINCT(A.menuid), `A`.`subof`, `A`.`ordering`, `A`.`linkto`, `C`.`title`, `C`.`description`, `A`.`level`
+FROM `MENUS` `A`
+LEFT JOIN `MENUS` `B` ON `A`.`subof` =  `B`.`menuid`
+JOIN `MENUDETAIL` `C` ON `A`.`menuid` = `C`.`menuid`
+WHERE `C`.`languageid` = '2'
+ORDER BY `A`.`subof`, `A`.`ordering` 
+ Execution Time:0.246013879776
+
+SELECT DISTINCT(A.menuid), `A`.`subof`, `A`.`ordering`, `A`.`linkto`, `C`.`title`, `C`.`description`, `A`.`level`
+FROM `MENUS` `A`
+LEFT JOIN `MENUS` `B` ON `A`.`subof` =  `B`.`menuid`
+JOIN `MENUDETAIL` `C` ON `A`.`menuid` = `C`.`menuid`
+WHERE `C`.`languageid` = '2'
+ORDER BY `A`.`subof`, `A`.`ordering` 
+ Execution Time:0.2720160484314
+
+SELECT DISTINCT(A.menuid), `A`.`subof`, `A`.`ordering`, `A`.`linkto`, `C`.`title`, `C`.`description`, `A`.`level`
+FROM `MENUS` `A`
+LEFT JOIN `MENUS` `B` ON `A`.`subof` =  `B`.`menuid`
+JOIN `MENUDETAIL` `C` ON `A`.`menuid` = `C`.`menuid`
+WHERE `C`.`languageid` = '2'
+ORDER BY `A`.`subof`, `A`.`ordering` 
+ Execution Time:0.31701898574829
+
+SELECT DISTINCT(A.menuid), `A`.`subof`, `A`.`ordering`, `A`.`linkto`, `C`.`title`, `C`.`description`, `A`.`level`
+FROM `MENUS` `A`
+LEFT JOIN `MENUS` `B` ON `A`.`subof` =  `B`.`menuid`
+JOIN `MENUDETAIL` `C` ON `A`.`menuid` = `C`.`menuid`
+WHERE `C`.`languageid` = '2'
+ORDER BY `A`.`subof`, `A`.`ordering` 
+ Execution Time:0.31601810455322
+
+SELECT DISTINCT(A.menuid), `A`.`subof`, `A`.`ordering`, `A`.`linkto`, `C`.`title`, `C`.`description`, `A`.`level`
+FROM `MENUS` `A`
+LEFT JOIN `MENUS` `B` ON `A`.`subof` =  `B`.`menuid`
+JOIN `MENUDETAIL` `C` ON `A`.`menuid` = `C`.`menuid`
+WHERE `C`.`languageid` = '2'
+ORDER BY `A`.`subof`, `A`.`ordering` 
+ Execution Time:0.28001594543457
+
+SELECT DISTINCT(A.menuid), `A`.`subof`, `A`.`ordering`, `A`.`linkto`, `C`.`title`, `C`.`description`, `A`.`level`
+FROM `MENUS` `A`
+LEFT JOIN `MENUS` `B` ON `A`.`subof` =  `B`.`menuid`
+JOIN `MENUDETAIL` `C` ON `A`.`menuid` = `C`.`menuid`
+WHERE `C`.`languageid` = '2'
+ORDER BY `A`.`subof`, `A`.`ordering` 
+ Execution Time:0.3110179901123
+
+SELECT DISTINCT(A.menuid), `A`.`subof`, `A`.`ordering`, `A`.`linkto`, `C`.`title`, `C`.`description`, `A`.`level`
+FROM `MENUS` `A`
+LEFT JOIN `MENUS` `B` ON `A`.`subof` =  `B`.`menuid`
+JOIN `MENUDETAIL` `C` ON `A`.`menuid` = `C`.`menuid`
+WHERE `C`.`languageid` = '2'
+ORDER BY `A`.`subof`, `A`.`ordering` 
+ Execution Time:0.26001501083374
+
+INSERT INTO `SLIDERS` (`userid`, `ordering`, `type`) VALUES ('1', '2', 'slide') 
+ Execution Time:0.48302793502808
+
+INSERT INTO `SLIDERDETAIL` (`languageid`, `title`, `caption`, `description`, `imageurl`, `sliderid`) VALUES ('1', 'test', 'test', '<p>test</p>\n', 'http://localhost/smartmartpro/public/upload/slider-background2.jpg', 4) 
+ Execution Time:0.3110179901123
+
+INSERT INTO `SLIDERDETAIL` (`languageid`, `title`, `description`, `imageurl`, `sliderid`) VALUES ('2', 'សដដស', '<p>សដងដង</p>\n', 'http://localhost/smartmartpro/public/upload/slider-background2.jpg', 4) 
+ Execution Time:0.31101703643799
+
+SELECT `s`.`sliderid`, `s`.`ordering`, `s`.`type`, `sd`.`title`, `sd`.`languageid`, `sd`.`caption`, `sd`.`description`, `sd`.`imageurl`
+FROM `SLIDERS` `s`
+JOIN `SLIDERDETAIL` `sd` ON `s`.`sliderid` = `sd`.`sliderid`
+ORDER BY `s`.`ordering` DESC 
+ Execution Time:0.29301595687866
+
+SELECT DISTINCT(A.menuid), `A`.`subof`, `A`.`ordering`, `A`.`linkto`, `C`.`title`, `C`.`description`, `A`.`level`
+FROM `MENUS` `A`
+LEFT JOIN `MENUS` `B` ON `A`.`subof` =  `B`.`menuid`
+JOIN `MENUDETAIL` `C` ON `A`.`menuid` = `C`.`menuid`
+WHERE `C`.`languageid` = '2'
+ORDER BY `A`.`subof`, `A`.`ordering` 
+ Execution Time:0.3110179901123
+
+SELECT DISTINCT(A.menuid), `A`.`subof`, `A`.`ordering`, `A`.`linkto`, `C`.`title`, `C`.`description`, `A`.`level`
+FROM `MENUS` `A`
+LEFT JOIN `MENUS` `B` ON `A`.`subof` =  `B`.`menuid`
+JOIN `MENUDETAIL` `C` ON `A`.`menuid` = `C`.`menuid`
+WHERE `C`.`languageid` = '2'
+ORDER BY `A`.`subof`, `A`.`ordering` 
+ Execution Time:0.26501488685608
+
+SELECT DISTINCT(A.menuid), `A`.`subof`, `A`.`ordering`, `A`.`linkto`, `C`.`title`, `C`.`description`, `A`.`level`
+FROM `MENUS` `A`
+LEFT JOIN `MENUS` `B` ON `A`.`subof` =  `B`.`menuid`
+JOIN `MENUDETAIL` `C` ON `A`.`menuid` = `C`.`menuid`
+WHERE `C`.`languageid` = '2'
+ORDER BY `A`.`subof`, `A`.`ordering` 
+ Execution Time:0.28001594543457
+
+SELECT DISTINCT(A.menuid), `A`.`subof`, `A`.`ordering`, `A`.`linkto`, `C`.`title`, `C`.`description`, `A`.`level`
+FROM `MENUS` `A`
+LEFT JOIN `MENUS` `B` ON `A`.`subof` =  `B`.`menuid`
+JOIN `MENUDETAIL` `C` ON `A`.`menuid` = `C`.`menuid`
+WHERE `C`.`languageid` = '2'
+ORDER BY `A`.`subof`, `A`.`ordering` 
+ Execution Time:0.33101892471313
+
+SELECT DISTINCT(A.menuid), `A`.`subof`, `A`.`ordering`, `A`.`linkto`, `C`.`title`, `C`.`description`, `A`.`level`
+FROM `MENUS` `A`
+LEFT JOIN `MENUS` `B` ON `A`.`subof` =  `B`.`menuid`
+JOIN `MENUDETAIL` `C` ON `A`.`menuid` = `C`.`menuid`
+WHERE `C`.`languageid` = '2'
+ORDER BY `A`.`subof`, `A`.`ordering` 
+ Execution Time:0.26701498031616
+
+INSERT INTO `SLIDERS` (`userid`, `ordering`, `type`) VALUES ('1', '3', 'slide') 
+ Execution Time:0.31001782417297
+
+INSERT INTO `SLIDERDETAIL` (`languageid`, `title`, `caption`, `description`, `imageurl`, `sliderid`) VALUES ('2', 'ok', 'ok', '<p><br />\nok</p>\n', 'http://localhost/smartmartpro/public/upload/offer-background.jpg', 5) 
+ Execution Time:0.31401801109314
+
+INSERT INTO `SLIDERDETAIL` (`languageid`, `title`, `description`, `imageurl`, `sliderid`) VALUES ('1', 'តេសត', '<p>សដថសថ</p>\n', 'http://localhost/smartmartpro/public/upload/offer-background.jpg', 5) 
+ Execution Time:0.31901812553406
+
+SELECT `s`.`sliderid`, `s`.`ordering`, `s`.`type`, `sd`.`title`, `sd`.`languageid`, `sd`.`caption`, `sd`.`description`, `sd`.`imageurl`
+FROM `SLIDERS` `s`
+JOIN `SLIDERDETAIL` `sd` ON `s`.`sliderid` = `sd`.`sliderid`
+WHERE `sd`.`languageid` = 2
+ORDER BY `s`.`ordering` DESC 
+ Execution Time:0.31401777267456
+
+SELECT DISTINCT(A.menuid), `A`.`subof`, `A`.`ordering`, `A`.`linkto`, `C`.`title`, `C`.`description`, `A`.`level`
+FROM `MENUS` `A`
+LEFT JOIN `MENUS` `B` ON `A`.`subof` =  `B`.`menuid`
+JOIN `MENUDETAIL` `C` ON `A`.`menuid` = `C`.`menuid`
+WHERE `C`.`languageid` = '2'
+ORDER BY `A`.`subof`, `A`.`ordering` 
+ Execution Time:0.30301690101624
+
+SELECT DISTINCT(A.menuid), `A`.`subof`, `A`.`ordering`, `A`.`linkto`, `C`.`title`, `C`.`description`, `A`.`level`
+FROM `MENUS` `A`
+LEFT JOIN `MENUS` `B` ON `A`.`subof` =  `B`.`menuid`
+JOIN `MENUDETAIL` `C` ON `A`.`menuid` = `C`.`menuid`
+WHERE `C`.`languageid` = '2'
+ORDER BY `A`.`subof`, `A`.`ordering` 
+ Execution Time:0.31801795959473
+
+SELECT `s`.`sliderid`, `s`.`ordering`, `s`.`type`, `sd`.`title`, `sd`.`languageid`, `sd`.`caption`, `sd`.`description`, `sd`.`imageurl`
+FROM `SLIDERS` `s`
+JOIN `SLIDERDETAIL` `sd` ON `s`.`sliderid` = `sd`.`sliderid`
+WHERE `sd`.`languageid` = 2
+ORDER BY `s`.`ordering` DESC 
+ Execution Time:0.30601811408997
+
+SELECT DISTINCT(A.menuid), `A`.`subof`, `A`.`ordering`, `A`.`linkto`, `C`.`title`, `C`.`description`, `A`.`level`
+FROM `MENUS` `A`
+LEFT JOIN `MENUS` `B` ON `A`.`subof` =  `B`.`menuid`
+JOIN `MENUDETAIL` `C` ON `A`.`menuid` = `C`.`menuid`
+WHERE `C`.`languageid` = '2'
+ORDER BY `A`.`subof`, `A`.`ordering` 
+ Execution Time:0.24901509284973
+
+SELECT DISTINCT(A.menuid), `A`.`subof`, `A`.`ordering`, `A`.`linkto`, `C`.`title`, `C`.`description`, `A`.`level`
+FROM `MENUS` `A`
+LEFT JOIN `MENUS` `B` ON `A`.`subof` =  `B`.`menuid`
+JOIN `MENUDETAIL` `C` ON `A`.`menuid` = `C`.`menuid`
+WHERE `C`.`languageid` = '2'
+ORDER BY `A`.`subof`, `A`.`ordering` 
+ Execution Time:0.2980170249939
+

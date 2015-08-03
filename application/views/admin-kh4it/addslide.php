@@ -109,7 +109,7 @@
 					
 					
 					
-					<form role="form" action="" method="post" accept-charset="UTF-8">
+					<form role="form" id="frmSlide" method="post" accept-charset="UTF-8">
 						
 						<!-- Tab -->
 						<div class="col-sm-8">
@@ -165,7 +165,6 @@
 													</div>
 													</div>
 
-
 													<div id="panel-profile-2" class="tab-pane fade  active in">
 														
 														<!-- Put Control Khmer here -->
@@ -220,22 +219,22 @@
 						<div class="col-sm-4">
 									<div class="form-group">
 										<label>Type</label>
-										<select class="form-control" name="category" id="category">
-											<option value="0">Slide</option>
-											<option value="1">Sub Slide</option>
-											<option value="2">Partner</option>
-											<option value="3">Feature</option>
+										<select class="form-control" name="type" id="type">
+											<option value="slide">Slide</option>
+											<option value="sub_slide">Sub Slide</option>
+											<option value="partner">Partner</option>
+											<option value="feature">Feature</option>
 											
 										</select>								
 									</div>
 									
 									<div class="form-group">
 										<label>Odering<span class="required">*</span></label>
-										<input type="text" class="form-control" name="txtseotitle" id="txtseotitle" value="" required="required"/>
+										<input type="text" class="form-control" name="ordering" id="ordering" value="" required="required"/>
 									</div>
 
 									<div class="form-group">
-										<button type="submit" class="btn btn-success">Save</button>
+										<button type="submit" class="btn btn-success" onclick="addSlide()">Save</button>
 										<button class="btn btn-danger">Cancel</button>
 									</div>	
 									
@@ -292,7 +291,7 @@
 		</div><!-- /.wrapper -->
 		<!-- END PAGE CONTENT -->
 		
-		
+
 	
 		
 		
@@ -380,6 +379,44 @@
 			filebrowserUploadUrl : '<?php echo base_url(); ?>/public/responsivefilemanager/filemanager/dialog.php?type=2&editor=ckeditor&fldr=', 
 			filebrowserImageBrowseUrl : '<?php echo base_url(); ?>/public/responsivefilemanager/filemanager/dialog.php?type=1&editor=ckeditor&fldr=' }); 
 	</script>
-		
+	<script>
+		function addSlide(){
+			$("#frmSlide").submit(function(e){
+				e.preventDefault();
+				
+				alert("ok");
+
+				$.ajax({
+					type: "POST",
+					url: '<?php  echo site_url()?>admin/slide/actionaddslide',
+					dataType: 'json',
+					data: {
+						type: $("#type").val(),
+						ordering: $("#ordering").val(),
+						SliderDetail:[
+							{
+									"languageid": "2",
+									"title": $("#entitle").val(),
+									"caption": $("#encaption").val(),
+									"description": CKEDITOR.instances.endescription.getData(),
+									"imageurl": $("#enfile").val()
+							},
+							{
+									"languageid":"1",
+									"title": $("#khtitle").val(),
+									"caption": $("#caption").val(),
+									"description": CKEDITOR.instances.khdescription.getData(),
+									"imageurl": $("#khfile").val()
+							}
+						]
+					},
+					success: function(data){
+						window.location.href="<?php echo site_url("admin/slide");?>";
+						console.log("DATA:",data);
+					}
+				});
+			});
+		}
+		</script>
 	</body>
 </html>

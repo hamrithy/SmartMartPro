@@ -8,29 +8,41 @@
 			$this->load->model('dto/Dtoslide');
 		}
 		/*
-			0: slide
-			1: sub slide
-			2: partner
-			3: feature
+		type
+			slide
+			sub slide
+			partner
+			feature
 		*/
-/*		public function addSlide(DtoSlide $s){
-			$data = array(
-				'slideid'          	=> $s->getSlideid(),
-				'title'				=> $s->getTitle(),
-				'caption'			=> str_replace(array("\r", "\n"), " ", $s->getCaption()),
-				'linkto'			=> $s->getLinkto(),
-				'imageurl'			=> $s->getImageurl(),
-				'ordering'			=> $s->getOrdering(),
-				'userid'			=> $s->getUserid()
+		public function addSlide(DtoSlide $s){
+			$this->db->trans_begin();
+			$slide = array(
+							"userid"	=>	$s->getUserid(),
+							"ordering"	=>	$s->getOrdering(),
+							"type"		=>	$s->getType()
+						);
 
-				);
-			$this->db->insert('SLIDES', $data);
-		}*/
+			$this->db->insert("SLIDERS",$slide);
+			$sliderid = $this->db->insert_id();
+			
+			foreach($s->getSliderdetail() as $slider){
+				$slider["sliderid"] = $sliderid;
+				$this->db->insert("SLIDERDETAIL",$slider);
+			}
+			if($this->db->trans_status()===FALSE){
+				$this->db->trans_rollback();
+				return FALSE;
+			}else{
+				$this->db->trans_commit();
+				return TRUE;
+			}
+		}
 
 		public function getAllSlides(){
 			$this->db->select('s.sliderid, s.ordering, s.type, sd.title, sd.languageid, sd.caption, sd.description, sd.imageurl');
 			$this->db->from('SLIDERS s');
 			$this->db->join('SLIDERDETAIL sd', 's.sliderid = sd.sliderid');
+			$this->db->where('sd.languageid',2);
 			$this->db->order_by('s.ordering', 'desc');
 			$query = $this->db->get();
 			return $query->result();
