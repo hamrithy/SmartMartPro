@@ -175,7 +175,7 @@
 									
 									<script>
 											function myimagechange(){
-												$("#myimagedemo").attr("src", $("#txtfile").val() );
+												$("#myimagedemo").attr("src", $("#txtfile").val());
 											}
 									</script>
 									
@@ -338,7 +338,7 @@
 	<script>
 		$("form#frmAddProduct").submit(function(e){
 			e.preventDefault();
-			alert( $.trim($(this).find("#txtendescription").val())  ); return;
+			//alert($.trim(CKEDITOR.instances.txtendescription.getData())); return;
 			$.ajax({
 				type: "POST",
 				url: '<?php  echo site_url()?>admin/product/addproductpro',
@@ -352,12 +352,12 @@
 						{
 								"languageid": "1",
 								"title": $.trim($("#txtkhtitle").val()),  
-								"description": $.trim($("#txtkhdescription").val()), 
+								"description": CKEDITOR.instances.txtendescription.getData(),
 						},
 						{
 								"languageid":"2",
 								"title": $.trim($("#txtentitle").val()),  
-								"description": $.trim($("#txtendescription").val()), 
+								"description": CKEDITOR.instances.txtkhdescription.getData(),
 						}
 					]
 				},
