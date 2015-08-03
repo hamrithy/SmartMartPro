@@ -48,6 +48,17 @@
 			return $query->result();
 		}
 
+		public function getfrontSlides($type, $langid){
+			$this->db->select('s.sliderid, s.ordering, s.type, sd.title, sd.languageid, sd.caption, sd.description, sd.imageurl');
+			$this->db->from('SLIDERS s');
+			$this->db->join('SLIDERDETAIL sd', 's.sliderid = sd.sliderid');
+			$this->db->where('sd.languageid', $langid);
+			$this->db->where('s.type', $type);
+			$this->db->order_by('s.ordering', 'desc');
+			$query = $this->db->get();
+			return $query->result();
+		}
+
 /*		public function deleteSlide(DtoSlide $s){
 			$this->db->where('slideid', $s->getSlideid());
 			$this->db->delete('SLIDES');

@@ -221,7 +221,7 @@
 										<label>Type</label>
 										<select class="form-control" name="type" id="type">
 											<option value="slide">Slide</option>
-											<option value="sub_slide">Sub Slide</option>
+											<option value="subslide">Sub Slide</option>
 											<option value="partner">Partner</option>
 											<option value="feature">Feature</option>
 											

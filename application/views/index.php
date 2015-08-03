@@ -19,64 +19,8 @@
 
             <div class="content-wrap">
 
-                <div class="container clearfix">
+                <?php $this->load->view('layouts/_slide'); ?>
 
-                    <div class="col_two_third bottommargin-lg">
-
-                        <div class="fslider" data-arrows="false">
-                            <div class="flexslider">
-                                <div class="slider-wrap">
-                                    <div class="slide">
-                                        <a href="javascript:;">
-                                            <img src="<?php echo base_url('public/style_front/images/shop/slider/1.jpg')?>" alt="Shop Image">
-                                        </a>
-                                    </div>
-                                    <div class="slide">
-                                        <a href="javascript:;">
-                                            <img src="<?php echo base_url('public/style_front/images/shop/slider/2.jpg')?>" alt="Shop Image">
-                                        </a>
-                                    </div>
-                                    <div class="slide">
-                                        <a href="javascript:;">
-                                            <img src="<?php echo base_url('public/style_front/images/shop/slider/3.jpg')?>" alt="Shop Image">
-                                        </a>
-                                    </div>
-                                    <div class="slide">
-                                        <a href="javascript:;">
-                                            <img src="<?php echo base_url('public/style_front/images/shop/slider/4.jpg')?>" alt="Shop Image">
-                                        </a>
-                                    </div>
-                                    <div class="slide">
-                                        <a href="javascript:;">
-                                            <img src="<?php echo base_url('public/style_front/images/shop/slider/3.jpg')?>" alt="Shop Image">
-                                        </a>
-                                    </div>
-                                    <div class="slide">
-                                        <a href="javascript:;">
-                                            <img src="<?php echo base_url('public/style_front/images/shop/slider/4.jpg')?>" alt="Shop Image">
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div class="col_one_third bottommargin-lg col_last">
-
-                        <div class="col_full bottommargin-sm">
-                            <a href="javascript:;"><img src="<?php echo base_url('public/style_front/images/shop/banners/7.jpg')?>" alt="Image"></a>
-                        </div>
-
-                        <div class="col_full nobottommargin">
-                            <a href="javascript:;"><img src="<?php echo base_url('public/style_front/images/shop/banners/3.jpg')?>" alt="Image"></a>
-                        </div>
-
-                    </div>
-
-                    <div class="clear"></div>
-
-                </div>
                 <div class="promo parallax promo-full bottommargin-lg" style="background-image: url('<?php echo base_url('public/style_front/images/parallax/3.jpg')?>)';" data-stellar-background-ratio="0.4">
                     <div class="container clearfix">
                         <h3>Get <span>30%</span> off on orders of $29 or more. Use Coupon: <span>SHOP30</span></h3>

@@ -7,11 +7,9 @@
 
 		}
 
-		public function listSlide(){
+		public function listSlide($type, $langid){
 			$this->load->model('dao/DaoSlide');
-			$result = $this->DaoSlide->listSlide();
-			// header('Content-Type:application/json' );
-			// echo json_encode($result);
+			$result = $this->DaoSlide->getfrontSlides($type, $langid);
 			$this->output
 			    ->set_content_type('application/json')
 			    ->set_output(json_encode($result));

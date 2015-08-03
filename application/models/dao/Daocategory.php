@@ -52,13 +52,20 @@ class Daocategory extends CI_Model{
 	public function deletecategory(Dtocategory $c){
 		$this->db->where('categoryid', $c->getCategoryid());
 		$this->db->delete('CATEGORYDETAIL');
-		$this->deletemaincat($c->getCategoryid());
+		
+		$this->db->where('categoryid', $c->getCategoryid());
+		$this->db->delete('CATEGORIES');
+
+		if($this->db->trans_status()===FALSE){
+			$this->db->trans_rollback();
+			return FALSE;
+		}else{
+			$this->db->trans_commit();
+			return TRUE;
+		}
 
 	}
-	public function deletemaincat($id){
-		$this->db->where('categoryid', $id);
-		$this->db->delete('CATEGORIES');
-	}
+
 
 	public function getcategory($id){
 		$this->db->select('d.categoryid, d.title, d.languageid,d.description, c.ordering, c.subof');
