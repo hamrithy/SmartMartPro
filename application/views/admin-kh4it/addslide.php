@@ -234,7 +234,7 @@
 									</div>
 
 									<div class="form-group">
-										<button type="submit" class="btn btn-success" onclick="addSlide()">Save</button>
+										<button type="submit" class="btn btn-success" onclick="addSlide()" id="btnSave">Save</button>
 										<button class="btn btn-danger">Cancel</button>
 									</div>	
 									
@@ -404,7 +404,7 @@
 							{
 									"languageid":"1",
 									"title": $("#khtitle").val(),
-									"caption": $("#caption").val(),
+									"caption": $("#khcaption").val(),
 									"description": CKEDITOR.instances.khdescription.getData(),
 									"imageurl": $("#khfile").val()
 							}
@@ -417,6 +417,63 @@
 				});
 			});
 		}
+		</script>
+		<script>
+			<?php if($sliderid != null){ ?>
+				$.post("<?php echo site_url()?>admin/slide/actiongetslide/<?php echo $sliderid ?>", function(data){
+				$("#btnSave").attr("onclick","updateSlide("+data[0].sliderid+")");
+				$("#ordering").val(data[0].ordering);
+				$('#type option[value='+data[0].type+']').prop('selected',true);
+
+				$('#entitle').val(data[0].title);
+				$('#encaption').val(data[0].caption);
+				CKEDITOR.instances.endescription.setData(data[0].description);
+				$('#enfile').val(data[0].imageurl);
+				$('#myimagedemo').attr("src", data[0].imageurl);
+
+				$('#khtitle').val(data[1].title);
+				$('#khcaption').val(data[1].caption);
+				CKEDITOR.instances.khdescription.setData(data[1].description);
+				$('#khfile').val(data[1].imageurl);
+				$('#myimagedemo1').attr('src', data[1].imageurl);
+				});
+			<?php } ?>
+			function updateSlide(id){
+				var sid = id;
+				$('#frmSlide').submit(function(e){
+					e.preventDefault();
+					$.ajax({
+						type:"POST",
+						url:"<?php echo site_url()?>admin/slide/actionupdateslider",
+						dataType:"json",
+						data:{
+							sliderid:sid,
+							type:$('#type').val(),
+							ordering:$('#ordering').val(),
+							SliderDetail:[
+								{
+									"languageid": "2",
+									"title": $("#entitle").val(),
+									"caption": $("#encaption").val(),
+									"description": CKEDITOR.instances.endescription.getData(),
+									"imageurl": $("#enfile").val()
+							},
+							{
+									"languageid":"1",
+									"title": $("#khtitle").val(),
+									"caption": $("#khcaption").val(),
+									"description": CKEDITOR.instances.khdescription.getData(),
+									"imageurl": $("#khfile").val()
+							}
+							]
+						},
+						success:function(data){
+							window.location.href = "<?php echo site_url("admin/slide");?>";
+						}
+					});
+
+				});
+			}
 		</script>
 	</body>
 </html>

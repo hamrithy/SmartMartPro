@@ -120,8 +120,8 @@
 									<td><?php echo $s->ordering; ?></td>
 									<td><?php echo $s->type; ?></td>
 									<td>
-										<a  href="<?php echo site_url()?>/admin/slide/deleteSlidePro/<?php echo $s->sliderid ?>" style="margin-right:3px" onclick="return confirm('Do you want to delete?');"  class="btn btn-danger">Delete</a>
-										<a href="<?php  echo site_url()?>/admin/slide/getSlide/<?php  echo $s->sliderid ?>" class="btn btn-primary" >Update</a>
+										<a  href="<?php echo site_url()?>/admin/slide/actiondeleteslide/<?php echo $s->sliderid ?>" style="margin-right:3px" onclick="return confirm('Do you want to delete?');"  class="btn btn-danger">Delete</a>
+										<a href="<?php  echo site_url()?>/admin/slide/actionshowslide/<?php  echo $s->sliderid ?>" class="btn btn-primary" >Update</a>
 									</td>
 								</tr>
 							<?php } ?>

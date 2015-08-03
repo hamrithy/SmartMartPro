@@ -36,6 +36,31 @@
 			$this->load->view('admin-kh4it/listslide', $data);
 		}
 
+		public function actionShowSlide($id){
+			$data['sliderid'] = $id;
+			$this->load->view('admin-kh4it/addslide', $data);
+		}
+
+		public function actionGetSlide($id){
+			$result = $this->DaoSlide->getSlide($id);
+			$this->output
+				->set_content_type('application/json')
+				->set_output(json_encode($result));
+		}
+
+		public function actionUpdateSlider(){
+			$this->DtoSlide->setSlideid($this->input->post('sliderid'));
+			$this->DtoSlide->setType($this->input->post('type'));
+			$this->DtoSlide->setOrdering($this->input->post('ordering'));
+			$this->DtoSlide->setSliderdetail($this->input->post('SliderDetail'));
+			$result = $this->DaoSlide->updateSlide($this->DtoSlide);
+			echo json_encode($result);
+		}
+
+		public function actionDeleteSlide($id){
+			$this->DaoSlide->deleteSlide($id);
+			redirect('admin/slide');
+		}
 
 	}
 ?>
