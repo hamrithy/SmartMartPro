@@ -122,7 +122,8 @@
                             var menuid;
                             var menuidLevel1;
                             var home = false;
-                            var currentURL = window.location.replace("#","");
+                            var currentURL = (window.location)+"";
+                            currentURL = currentURL.replace("#","");
                             $.each(menus,function(key,value){
                                 var current = '';
                                 if(value.level=="0"){
@@ -176,11 +177,6 @@
                                 }
                             });
                             $("#MAIN_MENU").html(str);
-
-/*                            $(document).on('click','#MAIN_MENU #MAIN', function(){
-                                $.cookie("CURRENT_MENU", ($(this).find("#MENUID")).attr("class"));
-                                alert($.cookie("CURRENT_MENU"));
-                            });*/
                         }
                     </script>
                 </ul>
