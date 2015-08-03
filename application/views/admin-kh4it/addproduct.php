@@ -90,7 +90,7 @@
 					
 					
 					
-					<form role="form" action="../kshrd-admin/post_news.hrd" enctype="multipart/form-data" method="post" accept-charset="UTF-8">
+					<form role="form" action="#" enctype="multipart/form-data" method="post" accept-charset="UTF-8">
 						
 						<!-- Tab -->
 						<div class="col-sm-8">
@@ -156,9 +156,8 @@
 						<div class="col-sm-4">
 									<div class="form-group">
 										<label>Category</label>
-										<select class="form-control" name="category" id="category">
-											<option value="1">SportEvent</option>
-											<option value="2">WorkShop</option>
+										<select class="form-control" name="category" id="listCategory">
+											
 										</select>								
 									</div>
 									
@@ -337,7 +336,7 @@
 	</script>
 
 	<script>
-		$.ajax({
+		/*$.ajax({
 			type: "POST",
 			url: '<?php  echo site_url()?>admin/product/addproductpro',
 			dataType: 'json',
@@ -363,6 +362,30 @@
 				console.log("DATA:",data);
 			}
 		});
+		*/
+
+		 $.ajax({
+             type: "POST",
+             url: '<?php  echo site_url()?>/category/showcategory',
+             dataType: 'json',
+             success: function(data){ 
+                 $("#listCategory").empty();
+                 $("#tmplCategory").tmpl(data.recentPost).appendTo("#listCategory");
+                 console.log("DATA:",data); 
+             },
+             error: function(data){
+                 console.log("ERROR...");
+                 console.log(data);
+             }
+         });
 	</script>
+	
+	
+	
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js"></script>
+    <script type="text/x-jquery-tmpl" id="tmplCategory">
+			<option value="{{= categoryid }}">{{= title}}</option>			
+	</script>
+    
 	</body>
 </html>
