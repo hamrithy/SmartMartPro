@@ -5,8 +5,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 		<meta name="author" content="Vuthea Chheang">
-		<title>List POSTs</title>
- 
+		<title>List Product</title>
 	<!-- BOOTSTRAP CSS (REQUIRED ALL PAGE)-->
 	<link href="<?php echo base_url(); ?>/public/assets/css/bootstrap.min.css" rel="stylesheet">
 
@@ -88,8 +87,7 @@
 									<h1 class="panel-title">
 									<i class="fa fa-tasks"></i>
 										<a href="<?php echo site_url()?>/admin/product"  >
-										List Posts
-										
+										List Product
 										</a>
 									</h1>
 								  </div>
@@ -102,27 +100,29 @@
 						<table class="table table-striped table-hover" id="datatable-example">
 							<thead class="the-box dark full">
 								<tr>
-									<th>Post ID</th>
-									<th>Titile</th>
-									<th>Posted Date</th>									
+									<th>ID</th>
+									<th>Title</th>	
+									<th>Category</th>		
+									<th>Posted Date</th>						
 									<th>Posted By</th>
 									<th>Action</th>
 								</tr>
 							</thead>
 							<tbody>
 						
-							<?php /// foreach ($listPost as $v){ ?>
+							<?php  foreach ($lstProduct as $v){ ?>
 								<tr>
-									<td><?php //echo $v->postid; ?></td>
-									<td><?php ///echo $v->title; ?></td>
-									<td><?php //echo $v->postdate; ?></td>									
-									<td><?php //echo $v->username; ?></td>
+									<td><?php echo $v->productid; ?></td>
+									<td><?php echo $v->title; ?></td>
+									<td><?php echo $v->categoryname; ?></td>
+									<td><?php echo $v->createddate; ?></td>									
+									<td><?php echo $v->username; ?></td>
 									<td>
-										<a  href="<?php echo site_url()?>/admin/post/deletepost/<?php //echo $v->postid ?>" style="margin-right:3px" onclick="return confirm('Do you want to delete?');"  class="btn btn-danger">Delete</a> 
-										<a  href="<?php  echo site_url()?>/admin/post/getpost/<?php // echo $v->postid ?>"  class="btn btn-primary">Update</a>
+										<a  href="<?php echo site_url()?>/admin/product/deleteproduct/<?php echo $v->productid ?>" style="margin-right:3px" onclick="return confirm('Do you want to delete?');"  class="btn btn-danger">Delete</a> 
+										<a  href="<?php  echo site_url()?>/admin/product/getshowproduct/<?php echo $v->productid ?>"  class="btn btn-primary">Update</a>
 									</td>
 								</tr>
-							<?php //} ?>
+							<?php } ?>
 							</tbody>
 						</table>
 						</div><!-- /.table-responsive -->

@@ -3,7 +3,7 @@
 		
 		private $productid;
 		private $categoryid;
-		private $thumbnail;
+		private $thumbnailurl;
 		private $userid;
 		private $seotitle;
 		private $seodescription;
@@ -25,12 +25,12 @@
 			$this->categoryid = $categoryid;
 		}
 		
-		public function getThumbnail(){
-			return $this->thumbnail;
+		public function getThumbnailurl(){
+			return $this->thumbnailurl;
 		}
 		
-		public function setThumbnail($thumbnail){
-			$this->thumbnail = $thumbnail;
+		public function setThumbnailurl($thumbnailurl){
+			$this->thumbnailurl = $thumbnailurl;
 		}
 		
 		public function getUserid(){
@@ -64,5 +64,7 @@
 		public function setProductDetails($productDetail){
 			$this->productDetail = $productDetail;
 		}
+		
+		
 	}
 

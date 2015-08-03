@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -6,7 +5,6 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 		<meta name="author" content="Vuthea Chheang">
 		<title>Add Post</title>
- 
 	<!-- BOOTSTRAP CSS (REQUIRED ALL PAGE)-->
 	<link href="<?php echo base_url(); ?>/public/assets/css/bootstrap.min.css" rel="stylesheet">
 
@@ -90,7 +88,7 @@
 					
 					
 					
-					<form role="form" id="frmAddProduct" action="#" enctype="multipart/form-data" method="post" accept-charset="UTF-8">
+					<form role="form" name="frmAddProduct" id="frmAddProduct" action="<?php echo site_url('admin/product/addproductpro')?>" enctype="multipart/form-data" method="post" accept-charset="UTF-8">
 						
 						<!-- Tab -->
 						<div class="col-sm-8">
@@ -119,7 +117,7 @@
 															</textarea>
 														</div>
 														
-													
+														
 														
 														
 														
@@ -158,7 +156,10 @@
 										<label>Category</label>
 										<select class="form-control" name="category" id="listCategory">
 											
-										</select>								
+										</select>
+										
+										<input type="text" class="form-control" name="txtproductid" id="txtproductid"/>
+																		
 									</div>
 									
 									<div class="form-group">
@@ -335,41 +336,56 @@
 			filebrowserImageBrowseUrl : '<?php echo base_url(); ?>/public/responsivefilemanager/filemanager/dialog.php?type=1&editor=ckeditor&fldr=' }); 
 	</script>
 
-	<script>
-		$("form#frmAddProduct").submit(function(e){
+	<script type="text/javascript">
+	 var action = "inserted";
+	$(function(){
+		 $("form#frmAddProduct").submit(function(e){
 			e.preventDefault();
-			//alert($.trim(CKEDITOR.instances.txtendescription.getData())); return;
 			$.ajax({
 				type: "POST",
-				url: '<?php  echo site_url()?>admin/product/addproductpro',
+				url: $("form#frmAddProduct").attr("action"),
 				dataType: 'json',
 				data: {
+					txtproductid : $("#txtproductid").val(),
 					CategoryID: $("#listCategory").val(),
 					SEOTitle: $.trim($("#txtseotitle").val()),
 					SEODescription: $.trim($("#txtseodescription").val()),  
-					Thumbnail: $.trim($("#txtfile").val()),
+					Thumbnailurl: $.trim($("#txtfile").val()),
 					ProductDetails:[
 						{
 								"languageid": "1",
 								"title": $.trim($("#txtkhtitle").val()),  
-								"description": CKEDITOR.instances.txtendescription.getData(),
+								"description": CKEDITOR.instances.txtkhdescription.getData()
 						},
 						{
 								"languageid":"2",
 								"title": $.trim($("#txtentitle").val()),  
-								"description": CKEDITOR.instances.txtkhdescription.getData(),
+								"description": CKEDITOR.instances.txtendescription.getData()
 						}
 					]
+				},success: function(data){
+					if(data==true){
+						alert("You have been "+action+" successfully.");
+						location.href= "<?php echo site_url('admin/product')?>";
+					}else{
+						alert("You have not been  "+action+" successfully.");
+					}
+					console.log("SUCCESSDATA:",data);
 				},
-				success: function(data){
-					console.log("DATA:",data);
+				error: function(data){
+					console.log("SUCCESSDATA:",data);
 				}
 			});
 		
 
 		});
-		
 
+	});
+	</script>
+	
+	
+	<script type="text/javascript">
+	$(function(){
 		 $.ajax({
              type: "POST",
              url: '<?php  echo site_url()?>/admin/category/lstCategorypro',
@@ -384,7 +400,9 @@
                  console.log(data);
              }
          });
+	});
 	</script>
+	
 	
 	
 	
@@ -393,5 +411,34 @@
 			<option value="{{= categoryid }}">{{= title}}</option>			
 	</script>
     
+    
+    <script type="text/javascript">
+	$(function(){
+			 <?php 
+			 	if($proid){  ?>
+						$.post("<?php  echo site_url()?>admin/product/getproduct/<?php echo $proid ?>",function(data){
+							console.log(data);
+							 $("#listCategory").val(data[0].categoryid);
+							 $("#txtseotitle").val(data[0].seotitle);
+							 $("#txtseodescription").val(data[0].seodescription);
+							 $("#txtfile").val(data[0].thumbnailurl);
+		
+							 $("#txtkhtitle").val(data[0].title);
+							 $("#txtkhdescription").val(data[0].description);
+							 $("#txtentitle").val(data[1].title);
+							 $("#txtendescription").val(data[1].description);
+
+							 $("#txtproductid").val(data[0].productid);
+							 
+							 document.frmAddProduct.action="<?php echo site_url('admin/product/updateproductpro')?>";
+							 document.title = "Update Product";
+							 action="updated";
+						});
+			<?php } ?>
+	});
+	</script>
+	
+	
+	
 	</body>
 </html>
