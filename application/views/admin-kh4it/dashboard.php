@@ -189,19 +189,19 @@
 
 					<div id="list_videos_in_category">
 					
-						<?php foreach($recentProducts as $row){ ?>	
+						<?php //foreach($recentProducts as $row){ ?>	
 						<div class="the-box no-border store-list view-category">
 							<div class="media">
-								<a target="_blank" href="<?php //echo site_url()?>/blog/detail/<?php //echo $row->postid ?>" class="pull-left"><img style="width: 196px; height: 110px" src="<?php echo $row->imageurl; ?>" class="store-image" alt="image"></a>
+								<a target="_blank" href="<?php //echo site_url()?>/blog/detail/<?php //echo $row->postid ?>" class="pull-left"><img style="width: 196px; height: 110px" src="<?php //echo $row->imageurl; ?>" class="store-image" alt="image"></a>
 								<div class="clearfix visible-xs"></div>
 								<div class="media-body">
 									<a href="#"></a>
 									<h4 style="padding: 0px; margin: 0px" class="media-heading">
-										<a target="_blank" href="<?php // echo site_url()?>/blog/detail/<?php //echo $row->postid ?>"><strong class="text-black"><?php echo $row->title; ?></strong></a>
+										<a target="_blank" href="<?php // echo site_url()?>/blog/detail/<?php //echo $row->postid ?>"><strong class="text-black"><?php // echo //$row->title; ?></strong></a>
 									</h4>
 									<ul style="list-style: none; padding: 0px; margin: 0px;">
 										<li class="text-muted small">&nbsp;</li>
-										<li class="text-muted small"><?php echo $row->createdate; ?></li>
+										<li class="text-muted small"><?php //echo $row->createdate; ?></li>
 										<li class="text-muted small"></li>
 									</ul>
 								</div>
