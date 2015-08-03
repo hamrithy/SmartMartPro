@@ -94,6 +94,16 @@ class Daocategory extends CI_Model{
 		}
 	}
 	
+	
+	public function lstCategory($langid){
+		$this->db->select('c.categoryid , c.title');
+		$this->db->from('CATEGORYDETAIL c');
+		$this->db->where('c.languageid',$langid);
+		$this->db->order_by('c.categoryid', 'desc');
+		$query = $this->db->get();
+		return $query->result();
+	}
+	
 }
 
 ?>

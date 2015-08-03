@@ -72,7 +72,10 @@
 			echo json_encode($result);
 		}
 		
-		
+		public function lstCategorypro(){
+			$data["lstCategory"] = $this->DaoCategory->lstCategory(2);
+			echo json_encode($data);
+		}
 	}
 
 	
