@@ -338,6 +338,7 @@
 	<script>
 		$("form#frmAddProduct").submit(function(e){
 			e.preventDefault();
+			alert( $.trim($(this).find("#txtendescription").val())  ); return;
 			$.ajax({
 				type: "POST",
 				url: '<?php  echo site_url()?>admin/product/addproductpro',
