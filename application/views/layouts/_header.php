@@ -111,6 +111,7 @@
                 <!-- BEGIN MAIN MENU -->
                 <ul id="MAIN_MENU">
                     <script type="text/javascript">
+                        var base_url = "<?php echo base_url();?>";
                         var menus = eval('<?php $this->menus->generateMenu()?>');
                         if(menus!=null || menus!=""){
                             var str = '';
@@ -120,16 +121,21 @@
                             var countLevel2 = 0;
                             var menuid;
                             var menuidLevel1;
-                            var currentMenuID = "1";
+                            var home = false;
+                            var currentURL = window.location.replace("#","");
                             $.each(menus,function(key,value){
                                 var current = '';
                                 if(value.level=="0"){
-                                    if(currentMenuID == value.menuid){
+                                    if(base_url==currentURL && home==false){
+                                        home = true;
                                         current = 'current';
                                     }
-                                    str += '<li class="mega-menu sub-menu '+current+'">'+
+                                    if(currentURL=="<?php echo site_url()?>"+value.linkto && home==false) {
+                                        current = 'current';
+                                    }
+                                    str += '<li class="mega-menu sub-menu '+current+'"  id="MAIN">'+
                                                 '<a href="<?php echo site_url()?>'+value.linkto+'">'+
-                                                    '<div>'+value.title+'</div>'+
+                                                    '<div id="MENUID" class="'+value.menuid+'">'+value.title+'</div>'+
                                                     '<span>'+value.description+'</span>'+
                                                 '</a>';
                                     menuid = value.menuid;
@@ -170,6 +176,11 @@
                                 }
                             });
                             $("#MAIN_MENU").html(str);
+
+/*                            $(document).on('click','#MAIN_MENU #MAIN', function(){
+                                $.cookie("CURRENT_MENU", ($(this).find("#MENUID")).attr("class"));
+                                alert($.cookie("CURRENT_MENU"));
+                            });*/
                         }
                     </script>
                 </ul>
