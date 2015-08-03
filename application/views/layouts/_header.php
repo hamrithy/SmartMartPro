@@ -1,3 +1,9 @@
+<?php 
+    if($this->input->cookie("LANGUAGE_ID")=="" || 
+       $this->input->cookie("LANGUAGE_ID")==null) {
+        redirect("language/english");
+    }
+?>
 <!-- BEGIN TOP BAR -->
 <div id="top-bar">
     <!-- BEGIN TOP BAR CONTAINER -->
@@ -178,6 +184,7 @@
                             });
                             $("#MAIN_MENU").html(str);
                         }
+                        menus="";
                     </script>
                 </ul>
                 <!-- END MAIN MENU -->
