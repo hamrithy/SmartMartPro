@@ -38,6 +38,7 @@
 			$this->DtoMenu->setOrdering($this->input->post('ordering'));
 			$this->DtoMenu->setSubof($this->input->post('subof'));
 			$this->DtoMenu->setLinkto($this->input->post('linkto'));
+			$this->DtoMenu->setLevel($this->input->post('level'));
 			$this->DtoMenu->setMenuDetails($this->input->post('menuDetails'));
 			$result = $this->DaoMenu->addNewMenu($this->DtoMenu);
 			echo json_encode($result);
@@ -64,6 +65,7 @@
 			$this->DtoMenu->setSubof($this->input->post('subof'));
 			$this->DtoMenu->setMenuid($this->input->post('menuid'));
 			$this->DtoMenu->setLinkto($this->input->post('linkto'));
+			$this->DtoMenu->setLevel($this->input->post('level'));
 			$this->DtoMenu->setMenuDetails($this->input->post('menuDetails'));
 			$result = $this->DaoMenu->updateMenu($this->DtoMenu);
 			echo json_encode($result);

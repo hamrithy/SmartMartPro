@@ -11,6 +11,7 @@ class DaoMenu extends CI_Model{
 		$this->db->trans_begin();
 		$this->db->insert("MENUS",array("ordering" 	=> $menus->getOrdering(),
 										"linkto" 	=> $menus->getLinkto(),
+										"level"		=> $menus->getLevel(),
 										"subof" 	=> ($menus->getSubof()=="") ? null : $menus->getSubof()
 										));
 		$menuID = $this->db->insert_id();
@@ -48,6 +49,7 @@ class DaoMenu extends CI_Model{
 		$menu = array(
 					"ordering"	=> $menus->getOrdering(),
 					"linkto"	=> $menus->getLinkto(),
+					"level"		=> $menus->getLeve(),
 					"subof"		=> ($menus->getSubof()=="") ? null : $menus->getSubof());
 		$this->db->where('menuid', $menuid);
 		$this->db->update('MENUS', $menu);
@@ -86,7 +88,7 @@ class DaoMenu extends CI_Model{
 	}
 
 	public function listTopMenu($languageid=1){
-		$this->db->select('A.menuid, B.title');
+		$this->db->select('A.menuid, B.title, A.level');
 		$this->db->from('MENUS A');
 		$this->db->join('MENUDETAIL B','A.menuid = B.menuid');
 		//$this->db->where('A.subof', null);

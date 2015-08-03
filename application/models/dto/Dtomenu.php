@@ -5,6 +5,7 @@ class DtoMenu {
 	private $linkto;
 	private $ordering;
 	private $subof;
+	private $level;
 	
 	private $menuDetails;
 /*	private $languageid;
@@ -42,6 +43,14 @@ class DtoMenu {
 	
 	public function setSubof($subof){
 		$this->subof = $subof;
+	}
+
+	public function setLevel($level){
+		$this->level = $level;
+	}
+
+	public function getLevel(){
+		return $this->level;
 	}
 	
 	public function setMenuDetails($menuDetails){

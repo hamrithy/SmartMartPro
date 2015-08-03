@@ -163,12 +163,10 @@
 									<div class="form-group">
 										<label>Subof</label>
 										<select class="form-control" name="subof" id="subof">
+											<option value=",0">-------</option>
 											<?php 
-												if(count($topMenu)>0){
-													echo '<option value="">-------</option>';
-												}
 												foreach($topMenu as $menu) {
-													echo '<option value="'.$menu->menuid.'">'.$menu->title.'</option>';
+													echo '<option value="'.$menu->menuid.','.($menu->level+1).'">'.$menu->title.'</option>';
 												}	
 											?>
 										</select>								
@@ -349,6 +347,7 @@
 					});
 				});
 				console.log(data);
+				var subof = ($.trim($("#subof").val())).split(",");
 				$.ajax({
 					type: "POST",
 					url: $("form#frmAddMenu").attr("action"),
@@ -356,7 +355,8 @@
 					data: {
 						menuid : 	$.trim($("#menuid").val()),
 						ordering: 	$.trim($("#txtOrder").val()),
-						subof: 		$.trim($("#subof").val()),
+						subof: 		subof[0],
+						level:  	subof[1],
 						linkto: 	$.trim($("#txtLinkto").val()),
 						menuDetails: data
 					},
