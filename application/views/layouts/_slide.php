@@ -5,6 +5,16 @@
                         <div class="fslider" data-arrows="false">
                             <div class="flexslider">
                                 <div class="slider-wrap"​ id="vuslider">
+                                    <?php 
+                                        $slidersMain = $this->sliders->getSlidesByType();
+                                        foreach($slidersMain as $slider){
+                                            echo '<div class="slide">
+                                                    <a href="javascript:;">
+                                                        <img src="'.$slider->imageurl.'" alt="Shop Image">
+                                                    </a>
+                                                </div>';
+                                        }
+                                    ?>
                                     
                                     <!--  <div class="slide">
                                         <a href="javascript:;">
@@ -38,14 +48,22 @@
                     </div>
 
                     <div class="col_one_third bottommargin-lg col_last">
+                        <?php 
+                            $slidersSub = $this->sliders->getSlidesByType("subslide");
+                            foreach($slidersSub as $slider){
+                                echo '<div class="col_full bottommargin-sm" >
+                                        <a href="javascript:;"><img id="subslide1" src="'.$slider->imageurl.'" alt="Image"></a>
+                                     </div>';
+                            }
+                        ?>
 
-                        <div class="col_full bottommargin-sm" >
+                        <!-- <div class="col_full bottommargin-sm" >
                             <a href="javascript:;"><img id="subslide1" src="<?php echo base_url('public/style_front/images/shop/banners/7.jpg')?>" alt="Image"></a>
                         </div>
 
                         <div class="col_full nobottommargin">
                             <a href="javascript:;"><img  id="subslide2" src="<?php echo base_url('public/style_front/images/shop/banners/3.jpg')?>" alt="Image"></a>
-                        </div>
+                        </div> -->
 
                     </div>
 
@@ -56,7 +74,7 @@
 <script>
    
     
-    $.post("<?php echo site_url()?>slide/listslide/slide/<?php echo lang('lang_id');?>", function(data){
+/*    $.post("<?php echo site_url()?>slide/listslide/slide/<?php echo lang('lang_id');?>", function(data){
             $("#vuslider").html(showslider(data));
     });
 
@@ -77,6 +95,6 @@
 
             $("#subslide1").attr("src", data[0].imageurl);
             $("#subslide2").attr("src", data[1].imageurl);
-    });
+    });*/
 
 </script>

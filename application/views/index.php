@@ -290,6 +290,7 @@
                     <div id="oc-clients-full" class="owl-carousel image-carousel">
 
                         <div class="oc-item"><a href="javascript:;"><img src="<?php echo base_url('public/style_front/images/clients/logo/1.png')?>" alt="Clients"></a></div>
+                        <div class="oc-item"><a href="javascript:;"><img src="<?php echo base_url('public/style_front/images/clients/logo/1.png')?>" alt="Clients"></a></div>
                         <div class="oc-item"><a href="javascript:;"><img src="<?php echo base_url('public/style_front/images/clients/logo/2.png')?>" alt="Clients"></a></div>
                         <div class="oc-item"><a href="javascript:;"><img src="<?php echo base_url('public/style_front/images/clients/logo/3.png')?>" alt="Clients"></a></div>
                         <div class="oc-item"><a href="javascript:;"><img src="<?php echo base_url('public/style_front/images/clients/logo/4.png')?>" alt="Clients"></a></div>

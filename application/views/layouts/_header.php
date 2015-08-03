@@ -1,9 +1,3 @@
-<?php 
-    if($this->input->cookie("LANGUAGE_ID")=="" || 
-       $this->input->cookie("LANGUAGE_ID")==null) {
-        redirect("language/english");
-    }
-?>
 <!-- BEGIN TOP BAR -->
 <div id="top-bar">
     <!-- BEGIN TOP BAR CONTAINER -->
@@ -118,7 +112,7 @@
                 <ul id="MAIN_MENU">
                     <script type="text/javascript">
                         var base_url = "<?php echo base_url();?>";
-                        var menus = eval('<?php $this->menus->generateMenu()?>');
+                        var menus = eval('<?php $this->menus->getAllMenus()?>');
                         if(menus!=null || menus!=""){
                             var str = '';
                             var strLevel1 = '<div class="mega-menu-content style-2 col-4 clearfix">';
