@@ -91,7 +91,7 @@
 						<strong>Welcome!</strong>
 					</p>
 					<p class="text-muted">
-						Welcome to Coffee Chateau, we provide the best food and drink to all customers. And the good services to the client. Best environment to disussing.
+						Welcome to AIS Smart Mart, we provide the best product to all customers. And the good services to the client. Best product to using in everyday lifestyle.
 					</p>
 				</div>
 				<!-- END EXAMPLE ALERT -->
@@ -107,7 +107,7 @@
 							<div class="tiles facebook-tile text-center">
 								<i class="fa fa-cutlery icon-lg-size"></i>
 								<h4>
-									<a href="#"><?php // echo $countFoods; ?> Foods</a>
+									<a href="#"><?php  echo $countProducts; ?> Products</a>
 								</h4>
 							</div>
 							<!-- /.tiles .facebook-tile -->
@@ -117,7 +117,7 @@
 							<div class="tiles twitter-tile text-center">
 								<i class="fa fa-dashboard icon-lg-size"></i>
 								<h4>
-									<a href="<?php echo site_url()?>/admin/foodcategory"><?php // echo $countFoodCategories; ?> Categories</a>
+									<a href="<?php echo site_url()?>/admin/foodcategory"><?php  echo $countCategories; ?> Categories</a>
 								</h4>
 							</div>
 							<!-- /.tiles .twitter-tile -->
@@ -127,7 +127,7 @@
 							<div class="tiles dribbble-tile text-center">
 								<i class="fa fa-comments icon-lg-size"></i>
 								<h4>
-									<a href="<?php echo site_url()?>/admin/post"><?php // echo $countPosts; ?> Posts</a>
+									<a href="<?php echo site_url()?>/admin/post"><?php echo $countUsers; ?> Users</a>
 								</h4>
 							</div>
 							<!-- /.tiles .dribbble-tile -->
@@ -137,7 +137,7 @@
 							<div class="tiles linkedin-tile text-center">
 								<i class="fa fa-credit-card icon-lg-size"></i>
 								<h4>
-									<a href="<?php echo site_url()?>/admin/page"><?php// echo $countPages; ?> Pages</a>
+									<a href="<?php echo site_url()?>/admin/page"><?php echo $countPages; ?> Pages</a>
 								</h4>
 							</div>
 							<!-- /.tiles .dribbble-tile -->
@@ -189,19 +189,19 @@
 
 					<div id="list_videos_in_category">
 					
-						<?php //foreach($recentPosts as $row){ ?>	
+						<?php foreach($recentProducts as $row){ ?>	
 						<div class="the-box no-border store-list view-category">
 							<div class="media">
-								<a target="_blank" href="<?php //echo site_url()?>/blog/detail/<?php //echo $row->postid ?>" class="pull-left"><img style="width: 196px; height: 110px" src="<?php //echo $row->thumbnailurl; ?>" class="store-image" alt="image"></a>
+								<a target="_blank" href="<?php //echo site_url()?>/blog/detail/<?php //echo $row->postid ?>" class="pull-left"><img style="width: 196px; height: 110px" src="<?php echo $row->imageurl; ?>" class="store-image" alt="image"></a>
 								<div class="clearfix visible-xs"></div>
 								<div class="media-body">
 									<a href="#"></a>
 									<h4 style="padding: 0px; margin: 0px" class="media-heading">
-										<a target="_blank" href="<?php // echo site_url()?>/blog/detail/<?php //echo $row->postid ?>"><strong class="text-black"><?php //echo $row->title; ?></strong></a>
+										<a target="_blank" href="<?php // echo site_url()?>/blog/detail/<?php //echo $row->postid ?>"><strong class="text-black"><?php echo $row->title; ?></strong></a>
 									</h4>
 									<ul style="list-style: none; padding: 0px; margin: 0px;">
 										<li class="text-muted small">&nbsp;</li>
-										<li class="text-muted small"><?php //echo $row->postdate; ?></li>
+										<li class="text-muted small"><?php echo $row->createdate; ?></li>
 										<li class="text-muted small"></li>
 									</ul>
 								</div>

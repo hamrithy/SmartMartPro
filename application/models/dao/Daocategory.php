@@ -110,6 +110,10 @@ class Daocategory extends CI_Model{
 		$query = $this->db->get();
 		return $query->result();
 	}
+
+	public function countCategories(){
+		return $this->db->count_all('CATEGORIES');
+	}
 	
 }
 

@@ -108,4 +108,8 @@ class DaoUser extends CI_Model
 		}
 	}
 
+	public function countUsers(){
+		return $this->db->count_all('USERS');
+	}
+
 }

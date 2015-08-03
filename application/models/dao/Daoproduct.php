@@ -30,6 +30,19 @@ class DaoProduct extends CI_Model{
 			return TRUE;
 		}
 	}
+
+	public function countProducts(){
+		return $this->db->count_all('PRODUCTS');
+	}
+
+	public function getRecentProducts($limit){
+		$this->db->select('productid,title,imageurl,createdate');
+		$this->db->from('PRODUCTDETAIL');
+		$this->db->limit($limit);
+		$this->db->order_by('productid','DESC');
+		$query = $this->db->get();
+		return $query->result();
+	}
 }
 
 ?>

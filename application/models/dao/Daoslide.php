@@ -48,7 +48,6 @@
 			return $query->result();
 		}
 
-<<<<<<< Updated upstream
 		public function getfrontSlides($type, $langid){
 			$this->db->select('s.sliderid, s.ordering, s.type, sd.title, sd.languageid, sd.caption, sd.description, sd.imageurl');
 			$this->db->from('SLIDERS s');
@@ -60,25 +59,12 @@
 			return $query->result();
 		}
 
-/*		public function deleteSlide(DtoSlide $s){
-			$this->db->where('slideid', $s->getSlideid());
-			$this->db->delete('SLIDES');
-		}
-
-		public function getSlide(DtoSlide $s){
-			$this->db->select('s.slideid , s.title, s.caption, s.linkto , s.imageurl, s.ordering , u.userid, u.username');
-			$this->db->from('SLIDES s');
-			$this->db->join('USERS u', 's.userid = u.userid');
-			$this->db->where('slideid', $s->getSlideid());
-			$this->db->order_by('slideid', 'desc');
-=======
 		public function getSlide($id){
 			$this->db->select('s.sliderid, s.ordering, s.type, sd.title, sd.languageid, sd.caption, sd.description, sd.imageurl');
 			$this->db->from('SLIDERS s');
 			$this->db->join('SLIDERDETAIL sd', 's.sliderid = sd.sliderid');
 			$this->db->where('s.sliderid',$id);
 			$this->db->order_by('s.ordering', 'desc');
->>>>>>> Stashed changes
 			$query = $this->db->get();
 			return $query->result();
 		}
@@ -98,7 +84,7 @@
 				$this->db->where('languageid', $sl['languageid']);
 				$this->db->update('SLIDERDETAIL', $sl);
 			}
-			if($this->trans_status() === FALSE){
+			if($this->db->trans_status() === FALSE){
 				$this->db->trans_rollback();
 				return FALSE;
 			}else{
