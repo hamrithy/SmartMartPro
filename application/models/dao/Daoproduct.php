@@ -17,7 +17,7 @@ class DaoProduct extends CI_Model{
 		$this->db->where('d.languageid',$langid   );
 		$this->db->join('CATEGORIES c', 'p.categoryid = c.categoryid');
 		$this->db->join('CATEGORYDETAIL cd', 'cd.categoryid = c.categoryid');
-		$this->db->where('cd.languageid',$this->CI->input->cookie("LANGUAGE_ID") || lang('lang_id'));
+		$this->db->where('cd.languageid',lang('lang_id'));
 		$this->db->join('USERS u', 'p.userid = u.userid');
 		$this->db->order_by("p.productid", "desc");
 		if($productid != 0){
