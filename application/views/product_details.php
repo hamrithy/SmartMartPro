@@ -546,7 +546,7 @@
         </section><!-- #content end -->
 
         <!-- BEGGIN FOOTER SECTION -->
-        <?php $this->load->view('footer'); ?>
+        <?php $this->load->view('_footer'); ?>
         <!-- END FOOTER SECTION -->
        
 </body>

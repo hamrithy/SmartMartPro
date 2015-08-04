@@ -1,7 +1,6 @@
                 <div class="container clearfix">
 
                     <div class="col_two_third bottommargin-lg">
-
                         <div class="fslider" data-arrows="false">
                             <div class="flexslider">
                                 <div class="slider-wrap"​ id="vuslider">
