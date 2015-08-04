@@ -14,7 +14,7 @@ class DaoProduct extends CI_Model{
 						   d.title,d.caption,d.description,d.createddate');
 		$this->db->from('PRODUCTS p');
 		$this->db->join('PRODUCTDETAIL d', 'p.productid = d.productid');
-		$this->db->where('d.languageid',$langid);
+		$this->db->where('d.languageid',$langid   );
 		$this->db->join('CATEGORIES c', 'p.categoryid = c.categoryid');
 		$this->db->join('CATEGORYDETAIL cd', 'cd.categoryid = c.categoryid');
 		$this->db->where('cd.languageid',$langid);
