@@ -258,31 +258,14 @@
                         <?php 
                             $slidersPartner = $this->sliders->getSlidesByType("partner");
                             foreach($slidersPartner as $slider){
-                                echo '<div class="oc-item">
+                                echo '<div class="oc-item" style="margin-right: 30px;">
                                         <a href="javascript:;">
                                             <img src="'.$slider->imageurl.'" alt="Clients">
                                         </a>
                                     </div>';
                             }
                         ?>
-                        <div class="oc-item"><a href="javascript:;"><img src="<?php echo base_url('public/style_front/images/clients/logo/1.png')?>" alt="Clients"></a></div>
-                        <div class="oc-item"><a href="javascript:;"><img src="<?php echo base_url('public/style_front/images/clients/logo/1.png')?>" alt="Clients"></a></div>
-                        <div class="oc-item"><a href="javascript:;"><img src="<?php echo base_url('public/style_front/images/clients/logo/2.png')?>" alt="Clients"></a></div>
-                        <div class="oc-item"><a href="javascript:;"><img src="<?php echo base_url('public/style_front/images/clients/logo/3.png')?>" alt="Clients"></a></div>
-                        <div class="oc-item"><a href="javascript:;"><img src="<?php echo base_url('public/style_front/images/clients/logo/4.png')?>" alt="Clients"></a></div>
-                        <div class="oc-item"><a href="javascript:;"><img src="<?php echo base_url('public/style_front/images/clients/logo/5.png')?>" alt="Clients"></a></div>
-                        <div class="oc-item"><a href="javascript:;"><img src="<?php echo base_url('public/style_front/images/clients/logo/6.png')?>" alt="Clients"></a></div>
-                        <div class="oc-item"><a href="javascript:;"><img src="<?php echo base_url('public/style_front/images/clients/logo/7.png')?>" alt="Clients"></a></div>
-                        <div class="oc-item"><a href="javascript:;"><img src="<?php echo base_url('public/style_front/images/clients/logo/8.png')?>" alt="Clients"></a></div>
-                        <div class="oc-item"><a href="javascript:;"><img src="<?php echo base_url('public/style_front/images/clients/logo/9.png')?>" alt="Clients"></a></div>
-                        <div class="oc-item"><a href="javascript:;"><img src="<?php echo base_url('public/style_front/images/clients/logo/10.png')?>" alt="Clients"></a></div>
-                        <div class="oc-item"><a href="javascript:;"><img src="<?php echo base_url('public/style_front/images/clients/logo/11.png')?>" alt="Clients"></a></div>
-                        <div class="oc-item"><a href="javascript:;"><img src="<?php echo base_url('public/style_front/images/clients/logo/12.png')?>" alt="Clients"></a></div>
-                        <div class="oc-item"><a href="javascript:;"><img src="<?php echo base_url('public/style_front/images/clients/logo/13.png')?>" alt="Clients"></a></div>
-                        <div class="oc-item"><a href="javascript:;"><img src="<?php echo base_url('public/style_front/images/clients/logo/14.png')?>" alt="Clients"></a></div>
-                        <div class="oc-item"><a href="javascript:;"><img src="<?php echo base_url('public/style_front/images/clients/logo/15.png')?>" alt="Clients"></a></div>
-                        <div class="oc-item"><a href="javascript:;"><img src="<?php echo base_url('public/style_front/images/clients/logo/18.png')?>" alt="Clients"></a></div>
-
+       
                     </div>
 
                     <script type="text/javascript">
@@ -292,7 +275,7 @@
                             var ocClients = $("#oc-clients-full");
 
                             ocClients.owlCarousel({
-                                margin: 30,
+                               
                                 nav: false,
                                 autoplay: true,
                                 dots: false,
