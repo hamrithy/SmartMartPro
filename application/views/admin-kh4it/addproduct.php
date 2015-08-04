@@ -53,7 +53,6 @@
 		<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 
 		
-			
 		
 		
 	</head>
@@ -158,7 +157,7 @@
 											
 										</select>
 										
-										<input type="text" class="form-control" name="txtproductid" id="txtproductid"/>
+										<input type="hidden" class="form-control" name="txtproductid" id="txtproductid"/>
 																		
 									</div>
 									
@@ -411,32 +410,35 @@
 			<option value="{{= categoryid }}">{{= title}}</option>			
 	</script>
     
-    
     <script type="text/javascript">
-	$(function(){
-			 <?php 
-			 	if($proid){  ?>
-						$.post("<?php  echo site_url()?>admin/product/getproduct/<?php echo $proid ?>",function(data){
-							console.log(data);
-							 $("#listCategory").val(data[0].categoryid);
-							 $("#txtseotitle").val(data[0].seotitle);
-							 $("#txtseodescription").val(data[0].seodescription);
-							 $("#txtfile").val(data[0].thumbnailurl);
+			$(function(){
+					 <?php 
+					 	if($proid){  ?>
+								$.post("<?php  echo site_url()?>admin/product/getproduct/<?php echo $proid ?>",function(data){
+									console.log(data);
+									 $("#listCategory").val(data[0].categoryid);
+									 $("#txtseotitle").val(data[0].seotitle);
+									 $("#txtseodescription").val(data[0].seodescription);
+									 $("#txtfile").val(data[0].thumbnailurl);
+				
+									 $("#txtkhtitle").val(data[0].title);
+									 CKEDITOR.instances.txtkhdescription.setData(data[0].description);
+									 $("#txtentitle").val(data[1].title);
+									 CKEDITOR.instances.txtendescription.setData(data[1].description);
+									 
 		
-							 $("#txtkhtitle").val(data[0].title);
-							 $("#txtkhdescription").val(data[0].description);
-							 $("#txtentitle").val(data[1].title);
-							 $("#txtendescription").val(data[1].description);
+									 $("#txtproductid").val(data[0].productid);
 
-							 $("#txtproductid").val(data[0].productid);
-							 
-							 document.frmAddProduct.action="<?php echo site_url('admin/product/updateproductpro')?>";
-							 document.title = "Update Product";
-							 action="updated";
-						});
-			<?php } ?>
-	});
-	</script>
+									 $("#myimagedemo").fadeIn("fast").attr('src',data[0].thumbnailurl);
+									 
+									 document.frmAddProduct.action="<?php echo site_url('admin/product/updateproductpro')?>";
+									 document.title = "Update Product";
+									 action="updated";
+								});
+					<?php } ?>
+			});
+			</script>
+    
 	
 	
 	
