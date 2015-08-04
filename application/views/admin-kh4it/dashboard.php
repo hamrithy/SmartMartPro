@@ -155,14 +155,14 @@
 				
 
 					<!-- BEGIN USER CARD LONG -->
-					<?php //foreach($recentFoods as $row){ ?>
+					<?php foreach($recentSlides as $row){ ?>
 					<div class="the-box bg-success no-border">
 						<div class="media user-card-sm">
-							<a href="#" class="pull-left"> <img alt="Avatar" src="<?php //echo $row->thumbnailurl; ?>" class="media-object img-circle">
+							<a href="#" class="pull-left"> <img alt="Avatar" src="<?php echo $row->imageurl; ?>" class="media-object img-circle">
 							</a>
 							<div class="media-body">
-								<h4 class="media-heading"><?php //echo $row->title; ?></h4>
-								<p class="text-success">$ <?php //echo $row->price; ?></p>
+								<h4 class="media-heading"><?php echo $row->title; ?></h4>
+								<p class="text-success">Date: <?php echo $row->createddate; ?></p>
 							</div>
 							<div class="right-button">
 								<a class="btn btn-success active" target="_blank" href="<?php echo base_url(); ?>menu" title="View" data-toggle="tooltip">
@@ -172,7 +172,7 @@
 							<!-- /.right-button -->
 						</div>
 					</div>
-					<?php //} ?>
+					<?php } ?>
 					<!-- /.the-box .no-border -->
 				
 			
@@ -189,19 +189,19 @@
 
 					<div id="list_videos_in_category">
 					
-						<?php //foreach($recentProducts as $row){ ?>	
+						<?php foreach($recentProducts as $row){ ?>	
 						<div class="the-box no-border store-list view-category">
 							<div class="media">
-								<a target="_blank" href="<?php //echo site_url()?>/blog/detail/<?php //echo $row->postid ?>" class="pull-left"><img style="width: 196px; height: 110px" src="<?php //echo $row->imageurl; ?>" class="store-image" alt="image"></a>
+								<a target="_blank" href="<?php //echo site_url()?>/blog/detail/<?php //echo $row->postid ?>" class="pull-left"><img style="width: 196px; height: 110px" src="<?php echo $row->thumbnailurl; ?>" class="store-image" alt="image"></a>
 								<div class="clearfix visible-xs"></div>
 								<div class="media-body">
 									<a href="#"></a>
 									<h4 style="padding: 0px; margin: 0px" class="media-heading">
-										<a target="_blank" href="<?php // echo site_url()?>/blog/detail/<?php //echo $row->postid ?>"><strong class="text-black"><?php // echo //$row->title; ?></strong></a>
+										<a target="_blank" href="<?php // echo site_url()?>/blog/detail/<?php //echo $row->postid ?>"><strong class="text-black"><?php echo $row->title; ?></strong></a>
 									</h4>
 									<ul style="list-style: none; padding: 0px; margin: 0px;">
-										<li class="text-muted small">&nbsp;</li>
-										<li class="text-muted small"><?php //echo $row->createdate; ?></li>
+										<li class="text-muted small"><?php echo $row->description; ?></li>
+										<li class="text-muted small"><?php echo $row->createddate; ?></li>
 										<li class="text-muted small"></li>
 									</ul>
 								</div>
@@ -209,7 +209,7 @@
 							</div>
 							<!-- /.media -->
 						</div>
-						<?php //} ?>
+						<?php } ?>
 						
 						
 					</div>

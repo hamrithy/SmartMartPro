@@ -103,8 +103,20 @@
 			$this->db->where('sliderid', $sid);
 			$this->db->delete('SLIDERS');
 		}
+		public function getRecentSlides($limit){
+			$this->db->select('s.sliderid,sd.imageurl , sd.title, sd.description, sd.createddate');
+			$this->db->from('SLIDERS s');
+			$this->db->join('SLIDERDETAIL sd','s.sliderid = sd.sliderid');
+			$this->db->limit($limit);
+			$this->db->where('languageid', 2);
+			$this->db->order_by('sliderid','DESC');
+			$query = $this->db->get();
+			return $query->result();
+		}
 
 	}
+
+	
 
 
 ?>
