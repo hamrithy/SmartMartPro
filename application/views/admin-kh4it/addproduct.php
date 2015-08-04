@@ -468,22 +468,24 @@
 
 										 /*$("#myimagedemo").fadeIn("fast").attr('src',data[0].thumbnailurl);*/
 										 var images = (data[0].thumbnailurl).split(";");
-										 for(var i=0;i<images.length;i++){
-											$('tbody').append('<tr>'+
-												'<td>'+
-													'<div class="form-group">'+
-							    						'<img src="'+images[i]+'" class="img-responsive" id="myimagedemo"/>'+
-													'</div>'+
-												'</td>'+
-												'<td>'+
-													'<input type="text" style="width:50px; text-align:center;" value='+i+' />'+
-												'</td>'+
-												'<td>'+
-													'<div class="form-group">'+
-							    						'<a type="button" class="btn btn-danger btn-file" href="javascript:;" id="btnRemove">Remove</a>'+	
-													'</div>'+
-												'</td>'+
-											'</tr>');
+										 if(images!="" && images.length>0){
+											 for(var i=0;i<images.length;i++){
+												$('tbody').append('<tr>'+
+													'<td>'+
+														'<div class="form-group">'+
+								    						'<img src="'+images[i]+'" class="img-responsive" id="myimagedemo"/>'+
+														'</div>'+
+													'</td>'+
+													'<td>'+
+														'<input type="text" style="width:50px; text-align:center;" value='+i+' />'+
+													'</td>'+
+													'<td>'+
+														'<div class="form-group">'+
+								    						'<a type="button" class="btn btn-danger btn-file" href="javascript:;" id="btnRemove">Remove</a>'+	
+														'</div>'+
+													'</td>'+
+												'</tr>');
+											 }
 										 }
 										 document.frmAddProduct.action="<?php echo site_url('admin/product/updateproductpro')?>";
 										 document.title = "Update Product";

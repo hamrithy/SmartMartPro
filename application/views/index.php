@@ -43,8 +43,25 @@
                         </div>
 
                         <div>
+                            <?php foreach($arriveds as $product){
+                                    $thumnailurl = explode(";", $product->thumbnailurl);
+                                    echo '  <div class="spost clearfix">
+                                            <div class="entry-image">
+                                                <a href="javascript:;"><img src="'.$thumnailurl[0].'" alt="Image"></a>
+                                            </div>
+                                            <div class="entry-c">
+                                                <div class="entry-title">
+                                                    <h4><a href="javascript:;">'.$product->title.'</a></h4>
+                                                </div>
+                                                <ul class="entry-meta">
+                                                    <li class="color">$29.99</li>
+                                                    <li><i class="icon-star3"></i> <i class="icon-star3"></i> <i class="icon-star3"></i> <i class="icon-star3"></i> <i class="icon-star-half-full"></i></li>
+                                                </ul>
+                                            </div>
+                                        </div>';
 
-                            <div class="spost clearfix">
+                            }?>
+                            <!-- <div class="spost clearfix">
                                 <div class="entry-image">
                                     <a href="javascript:;"><img src="<?php echo base_url('public/style_front/images/shop/small/1.jpg')?>" alt="Image"></a>
                                 </div>
@@ -102,8 +119,7 @@
                                         <li><i class="icon-star3"></i> <i class="icon-star3"></i> <i class="icon-star3"></i> <i class="icon-star3"></i> <i class="icon-star-empty"></i></li>
                                     </ul>
                                 </div>
-                            </div>
-
+                            </div> -->
                         </div>
 
                     </div>
@@ -115,8 +131,26 @@
                         </div>
 
                         <div>
+                            <?php foreach($populars as $product){
+                                    $thumnailurl = explode(";", $product->thumbnailurl);
+                                    echo '  <div class="spost clearfix">
+                                            <div class="entry-image">
+                                                <a href="javascript:;"><img src="'.$thumnailurl[0].'" alt="Image"></a>
+                                            </div>
+                                            <div class="entry-c">
+                                                <div class="entry-title">
+                                                    <h4><a href="javascript:;">'.$product->title.'</a></h4>
+                                                </div>
+                                                <ul class="entry-meta">
+                                                    <li class="color">$29.99</li>
+                                                    <li><i class="icon-star3"></i> <i class="icon-star3"></i> <i class="icon-star3"></i> <i class="icon-star3"></i> <i class="icon-star-half-full"></i></li>
+                                                </ul>
+                                            </div>
+                                        </div>';
 
-                            <div class="spost clearfix">
+                            }?>
+
+                            <!-- <div class="spost clearfix">
                                 <div class="entry-image">
                                     <a href="javascript:;"><img src="<?php echo base_url('public/style_front/images/shop/small/3.jpg')?>" alt="Image"></a>
                                 </div>
@@ -175,7 +209,7 @@
                                     </ul>
                                 </div>
                             </div>
-
+ -->
                         </div>
 
                     </div>
@@ -187,8 +221,26 @@
                         </div>
 
                         <div>
+                            <?php foreach($recommends as $product){
+                                    $thumnailurl = explode(";", $product->thumbnailurl);
+                                    echo '  <div class="spost clearfix">
+                                            <div class="entry-image">
+                                                <a href="javascript:;"><img src="'.$thumnailurl[0].'" alt="Image"></a>
+                                            </div>
+                                            <div class="entry-c">
+                                                <div class="entry-title">
+                                                    <h4><a href="javascript:;">'.$product->title.'</a></h4>
+                                                </div>
+                                                <ul class="entry-meta">
+                                                    <li class="color">$29.99</li>
+                                                    <li><i class="icon-star3"></i> <i class="icon-star3"></i> <i class="icon-star3"></i> <i class="icon-star3"></i> <i class="icon-star-half-full"></i></li>
+                                                </ul>
+                                            </div>
+                                        </div>';
 
-                            <div class="spost clearfix">
+                            }?>
+
+                            <!-- <div class="spost clearfix">
                                 <div class="entry-image">
                                     <a href="<?php echo site_url('product/1')?>"><img src="<?php echo base_url('public/style_front/images/shop/small/8.jpg')?>" alt="Image"></a>
                                 </div>
@@ -246,7 +298,7 @@
                                         <li><i class="icon-star3"></i> <i class="icon-star3"></i> <i class="icon-star3"></i> <i class="icon-star3"></i> <i class="icon-star-half-full"></i></li>
                                     </ul>
                                 </div>
-                            </div>
+                            </div> -->
 
                         </div>
 

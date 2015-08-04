@@ -17,7 +17,7 @@ class DaoProduct extends CI_Model{
 		$this->db->where('d.languageid',$langid);
 		$this->db->join('CATEGORIES c', 'p.categoryid = c.categoryid');
 		$this->db->join('CATEGORYDETAIL cd', 'cd.categoryid = c.categoryid');
-		$this->db->where('cd.languageid',$langid);
+		$this->db->where('cd.languageid',$this->CI->input->cookie("LANGUAGE_ID") || lang('lang_id'));
 		$this->db->join('USERS u', 'p.userid = u.userid');
 		$this->db->order_by("p.productid", "desc");
 		if($productid != 0){
@@ -123,7 +123,32 @@ class DaoProduct extends CI_Model{
 		$query = $this->db->get();
 		return $query->result();
 	}
-	
+
+	public function getRecentProductsByLanguage($limit){
+		return $this->getProductByOrderAndLimit($limit,'productid');
+	}
+
+	public function getPopularProductsByLanguage($limit){
+		return $this->getProductByOrderAndLimit($limit,'count');
+	}
+
+	public function getRecommendProductsByLanguage($limit){
+		return $this->getProductByOrderAndLimit($limit,'recommend');
+	}
+
+	public function getProductByOrderAndLimit($limit,$order_by)	{
+		$this->db->select('pd.productid,pd.description , pd.title, pd.caption, pd.createddate, p.thumbnailurl');
+		$this->db->from('PRODUCTS p');
+		$this->db->join('PRODUCTDETAIL pd','p.productid = pd.productid');
+		$this->db->where("pd.languageid", lang('lang_id'));
+		if($order_by=="recommend"){
+			$this->db->where("recommend",1);
+		}
+		$this->db->limit($limit);
+		$this->db->order_by($order_by,'DESC');
+		$query = $this->db->get();
+		return $query->result();		
+	}
 }
 
 ?>
