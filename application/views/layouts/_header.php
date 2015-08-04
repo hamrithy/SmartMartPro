@@ -15,6 +15,7 @@
                     <li><a href="#">USD</a>
                         <ul>
                             <li><a href="#">KHR</a></li>
+                            <li><a href="#">USD</a></li>
                         </ul>
                     </li>
                     <li><a href="javascript:;"><?php echo lang('lang_abbr') ?></a>
