@@ -174,19 +174,45 @@
 									
 									
 									<script>
+											var first = true;
+											var count = 0;
 											function myimagechange(){
-												$("#myimagedemo").attr("src", $("#txtfile").val());
+												//$("#myimagedemo").attr("src", $("#txtfile").val());
+												if(first==true){
+													$("tbody tr:first").remove();
+													first = false;
+												}
+												count++;
+												$('tbody').append('<tr>'+
+																	'<td>'+
+																		'<div class="form-group">'+
+												    						'<img src="'+$("#txtfile").val()+'" class="img-responsive" id="myimagedemo"/>'+
+																		'</div>'+
+																	'</td>'+
+																	'<td>'+
+																		'<input type="text" style="width:50px; text-align:center;" value='+count+' />'+
+																	'</td>'+
+																	'<td>'+
+																		'<div class="form-group">'+
+												    						'<a type="button" class="btn btn-danger btn-file" href="javascript:;" id="btnRemove">Remove</a>'+	
+																		'</div>'+
+																	'</td>'+
+																'</tr>');
 											}
-									</script>
+											$(document).on('click','#btnRemove',function(){
+												$(this).parents("tr").remove();
+												
+											});
+										</script>
 									
 									<div class="form-group">
 										<div style="height: 10px"></div>
 										<div class="form-group">
 											<div class="input-group">
-												<input type="text" readonly="readonly"   class="form-control" id="txtfile" name="txtfile" onchange="myimagechange()">
+												<input type="hidden" readonly="readonly"   class="form-control" id="txtfile" name="txtfile" onchange="myimagechange()">
 												
 												<span class="input-group-btn"> 
-													<a type="button" class="btn btn-default btn-file" data-target="#myModal" href="javascript:;" data-toggle="modal">Browse ... </a>	
+													<a type="button" class="btn btn-default btn-file" data-target="#myModal" href="javascript:;" data-toggle="modal">Add Image </a>	
 												</span>
 												
 											</div>
@@ -199,10 +225,17 @@
 										<button class="btn btn-danger">Cancel</button>
 									</div>
 									
-									<div class="form-group">
-										<label>Image</label>
-									    <img src="<?php echo base_url(); ?>/public/upload/slider-background.jpg" class="img-responsive" id="myimagedemo"/>
-									</div>
+									<table class="table">
+										<thead>
+											<tr>
+												<th><label>Image</label></th>
+												<th></th>
+												<th></th>
+											</tr>
+										</thead>
+										<tbody>
+										</tbody>
+									</table>
 									
 									
 									
