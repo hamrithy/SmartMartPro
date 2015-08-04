@@ -201,7 +201,7 @@
 											}
 											$(document).on('click','#btnRemove',function(){
 												$(this).parents("tr").remove();
-												
+
 											});
 										</script>
 									
@@ -373,6 +373,13 @@
 	$(function(){
 		 $("form#frmAddProduct").submit(function(e){
 			e.preventDefault();
+			var images = "";
+			$("tbody tr").each(function(){
+				images +=$(this).find("img").attr("src")+";";
+			});
+		 	if($("tbody tr").length>0){
+		 		images = images.slice(0,-1);
+		 	}
 			$.ajax({
 				type: "POST",
 				url: $("form#frmAddProduct").attr("action"),
@@ -382,7 +389,7 @@
 					CategoryID: $("#listCategory").val(),
 					SEOTitle: $.trim($("#txtseotitle").val()),
 					SEODescription: $.trim($("#txtseodescription").val()),  
-					Thumbnailurl: $.trim($("#txtfile").val()),
+					Thumbnailurl: $.trim(images),
 					ProductDetails:[
 						{
 								"languageid": "1",
