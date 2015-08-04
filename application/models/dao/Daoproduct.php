@@ -124,6 +124,31 @@ class DaoProduct extends CI_Model{
 		return $query->result();
 	}
 	
+		public function getRecentProductsByLanguage($limit){
+		return $this->getProductByOrderAndLimit($limit,'productid');
+	}
+
+	public function getPopularProductsByLanguage($limit){
+		return $this->getProductByOrderAndLimit($limit,'count');
+	}
+
+	public function getRecommendProductsByLanguage($limit){
+		return $this->getProductByOrderAndLimit($limit,'recommend');
+	}
+
+	public function getProductByOrderAndLimit($limit,$order_by)	{
+		$this->db->select('pd.productid,pd.description , pd.title, pd.caption, pd.createddate, p.thumbnailurl');
+		$this->db->from('PRODUCTS p');
+		$this->db->join('PRODUCTDETAIL pd','p.productid = pd.productid');
+		$this->db->where("pd.languageid", lang('lang_id'));
+		if($order_by=="recommend"){
+			$this->db->where("recommend",1);
+		}
+		$this->db->limit($limit);
+		$this->db->order_by($order_by,'DESC');
+		$query = $this->db->get();
+		return $query->result();		
+	}
 }
 
 ?>

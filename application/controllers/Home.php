@@ -5,13 +5,14 @@
 
 		public function __construct(){
 			parent::__construct();
+			$this->load->model("dao/DaoProduct");
 		}
 
 		public function index(){
-			//$this->load->model("Language");
-			//$data['language'] = $this->Language->findByLanguage($this->input->cookie("LANGUAGE"));
-			$this->load->view('index');
-			//echo json_encode($data);
+			$data["arriveds"] = $this->DaoProduct->getRecentProductsByLanguage(4);
+			$data["populars"] = $this->DaoProduct->getPopularProductsByLanguage(4);
+			$data["recommends"] = $this->DaoProduct->getRecommendProductsByLanguage(4);
+			$this->load->view('index', $data);
 		}
 	}
 ?>
