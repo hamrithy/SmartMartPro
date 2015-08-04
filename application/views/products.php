@@ -57,10 +57,10 @@
 								    // 	echo  '<a href="#"><img src="'.$thumnailurl[$i].'" alt="'.$v->title.'"></a>';
 								    //   }
 								    	if($thumnailurl[0] != null) {
-								     		echo  '<a href="#"><img src="'.$thumnailurl[0].'" alt="'.$v->title.'"></a>';
+								     		echo  '<a href="'.site_url().'product/detail/'.$v->productid.'"><img src="'.$thumnailurl[0].'" alt="'.$v->title.'"></a>';
 								    	} 
 										if($thumnailurl[1] != null) {
-								     		echo  '<a href="#"><img src="'.$thumnailurl[1].'" alt="'.$v->title.'"></a>';
+								     		echo  '<a href="'.site_url().'product/detail/'.$v->productid.'"><img src="'.$thumnailurl[1].'" alt="'.$v->title.'"></a>';
 								    	}
 								    ?>
 
