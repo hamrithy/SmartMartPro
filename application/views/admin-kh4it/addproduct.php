@@ -178,10 +178,6 @@
 											var count = 0;
 											function myimagechange(){
 												//$("#myimagedemo").attr("src", $("#txtfile").val());
-												if(first==true){
-													$("tbody tr:first").remove();
-													first = false;
-												}
 												count++;
 												$('tbody').append('<tr>'+
 																	'<td>'+
