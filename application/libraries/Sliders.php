@@ -15,6 +15,9 @@ class Sliders{
 		$this->CI->db->where('sd.languageid', $this->CI->input->cookie("LANGUAGE_ID") ||  lang('lang_id'));
 		$this->CI->db->where('s.type', $type);
 		$this->CI->db->order_by('s.ordering', 'desc');
+		if($type=="subslide"){
+			$this->CI->db->limit(2);
+		}
 		$query = $this->CI->db->get();
 		return $query->result();
 	}
