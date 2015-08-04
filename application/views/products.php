@@ -72,7 +72,7 @@
                                 </div>
                                 <div class="product-desc center">
                                     <div class="product-title"><h3><a href="<?php echo site_url()?>product/detail/<?php echo $v->productid?>"><?php echo $v->title?></a></h3></div>
-                                    <div class="product-price"><del>$24.99</del> <ins>$12.49</ins></div>
+                                    <div class="product-price"><!--<del>$24.99</del>  --> <ins>$<?php echo $v->price?></ins></div>
                                     <div class="product-rating">
                                         <i class="icon-star3"></i>
                                         <i class="icon-star3"></i>
@@ -678,7 +678,7 @@
                                                 <h4><a href="#">{{= title }}</a></h4>
                                             </div>
                                             <ul class="entry-meta">
-                                                <li class="color">$29.99</li>
+                                                <li class="color">$ {{= price }}</li>
                                                 <li><i class="icon-star3"></i> <i class="icon-star3"></i> <i class="icon-star3"></i> <i class="icon-star3"></i> <i class="icon-star-half-full"></i></li>
                                             </ul>
                                         </div>
