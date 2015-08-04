@@ -456,24 +456,44 @@
 					 	if($proid){  ?>
 								$.post("<?php  echo site_url()?>admin/product/getproduct/<?php echo $proid ?>",function(data){
 									console.log(data);
-									 $("#listCategory").val(data[0].categoryid);
-									 $("#txtseotitle").val(data[0].seotitle);
-									 $("#txtseodescription").val(data[0].seodescription);
-									 $("#txtfile").val(data[0].thumbnailurl);
-				
-									 $("#txtkhtitle").val(data[0].title);
-									 CKEDITOR.instances.txtkhdescription.setData(data[0].description);
-									 $("#txtentitle").val(data[1].title);
-									 CKEDITOR.instances.txtendescription.setData(data[1].description);
-									 
-		
-									 $("#txtproductid").val(data[0].productid);
+									if(data.length>0){
+										 $("#listCategory").val(data[0].categoryid);
+										 $("#txtseotitle").val(data[0].seotitle);
+										 $("#txtseodescription").val(data[0].seodescription);
+										 $("#txtfile").val(data[0].thumbnailurl);
+					
+										 $("#txtkhtitle").val(data[0].title);
+										 CKEDITOR.instances.txtkhdescription.setData(data[0].description);
+										 $("#txtentitle").val(data[1].title);
+										 CKEDITOR.instances.txtendescription.setData(data[1].description);
+										 
+			
+										 $("#txtproductid").val(data[0].productid);
 
-									 $("#myimagedemo").fadeIn("fast").attr('src',data[0].thumbnailurl);
-									 
-									 document.frmAddProduct.action="<?php echo site_url('admin/product/updateproductpro')?>";
-									 document.title = "Update Product";
-									 action="updated";
+										 /*$("#myimagedemo").fadeIn("fast").attr('src',data[0].thumbnailurl);*/
+										 var images = (data[0].thumbnailurl).split(";");
+										 for(var i=0;i<images.length;i++){
+											$('tbody').append('<tr>'+
+												'<td>'+
+													'<div class="form-group">'+
+							    						'<img src="'+images[i]+'" class="img-responsive" id="myimagedemo"/>'+
+													'</div>'+
+												'</td>'+
+												'<td>'+
+													'<input type="text" style="width:50px; text-align:center;" value='+i+' />'+
+												'</td>'+
+												'<td>'+
+													'<div class="form-group">'+
+							    						'<a type="button" class="btn btn-danger btn-file" href="javascript:;" id="btnRemove">Remove</a>'+	
+													'</div>'+
+												'</td>'+
+											'</tr>');
+										 }
+										 document.frmAddProduct.action="<?php echo site_url('admin/product/updateproductpro')?>";
+										 document.title = "Update Product";
+										 action="updated";
+										 first = true;
+									}
 								});
 					<?php } ?>
 			});
