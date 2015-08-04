@@ -71,7 +71,7 @@
                                     </div>
                                 </div>
                                 <div class="product-desc center">
-                                    <div class="product-title"><h3><a href="<?php echo site_url()?>product/findProductById/<?php echo $v->productid?>"><?php echo $v->title?></a></h3></div>
+                                    <div class="product-title"><h3><a href="<?php echo site_url()?>product/detail/<?php echo $v->productid?>"><?php echo $v->title?></a></h3></div>
                                     <div class="product-price"><del>$24.99</del> <ins>$12.49</ins></div>
                                     <div class="product-rating">
                                         <i class="icon-star3"></i>

@@ -21,6 +21,13 @@
 			$data["lstProduct"] = $this->DaoProduct->lstProduct(lang('lang_id'),0);
 			$this->load->view('products', $data);
 		}
+		
+		public function detail($id){
+			$data["title"] = "Product Details";
+			$data["page"] = "Product";
+			$data["getProduct"] = $this->DaoProduct->lstProduct(lang('lang_id'),$id);
+			$this->load->view("product_details",$data);
+		}
 	}
 
 ?>
