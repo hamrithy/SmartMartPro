@@ -35,6 +35,8 @@
 		
 		public function addProductPro(){
 			$this->DtoProduct->setCategoryid($this->input->post("CategoryID"));
+			$this->DtoProduct->setPrice($this->input->post("price"));
+			$this->DtoProduct->setRecommend($this->input->post("recommend"));
 			$this->DtoProduct->setThumbnailurl($this->input->post("Thumbnailurl"));
 			$this->DtoProduct->setUserid($this->encryption->decrypt($this->session->userdata("userid")));
 			$this->DtoProduct->setSeotitle($this->input->post("SEOTitle"));
@@ -53,6 +55,8 @@
 			$this->DtoProduct->setProductid($this->input->post("txtproductid"));
 			$this->DtoProduct->setCategoryid($this->input->post("CategoryID"));
 			$this->DtoProduct->setThumbnailurl($this->input->post("Thumbnailurl"));
+			$this->DtoProduct->setPrice($this->input->post("price"));
+			$this->DtoProduct->setRecommend($this->input->post("recommend"));
 			$this->DtoProduct->setUserid($this->encryption->decrypt($this->session->userdata("userid")));
 			$this->DtoProduct->setSeotitle($this->input->post("SEOTitle"));
 			$this->DtoProduct->setSeodescription($this->input->post("SEODescription"));

@@ -126,12 +126,12 @@
 														
 														<!-- Put Control Khmer here -->
 														<div class="form-group">
-															<label>ចំណងជើង<span class="required">*</span></label>
+															<label>áž…áŸ†ážŽáž„áž‡áž¾áž„<span class="required">*</span></label>
 															<input type="text" class="form-control" name="txtkhtitle" id="txtkhtitle" required />
 														</div>
 														
 														<div class="form-group">
-															<label>លំអិត</label>
+															<label>áž›áŸ†áž¢áž·áž�</label>
 															<textarea class="form-control" name="txtkhdescription" id="txtkhdescription">
 																	
 															</textarea>
@@ -162,6 +162,14 @@
 									</div>
 									
 									<div class="form-group">
+										<label>Price<span class="required">*</span></label>
+										<input type="text" class="form-control" name="txtprice" id="txtprice"  required="required"/>
+									</div>
+									
+								
+										
+									
+									<div class="form-group">
 										<label>SEO Title<span class="required">*</span></label>
 										<input type="text" class="form-control" name="txtseotitle" id="txtseotitle" value="" required="required"/>
 									</div>
@@ -171,6 +179,12 @@
 										<textarea class="form-control" name="txtseodescription" id="txtseodescription"></textarea>
 									</div>
 									
+									<div class="form-group">
+										<label class="">
+											 <input type="checkbox"  name="recommend" id="recommend" value="">
+											 Recommend Product
+									    </label>
+									</div>
 									
 									
 									<script>
@@ -369,13 +383,17 @@
 	$(function(){
 		 $("form#frmAddProduct").submit(function(e){
 			e.preventDefault();
-			var images = "";
+			var images = ""; 
 			$("tbody tr").each(function(){
 				images +=$(this).find("img").attr("src")+";";
 			});
 		 	if($("tbody tr").length>0){
 		 		images = images.slice(0,-1);
 		 	}
+		 	recommend = 0;
+		 	if($('#recommend').is(':checked')) {
+		 		recommend = 1;
+		 	} 
 			$.ajax({
 				type: "POST",
 				url: $("form#frmAddProduct").attr("action"),
@@ -386,6 +404,8 @@
 					SEOTitle: $.trim($("#txtseotitle").val()),
 					SEODescription: $.trim($("#txtseodescription").val()),  
 					Thumbnailurl: $.trim(images),
+					price     : $.trim($("#txtprice").val()),
+					recommend    : recommend,
 					ProductDetails:[
 						{
 								"languageid": "1",
@@ -457,12 +477,16 @@
 										 $("#txtseotitle").val(data[0].seotitle);
 										 $("#txtseodescription").val(data[0].seodescription);
 										 $("#txtfile").val(data[0].thumbnailurl);
+										 $("#txtprice").val(data[0].price);
 					
 										 $("#txtkhtitle").val(data[0].title);
 										 CKEDITOR.instances.txtkhdescription.setData(data[0].description);
 										 $("#txtentitle").val(data[1].title);
 										 CKEDITOR.instances.txtendescription.setData(data[1].description);
-										 
+
+										 if(data[0].recommend == 1){
+											$("#recommend").prop('checked', true);
+										 }
 			
 										 $("#txtproductid").val(data[0].productid);
 

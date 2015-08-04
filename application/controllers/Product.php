@@ -28,6 +28,11 @@
 			$data["getProduct"] = $this->DaoProduct->lstProduct(lang('lang_id'),$id);
 			$this->load->view("product_details",$data);
 		}
+		
+		public function recentProduct(){
+			$data["recentProducts"] = $this->DaoProduct->getRecentProductsByLanguage(3);
+			echo json_encode($data);
+		}
 	}
 
 ?>

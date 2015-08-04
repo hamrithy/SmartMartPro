@@ -8,7 +8,7 @@ class DaoProduct extends CI_Model{
 	}
 
 	public function lstProduct($langid,$productid){
-		$this->db->select('p.productid ,  p.seotitle , p.seodescription ,  p.thumbnailurl, 
+		$this->db->select('p.productid , p.price, p.recommend, p.seotitle , p.seodescription ,  p.thumbnailurl, 
 						   cd.categoryid , cd.title as categoryname ,
 						   u.userid , u.username ,  
 						   d.title,d.caption,d.description,d.createddate');
@@ -28,7 +28,7 @@ class DaoProduct extends CI_Model{
 	}
 	
 	public function getProduct($productid){
-		$this->db->select('d.languageid,d.title,d.caption,d.description , p.productid,p.seotitle,p.seodescription,  p.categoryid,p.thumbnailurl ');
+		$this->db->select('d.languageid,d.title,d.caption,d.description , p.productid,p.seotitle,p.seodescription, p.price, p.recommend, p.categoryid,p.thumbnailurl ');
 		$this->db->from('PRODUCTS p');
 		$this->db->join('PRODUCTDETAIL d', 'p.productid = d.productid');
 		$this->db->where('p.productid',$productid);
@@ -43,7 +43,9 @@ class DaoProduct extends CI_Model{
 						"userid" => $products->getUserid(),
 						"seotitle" => $products->getSeotitle(),
 						"seodescription" => $products->getSeodescription(),
-						"thumbnailurl" => $products->getThumbnailurl()
+						"thumbnailurl" => $products->getThumbnailurl(),
+				        "price"  => $products->getPrice(),
+						"recommend"  => $products->getRecommend()
 					);
 		$this->db->insert("PRODUCTS",$product);
 		$productID = $this->db->insert_id();
@@ -88,7 +90,9 @@ class DaoProduct extends CI_Model{
 				"userid" => $products->getUserid(),
 				"seotitle" => $products->getSeotitle(),
 				"seodescription" => $products->getSeodescription(),
-				"thumbnailurl" => $products->getThumbnailurl()
+				"thumbnailurl" => $products->getThumbnailurl(),
+				"price"  => $products->getPrice(),
+				"recommend"  => $products->getRecommend()
 		);
 		$this->db->where("productid", $productID);
 		$this->db->update("PRODUCTS",$product);
@@ -115,7 +119,7 @@ class DaoProduct extends CI_Model{
 	}
 
 	public function getRecentProducts($limit){
-		$this->db->select('pd.productid,pd.description , pd.title, pd.caption, pd.createddate, p.thumbnailurl');
+		$this->db->select('pd.productid,pd.description , pd.title, pd.caption, pd.createddate, p.thumbnailurl , p.price,p.recommend');
 		$this->db->from('PRODUCTS p');
 		$this->db->join('PRODUCTDETAIL pd','p.productid = pd.productid');
 		$this->db->limit($limit);
@@ -137,7 +141,7 @@ class DaoProduct extends CI_Model{
 	}
 
 	public function getProductByOrderAndLimit($limit,$order_by)	{
-		$this->db->select('pd.productid,pd.description , pd.title, pd.caption, pd.createddate, p.thumbnailurl');
+		$this->db->select('pd.productid,pd.description , pd.title, pd.caption, pd.createddate, p.thumbnailurl, p.price,p.recommend');
 		$this->db->from('PRODUCTS p');
 		$this->db->join('PRODUCTDETAIL pd','p.productid = pd.productid');
 		$this->db->where("pd.languageid", lang('lang_id'));

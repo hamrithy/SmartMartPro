@@ -399,8 +399,10 @@
                             <div class="widget clearfix">
 
                                 <h4>Recent Items</h4>
-                                <div id="post-list-footer">
+                                <div id="post-list-footer" class="lstRecentProducts">
 
+
+									<!-- 
                                     <div class="spost clearfix">
                                         <div class="entry-image">
                                             <a href="#"><img src="<?php echo base_url('public/style_front/images/shop/small/1.jpg')?>" alt="Image"></a>
@@ -445,7 +447,7 @@
                                             </ul>
                                         </div>
                                     </div>
-
+ 									-->
                                 </div>
 
                             </div>
@@ -643,6 +645,21 @@
 					                    console.log(data);
 					                }
 					            });
+
+	                            $.ajax({
+					                type: "POST",
+					                url: '<?php  echo site_url()?>product/recentProduct',
+					                dataType: 'json',
+					                success: function(data){ 
+					                    $(".lstRecentProducts").empty();
+					                    $("#tmplRecentProducts").tmpl(data.recentProducts).appendTo(".lstRecentProducts");
+					                     console.log("DATA:",data); 
+					                },
+					                error: function(data){
+					                    console.log("ERROR...");
+					                    console.log(data);
+					                }
+					            });
 				            });
                         </script>
                         
@@ -650,5 +667,26 @@
                        	<script type="text/x-jquery-tmpl" id="tmplCategory">
 							 <li><a href="#">{{= title }}</a></li>
 						</script> 
+						
+						<script type="text/x-jquery-tmpl" id="tmplRecentProducts">
+							 <div class="spost clearfix">
+                                        <div class="entry-image">
+                                            <a href="#"><img src="<?php $thumnailurl = explode(";", $v->thumbnailurl); echo $thumnailurl[0]; ?>" alt="{{= title }}"></a>
+                                        </div>
+                                        <div class="entry-c">
+                                            <div class="entry-title">
+                                                <h4><a href="#">{{= title }}</a></h4>
+                                            </div>
+                                            <ul class="entry-meta">
+                                                <li class="color">$29.99</li>
+                                                <li><i class="icon-star3"></i> <i class="icon-star3"></i> <i class="icon-star3"></i> <i class="icon-star3"></i> <i class="icon-star-half-full"></i></li>
+                                            </ul>
+                                        </div>
+                            </div>
+						</script> 
+						
+						
+									
+                                    
 </body>
 </html>

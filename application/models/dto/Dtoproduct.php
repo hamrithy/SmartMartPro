@@ -7,7 +7,25 @@
 		private $userid;
 		private $seotitle;
 		private $seodescription;
+		private $recommend;
+		private $price;
 		private $productDetail = array();
+		
+		public function getRecommend(){
+			return $this->recommend;
+		}
+		
+		public function setRecommend($recommend){
+			$this->recommend = $recommend;
+		}
+		
+		public function getPrice(){
+			return $this->price;
+		}
+		
+		public function setPrice($price){
+			$this->price = $price;
+		}
 		
 		public function getProductid(){
 			return $this->productid;

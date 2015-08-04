@@ -102,6 +102,7 @@
 								<tr>
 									<th>ID</th>
 									<th>Title</th>	
+									<th>Price</th>	
 									<th>Category</th>		
 									<th>Posted Date</th>						
 									<th>Posted By</th>
@@ -114,6 +115,7 @@
 								<tr>
 									<td><?php echo $v->productid; ?></td>
 									<td><?php echo $v->title; ?></td>
+									<td><?php echo $v->price; ?></td>
 									<td><?php echo $v->categoryname; ?></td>
 									<td><?php echo $v->createddate; ?></td>									
 									<td><?php echo $v->username; ?></td>
