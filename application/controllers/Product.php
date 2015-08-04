@@ -5,15 +5,22 @@
 
 		public function __construct(){
 			parent::__construct();
+			$this->load->model("dto/DtoProduct");
+			$this->load->model("dao/DaoProduct");
 		}
 
 		public function index(){
-			$this->load->view("products");
+			$this->listProduct();
 		}
 
 		public function findProductById($id){
 			$this->load->view("product_details");
 		}			
+		
+		public function listProduct(){
+			$data["lstProduct"] = $this->DaoProduct->lstProduct(lang('lang_id'),0);
+			$this->load->view('products', $data);
+		}
 	}
 
 ?>
