@@ -384,14 +384,14 @@
                             <div class="widget widget_links clearfix">
 
                                 <h4>Shop Categories</h4>
-                                <ul>
-                                    <li><a href="#">Shirts</a></li>
-                                    <li><a href="#">Pants</a></li>
-                                    <li><a href="#">Tshirts</a></li>
-                                    <li><a href="#">Sunglasses</a></li>
-                                    <li><a href="#">Shoes</a></li>
-                                    <li><a href="#">Bags</a></li>
-                                    <li><a href="#">Watches</a></li>
+                                <ul id="lstCategory">
+<!--                                     <li><a href="#">Shirts</a></li> -->
+<!--                                     <li><a href="#">Pants</a></li> -->
+<!--                                     <li><a href="#">Tshirts</a></li> -->
+<!--                                     <li><a href="#">Sunglasses</a></li> -->
+<!--                                     <li><a href="#">Shoes</a></li> -->
+<!--                                     <li><a href="#">Bags</a></li> -->
+<!--                                     <li><a href="#">Watches</a></li> -->
                                 </ul>
 
                             </div>
@@ -622,5 +622,33 @@
         <?php $this->load->view('_footer'); ?>
         <!-- END FOOTER SECTION -->
        
+       
+        	  <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+              <script src="http://ajax.aspnetcdn.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js"></script>
+                            
+                           
+                       <script type="text/javascript">
+                           $(function(){ 
+	                            $.ajax({
+					                type: "POST",
+					                url: '<?php  echo site_url()?>/category/lstCategory',
+					                dataType: 'json',
+					                success: function(data){ 
+					                    $("#lstCategory").empty();
+					                    $("#tmplCategory").tmpl(data.lstCategory).appendTo("#lstCategory");
+					                     console.log("DATA:",data); 
+					                },
+					                error: function(data){
+					                    console.log("ERROR...");
+					                    console.log(data);
+					                }
+					            });
+				            });
+                        </script>
+                        
+                        
+                       	<script type="text/x-jquery-tmpl" id="tmplCategory">
+							 <li><a href="#">{{= title }}</a></li>
+						</script> 
 </body>
 </html>
