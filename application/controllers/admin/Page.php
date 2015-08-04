@@ -23,7 +23,7 @@
 			$this->load->view('admin-kh4it/addpage');
 		}
 		
-		public function addPagePro(){
+		public function addpagepro(){
 			$this->DtoPage->setTitle($this->input->post('txttitle'));
 			$this->DtoPage->setBody($this->input->post('txtdescription'));
 			$this->DtoPage->setUserid($this->encryption->decrypt($this->session->userdata("userid")));
@@ -38,15 +38,15 @@
 			$this->load->view("admin-kh4it/listpage" , $data);
 		}
 		
-		public function deletePage($id){
+		public function deletepage($id){
 			$this->DtoPage->setPageid($id);
 			$this->DaoPage->deletePage($this->DtoPage);
 			redirect("admin/page");
 		}
 		
-		public function getPage($id){
+		public function getpage($id){
 			$this->DtoPage->setPageid($id);
-			$data["getPage"] = $this->DaoPage->getPage($this->DtoPage);
+			$data["page"] = $this->DaoPage->getPage($this->DtoPage);
 			$this->load->view("admin-kh4it/addpage" , $data);
 		}
 		

@@ -54,6 +54,10 @@
 		<!--  CSS (REQUIRED ALL PAGE)-->
 		<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 
+
+
+
+
 	</head>
  
 	<body class="tooltips">
@@ -68,20 +72,22 @@
 			<!-- BEGIN TOP NAV -->
 			<?php $this->load->view('admin-kh4it/_header') ?>
 			<!-- END TOP NAV -->
-			
-			
+					
 			<script type="text/javascript">
 			$(document).ready(function() {
 
 						<?php
-						$mPage= $getPage;
+						$mPage= $page;
 						if($mPage != null ){
 							foreach($mPage as $v){
 							?>
 							document.title= "Edit Page";
 							$("#formtitle").text("Form Edit Page");
-							$("#txtpageid").val("<?php echo $v->pageid?>");
-							$("#txttitle").val("<?php echo $v->title?>");
+							$("#txtpageid").val("<?php echo $v->pageid ?>");
+							$("#txtentitle").val("<?php echo $v->title1 ?>");
+							$("#txtkhtitle").val("<?php echo $v->title2 ?>");
+							$("#txtendescription").val("<?php echo $v->description1 ?>");
+							$("#txtkhdescription").val("<?php echo $v->description2 ?>");
 							$("#txtseodescription").val("<?php echo $v->seodescription ?>");
 							$("#txtseotitle").val("<?php echo $v->seotitle ?>");
 							//$("#txtdescription").text('<?php //echo $v->body ?>');
@@ -110,79 +116,82 @@
 				
 				<div class="container-fluid">
 					
-				<br/>				
-					<div class="panel panel-primary">
-							  <div class="panel-heading">
-								<h3 class="panel-title" id="formtitle">Form Add Page </h3>
-							  </div>
-							  <div class="panel-body">
-					
-					
-					<div class="row">
-					
-					<div class="col-sm-12">
-					
-					<div>
-						<form action="<?php echo site_url();?>/admin/page/addpagepro" id="frmpage" name="frmpage" method="post" class="form-horizontal" role="form">
-						
-								<div class="form-group">
-									<label class="col-lg-2 control-label">Title<span class="required">*</span></label>
-									<div class="col-lg-10">
-										<input type="text" class="form-control" name="txttitle" id="txttitle" value="" />
-										<input type="hidden" class="form-control" name="txtpageid" id="txtpageid" value="" />
-									</div>
-								</div> 	
-								<div class="form-group">
-									<label class="col-lg-2 control-label">Description<span class="required">*</span></label>
-									<div class="col-lg-10">
-										<textarea class="form-control" name="txtdescription" id="txtdescription">
-											<?php 
-												if($mPage != null ){
-													foreach($mPage as $v){
-													echo $v->body;
-													}
-												}
-											?>
-										</textarea>
-									</div>
+				<br/>
+					<form action="<?php echo site_url();?>/admin/page/addpagepro" id="frmpage" name="frmpage" method="post" role="form">
+						<!-- Tab -->
+						<div class="col-sm-8">
+							<div class="panel with-nav-tabs panel-info">
+							  	<div class="panel-heading">
+									<ul class="nav nav-tabs">
+										<li class=""><a href="#panel-home-2" data-toggle="tab"><img src="<?php echo base_url()?>/public/assets/img/eng.png"> English</a></li>
+										<li class="active"><a href="#panel-profile-2" data-toggle="tab"><img src="<?php echo base_url()?>/public/assets/img/kh.png"> Khmer</a></li>
+									</ul>
 								</div>
-								
-								<div class="form-group">
-									<label class="col-lg-2 control-label">SEO Title<span class="required">*</span></label>
-									<div class="col-lg-10">
-										<input type="text" class="form-control" name="txtseotitle" id="txtseotitle" value="" required="required"/>
-									</div>
-								</div>
-								
-								<div class="form-group">
-									<label class="col-lg-2 control-label">SEO Description<span class="required">*</span></label>
-									<div class="col-lg-10">
-										<textarea class="form-control" name="txtseodescription" id="txtseodescription"></textarea>
-									</div>
-								</div>
-								
+								<div class="collapse in" id="panel-collapse-2">
+										 <div class="panel-body">
+												<div class="tab-content">
+													<div id="panel-home-2" class="tab-pane fade">
+														
+														<!-- Put Control Englist here -->
+														<div class="form-group">
+															<label>Title<span class="required">*</span></label>
+															<input type="text" class="form-control" name="txtentitle" id="txtentitle" required />
+														</div>
+														
+														<div class="form-group">
+															<label>Description<span class="required">*</span></label>
+															<textarea class="form-control" name="txtendescription" id="txtendescription">
+																	
+															</textarea>
+														</div>
+														
+		
+													</div>
+													<div id="panel-profile-2" class="tab-pane fade  active in">
+														
+														<!-- Put Control Khmer here -->
+														<div class="form-group">
+															<label>ចំណងជើង<span class="required">*</span></label>
+															<input type="text" class="form-control" name="txtkhtitle" id="txtkhtitle" required />
+														</div>
+														
+														<div class="form-group">
+															<label>លំអិត<span class="required">*</span></label>
+															<textarea class="form-control" name="txtkhdescription" id="txtkhdescription">
+																	
+															</textarea>
+														</div>
+													
+													
+														
+														
+													</div><!-- /.tab-pane fade -->
+												</div><!-- /.tab-content -->
+										  </div><!-- /.panel-body -->
+									<div class="panel-footer">SmartMart</div>
+								</div><!-- /.collapse in -->
+							</div><!-- /.panel .panel-info -->
+						</div>
+						<!-- /Tab -->
+						<!-- right -->
+						<div class="col-sm-4">
 							
-
 							<div class="form-group">
-							
-								<div class="col-lg-9 col-lg-offset-3">
-									
-									<input type="submit" id="btnsave" class="btn btn-info" value="Save"/>
-									
-								</div>
+								<label>SEO Title<span class="required">*</span></label>
+								<input type="text" class="form-control" name="txtseotitle" id="txtseotitle" value="" required="required"/>
 							</div>
-							
-						</form>
-					</div><!-- /.the-box -->
-						
-					</div><!-- /.col-sm-8 -->
-						
-				
-					</div><!-- /.row -->
-					</div>
-					</div>
-					
-				
+							<div class="form-group">
+								<label>SEO Description<span class="required">*</span></label>
+								<input type="text" class="form-control" name="txtseodescription" id="txtseodescription" value="" required="required"/>
+							</div>									
+							<div class="form-group">
+								<button type="submit" class="btn btn-success">Save</button>
+								<button class="btn btn-danger">Cancel</button>
+							</div>		
+						</div><!-- /.col-sm-4 -->
+						<!-- /right -->
+
+					</form>
 				</div><!-- /.container-fluid -->
 				
 				
@@ -273,8 +282,14 @@
 	<script src="<?php echo base_url(); ?>/public/assets/ckeditor/ckeditor.js"></script>
 	
 	<script> 
-
-		CKEDITOR.replace( 'txtdescription' ,
+		CKEDITOR.replace( 'txtendescription' ,
+			{ filebrowserBrowseUrl : '<?php echo base_url(); ?>/public/responsivefilemanager/filemanager/dialog.php?type=2&editor=ckeditor&fldr=', 
+			filebrowserUploadUrl : '<?php echo base_url(); ?>/public/responsivefilemanager/filemanager/dialog.php?type=2&editor=ckeditor&fldr=', 
+			filebrowserImageBrowseUrl : '<?php echo base_url(); ?>/public/responsivefilemanager/filemanager/dialog.php?type=1&editor=ckeditor&fldr=' }); 
+	</script>
+	
+	<script> 
+		CKEDITOR.replace( 'txtkhdescription' ,
 			{ filebrowserBrowseUrl : '<?php echo base_url(); ?>/public/responsivefilemanager/filemanager/dialog.php?type=2&editor=ckeditor&fldr=', 
 			filebrowserUploadUrl : '<?php echo base_url(); ?>/public/responsivefilemanager/filemanager/dialog.php?type=2&editor=ckeditor&fldr=', 
 			filebrowserImageBrowseUrl : '<?php echo base_url(); ?>/public/responsivefilemanager/filemanager/dialog.php?type=1&editor=ckeditor&fldr=' }); 

@@ -5,10 +5,7 @@ class DtoPage {
 	private $userid;
 	private $seotitle;
 	private $seodescription;
-	
-	private $title;
-	private $languageid;
-	private $description;
+	private $pageDetail = array();
 	
 	public function getPageid(){
 		return $this->pageid;
@@ -64,6 +61,14 @@ class DtoPage {
 	
 	public function setDescription($description){
 		$this->description = $description;
+	}
+
+	public function getPagedetail(){
+		return $this->pageDetail;
+	}
+
+	public function setPagedetail($pageDetail){
+		$this->pageDetail = $pageDetail;
 	}
 	
 }

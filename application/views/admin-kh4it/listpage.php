@@ -103,8 +103,8 @@
 							<thead class="the-box dark full">
 								<tr>
 									<th>Page ID</th>
-									<th>Titile</th>
-									<th>Date</th>									
+									<th>Title 1</th>
+									<th>Title 2</th>
 									<th>Posted By</th>
 									<th>Action</th>
 								</tr>
@@ -114,8 +114,8 @@
 							<?php foreach ($listPage as $p){ ?>
 								<tr>
 									<td><?php echo $p->pageid ?></td>
-									<td><?php echo $p->title ?></td>
-									<td><?php echo $p->createddate ?></td>									
+									<td><?php echo $p->title1 ?></td>
+									<td><?php echo $p->title2 ?></td>
 									<td><?php echo $p->username ?></td>
 									<td>
 										<a  href="<?php echo site_url()?>/admin/page/deletepage/<?php echo $p->pageid ?>" style="margin-right:3px" onclick="return confirm('Do you want to delete?');"  class="btn btn-danger">Delete</a>
