@@ -21,12 +21,12 @@
 							"ordering"	=>	$s->getOrdering(),
 							"type"		=>	$s->getType()
 						);
-
 			$this->db->insert("SLIDERS",$slide);
 			$sliderid = $this->db->insert_id();
 			
 			foreach($s->getSliderdetail() as $slider){
 				$slider["sliderid"] = $sliderid;
+				$this->db->set('createddate', 'NOW()', FALSE);
 				$this->db->insert("SLIDERDETAIL",$slider);
 			}
 			if($this->db->trans_status()===FALSE){
@@ -103,6 +103,7 @@
 			$this->db->where('sliderid', $sid);
 			$this->db->delete('SLIDERS');
 		}
+		
 		public function getRecentSlides($limit){
 			$this->db->select('s.sliderid,sd.imageurl , sd.title, sd.description, sd.createddate');
 			$this->db->from('SLIDERS s');

@@ -11,7 +11,7 @@ class DtoSlide{
 	private $title;
 	private $caption;
 	private $imageurl;
-	private $createdate;
+	private $createddate;
 	private $description;
 	private $sliderdetail = array();
 

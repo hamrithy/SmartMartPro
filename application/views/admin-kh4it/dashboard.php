@@ -105,7 +105,7 @@
 					<div class="row">
 						<div class="col-xs-6">
 							<div class="tiles facebook-tile text-center">
-								<i class="fa fa-cutlery icon-lg-size"></i>
+								<i class="fa fa-briefcase icon-lg-size"></i>
 								<h4>
 									<a href="#"><?php  echo $countProducts; ?> Products</a>
 								</h4>
@@ -125,7 +125,7 @@
 						<!-- /.col-xs-6 -->
 						<div class="col-xs-6">
 							<div class="tiles dribbble-tile text-center">
-								<i class="fa fa-comments icon-lg-size"></i>
+								<i class="fa fa-user icon-lg-size"></i>
 								<h4>
 									<a href="<?php echo site_url()?>/admin/post"><?php echo $countUsers; ?> Users</a>
 								</h4>
@@ -149,7 +149,7 @@
 
 
 					<h4 class="small-title">
-						<strong><i class="fa  fa-cutlery"></i>Recent Post</strong>
+						<strong><i class="fa   fa-exchange"></i> Recent Slide Upload</strong>
 					</h4>
 
 				
