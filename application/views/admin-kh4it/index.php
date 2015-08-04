@@ -1,4 +1,4 @@
-<?php $this->load->view('layouts/_include'); ?>
+<?php $this->load->view('_include'); ?>
 <!-- BEGIN CUSTOMIZATION STYLE -->
 
 <!-- END CUSTOMIZATION STYLE -->
