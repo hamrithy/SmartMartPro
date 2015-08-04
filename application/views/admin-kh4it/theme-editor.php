@@ -138,19 +138,17 @@
 								</div><!-- /.col-sm-8 -->
 								<div class="col-sm-2">
 										<label>FrontEnd Page</label>					
-										<p><a href="<?php  echo site_url()?>/admin/theme/showfile/layouts/_footer">_footer.php</a></p>														
-										<p><a href="<?php  echo site_url()?>/admin/theme/showfile/layouts/_header">_header.php</a></p>	
-										<p><a href="<?php  echo site_url()?>/admin/theme/showfile/_slideshow">_slideshow.php</a></p>
-										<p><a href="<?php  echo site_url()?>/admin/theme/showfile/_service">_service.php</a></p>
-										<p><a href="<?php  echo site_url()?>/admin/theme/showfile/_visitus">_visitus.php</a></p>														
+										<p><a href="<?php  echo site_url()?>/admin/theme/showfile/_footer">_footer.php</a></p>														
+										<p><a href="<?php  echo site_url()?>/admin/theme/showfile/_header">_header.php</a></p>	
+										<p><a href="<?php  echo site_url()?>/admin/theme/showfile/_include">_include.php</a></p>
+										<p><a href="<?php  echo site_url()?>/admin/theme/showfile/_slide">_slide.php</a></p>
+										<p><a href="<?php  echo site_url()?>/admin/theme/showfile/_feature">_feature.php</a></p>														
 										<p><a href="<?php  echo site_url()?>/admin/theme/showfile/index">index.php</a></p>														
-										<p><a href="<?php  echo site_url()?>/admin/theme/showfile/blog">blog.php</a></p>								
-										<p><a href="<?php  echo site_url()?>/admin/theme/showfile/buttons">buttons.php</a></p>
-										<p><a href="<?php  echo site_url()?>/admin/theme/showfile/chiefs">chiefs.php</a></p>
+										<p><a href="<?php  echo site_url()?>/admin/theme/showfile/page">page.php</a></p>								
 										<p><a href="<?php  echo site_url()?>/admin/theme/showfile/contact">contact.php</a></p>
-										<p><a href="<?php  echo site_url()?>/admin/theme/showfile/menu">menu.php</a></p>
-										<p><a href="<?php  echo site_url()?>/admin/theme/showfile/post">post.php</a></p>
-										<p><a href="<?php  echo site_url()?>/admin/theme/showfile/recipe">recipe.php</a></p>
+										<p><a href="<?php  echo site_url()?>/admin/theme/showfile/product_details">product_details.php</a></p>
+										<p><a href="<?php  echo site_url()?>/admin/theme/showfile/products">products.php</a></p>
+										
 										
 										<!-- <label>Backend Page</label>	
 										<p><a href="<?php  echo site_url()?>/admin/theme/showfilestyle/screen">stylesheet.css</a></p>

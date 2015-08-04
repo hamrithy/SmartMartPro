@@ -1,4 +1,4 @@
-<?php $this->load->view('layouts/_include'); ?>
+<?php $this->load->view('_include'); ?>
 <!-- BEGIN CUSTOMIZATION STYLE -->
 
 <!-- END CUSTOMIZATION STYLE -->
@@ -10,7 +10,7 @@
     <div id="wrapper" class="clearfix">
 
         <!-- BEGIN HEADER -->
-        <?php $this->load->view('layouts/_header');?>
+        <?php $this->load->view('_header');?>
         <!-- END HEADER -->
 
         <!-- Content
@@ -19,7 +19,7 @@
 
             <div class="content-wrap">
 
-                <?php $this->load->view('layouts/_slide'); ?>
+                <?php $this->load->view('_slide'); ?>
 
                 <div class="promo parallax promo-full bottommargin-lg" style="background-image: url('<?php echo base_url('public/style_front/images/parallax/3.jpg')?>)';" data-stellar-background-ratio="0.4">
                     <div class="container clearfix">
@@ -32,7 +32,7 @@
                 <div class="container clearfix">
 
 
-                    <?php $this->load->view('layouts/_feature.php');?>
+                    <?php $this->load->view('_feature.php');?>
 
                     <div class="clear"></div>
 
@@ -326,7 +326,7 @@
         </section><!-- content end -->
 
         <!-- BEGGIN FOOTER SECTION -->
-        <?php $this->load->view('layouts/_footer'); ?>
+        <?php $this->load->view('_footer'); ?>
         <!-- END FOOTER SECTION -->
        
 </body>

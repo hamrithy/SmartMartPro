@@ -161,7 +161,7 @@
 													</div>
 													<div class="form-group">
 													<label>Image</label>
-												   		 <img src="<?php echo base_url(); ?>/public/upload/slider-background.jpg" class="img-responsive" id="myimagedemo"/>
+												   		 <img src="<?php echo base_url(); ?>/public/style_front/images/bgslide.jpg" class="img-responsive" id="myimagedemo"/>
 													</div>
 													</div>
 
@@ -203,7 +203,7 @@
 													</div>
 													<div class="form-group">
 													<label>រូបភាព</label>
-												   		 <img src="<?php echo base_url(); ?>/public/upload/slider-background.jpg" class="img-responsive" id="myimagedemo1"/>
+												   		 <img src="<?php echo base_url(); ?>/public/style_front/images/bgslide.jpg" class="img-responsive" id="myimagedemo1"/>
 													</div>
 													</div><!-- /.tab-pane fade -->
 													
