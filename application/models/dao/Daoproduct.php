@@ -178,6 +178,26 @@ class DaoProduct extends CI_Model{
 		return $query->result();
 	}
 	
+	
+	public function lstRelatedProduct($limit , $cateid){
+		$this->db->select('p.productid , p.price, p.recommend, p.seotitle , p.seodescription ,  p.thumbnailurl,
+						   cd.categoryid , cd.title as categoryname ,
+						   u.userid , u.username ,
+						   d.title,d.caption,d.description,d.createddate');
+		$this->db->from('PRODUCTS p');
+		$this->db->join('PRODUCTDETAIL d', 'p.productid = d.productid');
+		$this->db->where('d.languageid',lang('lang_id'));
+		$this->db->join('CATEGORIES c', 'p.categoryid = c.categoryid');
+		$this->db->join('CATEGORYDETAIL cd', 'cd.categoryid = c.categoryid');
+		$this->db->where('cd.languageid',lang('lang_id'));
+		$this->db->where('p.categoryid', $cateid );
+		$this->db->join('USERS u', 'p.userid = u.userid');
+		$this->db->limit($limit);
+		$this->db->order_by("p.count", "desc");
+		$query = $this->db->get();
+		return $query->result();
+	}
+	
 }
 
 ?>
