@@ -20,13 +20,17 @@
 
 		public function addmenu(){
 			$this->load->model('dao/DaoMenu');
+			$this->load->model('dao/DaoPage');
 			$data["topMenu"] = $this->DaoMenu->listTopMenu();
+			$data["pages"] = $this->DaoPage->listPage();
 			$data["menus"] = false;
 			$this->load->view('admin-kh4it/addmenu', $data);
 		}
 
 		public function updatemenu(){
 			$this->load->model('dao/DaoMenu');
+			$this->load->model('dao/DaoPage');
+			$data["pages"] = $this->DaoPage->listPage();
 			$data["topMenu"] = $this->DaoMenu->listTopMenu();
 			$this->load->view('admin-kh4it/updatemenu', $data);
 		}
@@ -52,6 +56,8 @@
 
 		public function getmenu($id){
 			$this->load->model("dao/DaoMenu");
+			$this->load->model('dao/DaoPage');
+			$data["pages"] = $this->DaoPage->listPage();
 			$data["menus"] = $this->DaoMenu->getMenuById($id);
 			$data["topMenu"] = $this->DaoMenu->listTopMenu();
 			$this->load->view("admin-kh4it/addmenu", $data);

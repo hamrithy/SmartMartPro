@@ -53,10 +53,12 @@ class DaoPage extends CI_Model{
 	}
 
 	public function getPageByName($pageName){
-		$this->db->select('p.pageid , p.title , p.body , u.userid , u.username');
-		$this->db->from('PAGES p');
-		$this->db->join('USERS u', 'p.userid = u.userid');
-		$this->db->where("replace(LOWER(p.title),' ','')=",$pageName);
+		$this->db->select('A.pageid, A.userid, A.seotitle, A.seodescription, B.title, B.description, C.username');
+		$this->db->from('PAGES A');
+		$this->db->join('PAGEDETAIL B', 'A.pageid=B.pageid');
+		$this->db->join('USERS C', 'A.userid=C.userid');
+		$this->db->where('B.languageid', lang('lang_id'));
+		$this->db->where("replace(LOWER(B.title),' ','')=", str_replace(" ","_",strtolower($pageName)));
 		$this->db->limit(1);
 		$query = $this->db->get();
 		return $query->row();
