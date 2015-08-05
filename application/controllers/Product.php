@@ -23,6 +23,7 @@
 		}
 		
 		public function detail($id){
+			$this->DaoProduct->increaseCount($id);
 			$data["title"] = "Product Details";
 			$data["page"] = "Product";
 			$data["getProduct"] = $this->DaoProduct->lstProduct(lang('lang_id'),$id);
@@ -33,6 +34,12 @@
 			$data["recentProducts"] = $this->DaoProduct->getRecentProductsByLanguage(3);
 			echo json_encode($data);
 		}
+		
+		public function lstPopProduct(){
+			$data["lstPopProduct"] = $this->DaoProduct->getPublicProduct(3);
+			echo json_encode($data);
+		}
+		
 	}
 
 ?>
