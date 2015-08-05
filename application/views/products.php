@@ -267,6 +267,14 @@
                            
                        <script type="text/javascript">
                            $(function(){ 
+                                function formatData(value){
+                                    alert("FORMAT");
+                                    console.log("FORMAT DATA=",value);
+                                    if(value!="" || value!=null){
+                                        var thumbnailurl = value["thumbnailurl"].split(";");
+                                        value['thumbnailurl'] = thumbnailurl[0];
+                                    }
+                                };
 	                            $.ajax({
 					                type: "POST",
 					                url: '<?php  echo site_url()?>/category/lstCategory',
@@ -287,9 +295,14 @@
 					                url: '<?php  echo site_url()?>product/recentProduct',
 					                dataType: 'json',
 					                success: function(data){ 
-					                    $(".lstRecentProducts").empty();
-					                    $("#tmplRecentProducts").tmpl(data.recentProducts).appendTo(".lstRecentProducts");
-					                     console.log("DATA:",data); 
+					                    console.log("DATA:",data); 
+                                        if(data.recentProducts.length>0){
+                                            for(var i=0;i<data.recentProducts.length;i++){
+                                                formatData(data.recentProducts[i]);
+                                            }
+                                            $(".lstRecentProducts").empty();
+                                            $("#tmplRecentProducts").tmpl(data.recentProducts).appendTo(".lstRecentProducts");
+                                        }
 					                },
 					                error: function(data){
 					                    console.log("ERROR...");
@@ -302,9 +315,14 @@
 					                url: '<?php  echo site_url()?>product/lstPopProduct',
 					                dataType: 'json',
 					                success: function(data){ 
-					                    $(".lstPopProduct").empty();
-					                    $("#tmplLstPopProduct").tmpl(data.lstPopProduct).appendTo(".lstPopProduct");
-					                     console.log("DATA:",data); 
+    					                console.log("DATA:",data); 
+                                        if(data.lstPopProduct.length>0){
+                                            for(var i=0;i<data.lstPopProduct.length;i++){
+                                                formatData(data.lstPopProduct[i]);
+                                            }
+                                            $(".lstPopProduct").empty();
+                                            $("#tmplLstPopProduct").tmpl(data.lstPopProduct).appendTo(".lstPopProduct");
+                                        }
 					                },
 					                error: function(data){
 					                    console.log("ERROR...");
@@ -322,7 +340,7 @@
 						<script type="text/x-jquery-tmpl" id="tmplRecentProducts">
 							 <div class="spost clearfix">
                                         <div class="entry-image">
-                                            <a href="#"><img src="{{= thumnailurl }}" alt="{{= title }}"></a>
+                                            <a href="#"><img src="{{= thumbnailurl }}" alt="{{= title }}"></a>
                                         </div>
                                         <div class="entry-c">
                                             <div class="entry-title">
@@ -339,7 +357,7 @@
 						<script type="text/x-jquery-tmpl" id="tmplLstPopProduct">
 								<div class="spost clearfix">
                                         <div class="entry-image">
-                                            <a href="<?php echo site_url()?>product/detail/{{= productid }}"><img src="{{= thumnailurl }}" alt="{{= title }}"></a>
+                                            <a href="<?php echo site_url()?>product/detail/{{= productid }}"><img src="{{= thumbnailurl }}" alt="{{= title }}"></a>
                                         </div>
                                         <div class="entry-c">
                                             <div class="entry-title">
