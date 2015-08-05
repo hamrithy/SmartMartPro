@@ -179,7 +179,14 @@
 									<div class="form-group">
 										<label>Link To<span class="required">*</span></label>
 										<input type="text" class="form-control" name="txtLinkto" id="txtLinkto" value="#" required="required"/>
-									</div>													
+									</div>	
+									<div class="form-group">
+										<label>Choose Page</label>
+										<select class="form-control" name="subof" id="subof">
+											<option>About</option>
+											<option>Term condition</option>
+										</select>
+									</div>												
 									<div class="form-group">
 										<button type="submit" class="btn btn-success">Save</button>
 										<button class="btn btn-danger">Cancel</button>
