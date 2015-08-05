@@ -57,10 +57,10 @@
 								    // 	echo  '<a href="#"><img src="'.$thumnailurl[$i].'" alt="'.$v->title.'"></a>';
 								    //   }
 								    	if($thumnailurl[0] != null) {
-								     		echo  '<a href="'.site_url().'product/detail/'.$v->productid.'"><img src="'.$thumnailurl[0].'" alt="'.$v->title.'"></a>';
+								     		echo  '<a href="'.site_url().'product/detail/'.$v->productid.'/'.$v->categoryid.'"><img src="'.$thumnailurl[0].'" alt="'.$v->title.'"></a>';
 								    	} 
 										if($thumnailurl[1] != null) {
-								     		echo  '<a href="'.site_url().'product/detail/'.$v->productid.'"><img src="'.$thumnailurl[1].'" alt="'.$v->title.'"></a>';
+								     		echo  '<a href="'.site_url().'product/detail/'.$v->productid.'/'.$v->categoryid.'"><img src="'.$thumnailurl[1].'" alt="'.$v->title.'"></a>';
 								    	}
 								    ?>
 
@@ -71,7 +71,7 @@
                                     </div>
                                 </div>
                                 <div class="product-desc center">
-                                    <div class="product-title"><h3><a href="<?php echo site_url()?>product/detail/<?php echo $v->productid?>"><?php echo $v->title?></a></h3></div>
+                                    <div class="product-title"><h3><a href="<?php echo site_url()?>product/detail/<?php echo $v->productid.'/'.$v->categoryid ?>"><?php echo $v->title?></a></h3></div>
                                     <div class="product-price"><!--<del>$24.99</del>  --> <ins>$<?php echo $v->price?></ins></div>
                                     <div class="product-rating">
                                         <i class="icon-star3"></i>
@@ -194,7 +194,7 @@
 
 	                            $.ajax({
 					                type: "POST",
-					                url: '<?php  echo site_url()?>product/recentProduct',
+					                url: '<?php  echo site_url()?>product/lstRecentProduct',
 					                dataType: 'json',
 					                success: function(data){ 
 					                    console.log("DATA:",data); 
@@ -242,11 +242,11 @@
 						<script type="text/x-jquery-tmpl" id="tmplRecentProducts">
 							 <div class="spost clearfix">
                                         <div class="entry-image">
-                                            <a href="<?php echo site_url()?>product/detail/{{= productid }}"><img src="{{= thumbnailurl }}" alt="{{= title }}"></a>
+                                            <a href="<?php echo site_url()?>product/detail/{{= productid }}/{{= categoryid }}"><img src="{{= thumbnailurl }}" alt="{{= title }}"></a>
                                         </div>
                                         <div class="entry-c">
                                             <div class="entry-title">
-                                                <h4><a href="<?php echo site_url()?>product/detail/{{= productid }}">{{= title }}</a></h4>
+                                                <h4><a href="<?php echo site_url()?>product/detail/{{= productid }}/{{= categoryid }}">{{= title }}</a></h4>
                                             </div>
                                             <ul class="entry-meta">
                                                 <li class="color">$ {{= price }}</li>
@@ -259,11 +259,11 @@
 						<script type="text/x-jquery-tmpl" id="tmplLstPopProduct">
 								<div class="spost clearfix"> 
                                         <div class="entry-image">
-                                            <a href="<?php echo site_url()?>product/detail/{{= productid }}"><img src="{{= thumbnailurl }}" alt="{{= title }}"></a>
+                                            <a href="<?php echo site_url()?>product/detail/{{= productid }}/{{= categoryid }}"><img src="{{= thumbnailurl }}" alt="{{= title }}"></a>
                                         </div>
                                         <div class="entry-c">
                                             <div class="entry-title">
-                                                <h4><a href="<?php echo site_url()?>product/detail/{{= productid }}">{{= title }}</a></h4>
+                                                <h4><a href="<?php echo site_url()?>product/detail/{{= productid }}/{{= categoryid }}">{{= title }}</a></h4>
                                             </div>
                                             <ul class="entry-meta">
                                                 <li class="color">$ {{= price }}</li>
