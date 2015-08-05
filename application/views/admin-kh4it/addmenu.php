@@ -163,11 +163,13 @@
 									<div class="form-group">
 										<label>Subof</label>
 										<select class="form-control" name="subof" id="subof">
-											<option value=",0">-------</option>
 											<?php 
-												foreach($topMenu as $menu) {
-													echo '<option value="'.$menu->menuid.','.($menu->level+1).'">'.$menu->title.'</option>';
-												}	
+												if(count($topMenu)>0){
+													echo '<option value="">-------</option>';
+													foreach($topMenu as $menu) {
+														echo '<option value="'.$menu->menuid.','.($menu->level+1).'">'.$menu->title.'</option>';
+													}	
+												}
 											?>
 										</select>								
 									</div>
@@ -182,9 +184,15 @@
 									</div>	
 									<div class="form-group">
 										<label>Choose Page</label>
-										<select class="form-control" name="subof" id="subof">
-											<option>About</option>
-											<option>Term condition</option>
+										<select class="form-control" name="page" id="page">
+											<?php 
+												if(count($pages)>0){
+													echo '<option value="#">Please choose</option>';
+													foreach($pages as $page){
+														echo '<option value="page/'.str_replace(" ","_",strtolower($page->title1)).'">'.$page->title1.'</option>';
+													}
+												}
+											?>
 										</select>
 									</div>												
 									<div class="form-group">
@@ -400,6 +408,10 @@
 				<?php
 				}
 			?>
+
+			$("#page").change(function(){
+				$("#txtLinkto").val($(this).val());
+			});
 		});
 	</script>
 	</body>

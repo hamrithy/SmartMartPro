@@ -9,13 +9,13 @@
 		}
 
 		public function index($pageName){
-			$data['page']  = $pageName;
-			$data['title'] = $pageName;
-			$data['PAGE_REC'] = $this->DaoPage->getPageByName(str_replace(" ","",strtolower($pageName)));
-			if($data['PAGE_REC']==null){
+			$data['PAGE_NAME']  = $pageName;
+			$data['TITLE'] = $pageName;
+			$data['PAGE'] = $this->DaoPage->getPageByName($pageName);
+			if($data['PAGE']==null){
 				redirect('page_no_found');
 			}
-			$this->load->view('front/page', $data);
+			$this->load->view('page', $data);
 		}
 
 	}

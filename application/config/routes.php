@@ -57,5 +57,5 @@ $route['information/(:num)'] = 'information/showpagedetails/$1';
 $route['gift/(:num)'] = 'gift/showpagedetails/$1';
 $route['graduation/(:num)'] = 'graduation/showpagedetails/$1';
 $route['product/(:num)'] = 'product/findproductbyid/$1';
-/*$route['page/(:any)'] = 'page/index/$1/$2';
-$route['page_no_found'] = 'ERROR_404/index';*/
+$route['page/(:any)'] = 'page/index/$1/$2';
+//$route['page_no_found'] = 'ERROR_404/index';

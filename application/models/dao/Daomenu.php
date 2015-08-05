@@ -11,7 +11,7 @@ class DaoMenu extends CI_Model{
 		$this->db->trans_begin();
 		$this->db->insert("MENUS",array("ordering" 	=> $menus->getOrdering(),
 										"linkto" 	=> $menus->getLinkto(),
-										"level"		=> $menus->getLevel(),
+										"level"		=> ($menus->getLevel()=="") ? '0' : $menus->getLevel(),
 										"subof" 	=> ($menus->getSubof()=="") ? null : $menus->getSubof()
 										));
 		$menuID = $this->db->insert_id();
@@ -30,7 +30,7 @@ class DaoMenu extends CI_Model{
 	}
 	
 	public function getAllMenus(){
-		$this->db->select('DISTINCT(A.menuid),A.subof, A.ordering, A.linkto, C.title, C.description, C.languageid, (SELECT title FROM MENUDETAIL WHERE menuid=A.subof AND languageid=1) AS suboftitle');
+		$this->db->select('DISTINCT(A.menuid), A.level, A.subof, A.ordering, A.linkto, C.title, C.description, C.languageid, (SELECT title FROM MENUDETAIL WHERE menuid=A.subof AND languageid=1) AS suboftitle');
 		$this->db->from('MENUS A');
 		$this->db->join('MENUS B', 'A.subof=B.menuid', 'left');
 		$this->db->join('MENUDETAIL C', 'A.menuid=C.menuid');
@@ -49,8 +49,8 @@ class DaoMenu extends CI_Model{
 		$menu = array(
 					"ordering"	=> $menus->getOrdering(),
 					"linkto"	=> $menus->getLinkto(),
-					"level"		=> $menus->getLeve(),
-					"subof"		=> ($menus->getSubof()=="") ? null : $menus->getSubof());
+					"level"		=> ($menus->getLevel()=="") ? '0' : $menus->getLevel(),
+					"subof" 	=> ($menus->getSubof()=="") ? null : $menus->getSubof());
 		$this->db->where('menuid', $menuid);
 		$this->db->update('MENUS', $menu);
 		// UDPDATE MAIN MENU
@@ -99,7 +99,7 @@ class DaoMenu extends CI_Model{
 	}
 
 	public function getMenuById($id){
-		$this->db->select('A.menuid,A.subof, A.ordering, A.linkto, C.title, C.description, C.languageid,D.languagename');
+		$this->db->select('A.menuid,A.subof, A.level, A.ordering, A.linkto, C.title, C.description, C.languageid,D.languagename');
 		$this->db->from('MENUS A');
 		$this->db->join('MENUS B', 'A.subof=B.menuid', 'left');
 		$this->db->join('MENUDETAIL C', 'A.menuid=C.menuid');
