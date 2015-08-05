@@ -59,15 +59,10 @@
 												    	echo '<div class="slide" data-thumb="'.$thumnailurl[$i].'"><a href="'.$thumnailurl[$i].'" title="'.$v->title.'" data-lightbox="gallery-item"><img src="'.$thumnailurl[$i].'" alt="'.$v->title.'"></a></div>';
 												    }
 								    			?>
-                                               <!--  
-                                                <div class="slide" data-thumb="<?php echo base_url('public/style_front/images/shop/thumbs/dress/3.jpg')?>"><a href="<?php echo base_url('public/style_front/images/shop/dress/3.jpg')?>" title="Pink Printed Dress - Front View" data-lightbox="gallery-item"><img src="<?php echo base_url('public/style_front/images/shop/dress/3.jpg')?>" alt="Pink Printed Dress"></a></div>
-                                                <div class="slide" data-thumb="<?php echo base_url('public/style_front/images/shop/thumbs/dress/3-1.jpg')?>"><a href="<?php echo base_url('public/style_front/images/shop/dress/3-1.jpg')?>" title="Pink Printed Dress - Side View" data-lightbox="gallery-item"><img src="<?php echo base_url('public/style_front/images/shop/dress/3-1.jpg')?>" alt="Pink Printed Dress"></a></div>
-                                                <div class="slide" data-thumb="<?php echo base_url('public/style_front/images/shop/thumbs/dress/3-2.jpg')?>"><a href="<?php echo base_url('public/style_front/images/shop/dress/3-2.jpg')?>" title="Pink Printed Dress - Back View" data-lightbox="gallery-item"><img src="<?php echo base_url('public/style_front/images/shop/dress/3-2.jpg')?>" alt="Pink Printed Dress"></a></div>
-                                            	-->
                                             </div>
                                         </div>
                                     </div>
-<!--                                     <div class="sale-flash">Sale!</div> -->
+                                    
                                 </div><!-- Product Single - Gallery End -->
 
                             </div>
@@ -93,17 +88,7 @@
 
                                 <!-- Product Single - Quantity & Cart Button
                                 ============================================= -->
-                                <form class="cart nobottommargin clearfix" method="post" enctype='multipart/form-data'>
-                                    <div class="quantity clearfix">
-                                        <input type="button" value="-" class="minus">
-                                        <input type="text" step="1" min="1"  name="quantity" value="1" title="Qty" class="qty" size="4" />
-                                        <input type="button" value="+" class="plus">
-                                    </div>
-                                    <button type="submit" class="add-to-cart button nomargin">Add to cart</button>
-                                </form><!-- Product Single - Quantity & Cart Button End -->
-
-                                <div class="clear"></div>
-                                <div class="line"></div>
+                               
 
                                 <!-- Product Single - Short Description
                                 ============================================= -->
