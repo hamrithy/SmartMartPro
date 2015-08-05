@@ -192,15 +192,11 @@
 											var count = 0;
 											function myimagechange(){
 												//$("#myimagedemo").attr("src", $("#txtfile").val());
-												count++;
 												$('tbody').append('<tr>'+
 																	'<td>'+
 																		'<div class="form-group">'+
 												    						'<img src="'+$("#txtfile").val()+'" class="img-responsive" id="myimagedemo"​​ style="width:30%;"/>'+
 																		'</div>'+
-																	'</td>'+
-																	'<td>'+
-																		'<input type="text" style="width:50px; text-align:center;" value='+count+' />'+
 																	'</td>'+
 																	'<td>'+
 																		'<div class="form-group">'+
@@ -497,11 +493,8 @@
 												$('tbody').append('<tr>'+
 													'<td>'+
 														'<div class="form-group">'+
-								    						'<img src="'+images[i]+'" class="img-responsive" id="myimagedemo"/>'+
+								    						'<img src="'+images[i]+'" class="img-responsive" id="myimagedemo" style="width:30%;"/>'+
 														'</div>'+
-													'</td>'+
-													'<td>'+
-														'<input type="text" style="width:50px; text-align:center;" value='+i+' />'+
 													'</td>'+
 													'<td>'+
 														'<div class="form-group">'+
