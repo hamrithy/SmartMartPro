@@ -337,7 +337,7 @@
 						</script> 
 						
 						<script type="text/x-jquery-tmpl" id="tmplLstPopProduct">
-								<div class="spost clearfix">
+								<div class="spost clearfix"> 
                                         <div class="entry-image">
                                             <a href="<?php echo site_url()?>product/detail/{{= productid }}"><img src="{{= thumnailurl }}" alt="{{= title }}"></a>
                                         </div>
