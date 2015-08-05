@@ -56,8 +56,7 @@
                                                 <?php  
                                                 	$thumnailurl = explode(";", $v->thumbnailurl);
 												    for($i=0; $i<count($thumnailurl); $i++){
-												    	echo '<div class="slide" data-thumb="'.$thumnailurl[$i].'"><a href="'.$thumnailurl[$i].'" title="'.$v->title.'" data-lightbox="'.$v->title.'"><img src="'.$thumnailurl[$i].'" alt="'.$v->title.'"></a></div>';
-
+												    	echo '<div class="slide" data-thumb="'.$thumnailurl[$i].'"><a href="'.$thumnailurl[$i].'" title="'.$v->title.'" data-lightbox="gallery-item"><img src="'.$thumnailurl[$i].'" alt="'.$v->title.'"></a></div>';
 												    }
 								    			?>
                                                <!--  
