@@ -126,12 +126,12 @@
 														
 														<!-- Put Control Khmer here -->
 														<div class="form-group">
-															<label>áž…áŸ†ážŽáž„áž‡áž¾áž„<span class="required">*</span></label>
+															<label>ចំណងជើង<span class="required">*</span></label>
 															<input type="text" class="form-control" name="txtkhtitle" id="txtkhtitle" required />
 														</div>
 														
 														<div class="form-group">
-															<label>áž›áŸ†áž¢áž·áž�</label>
+															<label>លំអិត</label>
 															<textarea class="form-control" name="txtkhdescription" id="txtkhdescription">
 																	
 															</textarea>
@@ -196,7 +196,7 @@
 												$('tbody').append('<tr>'+
 																	'<td>'+
 																		'<div class="form-group">'+
-												    						'<img src="'+$("#txtfile").val()+'" class="img-responsive" id="myimagedemo"/>'+
+												    						'<img src="'+$("#txtfile").val()+'" class="img-responsive" id="myimagedemo"​​ style="width:30%;"/>'+
 																		'</div>'+
 																	'</td>'+
 																	'<td>'+
