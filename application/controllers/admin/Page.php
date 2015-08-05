@@ -24,13 +24,12 @@
 		}
 		
 		public function addpagepro(){
-			$this->DtoPage->setTitle($this->input->post('txttitle'));
-			$this->DtoPage->setBody($this->input->post('txtdescription'));
 			$this->DtoPage->setUserid($this->encryption->decrypt($this->session->userdata("userid")));
-			$this->DtoPage->setSeotitle($this->input->post("txtseotitle"));
-			$this->DtoPage->setSeodescription($this->input->post("txtseodescription"));
-			$this->DaoPage->addPage($this->DtoPage);
-			redirect("admin/page");
+			$this->DtoPage->setSeotitle($this->input->post("seotitle"));
+			$this->DtoPage->setSeodescription($this->input->post("seodescription"));
+			$this->DtoPage->setPagedetail($this->input->post('PageDetail'));
+			$result = $this->DaoPage->addPage($this->DtoPage);
+			echo json_encode($result);
 		}
 		
 		public function listPagePro(){
@@ -45,8 +44,7 @@
 		}
 		
 		public function getpage($id){
-			$this->DtoPage->setPageid($id);
-			$data["page"] = $this->DaoPage->getPage($this->DtoPage);
+			$data['pageid'] = $id;
 			$this->load->view("admin-kh4it/addpage" , $data);
 		}
 		
@@ -61,7 +59,9 @@
 			redirect("admin/page");
 		}
 
-	
+		public function showPage($id){
+			
+		}	
 	
 	}
 

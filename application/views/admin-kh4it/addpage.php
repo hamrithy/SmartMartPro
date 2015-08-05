@@ -71,45 +71,10 @@
 		<div class="wrapper">
 			<!-- BEGIN TOP NAV -->
 			<?php $this->load->view('admin-kh4it/_header') ?>
-			<!-- END TOP NAV -->
-					
-			<script type="text/javascript">
-			$(document).ready(function() {
-
-						<?php
-						$mPage= $page;
-						if($mPage != null ){
-							foreach($mPage as $v){
-							?>
-							document.title= "Edit Page";
-							$("#formtitle").text("Form Edit Page");
-							$("#txtpageid").val("<?php echo $v->pageid ?>");
-							$("#txtentitle").val("<?php echo $v->title1 ?>");
-							$("#txtkhtitle").val("<?php echo $v->title2 ?>");
-							$("#txtendescription").val("<?php echo $v->description1 ?>");
-							$("#txtkhdescription").val("<?php echo $v->description2 ?>");
-							$("#txtseodescription").val("<?php echo $v->seodescription ?>");
-							$("#txtseotitle").val("<?php echo $v->seotitle ?>");
-							//$("#txtdescription").text('<?php //echo $v->body ?>');
-							document.frmpage.action="<?php echo site_url();?>/admin/page/updatepage";
-							<?php
-							 }
-						}
-						 ?>
-			});
-		  	</script>
-		  	
-			
+			<!-- END TOP NAV -->		
 			<!-- BEGIN SIDEBAR LEFT -->
 			<?php $this->load->view('admin-kh4it/_sidebar') ?>
-			<!-- END SIDEBAR LEFT -->
-			
-			
-			
-	
-			
-			
-			
+			<!-- END SIDEBAR LEFT -->	
 			<!-- BEGIN PAGE CONTENT -->
 			<div class="page-content">
 				
@@ -117,7 +82,7 @@
 				<div class="container-fluid">
 					
 				<br/>
-					<form action="<?php echo site_url();?>/admin/page/addpagepro" id="frmpage" name="frmpage" method="post" role="form">
+					<form id="frmpage" name="frmpage" method="post" role="form">
 						<!-- Tab -->
 						<div class="col-sm-8">
 							<div class="panel with-nav-tabs panel-info">
@@ -185,7 +150,7 @@
 								<input type="text" class="form-control" name="txtseodescription" id="txtseodescription" value="" required="required"/>
 							</div>									
 							<div class="form-group">
-								<button type="submit" class="btn btn-success">Save</button>
+								<button type="submit" class="btn btn-success" id="btnSave" onclick="addPage()">Save</button>
 								<button class="btn btn-danger">Cancel</button>
 							</div>		
 						</div><!-- /.col-sm-4 -->
@@ -293,6 +258,49 @@
 			{ filebrowserBrowseUrl : '<?php echo base_url(); ?>/public/responsivefilemanager/filemanager/dialog.php?type=2&editor=ckeditor&fldr=', 
 			filebrowserUploadUrl : '<?php echo base_url(); ?>/public/responsivefilemanager/filemanager/dialog.php?type=2&editor=ckeditor&fldr=', 
 			filebrowserImageBrowseUrl : '<?php echo base_url(); ?>/public/responsivefilemanager/filemanager/dialog.php?type=1&editor=ckeditor&fldr=' }); 
+	</script>
+	<script>
+		<?php if($pageid != null){ ?>
+			$.post("<?php echo site_url() ?>admin/showpage/<?php echo $pageid ?>", function(data){
+				$('#btnSave').attr("onclick","updatePage("+data[0].pageid+")");
+				$('#seotitle').val(data[0].seotitle);
+				$('#seodescription').val(data[0].seodescription);
+				$('#txtentitle').val(data[0].title);
+				CKEDITOR.instances.txtendescription.setData(data[0].description);
+				$('#txtkhtitle').val(data[1].title);
+				CKEDITOR.instances.txtkhdescription.setData(data[1].description);
+			});
+		<?php } ?>
+		function addPage(){
+			$('#frmpage').submit(function(e){
+				e.preventDefault();
+				$.ajax({
+					type:'post',
+					url:'<?php echo site_url() ?>admin/page/addpagepro',
+					dataType:'json',
+					data:{
+						seotitle:$('#txtseotitle').val(),
+						seodescription:$('#txtseodescription').val(),
+						PageDetail:[
+						{
+							"languageid":"2",
+							"title":$('#txtentitle').val(),
+							"description": CKEDITOR.instances.txtendescription.getData()
+						},
+						{
+							"languageid":"1",
+							"title":$('#txtkhtitle').val(),
+							"description": CKEDITOR.instances.txtkhdescription.getData()
+						}
+						]
+					},
+					success:function(data){
+						window.location.href="<?php echo site_url("admin/page");?>";
+					}
+
+				});
+			});
+		}
 	</script>
 
 	</body>

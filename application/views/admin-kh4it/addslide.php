@@ -383,9 +383,6 @@
 		function addSlide(){
 			$("#frmSlide").submit(function(e){
 				e.preventDefault();
-				
-				alert("ok");
-
 				$.ajax({
 					type: "POST",
 					url: '<?php  echo site_url()?>admin/slide/actionaddslide',

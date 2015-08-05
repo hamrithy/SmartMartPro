@@ -10,8 +10,6 @@ class DaoPage extends CI_Model{
 		$this->load->model("dto/Dtopage");
 		$this->db->trans_begin();
 		$page = array(
-				'title'              =>    	$pages->getTitle(),
-				'body'  			 =>	   	$pages->getBody(),
 				'userid'             =>     $pages->getUserid(),
 				'seotitle'           =>    	$pages->getSeotitle(),
 				//'seodescription'     =>	   	str_replace(array("\r", "\n"), " ", $pages->getSeodescription())
@@ -21,8 +19,8 @@ class DaoPage extends CI_Model{
 		$pageid = $this->db->insert_id();
 
 		foreach ($pages->getPagedetail() as $page) {
-			$p["pageid"] = $pageid;
-			$this->db->insert("PAGEDETAIL", $p);
+			$page["pageid"] = $pageid;
+			$this->db->insert("PAGEDETAIL", $page);
 		}
 		if($this->db->trans_status()===FALSE){
 			$this->db->trans_rollback();
@@ -45,15 +43,8 @@ class DaoPage extends CI_Model{
 		return $query->result();
 	}
 	
-	public function getPage(DtoPage $p){
-		$this->db->select('p.pageid , p.seotitle, p.seodescription, pd1.title title1 , pd2.title title2 , pd1.description description1, pd2.description description2, u.userid , u.username');
-		$this->db->from('PAGES p');
-		$this->db->join('USERS u', 'p.userid = u.userid');
-		$this->db->join('PAGEDETAIL pd1', 'p.pageid = pd1.pageid AND pd1.languageid=1');
-		$this->db->join('PAGEDETAIL pd2', 'p.pageid = pd2.pageid AND pd2.languageid=2');
-		$this->db->where('p.pageid',$p->getPageid());
-		$query = $this->db->get();
-		return $query->result();
+	public function getPage($id){
+
 	}
 
 	public function getPageByName($pageName){
