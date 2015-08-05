@@ -44,7 +44,12 @@ class DaoPage extends CI_Model{
 	}
 	
 	public function getPage($id){
-
+		$this->db->select('p.pageid, p.seotitle, p.seodescription, pd.title, pd.description');
+		$this->db->from('PAGES p');
+		$this->db->join('PAGEDETAIL pd','p.pageid = pd.pageid');
+		$this->db->where('p.pageid',$id);
+		$query = $this->db->get();
+		return $query->result();
 	}
 
 	public function getPageByName($pageName){
@@ -73,16 +78,26 @@ class DaoPage extends CI_Model{
 	}
 	
 	public function updatePage(DtoPage $p){
-		$data = array(
-				'title'              =>    	$p->getTitle(),
-				'body'  			 =>	   	$p->getBody(),
-				'userid'             =>     $p->getUserid(),
-				'seotitle'           =>    	$p->getSeotitle(),
-				'seodescription'     =>	   	str_replace(array("\r", "\n"), " ", $p->getSeodescription())
-		);
-		$this->db->set('createddate', 'NOW()', FALSE);
-		$this->db->where('pageid' , $p->getPageid());
-		$this->db->update('PAGES' , $data);
+		$this->db->trans_begin();
+			$page = array(
+					"seotitle"			=>	$p->getSeotitle(),
+					"seodescription"	=>	$p->getSeodescription()
+				);
+			$this->db->where('pageid', $p->getPageid());
+			$this->db->update('PAGES', $page);
+			$pid = $p->getPageid();
+			foreach($p->getPagedetail() as $pa){
+				$this->db->where('pageid',$pid);
+				$this->db->where('languageid', $pa['languageid']);
+				$this->db->update('PAGEDETAIL', $pa);
+			}
+			if($this->db->trans_status() === FALSE){
+				$this->db->trans_rollback();
+				return FALSE;
+			}else{
+				$this->db->trans_commit();
+				return TRUE;
+			}
 	}
 		
 	public function countPages(){

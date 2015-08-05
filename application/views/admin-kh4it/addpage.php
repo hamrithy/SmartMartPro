@@ -261,16 +261,49 @@
 	</script>
 	<script>
 		<?php if($pageid != null){ ?>
-			$.post("<?php echo site_url() ?>admin/showpage/<?php echo $pageid ?>", function(data){
-				$('#btnSave').attr("onclick","updatePage("+data[0].pageid+")");
-				$('#seotitle').val(data[0].seotitle);
-				$('#seodescription').val(data[0].seodescription);
-				$('#txtentitle').val(data[0].title);
-				CKEDITOR.instances.txtendescription.setData(data[0].description);
-				$('#txtkhtitle').val(data[1].title);
-				CKEDITOR.instances.txtkhdescription.setData(data[1].description);
-			});
+			 $.post("<?php echo site_url() ?>admin/page/showpage/<?php echo $pageid ?>", function(data){
+			 	$('#btnSave').attr("onclick","updatePage("+data[0].pageid+")");
+			 	$('#txtseotitle').val(data[0].seotitle);
+			 	$('#txtseodescription').val(data[0].seodescription);
+			 	$('#txtentitle').val(data[1].title);
+			 	CKEDITOR.instances.txtendescription.setData(data[1].description);
+			 	$('#txtkhtitle').val(data[0].title);
+			 	CKEDITOR.instances.txtkhdescription.setData(data[0].description);
+			 });
+			
 		<?php } ?>
+		function updatePage(pageid){
+				var pid = pageid;
+				$('#frmpage').submit(function(e){
+					e.preventDefault();
+					$.ajax({
+						type:"POST",
+						url:"<?php echo site_url()?>admin/page/updatepage",
+						dataType:"json",
+						data:{
+							pageid:pid,
+							seotitle:$('#txtseotitle').val(),
+							seodescription:$('#txtseodescription').val(),
+							PageDetail:[
+								{
+									"languageid": "2",
+									"title": $("#txtentitle").val(),
+									"description": CKEDITOR.instances.txtendescription.getData(),
+								},
+							{
+									"languageid":"1",
+									"title": $("#txtkhtitle").val(),
+									"description": CKEDITOR.instances.txtkhdescription.getData(),
+							}
+							]
+						},
+						success:function(data){
+							window.location.href = "<?php echo site_url("admin/page");?>";
+						}
+					});
+
+				});
+		}
 		function addPage(){
 			$('#frmpage').submit(function(e){
 				e.preventDefault();
@@ -301,6 +334,7 @@
 				});
 			});
 		}
+
 	</script>
 
 	</body>

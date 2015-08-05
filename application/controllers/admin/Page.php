@@ -49,18 +49,19 @@
 		}
 		
 		public function updatePage(){
-			$this->DtoPage->setPageid($this->input->post('txtpageid'));
-			$this->DtoPage->setTitle($this->input->post('txttitle'));
-			$this->DtoPage->setBody($this->input->post('txtdescription'));
-			$this->DtoPage->setSeotitle($this->input->post("txtseotitle"));
-			$this->DtoPage->setSeodescription($this->input->post("txtseodescription"));
-			$this->DtoPage->setUserid($this->encryption->decrypt($this->session->userdata("userid")));
-			$this->DaoPage->updatePage($this->DtoPage);
-			redirect("admin/page");
+			$this->DtoPage->setPageid($this->input->post('pageid'));
+			$this->DtoPage->setSeotitle($this->input->post("seotitle"));
+			$this->DtoPage->setSeodescription($this->input->post("seodescription"));
+			$this->DtoPage->setPagedetail($this->input->post('PageDetail'));
+			$result = $this->DaoPage->updatePage($this->DtoPage);
+			echo json_encode($result);
 		}
 
 		public function showPage($id){
-			
+			$result = $this->DaoPage->getPage($id);
+			$this->output
+				->set_content_type('application/json')
+				->set_output(json_encode($result));
 		}	
 	
 	}
