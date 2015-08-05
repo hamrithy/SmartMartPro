@@ -27,7 +27,7 @@
 			$data["title"] = "Product Details";
 			$data["page"] = "Product";
 			$data["getProduct"] = $this->DaoProduct->lstProduct(lang('lang_id'),$id);
-			$data["lstRelateProduct"] = $this->DaoProduct->lstRelatedProduct(20,$cateid);
+			$data["lstRelateProduct"] = $this->DaoProduct->lstRelatedProduct(20,$id,$cateid);
 			$this->load->view("product_details",$data);
 		}
 		
