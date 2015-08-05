@@ -20,7 +20,8 @@
 		}
 
 		public function addpage(){
-			$this->load->view('admin-kh4it/addpage');
+			$data["pageid"] = null;
+			$this->load->view('admin-kh4it/addpage', $data);
 		}
 		
 		public function addpagepro(){
