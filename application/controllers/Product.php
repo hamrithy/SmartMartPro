@@ -31,13 +31,13 @@
 			$this->load->view("product_details",$data);
 		}
 		
-		public function recentProduct(){
-			$data["recentProducts"] = $this->DaoProduct->getRecentProductsByLanguage(5);
+		public function lstRecentProduct(){
+			$data["recentProducts"] = $this->DaoProduct->lstRecentProduct(5);
 			echo json_encode($data);
 		}
 		
 		public function lstPopProduct(){
-			$data["lstPopProduct"] = $this->DaoProduct->getPublicProduct(5);
+			$data["lstPopProduct"] = $this->DaoProduct->getPopularProduct(5);
 			echo json_encode($data);
 		}
 		

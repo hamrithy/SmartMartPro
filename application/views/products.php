@@ -194,7 +194,7 @@
 
 	                            $.ajax({
 					                type: "POST",
-					                url: '<?php  echo site_url()?>product/recentProduct',
+					                url: '<?php  echo site_url()?>product/lstRecentProduct',
 					                dataType: 'json',
 					                success: function(data){ 
 					                    console.log("DATA:",data); 
