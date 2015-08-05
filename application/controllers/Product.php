@@ -40,6 +40,12 @@
 			echo json_encode($data);
 		}
 		
+		public function lstRelateProduct($cateid){
+			$data["lstRelateProduct"] = $this->DaoProduct->lstRelatedProduct(20,$cateid);
+			echo json_encode($data);
+		}
+		
+		
 	}
 
 ?>
