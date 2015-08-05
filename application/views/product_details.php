@@ -210,25 +210,30 @@
 
                         <h4>Related Products</h4>
 
-                        <div id="oc-product" class="lstRelateProduct owl-carousel product-carousel">
+                        <div id="oc-product" class="owl-carousel product-carousel">
 
 
-							
+							<?php foreach($lstRelateProduct as $v){ ?>
 
                             <div class="oc-item">
                                 <div class="product iproduct clearfix">
                                     <div class="product-image">
-                                        <a href="#"><img src="<?php echo base_url('public/style_front/images/shop/dress/1.jpg')?>" alt="Checked Short Dress"></a>
-                                        <a href="#"><img src="<?php echo base_url('public/style_front/images/shop/dress/1-1.jpg')?>" alt="Checked Short Dress"></a>
-                                        <div class="sale-flash">50% Off*</div>
+                                    	<?php 
+	                                    	$thumnailurl = explode(";", $v->thumbnailurl);
+	                                    	if($thumnailurl[0] != null) {
+	                                    		echo  '<a href="'.site_url().'product/detail/'.$v->productid.'/'.$v->categoryid.'"><img src="'.$thumnailurl[0].'" alt="'.$v->title.'"></a>';
+	                                    	}
+	                                    	if($thumnailurl[1] != null) {
+	                                    		echo  '<a href="'.site_url().'product/detail/'.$v->productid.'/'.$v->categoryid.'"><img src="'.$thumnailurl[1].'" alt="'.$v->title.'"></a>';
+	                                    	}
+                                    	?>
                                         <div class="product-overlay">
-                                            <a href="#" class="add-to-cart"><i class="icon-shopping-cart"></i><span> Add to Cart</span></a>
                                             <a href="include/ajax/shop-item.html" class="item-quick-view" data-lightbox="ajax"><i class="icon-zoom-in2"></i><span> Quick View</span></a>
                                         </div>
                                     </div>
                                     <div class="product-desc center">
-                                        <div class="product-title"><h3><a href="#">Checked Short Dress</a></h3></div>
-                                        <div class="product-price"><del>$24.99</del> <ins>$12.49</ins></div>
+                                        <div class="product-title"><h3><a href="<?php echo site_url()?>product/detail/<?php echo $v->productid.'/'.$v->categoryid?>"><?php echo $v->title ?></a></h3></div>
+                                        <div class="product-price"> <ins>$ <?php echo $v->price ?></ins></div>
                                         <div class="product-rating">
                                             <i class="icon-star3"></i>
                                             <i class="icon-star3"></i>
@@ -240,7 +245,7 @@
                                 </div>
                             </div>
 
-                           
+                           <?php } ?>
 
                         </div>
 

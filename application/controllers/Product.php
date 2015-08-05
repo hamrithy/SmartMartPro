@@ -22,21 +22,22 @@
 			$this->load->view('products', $data);
 		}
 		
-		public function detail($id){
+		public function detail($id,$cateid){
 			$this->DaoProduct->increaseCount($id);
 			$data["title"] = "Product Details";
 			$data["page"] = "Product";
 			$data["getProduct"] = $this->DaoProduct->lstProduct(lang('lang_id'),$id);
+			$data["lstRelateProduct"] = $this->DaoProduct->lstRelatedProduct(20,$cateid);
 			$this->load->view("product_details",$data);
 		}
 		
 		public function recentProduct(){
-			$data["recentProducts"] = $this->DaoProduct->getRecentProductsByLanguage(3);
+			$data["recentProducts"] = $this->DaoProduct->getRecentProductsByLanguage(5);
 			echo json_encode($data);
 		}
 		
 		public function lstPopProduct(){
-			$data["lstPopProduct"] = $this->DaoProduct->getPublicProduct(3);
+			$data["lstPopProduct"] = $this->DaoProduct->getPublicProduct(5);
 			echo json_encode($data);
 		}
 		
