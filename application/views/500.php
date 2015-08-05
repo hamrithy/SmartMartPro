@@ -1,4 +1,4 @@
-<?php $this->load->view('layouts/_include'); ?>
+<?php $this->load->view('_include'); ?>
 <!-- BEGIN CUSTOMIZATION STYLE -->
 
 <!-- END CUSTOMIZATION STYLE -->
@@ -12,7 +12,7 @@
     <div id="wrapper" class="clearfix">
 
         <!-- BEGIN HEADER -->
-        <?php $this->load->view('layouts/_header');?>
+        <?php $this->load->view('_header');?>
         <!-- END HEADER -->
 
 
@@ -49,7 +49,7 @@
         </section>
 
         <!-- BEGGIN FOOTER SECTION -->
-        <?php $this->load->view('layouts/_footer'); ?>
+        <?php $this->load->view('_footer'); ?>
         <!-- END FOOTER SECTION -->
 
 </body>
