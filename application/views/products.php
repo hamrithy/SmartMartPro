@@ -322,7 +322,7 @@
 						<script type="text/x-jquery-tmpl" id="tmplRecentProducts">
 							 <div class="spost clearfix">
                                         <div class="entry-image">
-                                            <a href="#"><img src="${splitStr(thumnailurl,'-')}" alt="{{= title }}"></a>
+                                            <a href="#"><img src="{{= thumnailurl }}" alt="{{= title }}"></a>
                                         </div>
                                         <div class="entry-c">
                                             <div class="entry-title">
@@ -339,7 +339,7 @@
 						<script type="text/x-jquery-tmpl" id="tmplLstPopProduct">
 								<div class="spost clearfix">
                                         <div class="entry-image">
-                                            <a href="<?php echo site_url()?>product/detail/{{= productid }}"><img src="splitStr(${thumnailurl},';')" alt="{{= title }}"></a>
+                                            <a href="<?php echo site_url()?>product/detail/{{= productid }}"><img src="{{= thumnailurl }}" alt="{{= title }}"></a>
                                         </div>
                                         <div class="entry-c">
                                             <div class="entry-title">
@@ -352,12 +352,6 @@
                                         </div>
                           		</div>	
                          </script> 
-                         
-                         
-                         <script type="text/javascript">
-                         function splitStr(string,seperator){
-                        	    return string.split(seperator);
-                        	}
-                         </script>           
+                                  
 </body>
 </html>
