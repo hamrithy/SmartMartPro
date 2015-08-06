@@ -20,11 +20,12 @@
         <section id="page-title">
 
             <div class="container clearfix">
-                <h1>Products</h1>
+                <h1>Searching Products</h1>
                 <span>Start Buying your Favourite Products</span>
                 <ol class="breadcrumb">
                     <li><a href="<?php echo site_url('')?>">Home</a></li>
-                    <li class="active">Products</li>
+                    <li><a href="<?php echo site_url('product')?>">Product</a></li>
+                    <li class="active">Searching Products</li>
                 </ol>
             </div>
 
@@ -47,9 +48,14 @@
                         <div id="shop" class="product-3 clearfix">
 
 	
-							<?php foreach ($lstProduct as $v){?>
-							
+						<?php 
+
+                        if(count($lstProduct)>0){
+                            foreach ($lstProduct as $v){?>
+							 
+
 							<div class="product clearfix">
+
                                 <div class="product-image">
 								    <?php 
 								    $thumnailurl = explode(";", $v->thumbnailurl);
@@ -81,7 +87,11 @@
                             </div>	
 							
 							
-							<?php } ?>
+							<?php } 
+                            }else{
+                                echo '<h4 style="font-style: italic; font-weight: bold; text-align: center;">Products search not found...</h4>';
+                            }
+                            ?>
 						
 
 						
