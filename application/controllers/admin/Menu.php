@@ -50,10 +50,11 @@
 			echo json_encode($result);
 		}
 
-		public function deletemenu($id){
+		public function deletemenu(){
+			$id = $this->input->post("id");
 			$this->load->model('dao/DaoMenu');
-			$this->DaoMenu->deleteMenu($id);
-			redirect("admin/menu");
+			$data["SUCCESS"] = $this->DaoMenu->deleteMenu($id);
+			echo json_encode($data);
 		}
 
 		public function getmenu($id){

@@ -202,7 +202,7 @@
 												if(count($categories)>0){
 													echo '<option value="#">Please choose</option>';
 													foreach($categories as $category){
-														echo '<option value="category/'.$category->categoryid.'">'.$category->title.'</option>';
+														echo '<option value="product/bycate/'.$category->categoryid.'">'.$category->title.'</option>';
 													}
 												}
 											?>
