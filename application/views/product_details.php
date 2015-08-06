@@ -205,12 +205,14 @@
                                     <div class="product-image">
                                     	<?php 
 	                                    	$thumnailurl = explode(";", $v->thumbnailurl);
-	                                    	if($thumnailurl[0] != null) {
-	                                    		echo  '<a href="'.site_url().'product/detail/'.$v->productid.'/'.$v->categoryid.'"><img src="'.$thumnailurl[0].'" alt="'.$v->title.'"></a>';
-	                                    	}
-	                                    	if($thumnailurl[1] != null) {
-	                                    		echo  '<a href="'.site_url().'product/detail/'.$v->productid.'/'.$v->categoryid.'"><img src="'.$thumnailurl[1].'" alt="'.$v->title.'"></a>';
-	                                    	}
+                                            if($thumnailurl!=""){
+	                                    	  if($thumnailurl[0] != null) {
+	                                    		 echo  '<a href="'.site_url().'product/detail/'.$v->productid.'/'.$v->categoryid.'"><img src="'.$thumnailurl[0].'" alt="'.$v->title.'"></a>';
+	                                    	  }
+	                                    	  if($thumnailurl[1] != null) {
+	                                    		 echo  '<a href="'.site_url().'product/detail/'.$v->productid.'/'.$v->categoryid.'"><img src="'.$thumnailurl[1].'" alt="'.$v->title.'"></a>';
+	                                    	  }
+                                            }
                                     	?>
                                         <div class="product-overlay">
                                             <a href="include/ajax/shop-item.html" class="item-quick-view" data-lightbox="ajax"><i class="icon-zoom-in2"></i><span> Quick View</span></a>
