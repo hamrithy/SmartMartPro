@@ -36,6 +36,12 @@
 			$this->load->view('products_cate', $data);
 		}
 		
+		public function search(){
+			$data["lstProduct"] = $this->DaoProduct->lstProductByName($this->input->post("q"));
+			$this->load->view('products_search', $data);
+		}
+		
+		
 		public function lstRecentProduct(){
 			$data["recentProducts"] = $this->DaoProduct->lstRecentProduct(5);
 			echo json_encode($data);
