@@ -189,7 +189,7 @@
 												echo '<option value="#">-------</option>';
 												if(count($pages)>0){
 													foreach($pages as $page){
-														echo '<option value="page/'.str_replace(" ","_",strtolower($page->title1)).'">'.$page->title1.'</option>';
+														echo '<option value="page/'.str_replace(" ","_",strtolower($page->title2)).'">'.$page->title2.'</option>';
 													}
 												}
 											?>
