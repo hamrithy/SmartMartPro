@@ -196,6 +196,19 @@
 										</select>
 									</div>												
 									<div class="form-group">
+										<label>OR Choose Category</label>
+										<select class="form-control" name="ProductCategory" id="ProductCategory">
+											<?php 
+												if(count($categories)>0){
+													echo '<option value="#">Please choose</option>';
+													foreach($categories as $category){
+														echo '<option value="category/'.$category->categoryid.'">'.$category->title.'</option>';
+													}
+												}
+											?>
+										</select>
+									</div>	
+									<div class="form-group">
 										<button type="submit" class="btn btn-success">Save</button>
 										<button class="btn btn-danger">Cancel</button>
 									</div>		
@@ -394,7 +407,8 @@
 				if($menus){
 					foreach($menus as $menu){?>
 						var languageName = '<?php echo $menu->languagename ?>';
-						$("#subof").val("<?php echo $menu->subof?>");
+						var subof = '<?php echo ($menu->subof==NULL) ? "": $menu->subof.",".$menu->level?>';
+						$("#subof").val(subof);
 						$("#menuid").val("<?php echo $menu->menuid?>");
 						$("#txtLinkto").val("<?php echo $menu->linkto?>");
 						$("."+languageName).find("#txtTitle").val($.trim('<?php echo trim($menu->title)?>'));
@@ -409,7 +423,7 @@
 				}
 			?>
 
-			$("#page").change(function(){
+			$("#page, #ProductCategory").change(function(){
 				$("#txtLinkto").val($(this).val());
 			});
 		});
