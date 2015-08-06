@@ -8,7 +8,7 @@
 	Version: 2.0
 
 -----------------------------------------------------------------------------------*/
-
+@import url(http://fonts.googleapis.com/css?family=Hanuman:400,700);
 
 dl, dt, dd, ol, ul, li {
 	margin: 0;
@@ -55,7 +55,7 @@ dl, dt, dd, ol, ul, li {
 body {
 	line-height: 1.5;
 	color: #555;
-	font-family: 'Lato', sans-serif;
+	font-family: 'Lato', sans-serif, 'Nokora', serif;
 }
 
 a {
@@ -87,7 +87,7 @@ h6 {
 	font-weight: 600;
 	line-height: 1.5;
 	margin: 0 0 30px 0;
-	font-family: 'Raleway', sans-serif;
+	font-family: 'Raleway', sans-serif, 'Hanuman', serif;
 }
 
 h5,
@@ -129,7 +129,7 @@ table,
 fieldset,
 form { margin-bottom: 30px; }
 
-small { font-family: 'Lato', sans-serif; }
+small { font-family: 'Lato', sans-serif, 'Hanuman', serif; }
 
 .uppercase { text-transform: uppercase !important; }
 
@@ -888,7 +888,7 @@ body.stretched #header.full-header .container {
 #logo {
 	position: relative;
 	float: left;
-	font-family: 'Raleway', sans-serif;
+	font-family: 'Raleway', sans-serif, 'Hanuman', serif;
 	font-size: 36px;
 	line-height: 100%;
 	margin-right: 40px;
@@ -1019,7 +1019,7 @@ body.stretched #header.full-header .container {
 	font-size: 13px;
 	letter-spacing: 1px;
 	text-transform: uppercase;
-	font-family: 'Raleway', sans-serif;
+	font-family: 'Raleway', sans-serif, 'Hanuman', serif;
 	-webkit-transition: height .4s ease, line-height .4s ease, margin .4s ease, padding .4s ease;
 	-o-transition: height .4s ease, line-height .4s ease, margin .4s ease, padding .4s ease;
 	transition: height .4s ease, line-height .4s ease, margin .4s ease, padding .4s ease;
@@ -1091,7 +1091,7 @@ body.stretched #header.full-header .container {
 	padding-bottom: 0 !important;
 	border: 0 !important;
 	letter-spacing: 0;
-	font-family: 'Lato', sans-serif;
+	font-family: 'Lato', sans-serif, 'Hanuman', serif;
 	-webkit-transition: all .2s ease-in-out;
 	-o-transition: all .2s ease-in-out;
 	transition: all .2s ease-in-out;
@@ -1193,7 +1193,7 @@ body.stretched #header.full-header #primary-menu ul li.mega-menu .mega-menu-cont
 #primary-menu ul li .mega-menu-content.style-2 > ul > li.mega-menu-title > a {
 	font-size: 13px;
 	font-weight: bold;
-	font-family: 'Raleway', sans-serif;
+	font-family: 'Raleway', sans-serif, 'Hanuman', serif;
 	letter-spacing: 1px;
 	text-transform: uppercase !important;
 	margin-bottom: 15px;
@@ -1651,7 +1651,7 @@ body.top-search-open #top-search form {
 	color: #333;
 	font-weight: 700;
 	margin-top: 0 !important;
-	font-family: 'Raleway', sans-serif;
+	font-family: 'Raleway', sans-serif, 'Hanuman', serif;
 	letter-spacing: 2px;
 }
 
@@ -4843,7 +4843,7 @@ body.device-touch.device-xxs .portfolio-notitle .portfolio-overlay { display: no
 	line-height: 14px;
 	margin: 0 10px 15px 0;
 	color: #999;
-	font-family: 'Crete Round', serif;
+	font-family: 'Crete Round', serif, 'Hanuman', serif;
 	font-style: italic;
 }
 
@@ -4889,7 +4889,7 @@ body.device-touch.device-xxs .portfolio-notitle .portfolio-overlay { display: no
 	padding: 30px 0;
 	text-align: center;
 	color: #444;
-	font-family: 'Raleway', sans-serif;
+	font-family: 'Raleway', sans-serif, 'Hanuman', serif;
 	text-transform: uppercase;
 	letter-spacing: 1px;
 	font-size: 24px;
@@ -4912,7 +4912,7 @@ body:not(.device-touch) .entry-link {
 .entry-link span {
 	display: block;
 	margin-top: 5px;
-	font-family: 'Crete Round', serif;
+	font-family: 'Crete Round', serif, 'Hanuman', serif;
 	font-style: italic;
 	font-weight: normal;
 	text-transform: none;
@@ -4925,7 +4925,7 @@ body:not(.device-touch) .entry-link {
 
 .entry blockquote p {
 	font-weight: 400;
-	font-family: 'Crete Round', serif;
+	font-family: 'Crete Round', serif, 'Hanuman', serif;
 	font-style: italic;
 }
 
@@ -5149,7 +5149,7 @@ body:not(.device-touch) .entry-link {
 	font-weight: bold;
 	letter-spacing: 1px;
 	text-transform: uppercase;
-	font-family: 'Raleway', sans-serif;
+	font-family: 'Raleway', sans-serif, 'Hanuman', serif;
 }
 
 .post-timeline .entry-timeline {
@@ -5288,7 +5288,7 @@ body:not(.device-touch) .entry-link {
 	display: inline-block;
 	border-bottom: 1px solid #1ABC9C;
 	padding: 0 2px;
-	font-family: 'Crete Round', serif;
+	font-family: 'Crete Round', serif, 'Hanuman', serif;
 	font-style: italic;
 }
 
@@ -5558,7 +5558,7 @@ body:not(.device-touch) .entry-link {
 .comment-content .comment-author span a {
 	font-size: 12px;
 	font-weight: normal;
-	font-family: 'Crete Round', serif;
+	font-family: 'Crete Round', serif, 'Hanuman', serif;
 	font-style: italic;
 	color: #AAA;
 }
@@ -5671,7 +5671,7 @@ div.alignright {
 .wp-caption {
 	text-align: center;
 	margin: 10px 20px 13px 20px;
-	font-family: 'Lato', Georgia, "Times New Roman", Times, serif;
+	font-family: 'Lato', Georgia, "Times New Roman", Times, serif, 'Hanuman', serif;
 	font-style: italic;
 }
 
@@ -6571,7 +6571,7 @@ body:not(.device-touch) .button {
 	font-size: 22px;
 	height: auto;
 	line-height: 1;
-	font-family: 'Raleway', sans-serif;
+	font-family: 'Raleway', sans-serif, 'Hanuman', serif;
 }
 
 .button.button-desc span {
@@ -6580,7 +6580,7 @@ body:not(.device-touch) .button {
 	font-size: 14px;
 	font-weight: 400;
 	letter-spacing: 1px;
-	font-family: 'Crete Round', serif;
+	font-family: 'Crete Round', serif, 'Hanuman', serif;
 	font-style: italic;
 	text-transform: none;
 }
@@ -7551,7 +7551,7 @@ body:not(.device-touch) .button.button-full strong {
 
 .feature-box.fbox-center.fbox-italic p {
 	font-style: italic;
-	font-family: 'Lato', sans-serif;
+	font-family: 'Lato', sans-serif, 'Hanuman', serif;
 }
 
 
@@ -9071,7 +9071,7 @@ body:not(.device-touch) .clients-grid li a {
 
 .testi-content p {
 	margin-bottom: 0;
-	font-family: 'Crete Round', serif;
+	font-family: 'Crete Round', serif, 'Hanuman', serif;
 	font-style: italic;
 }
 
@@ -9261,7 +9261,7 @@ body:not(.device-touch) .clients-grid li a {
 	display: block;
 	color: #1ABC9C;
 	font-weight: 400;
-	font-family: 'Crete Round', serif;
+	font-family: 'Crete Round', serif, 'Hanuman', serif;
 	font-style: italic;
 	font-size: 15px;
 	margin-top: 5px;
@@ -9613,7 +9613,7 @@ body:not(.device-touch) .team-overlay {
 .counter {
 	font-size: 42px;
 	font-weight: 600;
-	font-family: 'Raleway', sans-serif;
+	font-family: 'Raleway', sans-serif, 'Hanuman', serif;
 }
 
 .counter.counter-small { font-size: 28px; }
@@ -9746,7 +9746,7 @@ body:not(.device-touch) .rounded-skill {
 
 .skills li .progress-percent .counter {
 	font-weight: 400;
-	font-family: 'Lato', sans-serif;
+	font-family: 'Lato', sans-serif, 'Hanuman', serif;
 }
 
 .progress-percent:after, .progress-percent:before {
@@ -10272,7 +10272,7 @@ label {
 	display: inline-block;
 	font-size: 13px;
 	font-weight: 700;
-	font-family: 'Raleway', sans-serif;
+	font-family: 'Raleway', sans-serif, 'Hanuman', serif;
 	text-transform: uppercase;
 	letter-spacing: 1px;
 	color: #555;
@@ -10647,7 +10647,7 @@ label.error { display: none !important; }
 	display: block;
 	margin: 0 0 5px;
 	font-size: 16px;
-	font-family: 'Crete Round', serif;
+	font-family: 'Crete Round', serif, 'Hanuman', serif;
 	font-style: italic;
 	font-weight: 400;
 	color: #999;
