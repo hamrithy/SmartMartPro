@@ -31,6 +31,11 @@
 			$this->load->view("product_details",$data);
 		}
 		
+		public function byCate($cateid){
+			$data["lstProduct"] = $this->DaoProduct->lstProductByCate($cateid);
+			$this->load->view('products_cate', $data);
+		}
+		
 		public function lstRecentProduct(){
 			$data["recentProducts"] = $this->DaoProduct->lstRecentProduct(5);
 			echo json_encode($data);

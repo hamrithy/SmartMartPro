@@ -233,7 +233,7 @@
                         
                         
                        	<script type="text/x-jquery-tmpl" id="tmplCategory">
-							 <li><a href="<?php echo site_url() ?>product/bycate/{{= categoryid }}">{{= title }}</a></li>
+							<li><a href="<?php echo site_url() ?>product/bycate/{{= categoryid }}">{{= title }}</a></li>
 						</script> 
 						
 						<script type="text/x-jquery-tmpl" id="tmplRecentProducts">
