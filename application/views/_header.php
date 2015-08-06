@@ -226,7 +226,7 @@
                 <div id="top-search">
                     <a href="#" id="top-search-trigger"><i class="icon-search3"></i><i class="icon-line-cross"></i></a>
                     <form action="<?php echo site_url()?>product/search" method="get">
-                        <input type="text" name="q" class="form-control" value="<?php if (!empty($_GET)) { echo $_GET["q"];  }  ?>" placeholder="Type &amp; Hit Enter..">
+                        <input id="txtSearch" type="text" name="q" class="form-control" value="<?php if (!empty($_GET)) { echo $_GET["q"];  }  ?>" placeholder="Type &amp; Hit Enter..">
                     </form>
                 </div><!-- #top-search end -->
 
@@ -240,3 +240,12 @@
 
 </header>
 <!-- END HEADER -->
+<script type="text/javascript">
+    $(function(){
+        $("#top-search form").submit(function(e){
+            e.preventDefault();
+            location.href="<?php echo site_url() ?>product/search/"+$("#txtSearch").val();
+        });
+    });
+
+</script>

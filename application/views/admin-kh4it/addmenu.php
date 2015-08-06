@@ -164,8 +164,8 @@
 										<label>Subof</label>
 										<select class="form-control" name="subof" id="subof">
 											<?php 
+												echo '<option value="">-------</option>';
 												if(count($topMenu)>0){
-													echo '<option value="">-------</option>';
 													foreach($topMenu as $menu) {
 														echo '<option value="'.$menu->menuid.','.($menu->level+1).'">'.$menu->title.'</option>';
 													}	
@@ -186,8 +186,8 @@
 										<label>Choose Page</label>
 										<select class="form-control" name="page" id="page">
 											<?php 
+												echo '<option value="#">-------</option>';
 												if(count($pages)>0){
-													echo '<option value="#">Please choose</option>';
 													foreach($pages as $page){
 														echo '<option value="page/'.str_replace(" ","_",strtolower($page->title1)).'">'.$page->title1.'</option>';
 													}
@@ -199,8 +199,8 @@
 										<label>OR Choose Category</label>
 										<select class="form-control" name="ProductCategory" id="ProductCategory">
 											<?php 
+												echo '<option value="#">-------</option>';
 												if(count($categories)>0){
-													echo '<option value="#">Please choose</option>';
 													foreach($categories as $category){
 														echo '<option value="product/bycate/'.$category->categoryid.'">'.$category->title.'</option>';
 													}
