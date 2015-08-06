@@ -69,21 +69,26 @@ class DaoMenu extends CI_Model{
 	}
 
 	public function deleteMenu($menuid){
-		$this->db->trans_begin();
+		try{
+			$this->db->trans_begin();
 
-		// DELETE ALL DETAILS
-		$this->db->where('menuid', $menuid);
-		$this->db->delete('MENUDETAIL');
+			// DELETE ALL DETAILS
+			$this->db->where('menuid', $menuid);
+			$this->db->delete('MENUDETAIL');
 
-		// DELETE MAIN
-		$this->db->where('menuid', $menuid);
-		$this->db->delete('MENUS');
-		if($this->db->trans_status()===FALSE){
-			$this->db->trans_rollback();
+			// DELETE MAIN
+			$this->db->where('menuid', $menuid);
+			$this->db->delete('MENUS');
+			if($this->db->trans_status()===FALSE){
+				$this->db->trans_rollback();
+				return FALSE;
+			}else{
+				$this->db->trans_commit();
+				return TRUE;
+			}
+		}catch(Exception $e){
+			log_message($e->getMessage());
 			return FALSE;
-		}else{
-			$this->db->trans_commit();
-			return TRUE;
 		}
 	}
 
@@ -108,7 +113,7 @@ class DaoMenu extends CI_Model{
 		$query = $this->db->get();
 		return $query->result();	
 	}
-	
+
 }
 
 ?>

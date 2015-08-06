@@ -141,7 +141,7 @@ class DaoProduct extends CI_Model{
 	}
 
 	public function getProductByOrderAndLimit($limit,$order_by)	{
-		$this->db->select('pd.productid,pd.description , pd.title, pd.caption, pd.createddate, p.thumbnailurl, p.price , p.recommend');
+		$this->db->select('pd.productid,pd.description , p.categoryid, pd.title, pd.caption, pd.createddate, p.thumbnailurl, p.price , p.recommend');
 		$this->db->from('PRODUCTS p');
 		$this->db->join('PRODUCTDETAIL pd','p.productid = pd.productid');
 		$this->db->where("pd.languageid", lang('lang_id'));

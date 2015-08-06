@@ -118,7 +118,7 @@
 									<td><?php echo $menu->ordering; ?></td>						
 									<td><?php echo $menu->suboftitle; ?></td>
 									<td>
-										<a  href="<?php echo site_url()?>admin/menu/deletemenu/<?php echo $menu->menuid ?>" style="margin-right:3px" onclick="return confirm('Do you want to delete?');"  class="btn btn-danger">Delete</a>
+										<a  href="javascript:;" style="margin-right:3px" id="btnDelete" data="<?php echo $menu->menuid ?>" class="btn btn-danger">Delete</a>
 										<a  href="<?php  echo site_url()?>admin/menu/getmenu/<?php  echo $menu->menuid ?>"  class="btn btn-primary">Update</a>
 									</td>
 								</tr>
@@ -217,5 +217,30 @@
 	<!-- MAIN APPS JS -->
 	<script src="<?php echo base_url(); ?>/public/assets/js/apps.js"></script>
 	
+	<script type="text/javascript">
+		$(function(){
+			$(document).on('click','#btnDelete', function(){
+				var _this = $(this);
+				$.ajax({
+					url: '<?php echo site_url()?>admin/menu/deletemenu',
+					type: "POST",
+					dataType: "json",
+					data:{
+						id: _this.attr("data")
+					},
+					success: function(data){
+						if(data.SUCCESS==true){
+							_this.parents("tr").remove();
+						}else{
+							alert("You can not delete that menu.");
+						}
+					},
+					error: function(data){
+						alert("That menu cannot delete.");
+					}
+				});
+			})
+		});
+	</script>
 	</body>
 </html>

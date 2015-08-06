@@ -47,11 +47,11 @@
                                     $thumnailurl = explode(";", $product->thumbnailurl);
                                     echo '  <div class="spost clearfix">
                                             <div class="entry-image">
-                                                <a href="javascript:;"><img src="'.$thumnailurl[0].'" alt="Image"></a>
+                                                <a href="'.site_url().'product/detail/'.$product->productid.'/'.$product->categoryid.'"><img src="'.$thumnailurl[0].'" alt="Image"></a>
                                             </div>
                                             <div class="entry-c">
                                                 <div class="entry-title">
-                                                    <h4><a href="javascript:;">'.$product->title.'</a></h4>
+                                                    <h4><a href="'.site_url().'product/detail/'.$product->productid.'/'.$product->categoryid.'">'.$product->title.'</a></h4>
                                                 </div>
                                                 <ul class="entry-meta">
                                                     <li class="color">$29.99</li>
@@ -135,11 +135,11 @@
                                     $thumnailurl = explode(";", $product->thumbnailurl);
                                     echo '  <div class="spost clearfix">
                                             <div class="entry-image">
-                                                <a href="javascript:;"><img src="'.$thumnailurl[0].'" alt="Image"></a>
+                                                <a href="'.site_url().'product/detail/'.$product->productid.'/'.$product->categoryid.'"><img src="'.$thumnailurl[0].'" alt="Image"></a>
                                             </div>
                                             <div class="entry-c">
                                                 <div class="entry-title">
-                                                    <h4><a href="javascript:;">'.$product->title.'</a></h4>
+                                                    <h4><a href="'.site_url().'product/detail/'.$product->productid.'/'.$product->categoryid.'">'.$product->title.'</a></h4>
                                                 </div>
                                                 <ul class="entry-meta">
                                                     <li class="color">$29.99</li>
@@ -225,11 +225,11 @@
                                     $thumnailurl = explode(";", $product->thumbnailurl);
                                     echo '  <div class="spost clearfix">
                                             <div class="entry-image">
-                                                <a href="javascript:;"><img src="'.$thumnailurl[0].'" alt="Image"></a>
+                                                <a href="'.site_url().'product/detail/'.$product->productid.'/'.$product->categoryid.'"><img src="'.$thumnailurl[0].'" alt="Image"></a>
                                             </div>
                                             <div class="entry-c">
                                                 <div class="entry-title">
-                                                    <h4><a href="javascript:;">'.$product->title.'</a></h4>
+                                                    <h4><a href="'.site_url().'product/detail/'.$product->productid.'/'.$product->categoryid.'">'.$product->title.'</a></h4>
                                                 </div>
                                                 <ul class="entry-meta">
                                                     <li class="color">$29.99</li>
