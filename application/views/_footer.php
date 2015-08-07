@@ -9,13 +9,26 @@
 
                 <div class="col_two_third">
 
-                    <div class="col_one_third">
+                    <div class="col_half">
 
                         <div class="widget clearfix">
 
                             <img src="<?php echo base_url('public/style_front/images/footer-widget-logo.png')?>" alt="" class="footer-logo">
 
-                            <p>We believe in <strong>Simple</strong>, <strong>Creative</strong> &amp; <strong>Flexible</strong> Design Standards.</p>
+                            <p>We believe in <strong>Simple</strong>, <strong>Creative</strong> &amp; <strong>Flexible</strong> Design Standards.
+                            Sale available on selected Designer Brands that include Apparels, Footwear, Fashion Accessories & Watches.
+                            </p>
+
+                           
+
+                        </div>
+
+                    </div>
+
+                    <div class="col_half col_last">
+
+                        <div class="widget clearfix">
+                            <h4>Contact Us</h4>
 
                             <div style="background: url('<?php echo base_url('public/style_front/images/world-map.png')?>') no-repeat center center; background-size: 100%;">
                                 <address>
@@ -28,70 +41,6 @@
                                 <abbr title="Fax"><strong>Fax:</strong></abbr> (855) 12 345 678<br>
                                 <abbr title="Email Address"><strong>Email:</strong></abbr> info@domain.com
                             </div>
-
-                        </div>
-
-                    </div>
-
-                    <div class="col_one_third">
-
-                        <div class="widget widget_links clearfix">
-
-                            <h4>Blogroll</h4>
-
-                            <ul>
-                                <li><a href="http://codex.wordpress.org/">Documentation</a></li>
-                                <li><a href="http://wordpress.org/support/forum/requests-and-feedback">Feedback</a></li>
-                                <li><a href="http://wordpress.org/extend/plugins/">Plugins</a></li>
-                                <li><a href="http://wordpress.org/support/">Support Forums</a></li>
-                                <li><a href="http://wordpress.org/extend/themes/">Themes</a></li>
-                                <li><a href="http://wordpress.org/news/">WordPress Blog</a></li>
-                                <li><a href="http://planet.wordpress.org/">WordPress Planet</a></li>
-                            </ul>
-
-                        </div>
-
-                    </div>
-
-                    <div class="col_one_third col_last">
-
-                        <div class="widget clearfix">
-                            <h4>Recent Posts</h4>
-
-                            <div id="post-list-footer">
-                                <div class="spost clearfix">
-                                    <div class="entry-c">
-                                        <div class="entry-title">
-                                            <h4>Recently Page 1</h4>
-                                        </div>
-                                        <ul class="entry-meta">
-                                            <li>10th July 2014</li>
-                                        </ul>
-                                    </div>
-                                </div>
-
-                                <div class="spost clearfix">
-                                    <div class="entry-c">
-                                        <div class="entry-title">
-                                            <h4><a href="#">Recently Page 2</a></h4>
-                                        </div>
-                                        <ul class="entry-meta">
-                                            <li>10th July 2014</li>
-                                        </ul>
-                                    </div>
-                                </div>
-
-                                <div class="spost clearfix">
-                                    <div class="entry-c">
-                                        <div class="entry-title">
-                                            <h4>Recently Page 3</h4>
-                                        </div>
-                                        <ul class="entry-meta">
-                                            <li>10th July 2014</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
 
                     </div>
@@ -100,7 +49,7 @@
 
                 <div class="col_one_third col_last">
 
-                    <div class="widget clearfix" style="margin-bottom: -20px;">
+                    <!-- <div class="widget clearfix" style="margin-bottom: -20px;">
 
                         <div class="row">
 
@@ -116,7 +65,7 @@
 
                         </div>
 
-                    </div>
+                    </div> -->
 
                     <div class="widget subscribe-widget clearfix">
                         <h5><strong>Subscribe</strong> to Our Newsletter to get Important News, Amazing Offers &amp; Inside Scoops:</h5>
