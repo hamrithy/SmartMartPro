@@ -416,7 +416,7 @@
 					]
 				},success: function(data){
 					if(data==true){
-						alert("You have been "+action+" successfully.");
+						//alert("You have been "+action+" successfully.");
 						location.href= "<?php echo site_url('admin/product')?>";
 					}else{
 						alert("You have not been  "+action+" successfully.");

@@ -8,7 +8,7 @@
                                             </div>
                                             <div class="fbox-desc">
                                                 <h3>'.$fslider->title.'<span class="subtitle">'.$fslider->caption.'</span></h3>
-                                                 <p><a href="javascript:;" class="btn btn-default">Shop Now</a></p>
+                                                 <!-- <p><a href="javascript:;" class="btn btn-default">Shop Now</a></p> -->
                                            </div>
                                         </div>
                                     </div>

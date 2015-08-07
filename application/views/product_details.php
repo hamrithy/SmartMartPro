@@ -41,6 +41,10 @@
                     <div class="single-product">
 
 						<?php foreach ($getProduct as $v){?>
+                        <script>
+                            document.title= "<?php echo $v->title?>";
+                             
+                        </script>
 
                         <div class="product">
 
