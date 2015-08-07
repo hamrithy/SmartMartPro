@@ -2,7 +2,7 @@
 
 if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-if ( ! function_exists('test_method'))
+if ( ! function_exists('get_view_path'))
 {
 	function get_view_path($view_name)
 		{

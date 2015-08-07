@@ -61,65 +61,7 @@
                                         </div>';
 
                             }?>
-                            <!-- <div class="spost clearfix">
-                                <div class="entry-image">
-                                    <a href="javascript:;"><img src="<?php echo base_url('public/style_front/images/shop/small/1.jpg')?>" alt="Image"></a>
-                                </div>
-                                <div class="entry-c">
-                                    <div class="entry-title">
-                                        <h4><a href="javascript:;">Blue Round-Neck Tshirt</a></h4>
-                                    </div>
-                                    <ul class="entry-meta">
-                                        <li class="color">$29.99</li>
-                                        <li><i class="icon-star3"></i> <i class="icon-star3"></i> <i class="icon-star3"></i> <i class="icon-star3"></i> <i class="icon-star-half-full"></i></li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <div class="spost clearfix">
-                                <div class="entry-image">
-                                    <a href="javascript:;"><img src="<?php echo base_url('public/style_front/images/shop/small/6.jpg')?>" alt="Image"></a>
-                                </div>
-                                <div class="entry-c">
-                                    <div class="entry-title">
-                                        <h4><a href="javascript:;">Checked Short Dress</a></h4>
-                                    </div>
-                                    <ul class="entry-meta">
-                                        <li class="color">$23.99</li>
-                                        <li><i class="icon-star3"></i> <i class="icon-star3"></i> <i class="icon-star3"></i> <i class="icon-star-half-full"></i> <i class="icon-star-empty"></i></li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <div class="spost clearfix">
-                                <div class="entry-image">
-                                    <a href="javascript:;"><img src="<?php echo base_url('public/style_front/images/shop/small/7.jpg')?>" alt="Image"></a>
-                                </div>
-                                <div class="entry-c">
-                                    <div class="entry-title">
-                                        <h4><a href="javascript:;">Light Blue Denim Dress</a></h4>
-                                    </div>
-                                    <ul class="entry-meta">
-                                        <li class="color">$19.99</li>
-                                        <li><i class="icon-star3"></i> <i class="icon-star3"></i> <i class="icon-star3"></i> <i class="icon-star-empty"></i> <i class="icon-star-empty"></i></li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <div class="spost clearfix">
-                                <div class="entry-image">
-                                    <a href="javascript:;"><img src="<?php echo base_url('public/style_front/images/shop/small/9.jpg')?>" alt="Image"></a>
-                                </div>
-                                <div class="entry-c">
-                                    <div class="entry-title">
-                                        <h4><a href="javascript:;">Slim Fit Chinos</a></h4>
-                                    </div>
-                                    <ul class="entry-meta">
-                                        <li class="color">$24.99</li>
-                                        <li><i class="icon-star3"></i> <i class="icon-star3"></i> <i class="icon-star3"></i> <i class="icon-star3"></i> <i class="icon-star-empty"></i></li>
-                                    </ul>
-                                </div>
-                            </div> -->
+          
                         </div>
 
                     </div>
@@ -150,66 +92,6 @@
 
                             }?>
 
-                            <!-- <div class="spost clearfix">
-                                <div class="entry-image">
-                                    <a href="javascript:;"><img src="<?php echo base_url('public/style_front/images/shop/small/3.jpg')?>" alt="Image"></a>
-                                </div>
-                                <div class="entry-c">
-                                    <div class="entry-title">
-                                        <h4><a href="javascript:;">Round-Neck Tshirt</a></h4>
-                                    </div>
-                                    <ul class="entry-meta">
-                                        <li class="color">$15</li>
-                                        <li><i class="icon-star3"></i> <i class="icon-star3"></i> <i class="icon-star3"></i> <i class="icon-star3"></i> <i class="icon-star3"></i></li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <div class="spost clearfix">
-                                <div class="entry-image">
-                                    <a href="javascript:;"><img src="<?php echo base_url('public/style_front/images/shop/small/10.jpg')?>" alt="Image"></a>
-                                </div>
-                                <div class="entry-c">
-                                    <div class="entry-title">
-                                        <h4><a href="javascript:;">Green Trousers</a></h4>
-                                    </div>
-                                    <ul class="entry-meta">
-                                        <li class="color">$19</li>
-                                        <li><i class="icon-star3"></i> <i class="icon-star3"></i> <i class="icon-star-empty"></i> <i class="icon-star-empty"></i> <i class="icon-star-empty"></i></li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <div class="spost clearfix">
-                                <div class="entry-image">
-                                    <a href="javascript:;"><img src="<?php echo base_url('public/style_front/images/shop/small/11.jpg')?>" alt="Image"></a>
-                                </div>
-                                <div class="entry-c">
-                                    <div class="entry-title">
-                                        <h4><a href="javascript:;">Silver Chrome Watch</a></h4>
-                                    </div>
-                                    <ul class="entry-meta">
-                                        <li class="color">$34.99</li>
-                                        <li><i class="icon-star3"></i> <i class="icon-star3"></i> <i class="icon-star3"></i> <i class="icon-star-half-full"></i> <i class="icon-star-empty"></i></li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <div class="spost clearfix">
-                                <div class="entry-image">
-                                    <a href="javascript:;"><img src="<?php echo base_url('public/style_front/images/shop/small/4.jpg')?>" alt="Image"></a>
-                                </div>
-                                <div class="entry-c">
-                                    <div class="entry-title">
-                                        <h4><a href="javascript:;">Black Polo Tshirt</a></h4>
-                                    </div>
-                                    <ul class="entry-meta">
-                                        <li class="color">$17.99</li>
-                                        <li><i class="icon-star3"></i> <i class="icon-star3"></i> <i class="icon-star3"></i> <i class="icon-star3"></i> <i class="icon-star-half-full"></i></li>
-                                    </ul>
-                                </div>
-                            </div>
- -->
                         </div>
 
                     </div>
@@ -240,65 +122,7 @@
 
                             }?>
 
-                            <!-- <div class="spost clearfix">
-                                <div class="entry-image">
-                                    <a href="<?php echo site_url('product/1')?>"><img src="<?php echo base_url('public/style_front/images/shop/small/8.jpg')?>" alt="Image"></a>
-                                </div>
-                                <div class="entry-c">
-                                    <div class="entry-title">
-                                        <h4><a href="javascript:;">Pink Printed Dress</a></h4>
-                                    </div>
-                                    <ul class="entry-meta">
-                                        <li class="color">$21</li>
-                                        <li><i class="icon-star3"></i> <i class="icon-star3"></i> <i class="icon-star3"></i> <i class="icon-star3"></i> <i class="icon-star-half-full"></i></li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <div class="spost clearfix">
-                                <div class="entry-image">
-                                    <a href="javascript:;"><img src="<?php echo base_url('public/style_front/images/shop/small/5.jpg')?>" alt="Image"></a>
-                                </div>
-                                <div class="entry-c">
-                                    <div class="entry-title">
-                                        <h4><a href="javascript:;">Blue Round-Neck Tshirt</a></h4>
-                                    </div>
-                                    <ul class="entry-meta">
-                                        <li class="color">$19.99</li>
-                                        <li><i class="icon-star3"></i> <i class="icon-star3"></i> <i class="icon-star3"></i> <i class="icon-star-empty"></i> <i class="icon-star-empty"></i></li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <div class="spost clearfix">
-                                <div class="entry-image">
-                                    <a href="javascript:;"><img src="<?php echo base_url('public/style_front/images/shop/small/12.jpg')?>" alt="Image"></a>
-                                </div>
-                                <div class="entry-c">
-                                    <div class="entry-title">
-                                        <h4><a href="javascript:;">Men Aviator Sunglasses</a></h4>
-                                    </div>
-                                    <ul class="entry-meta">
-                                        <li class="color">$14.99</li>
-                                        <li><i class="icon-star3"></i> <i class="icon-star3"></i> <i class="icon-star-half-full"></i> <i class="icon-star-empty"></i> <i class="icon-star-empty"></i></li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <div class="spost clearfix">
-                                <div class="entry-image">
-                                    <a href="javascript:;"><img src="<?php echo base_url('public/style_front/images/shop/small/2.jpg')?>" alt="Image"></a>
-                                </div>
-                                <div class="entry-c">
-                                    <div class="entry-title">
-                                        <h4><a href="javascript:;">Unisex Sunglasses</a></h4>
-                                    </div>
-                                    <ul class="entry-meta">
-                                        <li class="color">$17.99</li>
-                                        <li><i class="icon-star3"></i> <i class="icon-star3"></i> <i class="icon-star3"></i> <i class="icon-star3"></i> <i class="icon-star-half-full"></i></li>
-                                    </ul>
-                                </div>
-                            </div> -->
+                     
 
                         </div>
 

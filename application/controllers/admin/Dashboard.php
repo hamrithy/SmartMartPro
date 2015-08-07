@@ -18,7 +18,7 @@
 		}
 		public function index(){
 			$data['recentSlides'] = $this->DaoSlide->getRecentSlides(5);
-			$data['recentProducts'] = $this->DaoProduct->getRecentProducts(5);
+			$data['recentProducts'] = $this->DaoProduct->getRecentProductsByLanguage(5);
 			$data['countPages'] = $this->DaoPage->countPages();
 			$data['countUsers'] = $this->DaoUser->countUsers();
 			$data['countCategories'] = $this->Daocategory->countCategories();

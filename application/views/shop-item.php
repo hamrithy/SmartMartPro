@@ -16,7 +16,7 @@
                                                     $thumnailurl = explode(";", $v->thumbnailurl);
                                                     for($i=0; $i<count($thumnailurl); $i++){
                                                 
-                                                        echo '<div class="slide"><a href="'.$thumnailurl[$i].'" title="'.$v->title.'"><img src="'.$thumnailurl[$i].'" alt="'.$v->title.'"></a></div>';
+                                                        echo '<div class="slide"><a href="#" title="'.$v->title.'"><img src="'.$thumnailurl[$i].'" alt="'.$v->title.'"></a></div>';
                                                     }
                                                 ?>
 

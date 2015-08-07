@@ -189,10 +189,12 @@
 
 					<div id="list_videos_in_category">
 					
-						<?php foreach($recentProducts as $row){ ?>	
+						<?php foreach($recentProducts as $row){
+							$thumnailurl = explode(";", $row->thumbnailurl);
+						 ?>	
 						<div class="the-box no-border store-list view-category">
 							<div class="media">
-								<a target="_blank" href="<?php //echo site_url()?>/blog/detail/<?php //echo $row->postid ?>" class="pull-left"><img style="width: 196px; height: 110px" src="<?php echo $row->thumbnailurl; ?>" class="store-image" alt="image"></a>
+								<a target="_blank" href="<?php //echo site_url()?>/blog/detail/<?php //echo $row->postid ?>" class="pull-left"><img style="width: 196px; height: 110px" src="<?php echo $thumnailurl[0]; ?>" class="store-image" alt="image"></a>
 								<div class="clearfix visible-xs"></div>
 								<div class="media-body">
 									<a href="#"></a>

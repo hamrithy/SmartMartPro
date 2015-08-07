@@ -81,7 +81,7 @@
 
                             <div class="col_full">
                                 <label for="template-contactform-message">Message <small>*</small></label>
-                                <textarea class="required sm-form-control" id="txtMessage" name="txtMessage" rows="6" cols="30"></textarea>
+                                <input type="text" class="required sm-form-control" id="txtMessage" name="txtMessage" rows="6" cols="30"/>
                             </div>
 
                             <div class="col_full hidden">
