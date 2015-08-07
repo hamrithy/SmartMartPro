@@ -72,7 +72,7 @@
 								    	}
 								    ?>
                                     <div class="product-overlay">
-                                        <a href="include/ajax/shop-item.html" class="item-quick-view" data-lightbox="ajax"><i class="icon-zoom-in2"></i><span> Quick View</span></a>
+                                        <a href="<?php echo site_url();?>product/shopitem/<?php echo $v->productid.'/'.$v->categoryid ?>" class="item-quick-view" data-lightbox="ajax"><i class="icon-zoom-in2"></i><span> Quick View</span></a>
                                     </div>
                                 </div>
                                 <div class="product-desc center">
