@@ -106,13 +106,6 @@
         <!-- BEGGIN FOOTER SECTION -->
         <?php $this->load->view('_footer'); ?>
         <!-- END FOOTER SECTION -->
-       
-       
-        	  <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-              <script src="http://ajax.aspnetcdn.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js"></script>
-                            
-                           
-                      
-                                  
+        <script src="http://ajax.aspnetcdn.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js"></script>                          
 </body>
 </html>
