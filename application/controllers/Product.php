@@ -56,7 +56,13 @@
 			$data["lstRelateProduct"] = $this->DaoProduct->lstRelatedProduct(20,$cateid);
 			echo json_encode($data);
 		}
-		
+		public function shopitem($id,$cateid){
+			$this->DaoProduct->increaseCount($id);
+			$data["title"] = "Product Details";
+			$data["page"] = "Product";
+			$data["getProduct"] = $this->DaoProduct->lstProduct(lang('lang_id'),$id);
+			$this->load->view('shop-item', $data);
+		}
 		
 	}
 

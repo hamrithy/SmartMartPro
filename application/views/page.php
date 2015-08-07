@@ -22,9 +22,12 @@
 
     <!-- BEGIN EXTERNAL JQUERY.js AND PLUGINS.js
     ============================================= -->
-    <script type="text/javascript" src="<?php echo base_url('public/style_front/js/jquery.js') ?>"></script>
+    // <script type="text/javascript" src="<?php echo base_url('public/style_front/js/jquery.js') ?>"></script>
     <script type="text/javascript" src="<?php echo base_url('public/style_front/js/plugins.js') ?>"></script>
     <!-- END EXTERNAL JQUERY.js AND PLUGINS.js -->
+
+   
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js"></script>
 
     <!-- BEGIN WEBSITE INFORMATION AND SEO INFORMATION -->
     <title>SmartMart | <?php echo $PAGE->title?></title>
@@ -74,9 +77,18 @@
             <div class="content-wrap">
 
                 <div class="container clearfix">
+                    <div class="postcontent nobottommargin clearfix">
+                         <?php echo $PAGE->description; ?>
+                    </div>
+                  
+                    <div class="sidebar nobottommargin col_last clearfix">
+                        <!-- Sidebar
+                    ============================================= -->
+                    <?php $this->load->view('_sidebar.php'); ?>
+                    <!-- End -->
+                    </div> 
 
-                    <?php echo $PAGE->description; ?>
-
+                     
                 </div>
 
             </div>

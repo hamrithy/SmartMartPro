@@ -20,8 +20,8 @@
         <section id="page-title">
 
             <div class="container clearfix">
-                <h1>Products</h1>
-                <span>Start Buying your Favourite Products</span>
+                <h1>Category</h1>
+                <span>Filter products with category</span>
                 <ol class="breadcrumb">
                     <li><a href="<?php echo site_url('')?>">Home</a></li>
                     <li class="active">Products</li>

@@ -143,9 +143,9 @@
                             </div>
 
                             <div class="col_one_fifth col_last">
-
+<!-- 
                                 <a href="#" title="Brand Logo" class="hidden-xs"><img class="image_fade" src="<?php echo base_url('public/style_front/images/shop/brand.jpg')?>" alt="Brand Logo"></a>
-
+ -->
                                 <div class="divider divider-center"><i class="icon-circle-blank"></i></div>
 
                                 <div class="feature-box fbox-plain fbox-dark fbox-small">
@@ -215,7 +215,7 @@
                                             }
                                     	?>
                                         <div class="product-overlay">
-                                            <a href="include/ajax/shop-item.html" class="item-quick-view" data-lightbox="ajax"><i class="icon-zoom-in2"></i><span> Quick View</span></a>
+                                            <a href="<?php echo site_url();?>product/shopitem/<?php echo $v->productid.'/'.$v->categoryid ?>" class="item-quick-view" data-lightbox="ajax"><i class="icon-zoom-in2"></i><span> Quick View</span></a>
                                         </div>
                                     </div>
                                     <div class="product-desc center">
