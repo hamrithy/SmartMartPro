@@ -45,8 +45,11 @@
                         <!-- Shop
                         ============================================= -->
                         <div id="shop" class="product-3 clearfix">
-
-	
+							
+							<?php if(sizeof($lstProduct)== 0){?>
+							<h1>No product</h1>
+							<?php }?>
+							
 							<?php foreach ($lstProduct as $v){?>
 							
 							<div class="product clearfix">

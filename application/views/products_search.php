@@ -48,6 +48,8 @@
                         <div id="shop" class="product-3 clearfix">
 
 	
+							
+							
 						<?php 
 
                         if(count($lstProduct)>0){
