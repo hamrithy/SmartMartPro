@@ -36,7 +36,7 @@
 			$this->load->view('products_cate', $data);
 		}
 		
-		public function search($search){
+		public function search($search=""){
 			$data["lstProduct"] = $this->DaoProduct->lstProductByName($search);
 			$this->load->view('products_search', $data);
 		}
