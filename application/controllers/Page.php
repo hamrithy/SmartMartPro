@@ -17,7 +17,5 @@
 			}
 			$this->load->view('page', $data);
 		}
-
 	}
-
 ?>

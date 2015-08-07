@@ -39,9 +39,9 @@
             </div>
 
             <div class="video-wrap">
-                <video poster="images/videos/explore-poster.jpg" preload="auto" loop autoplay muted>
-                    <source src='images/videos/explore.mp4' type='video/mp4' />
-                    <source src='images/videos/explore.webm' type='video/webm' />
+                <video poster="<?php echo base_url('public/images/videos/explore-poster.jpg')?>" preload="auto" loop autoplay muted>
+                    <source src="<?php echo base_url('public/images/videos/explore.mp4')?>" type='video/mp4' />
+                    <source src="<?php echo base_url('public/images/videos/explore.webm')?>" type='video/webm' />
                 </video>
                 <div class="video-overlay" style="background-color: rgba(0,0,0,0.3);"></div>
             </div>
