@@ -300,6 +300,7 @@
 					$("#MESSAGE").fadeOut(5000);
 					return;
 				}else{
+					$("#frmWaiting").modal('show');
 					$.ajax({
 						type: "POST",
 						url: '<?php  echo site_url()?>/admin/user/adduserpro',
@@ -322,12 +323,13 @@
 								$("#MESSAGE").html('<div class="alert alert-warning alert-bold-border fade in alert-dismissable">'+data["ERR_MSG"]+'</div>');
 								$("#MESSAGE").fadeIn(1000);
 								$("#MESSAGE").fadeOut(5000);
+								$("#frmWaiting").modal('hide');
 							}else{
-								$("#MESSAGE").html('<div class="alert alert-warning alert-bold-border fade in alert-dismissable">You have been inserted successfully.</div>');
-								$("#MESSAGE").fadeIn(1000);
-								$("#MESSAGE").fadeOut(5000,function(){
-									location.href= "<?php echo site_url('admin/user');?>";
-								});
+								$("#getTxt").html("<h5>You have been inserted successfully.</h5>");
+								setTimeout(function(){ 
+									location.href= "<?php  echo site_url('admin/user')?>";
+		 							$("#frmWaiting").modal('hide');
+								}, 1000);
 							}
 						}
 					});

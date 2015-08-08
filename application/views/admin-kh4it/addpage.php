@@ -116,12 +116,12 @@
 														
 														<!-- Put Control Khmer here -->
 														<div class="form-group">
-															<label>ចំណងជើង<span class="required">*</span></label>
+															<label>áž…áŸ†ážŽáž„áž‡áž¾áž„<span class="required">*</span></label>
 															<input type="text" class="form-control" name="txtkhtitle" id="txtkhtitle" required />
 														</div>
 														
 														<div class="form-group">
-															<label>លំអិត<span class="required">*</span></label>
+															<label>áž›áŸ†áž¢áž·áž�<span class="required">*</span></label>
 															<textarea class="form-control" name="txtkhdescription" id="txtkhdescription">
 																	
 															</textarea>
@@ -151,7 +151,7 @@
 							</div>									
 							<div class="form-group">
 								<button type="submit" class="btn btn-success" id="btnSave" onclick="addPage()">Save</button>
-								<button class="btn btn-danger">Cancel</button>
+								<a href="<?php  echo site_url('admin/page')?>" class="btn btn-danger">Cancel</a>
 							</div>		
 						</div><!-- /.col-sm-4 -->
 						<!-- /right -->
@@ -276,6 +276,7 @@
 				var pid = pageid;
 				$('#frmpage').submit(function(e){
 					e.preventDefault();
+					$("#frmWaiting").modal('show');
 					$.ajax({
 						type:"POST",
 						url:"<?php echo site_url()?>admin/page/updatepage",
@@ -298,7 +299,11 @@
 							]
 						},
 						success:function(data){
-							window.location.href = "<?php echo site_url("admin/page");?>";
+							$("#getTxt").html("<h5>You have been inserted successfully.</h5>");
+							setTimeout(function(){ 
+								location.href= "<?php  echo site_url('admin/page')?>";
+	 							$("#frmWaiting").modal('hide');
+							}, 1000);
 						}
 					});
 
@@ -307,6 +312,7 @@
 		function addPage(){
 			$('#frmpage').submit(function(e){
 				e.preventDefault();
+				$("#frmWaiting").modal('show');
 				$.ajax({
 					type:'post',
 					url:'<?php echo site_url() ?>admin/page/addpagepro',
@@ -328,7 +334,11 @@
 						]
 					},
 					success:function(data){
-						window.location.href="<?php echo site_url("admin/page");?>";
+						$("#getTxt").html("<h5>You have been inserted successfully.</h5>");
+						setTimeout(function(){ 
+							location.href= "<?php  echo site_url('admin/page')?>";
+ 							$("#frmWaiting").modal('hide');
+						}, 1000);
 					}
 
 				});
@@ -336,6 +346,7 @@
 		}
 
 	</script>
+	
 
 	</body>
 </html>

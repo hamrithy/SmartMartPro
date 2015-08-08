@@ -228,7 +228,7 @@
 									
 									<div class="form-group">
 										<button type="submit" id="btSave" class="btn btn-success">Save</button>
-										<button class="btn btn-danger">Cancel</button>
+										<a href="<?php  echo site_url('admin/product')?>" class="btn btn-danger">Cancel</a>
 									</div>
 									
 									<table class="table">
@@ -390,6 +390,7 @@
 		 	if($('#recommend').is(':checked')) {
 		 		recommend = 1;
 		 	} 
+		 	$("#frmWaiting").modal('show');
 			$.ajax({
 				type: "POST",
 				url: $("form#frmAddProduct").attr("action"),
@@ -416,8 +417,11 @@
 					]
 				},success: function(data){
 					if(data==true){
-						//alert("You have been "+action+" successfully.");
-						location.href= "<?php echo site_url('admin/product')?>";
+ 						$("#getTxt").html("<h5>You have been "+action+" successfully.</h5>");
+						setTimeout(function(){ 
+							location.href= "<?php  echo site_url('admin/product')?>";
+ 							$("#frmWaiting").modal('hide');
+						}, 1000);
 					}else{
 						alert("You have not been  "+action+" successfully.");
 					}
@@ -515,6 +519,8 @@
 			</script>
     
 	
+	
+										
 	
 	
 	</body>

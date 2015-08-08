@@ -234,6 +234,7 @@
 
 			$(document).on('click', '#ACTIVE a', function(){
 				_this = $(this);
+				$("#frmWaiting").modal('show');
 				$.ajax({
 					type: "POST",
 					url: '<?php  echo site_url()?>admin/user/updateuserstatuspro',
@@ -260,6 +261,7 @@
 								_this.addClass("btn-danger");
 								_this.attr("id",0);
 							}
+							$("#frmWaiting").modal('hide');
 							$("#MESSAGE").html('<div class="alert alert-warning alert-bold-border fade in alert-dismissable">You have been updated successfully.</div>');
 							$("#MESSAGE").fadeIn(1000);
 							$("#MESSAGE").fadeOut(5000);

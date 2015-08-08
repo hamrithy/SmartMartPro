@@ -314,7 +314,8 @@
 				        , position: 'absolute' // Element positioning
 			        }
 			        var target = document.getElementById('frmadduser');
-			        var spinner = new Spinner(opts).spin(target);
+// 			        var spinner = new Spinner(opts).spin(target);
+			        $("#frmWaiting").modal('show');
 					$.ajax({
 						type: "POST",
 						url: '<?php  echo site_url()?>/admin/user/updateuserpro',
@@ -330,15 +331,16 @@
 						success: function(data){
 							console.log("DATA:",data);
 							if(data["ERROR"]==true){
-								$("#MESSAGE").html('<div class="alert alert-warning alert-bold-border fade in alert-dismissable">'+data["ERR_MSG"]+'</div>');
+								$("#MESSAGE").html('<div style="color:red" class="alert alert-warning alert-bold-border fade in alert-dismissable">'+data["ERR_MSG"]+'</div>');
 								$("#MESSAGE").fadeIn(500);
 								$("#MESSAGE").fadeOut(2000);
+								$("#frmWaiting").modal('hide');
 							}else{
-								$("#MESSAGE").html('<div class="alert alert-warning alert-bold-border fade in alert-dismissable">You have been updated successfully.</div>');
-								$("#MESSAGE").fadeIn(500);
-								$("#MESSAGE").fadeOut(2000,function(){
-									location.href= "<?php echo site_url('admin/user');?>";
-								});
+								$("#getTxt").html("<h5>You have been updated successfully.</h5>");
+								setTimeout(function(){ 
+									location.href= "<?php  echo site_url('admin/user')?>";
+		 							$("#frmWaiting").modal('hide');
+								}, 1000);
 							}
 							spinner.stop();
 						},

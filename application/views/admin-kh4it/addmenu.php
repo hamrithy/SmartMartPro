@@ -138,12 +138,12 @@
 														<!-- Put Control Khmer here -->
 														<div class="form-group">
 															<input type="hidden" id="languageid" value="1" />
-															<label>ចំណងជើង<span class="required">*</span></label>
+															<label>áž…áŸ†ážŽáž„áž‡áž¾áž„<span class="required">*</span></label>
 															<input type="text" class="form-control" name="txtkhtitle" id="txtTitle" required />
 														</div>
 														
 														<div class="form-group">
-															<label>លំអិត<span class="required">*</span></label>
+															<label>áž›áŸ†áž¢áž·áž�<span class="required">*</span></label>
 															<textarea class="form-control" name="txtkhdescription" id="txtDescription">
 																	
 															</textarea>
@@ -210,7 +210,7 @@
 									</div>	
 									<div class="form-group">
 										<button type="submit" class="btn btn-success">Save</button>
-										<button class="btn btn-danger">Cancel</button>
+										<a href="<?php  echo site_url('admin/menu')?>" class="btn btn-danger">Cancel</a>
 									</div>		
 								</div><!-- /.col-sm-4 -->
 								<!-- /left -->
@@ -376,6 +376,7 @@
 				});
 				console.log(data);
 				var subof = ($.trim($("#subof").val())).split(",");
+				$("#frmWaiting").modal('show');
 				$.ajax({
 					type: "POST",
 					url: $("form#frmAddMenu").attr("action"),
@@ -390,8 +391,11 @@
 					},
 					success: function(data){
 						if(data==true){
-							alert("You have been "+action+" successfully.");
-							location.href= "<?php echo site_url('admin/menu')?>";
+							$("#getTxt").html("<h5>You have been "+action+" successfully.</h5>");
+							setTimeout(function(){ 
+								location.href= "<?php  echo site_url('admin/menu')?>";
+	 							$("#frmWaiting").modal('hide');
+							}, 1000);
 						}else{
 							alert("You have not been "+action+" successfully.");
 						}
@@ -428,5 +432,9 @@
 			});
 		});
 	</script>
+	
+										
+										
+										
 	</body>
 </html>P

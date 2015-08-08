@@ -148,12 +148,12 @@
 														
 														<!-- Put Control Khmer here -->
 														<div class="form-group">
-															<label>ចំណងជើង<span class="required">*</span></label>
+															<label>áž…áŸ†ážŽáž„áž‡áž¾áž„<span class="required">*</span></label>
 															<input type="text" class="form-control" name="txtkhtitle" id="txtkhtitle" required />
 														</div>
 														
 														<div class="form-group">
-															<label>លំអិត<span class="required">*</span></label>
+															<label>áž›áŸ†áž¢áž·áž�<span class="required">*</span></label>
 															<textarea class="form-control" name="txtkhdescription" id="txtkhdescription">
 																	
 															</textarea>
@@ -187,7 +187,7 @@
 									</div>									
 									<div class="form-group">
 										<button type="submit" id="btnaddcats" class="btn btn-success" onclick="addcategorypro()">Save</button>
-										<button class="btn btn-danger">Cancel</button>
+										<a href="<?php  echo site_url('admin/category')?>" class="btn btn-danger">Cancel</a>
 									</div>		
 								</div><!-- /.col-sm-4 -->
 								<!-- /left -->
@@ -299,10 +299,13 @@
 			filebrowserImageBrowseUrl : '<?php echo base_url(); ?>/public/responsivefilemanager/filemanager/dialog.php?type=1&editor=ckeditor&fldr=' }); 
 	</script>
 	<script>
+
+	var action = "inserted";
+	
 	function addcategorypro(){
 		$("#frmcategory").submit(function(e){
 			e.preventDefault();
-			
+			$("#frmWaiting").modal('show');
 			$.ajax({
 			type: "POST",
 			url: '<?php  echo site_url()?>admin/category/addcategorypro',
@@ -324,7 +327,11 @@
 				]
 			},
 			success: function(data){
-				window.location.href="<?php echo site_url("admin/category");?>";
+				$("#getTxt").html("<h5>You have been "+action+"successfully.</h5>");
+				setTimeout(function(){ 
+					location.href= "<?php  echo site_url('admin/category')?>";
+						$("#frmWaiting").modal('hide');
+				}, 1000);
 				console.log("DATA:",data);
 			}
 		});
@@ -341,6 +348,8 @@
 	</script>
 
 	<script>
+
+		
 		<?php if($catid != null){ ?>
 			
 			$.post("<?php  echo site_url()?>admin/category/getcategory/<?php echo $catid ?>",function(data){
@@ -354,14 +363,16 @@
 				//setvalue for kh
 				$("#txtkhtitle").val(data[0].title);
 				CKEDITOR.instances.txtkhdescription.setData(data[0].description);
+				action="updated";
 			});
 
 		<?php } ?>
+		
 		function frmcategoryupdate(id){
 			var cid= id;
 			$("#frmcategory").submit(function(e){
 				e.preventDefault();
-				
+				$("#frmWaiting").modal('show');
 				$.ajax({
 					type: "POST",
 					url: '<?php  echo site_url()?>admin/category/updatecategorypro',
@@ -384,7 +395,11 @@
 						]
 					},
 					success: function(data){
-						window.location.href="<?php echo site_url("admin/category");?>";
+						$("#getTxt").html("<h5>You have been "+action+"successfully.</h5>");
+						setTimeout(function(){ 
+							location.href= "<?php  echo site_url('admin/category')?>";
+ 							$("#frmWaiting").modal('hide');
+						}, 1000);
 						console.log("DATA:",data);
 					}
 				});
@@ -393,5 +408,8 @@
 		}
 	</script>
 		
+		
+										
+										
 	</body>
 </html>

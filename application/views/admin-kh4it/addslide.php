@@ -169,15 +169,15 @@
 														
 														<!-- Put Control Khmer here -->
 														<div class="form-group">
-															<label>ចំណងជើង<span class="required">*</span></label>
+															<label>áž…áŸ†ážŽáž„áž‡áž¾áž„<span class="required">*</span></label>
 															<input type="text" class="form-control" name="khtitle" id="khtitle" required />
 														</div>
 															<div class="form-group">
-															<label>ចំណងជើង<span class="required">*</span></label>
+															<label>áž…áŸ†ážŽáž„áž‡áž¾áž„<span class="required">*</span></label>
 															<textarea class="form-control" name="khcaption" id="khcaption"></textarea>
 														</div>
 														<div class="form-group">
-															<label>លំអិត<span class="required">*</span></label>
+															<label>áž›áŸ†áž¢áž·áž�<span class="required">*</span></label>
 															<textarea class="form-control" name="khdescription" id="khdescription">
 															</textarea>
 														</div>
@@ -194,7 +194,7 @@
 																<input type="text" readonly="readonly"   class="form-control" id="khfile" name="khfile" onchange="myimagechange()">
 																
 																<span class="input-group-btn"> 
-																	<a type="button" class="btn btn-default btn-file" data-target="#myModal" href="javascript:;" data-toggle="modal">រុករក...</a>	
+																	<a type="button" class="btn btn-default btn-file" data-target="#myModal" href="javascript:;" data-toggle="modal">ážšáž»áž€ážšáž€...</a>	
 																</span>
 																
 															</div>
@@ -202,7 +202,7 @@
 														</div>
 													</div>
 													<div class="form-group">
-													<label>រូបភាព</label>
+													<label>ážšáž¼áž”áž—áž¶áž–</label>
 												   		 <img src="<?php echo base_url(); ?>/public/style_front/images/bgslide.jpg" class="img-responsive" id="myimagedemo1"/>
 													</div>
 													</div><!-- /.tab-pane fade -->
@@ -383,6 +383,7 @@
 		function addSlide(){
 			$("#frmSlide").submit(function(e){
 				e.preventDefault();
+				$("#frmWaiting").modal('show');
 				$.ajax({
 					type: "POST",
 					url: '<?php  echo site_url()?>admin/slide/actionaddslide',
@@ -408,7 +409,11 @@
 						]
 					},
 					success: function(data){
-						window.location.href="<?php echo site_url("admin/slide");?>";
+						$("#getTxt").html("<h5>You have been inserted successfully.</h5>");
+						setTimeout(function(){ 
+							location.href= "<?php  echo site_url('admin/slide')?>";
+ 							$("#frmWaiting").modal('hide');
+						}, 1000);
 						console.log("DATA:",data);
 					}
 				});
@@ -439,6 +444,7 @@
 				var sid = id;
 				$('#frmSlide').submit(function(e){
 					e.preventDefault();
+					$("#frmWaiting").modal('show');
 					$.ajax({
 						type:"POST",
 						url:"<?php echo site_url()?>admin/slide/actionupdateslider",
@@ -465,7 +471,11 @@
 							]
 						},
 						success:function(data){
-							window.location.href = "<?php echo site_url("admin/slide");?>";
+							$("#getTxt").html("<h5>You have been updated successfully.</h5>");
+							setTimeout(function(){ 
+								location.href= "<?php  echo site_url('admin/slide')?>";
+	 							$("#frmWaiting").modal('hide');
+							}, 1000);
 						}
 					});
 
