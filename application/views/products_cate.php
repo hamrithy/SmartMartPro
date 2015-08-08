@@ -95,65 +95,11 @@
                         </div>
                     </div><!-- .postcontent end -->
 
-                    <!-- Sidebar
-                    ============================================= -->
+                    <!-- BEGIN SIDEBAR -->
                     <div class="sidebar nobottommargin">
-                        <div class="sidebar-widgets-wrap">
-
-                            <div class="widget widget_links clearfix">
-
-                                <h4>Shop Categories</h4>
-                                <ul id="lstCategory">
-<!--                                     <li><a href="#">Shirts</a></li> -->
-<!--                                     <li><a href="#">Pants</a></li> -->
-<!--                                     <li><a href="#">Tshirts</a></li> -->
-<!--                                     <li><a href="#">Sunglasses</a></li> -->
-<!--                                     <li><a href="#">Shoes</a></li> -->
-<!--                                     <li><a href="#">Bags</a></li> -->
-<!--                                     <li><a href="#">Watches</a></li> -->
-                                </ul>
-
-                            </div>
-
-                            <div class="widget clearfix">
-
-                                <h4>Recent Items</h4>
-                                <div id="post-list-footer" class="lstRecentProducts">
-
-
-
-
-
-
-                                </div>
-
-                            </div>
-
-                            
-
-                            <div class="widget clearfix">
-
-                                <h4>Popular Items</h4>
-                                <div id="Popular-item" class="lstPopProduct">
-                                    
-                                    
-                                    
-                                    
-                                    
-                                </div>
-
-                            </div>
-
-                            <div class="widget clearfix">
-                                <iframe src="//www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2FEnvato&amp;width=240&amp;height=290&amp;colorscheme=light&amp;show_faces=true&amp;header=true&amp;stream=false&amp;show_border=true&amp;appId=499481203443583" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:240px; height:290px;" allowTransparency="true"></iframe>
-                            </div>
-
-                            
-
-                            
-
-                        </div>
-                    </div><!-- .sidebar end -->
+                        <?php $this->load->view('_sidebar.php'); ?>
+                    </div>
+                    <!-- END SIDEBAR -->
 
                 </div>
 
