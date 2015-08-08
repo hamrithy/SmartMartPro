@@ -90,7 +90,9 @@
 						
 
                         </div><!-- #shop end -->
-
+                        <div id="PAGINATION">
+                            <?php echo $this->pagination->create_links();?>
+                        </div>
                     </div><!-- .postcontent end -->
 
                     <!-- Sidebar

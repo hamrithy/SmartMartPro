@@ -26,6 +26,32 @@ class DaoProduct extends CI_Model{
 		$query = $this->db->get();
 		return $query->result();
 	}
+
+	public function listProducts($limit, $offset){
+		$this->db->select('p.productid , p.price, p.recommend, p.seotitle , p.seodescription ,  p.thumbnailurl, 
+						   cd.categoryid , cd.title as categoryname ,
+						   u.userid , u.username ,  
+						   d.title,d.caption,d.description,d.createddate');
+		$this->db->from('PRODUCTS p');
+		$this->db->join('PRODUCTDETAIL d', 'p.productid = d.productid');
+		$this->db->where('d.languageid',lang("lang_id"));
+		$this->db->join('CATEGORIES c', 'p.categoryid = c.categoryid');
+		$this->db->join('CATEGORYDETAIL cd', 'cd.categoryid = c.categoryid');
+		$this->db->where('cd.languageid', lang("lang_id"));
+		$this->db->join('USERS u', 'p.userid = u.userid');
+		$this->db->order_by("p.productid", "desc");
+		$this->db->limit($limit, $offset);
+		$query = $this->db->get();
+		return $query->result();
+	}
+
+	public function getAllProductCount($categoryID=0){
+		$this->db->from("PRODUCTS");
+		if($categoryID!=0){
+			$this->db->where("categoryid",$categoryID);
+		}
+		return $this->db->count_all_results();
+	}
 	
 	public function getProduct($productid){
 		$this->db->select('d.languageid,d.title,d.caption,d.description , p.productid,p.seotitle,p.seodescription, p.price, p.recommend, p.categoryid,p.thumbnailurl ');
@@ -218,7 +244,7 @@ class DaoProduct extends CI_Model{
 		return $query->result();
 	}
 	
-	public function lstProductByCate($cateid){
+	public function lstProductByCate($cateid,$limit,$offset){
 		$this->db->select('p.productid , p.price, p.recommend, p.seotitle , p.seodescription ,  p.thumbnailurl,
 						   cd.categoryid , cd.title as categoryname ,
 						   u.userid , u.username ,
@@ -232,11 +258,12 @@ class DaoProduct extends CI_Model{
 		$this->db->join('USERS u', 'p.userid = u.userid');
 		$this->db->order_by("p.productid", "desc");
 		$this->db->where('p.categoryid',$cateid);
+		$this->db->limit($limit, $offset);
 		$query = $this->db->get();
 		return $query->result();
 	}
 	
-	public function lstProductByName($search){
+	public function lstProductByName($search,$limit,$offset){
 		$this->db->select('p.productid , p.price, p.recommend, p.seotitle , p.seodescription ,  p.thumbnailurl,
 						   cd.categoryid , cd.title as categoryname ,
 						   u.userid , u.username ,
@@ -250,8 +277,17 @@ class DaoProduct extends CI_Model{
 		$this->db->join('USERS u', 'p.userid = u.userid');
 		$this->db->order_by("p.productid", "desc");
 		$this->db->like('d.title', $search);
+		$this->db->limit($limit, $offset);
 		$query = $this->db->get();
 		return $query->result();
+	}
+
+	public function getAllProductsCountByName($search){
+		$this->db->distinct("productid");
+		$this->db->from("PRODUCTDETAIL");
+		$this->db->where("languageid",lang('lang_id'));
+		$this->db->like("title", $search);
+		return $this->db->count_all_results();
 	}
 	
 	
