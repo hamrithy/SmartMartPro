@@ -19,7 +19,8 @@
 			$slide = array(
 							"userid"	=>	$s->getUserid(),
 							"ordering"	=>	$s->getOrdering(),
-							"type"		=>	$s->getType()
+							"type"		=>	$s->getType(),
+							"linkto"	=>	$s->getLinkto()
 						);
 			$this->db->insert("SLIDERS",$slide);
 			$sliderid = $this->db->insert_id();
@@ -60,7 +61,7 @@
 		}
 
 		public function getSlide($id){
-			$this->db->select('s.sliderid, s.ordering, s.type, sd.title, sd.languageid, sd.caption, sd.description, sd.imageurl');
+			$this->db->select('s.sliderid, s.linkto, s.ordering, s.type, sd.title, sd.languageid, sd.caption, sd.description, sd.imageurl');
 			$this->db->from('SLIDERS s');
 			$this->db->join('SLIDERDETAIL sd', 's.sliderid = sd.sliderid');
 			$this->db->where('s.sliderid',$id);
@@ -74,7 +75,8 @@
 			$slide = array(
 					"userid"	=>	$s->getUserid(),
 					"ordering"	=>	$s->getOrdering(),
-					"type"		=>	$s->getType()
+					"type"		=>	$s->getType(),
+					"linkto"	=>	$s->getLinkto()
 				);
 			$this->db->where('sliderid', $s->getSlideid());
 			$this->db->update('SLIDERS', $slide);
@@ -113,6 +115,15 @@
 			$this->db->order_by('sliderid','DESC');
 			$query = $this->db->get();
 			return $query->result();
+		}
+
+		public function showSlide(){
+			$this->db->select('S.sliderid,S.title');
+			$this->db->from('SLIDERS S');
+			$this->db->where('S.languageid', lang('lang_id'));
+			$this->db->order_by('S.sliderid', 'DESC');
+			$query = $this->db->get();
+			return 	$query->result();
 		}
 
 	}

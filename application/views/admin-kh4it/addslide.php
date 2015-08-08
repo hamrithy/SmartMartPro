@@ -232,7 +232,16 @@
 										<label>Odering<span class="required">*</span></label>
 										<input type="text" class="form-control" name="ordering" id="ordering" value="" required="required"/>
 									</div>
+										<div class="form-group">
+										<label>Linkto<span class="required">*</span></label>
+										<input type="text" class="form-control" name="linkto" id="linkto" value="" required="required"/>
+									</div>
+									<div class="form-group">
+										<label>Choose Slide</label>
+										<select class="form-control" name="slide" id="slide">
 
+										</select>
+									</div>	
 									<div class="form-group">
 										<button type="submit" class="btn btn-success" onclick="addSlide()" id="btnSave">Save</button>
 										<button class="btn btn-danger">Cancel</button>
@@ -391,6 +400,7 @@
 					data: {
 						type: $("#type").val(),
 						ordering: $("#ordering").val(),
+						linkto: $("linkto").val(),
 						SliderDetail:[
 							{
 									"languageid": "2",
@@ -426,6 +436,7 @@
 				$("#btnSave").attr("onclick","updateSlide("+data[0].sliderid+")");
 				$("#ordering").val(data[0].ordering);
 				$('#type option[value='+data[0].type+']').prop('selected',true);
+				$('#linkto').val(data[0].linkto);
 
 				$('#entitle').val(data[0].title);
 				$('#encaption').val(data[0].caption);
@@ -453,6 +464,7 @@
 							sliderid:sid,
 							type:$('#type').val(),
 							ordering:$('#ordering').val(),
+							linkto:$('#linkto').val(),
 							SliderDetail:[
 								{
 									"languageid": "2",

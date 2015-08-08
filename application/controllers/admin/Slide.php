@@ -26,6 +26,7 @@
 			$this->DtoSlide->setUserid($this->encryption->decrypt($this->session->userdata('userid')));
 			$this->DtoSlide->setType($this->input->post('type'));
 			$this->DtoSlide->setOrdering($this->input->post('ordering'));
+			$this->DtoSlide->setLinkto($this->input->post('linkto'));
 			$this->DtoSlide->setSliderdetail($this->input->post('SliderDetail'));
 			$result = $this->DaoSlide->addSlide($this->DtoSlide);
 			echo json_encode($result);
@@ -52,6 +53,7 @@
 			$this->DtoSlide->setSlideid($this->input->post('sliderid'));
 			$this->DtoSlide->setType($this->input->post('type'));
 			$this->DtoSlide->setOrdering($this->input->post('ordering'));
+			$this->DtoSlide->setLinkto($this->input->post('linkto'));
 			$this->DtoSlide->setSliderdetail($this->input->post('SliderDetail'));
 			$result = $this->DaoSlide->updateSlide($this->DtoSlide);
 			echo json_encode($result);

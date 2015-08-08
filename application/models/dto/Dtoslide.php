@@ -6,6 +6,7 @@ class DtoSlide{
 	private $userid;
 	private $ordering;
 	private $type;
+	private $linkto;
 
 	private $languageid;
 	private $title;
@@ -14,6 +15,13 @@ class DtoSlide{
 	private $createddate;
 	private $description;
 	private $sliderdetail = array();
+
+	public function getLinkto(){
+		return $this->linkto;
+	}
+	public function setLinkto($linkto){
+		$this->linkto = $linkto;
+	}
 
 	public function getSliderdetail(){
 		return $this->sliderdetail;
