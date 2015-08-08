@@ -3,12 +3,12 @@
                     <div class="col_two_third bottommargin-lg">
                         <div class="fslider" data-arrows="false">
                             <div class="flexslider">
-                                <div class="slider-wrap"​ id="vuslider">
+                                <div class="slider-wrap"​ id="vuslider" data-lightbox="gallery">
                                     <?php 
                                         $slidersMain = $this->sliders->getSlidesByType();
                                         foreach($slidersMain as $slider){
                                             echo '<div class="slide">
-                                                    <a href="javascript:;">
+                                                    <a href="'.$slider->imageurl.'" data-lightbox="gallery-item">
                                                         <img src="'.$slider->imageurl.'" alt="Shop Image">
                                                     </a>
                                                 </div>';
@@ -46,12 +46,12 @@
 
                     </div>
 
-                    <div class="col_one_third bottommargin-lg col_last">
+                    <div class="col_one_third bottommargin-lg col_last" data-lightbox="gallery">
                         <?php 
                             $slidersSub = $this->sliders->getSlidesByType("subslide");
                             foreach($slidersSub as $slider){
-                                echo '<div class="col_full bottommargin-sm" >
-                                        <a href="javascript:;"><img id="subslide1" src="'.$slider->imageurl.'" alt="Image"></a>
+                                echo '<div class="col_full bottommargin-sm slide" >
+                                        <a href="'.$slider->imageurl.'" data-lightbox="gallery-item"><img id="subslide1" src="'.$slider->imageurl.'" alt="Image"></a>
                                      </div>';
                             }
                         ?>

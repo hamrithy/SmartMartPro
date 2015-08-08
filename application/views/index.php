@@ -130,14 +130,14 @@
 
                     <div class="clear"></div><div class="line"></div>
 
-                    <div id="oc-clients-full" class="owl-carousel image-carousel">
+                    <div id="oc-clients-full" class="owl-carousel image-carousel" data-lightbox="gallery">
                         <?php 
                             $slidersPartner = $this->sliders->getSlidesByType("partner");
                             foreach($slidersPartner as $slider){
                                 echo '<div class="oc-item" style="margin-right: 30px;">
-                                       
+                                        <a href="'.$slider->imageurl.'"data-lightbox="gallery-item">
                                             <img src="'.$slider->imageurl.'" alt="Clients" height="100px">
-                                       
+                                        </a>
                                     </div>';
                             }
                         ?>
