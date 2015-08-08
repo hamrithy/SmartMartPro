@@ -107,7 +107,7 @@
 							<div class="tiles facebook-tile text-center">
 								<i class="fa fa-briefcase icon-lg-size"></i>
 								<h4>
-									<a href="#"><?php  echo $countProducts; ?> Products</a>
+									<a href="<?php echo site_url()?>admin/product"><?php  echo $countProducts; ?> Products</a>
 								</h4>
 							</div>
 							<!-- /.tiles .facebook-tile -->
@@ -117,7 +117,7 @@
 							<div class="tiles twitter-tile text-center">
 								<i class="fa fa-dashboard icon-lg-size"></i>
 								<h4>
-									<a href="<?php echo site_url()?>/admin/foodcategory"><?php  echo $countCategories; ?> Categories</a>
+									<a href="<?php echo site_url()?>admin/category"><?php  echo $countCategories; ?> Categories</a>
 								</h4>
 							</div>
 							<!-- /.tiles .twitter-tile -->
@@ -127,7 +127,7 @@
 							<div class="tiles dribbble-tile text-center">
 								<i class="fa fa-user icon-lg-size"></i>
 								<h4>
-									<a href="<?php echo site_url()?>/admin/post"><?php echo $countUsers; ?> Users</a>
+									<a href="<?php echo site_url()?>admin/user"><?php echo $countUsers; ?> Users</a>
 								</h4>
 							</div>
 							<!-- /.tiles .dribbble-tile -->
@@ -137,7 +137,7 @@
 							<div class="tiles linkedin-tile text-center">
 								<i class="fa fa-credit-card icon-lg-size"></i>
 								<h4>
-									<a href="<?php echo site_url()?>/admin/page"><?php echo $countPages; ?> Pages</a>
+									<a href="<?php echo site_url()?>admin/page"><?php echo $countPages; ?> Pages</a>
 								</h4>
 							</div>
 							<!-- /.tiles .dribbble-tile -->
@@ -158,14 +158,14 @@
 					<?php foreach($recentSlides as $row){ ?>
 					<div class="the-box bg-success no-border">
 						<div class="media user-card-sm">
-							<a href="#" class="pull-left"> <img alt="Avatar" src="<?php echo $row->imageurl; ?>" class="media-object img-circle">
+							<a href="<?php echo base_url()?>admin/slide" class="pull-left"> <img alt="Avatar" src="<?php echo $row->imageurl; ?>" class="media-object img-circle">
 							</a>
 							<div class="media-body">
 								<h4 class="media-heading"><?php echo $row->title; ?></h4>
 								<p class="text-success">Date: <?php echo $row->createddate; ?></p>
 							</div>
 							<div class="right-button">
-								<a class="btn btn-success active" target="_blank" href="<?php echo base_url(); ?>menu" title="View" data-toggle="tooltip">
+								<a class="btn btn-success active" href="<?php echo base_url(); ?>admin/slide" title="View" data-toggle="tooltip">
 									<i class="fa fa-check"></i>
 								</a>
 							</div>
@@ -194,15 +194,14 @@
 						 ?>	
 						<div class="the-box no-border store-list view-category">
 							<div class="media">
-								<a target="_blank" href="<?php //echo site_url()?>/blog/detail/<?php //echo $row->postid ?>" class="pull-left"><img style="width: 196px; height: 110px" src="<?php echo $thumnailurl[0]; ?>" class="store-image" alt="image"></a>
+								<a target="_blank" href="<?php  echo site_url()?>admin/product" class="pull-left"><img style="width: 196px; height: 110px" src="<?php echo $thumnailurl[0]; ?>" class="store-image" alt="image"></a>
 								<div class="clearfix visible-xs"></div>
 								<div class="media-body">
 									<a href="#"></a>
 									<h4 style="padding: 0px; margin: 0px" class="media-heading">
-										<a target="_blank" href="<?php // echo site_url()?>/blog/detail/<?php //echo $row->postid ?>"><strong class="text-black"><?php echo $row->title; ?></strong></a>
+										<a href="<?php  echo site_url()?>admin/product"><strong class="text-black"><?php echo $row->title; ?></strong></a>
 									</h4>
 									<ul style="list-style: none; padding: 0px; margin: 0px;">
-										<li class="text-muted small"><?php echo $row->description; ?></li>
 										<li class="text-muted small"><?php echo $row->createddate; ?></li>
 										<li class="text-muted small"></li>
 									</ul>
