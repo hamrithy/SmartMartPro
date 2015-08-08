@@ -8,7 +8,7 @@
                                         $slidersMain = $this->sliders->getSlidesByType();
                                         foreach($slidersMain as $slider){
                                             echo '<div class="slide">
-                                                    <a href="'.$slider->imageurl.'" data-lightbox="gallery-item">
+                                                    <a href="'.$slider->imageurl.'" title="'.$slider->title.'" data-lightbox="gallery-item">
                                                         <img src="'.$slider->imageurl.'" alt="Shop Image">
                                                     </a>
                                                 </div>';
@@ -51,7 +51,7 @@
                             $slidersSub = $this->sliders->getSlidesByType("subslide");
                             foreach($slidersSub as $slider){
                                 echo '<div class="col_full bottommargin-sm slide" >
-                                        <a href="'.$slider->imageurl.'" data-lightbox="gallery-item"><img id="subslide1" src="'.$slider->imageurl.'" alt="Image"></a>
+                                        <a href="'.$slider->imageurl.'" title="'.$slider->title.'" data-lightbox="gallery-item"><img id="subslide1" src="'.$slider->imageurl.'" alt="Image"></a>
                                      </div>';
                             }
                         ?>

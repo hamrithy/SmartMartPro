@@ -31,8 +31,7 @@
 
                 <div class="container clearfix">
 
-
-                    <?php $this->load->view('_feature.php');?>
+                    <?php $this->load->view('_feature.php');?>                    
 
                     <div class="clear"></div>
 
@@ -135,7 +134,7 @@
                             $slidersPartner = $this->sliders->getSlidesByType("partner");
                             foreach($slidersPartner as $slider){
                                 echo '<div class="oc-item" style="margin-right: 30px;">
-                                        <a href="'.$slider->imageurl.'"data-lightbox="gallery-item">
+                                        <a href="'.$slider->imageurl.'" title="'.$slider->title.'" data-lightbox="gallery-item">
                                             <img src="'.$slider->imageurl.'" alt="Clients" height="100px">
                                         </a>
                                     </div>';
