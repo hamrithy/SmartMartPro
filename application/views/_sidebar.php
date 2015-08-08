@@ -2,7 +2,7 @@
                         <div class="sidebar-widgets-wrap">
 
                             <div class="widget widget_links clearfix">
-
+                                <div class="category-process form-process"></div>
                                 <h4>Shop Categories</h4>
                                 <ul id="lstCategory">
 <!--                                     <li><a href="#">Shirts</a></li> -->
@@ -17,7 +17,7 @@
                             </div>
 
                             <div class="widget clearfix">
-
+                                <div class="recent-process form-process"></div>
                                 <h4>Recent Items</h4>
                                 <div id="post-list-footer" class="lstRecentProducts">
 
@@ -33,7 +33,7 @@
                             
 
                             <div class="widget clearfix">
-
+                                <div class="popular-process form-process"></div>
                                 <h4>Popular Items</h4>
                                 <div id="Popular-item" class="lstPopProduct">
                                     
@@ -59,12 +59,12 @@
  <script type="text/javascript">
                            $(function(){ 
                                 function formatData(value){
-                                    console.log("FORMAT DATA=",value);
                                     if(value!="" || value!=null){
                                         var thumbnailurl = value["thumbnailurl"].split(";");
                                         value['thumbnailurl'] = thumbnailurl[0];
                                     }
                                 };
+                                $('.category-process').fadeIn();
                                 $.ajax({
                                     type: "POST",
                                     url: '<?php  echo site_url()?>/category/lstCategory',
@@ -72,20 +72,20 @@
                                     success: function(data){ 
                                         $("#lstCategory").empty();
                                         $("#tmplCategory").tmpl(data.lstCategory).appendTo("#lstCategory");
-                                         console.log("DATA:",data); 
+                                         $('.category-process').fadeOut();
                                     },
                                     error: function(data){
                                         console.log("ERROR...");
-                                        console.log(data);
+                                        $('.category-process').fadeOut();
                                     }
                                 });
 
+                                $('.recent-process').fadeIn();
                                 $.ajax({
                                     type: "POST",
                                     url: '<?php  echo site_url()?>product/lstRecentProduct',
                                     dataType: 'json',
                                     success: function(data){ 
-                                        console.log("DATA:",data); 
                                         if(data.recentProducts.length>0){
                                             for(var i=0;i<data.recentProducts.length;i++){
                                                 formatData(data.recentProducts[i]);
@@ -93,19 +93,19 @@
                                             $(".lstRecentProducts").empty();
                                             $("#tmplRecentProducts").tmpl(data.recentProducts).appendTo(".lstRecentProducts");
                                         }
+                                        $('.recent-process').fadeOut();
                                     },
                                     error: function(data){
                                         console.log("ERROR...");
-                                        console.log(data);
+                                        $('.recent-process').fadeOut();
                                     }
                                 });
-
+                                $('.popular-process').fadeIn();
                                 $.ajax({
                                     type: "POST",
                                     url: '<?php  echo site_url()?>product/lstPopProduct',
                                     dataType: 'json',
                                     success: function(data){ 
-                                        console.log("DATA:",data); 
                                         if(data.lstPopProduct.length>0){
                                             for(var i=0;i<data.lstPopProduct.length;i++){
                                                 formatData(data.lstPopProduct[i]);
@@ -113,10 +113,11 @@
                                             $(".lstPopProduct").empty();
                                             $("#tmplLstPopProduct").tmpl(data.lstPopProduct).appendTo(".lstPopProduct");
                                         }
+                                        $('.popular-process').fadeOut();
                                     },
                                     error: function(data){
                                         console.log("ERROR...");
-                                        console.log(data);
+                                        $('.popular-process').fadeOut();
                                     }
                                 });
                             });

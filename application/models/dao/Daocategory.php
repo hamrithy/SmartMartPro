@@ -34,7 +34,7 @@ class Daocategory extends CI_Model{
 		
 		$this->db->select('c.categoryid , c.title');
 			$this->db->from('CATEGORYDETAIL c');
-			$this->db->where('c.languageid',2);
+			$this->db->where('c.languageid',lang('lang_id'));
 			$this->db->order_by('c.categoryid', 'desc');
 			$query = $this->db->get();
 			return $query->result();
@@ -44,7 +44,7 @@ class Daocategory extends CI_Model{
 		$this->db->select('d.categoryid, d.title, c.ordering, c.subof');
 		$this->db->from('CATEGORYDETAIL d');
 		$this->db->join('CATEGORIES c', 'd.categoryid = c.categoryid');
-		$this->db->where('d.languageid',2);
+		$this->db->where('d.languageid',lang('lang_id'));
 		$this->db->order_by('d.categoryid', 'desc');
 		$query = $this->db->get();
 		return $query->result();
@@ -72,6 +72,7 @@ class Daocategory extends CI_Model{
 		$this->db->from('CATEGORYDETAIL d');
 		$this->db->join('CATEGORIES c', 'd.categoryid = c.categoryid');
 		$this->db->where('d.categoryid', $id);
+		$this->db->where('d.languageid',lang('lang_id'));
 		$query = $this->db->get();
 		return $query->result();
 	}
