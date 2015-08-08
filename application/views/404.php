@@ -24,17 +24,17 @@
 
                 <div class="heading-block nobottomborder">
                     <h4>Ooopps.! The Page you were looking for, couldn't be found.</h4>
-                    <span>Try the search below to find matching pages:</span>
+                    <!-- <span>Try the search below to find matching pages:</span> -->
                 </div>
 
-                <form action="#" method="get" role="form" class="divcenter nobottommargin">
+                <!-- <form action="#" method="get" role="form" class="divcenter nobottommargin">
                     <div class="input-group input-group-lg">
                         <input type="text" class="form-control" placeholder="Search for Pages...">
                         <span class="input-group-btn">
                             <button class="btn btn-danger" type="button">Search</button>
                         </span>
                     </div>
-                </form>
+                </form> -->
 
             </div>
 

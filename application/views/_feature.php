@@ -2,9 +2,9 @@
                             $slidersFeature = $this->sliders->getSlidesByType("feature");
                             foreach($slidersFeature as $fslider){
                                 echo '<div class="col_one_third bottommargin-lg" style="margin-right:2%;">
-                                        <div class="feature-box center media-box fbox-bg" data-lightbox="gallery">
+                                        <div class="feature-box center media-box fbox-bg">
                                             <div class="fbox-media">
-                                                <a href="'.$fslider->imageurl.'" title="'.$fslider->title.'" data-lightbox="gallery-item">
+                                                <a href="'.$fslider->linkto.'" title="'.$fslider->title.'">
                                                     <img src="'.$fslider->imageurl.'" alt="Image">
                                                 </a>
                                             </div>

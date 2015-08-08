@@ -3,13 +3,13 @@
                     <div class="col_two_third bottommargin-lg">
                         <div class="fslider" data-arrows="false">
                             <div class="flexslider">
-                                <div class="slider-wrap"​ id="vuslider" data-lightbox="gallery">
+                                <div class="slider-wrap"​ id="vuslider">
                                     <?php 
                                         $slidersMain = $this->sliders->getSlidesByType();
                                         foreach($slidersMain as $slider){
                                             echo '<div class="slide">
-                                                    <a href="'.$slider->imageurl.'" title="'.$slider->title.'" data-lightbox="gallery-item">
-                                                        <img src="'.$slider->imageurl.'" alt="Shop Image">
+                                                    <a href="'.$slider->linkto.'" title="'.$slider->title.'">
+                                                        <img src="'.$slider->imageurl.'" alt='.$slider->title.'">
                                                     </a>
                                                 </div>';
                                         }
@@ -46,12 +46,12 @@
 
                     </div>
 
-                    <div class="col_one_third bottommargin-lg col_last" data-lightbox="gallery">
+                    <div class="col_one_third bottommargin-lg col_last">
                         <?php 
                             $slidersSub = $this->sliders->getSlidesByType("subslide");
                             foreach($slidersSub as $slider){
                                 echo '<div class="col_full bottommargin-sm slide" >
-                                        <a href="'.$slider->imageurl.'" title="'.$slider->title.'" data-lightbox="gallery-item"><img id="subslide1" src="'.$slider->imageurl.'" alt="Image"></a>
+                                        <a href="'.$slider->linkto.'" title="'.$slider->title.'"><img id="subslide1" src="'.$slider->imageurl.'" alt="'.$slider->title.'"></a>
                                      </div>';
                             }
                         ?>
