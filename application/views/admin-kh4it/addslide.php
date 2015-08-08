@@ -169,15 +169,15 @@
 														
 														<!-- Put Control Khmer here -->
 														<div class="form-group">
-															<label>áž…áŸ†ážŽáž„áž‡áž¾áž„<span class="required">*</span></label>
+															<label>ចំណងជើង<span class="required">*</span></label>
 															<input type="text" class="form-control" name="khtitle" id="khtitle" required />
 														</div>
 															<div class="form-group">
-															<label>áž…áŸ†ážŽáž„áž‡áž¾áž„<span class="required">*</span></label>
+															<label>ចំណងជើងខ្លី<span class="required">*</span></label>
 															<textarea class="form-control" name="khcaption" id="khcaption"></textarea>
 														</div>
 														<div class="form-group">
-															<label>áž›áŸ†áž¢áž·áž�<span class="required">*</span></label>
+															<label>ចំណងជើងវែង<span class="required">*</span></label>
 															<textarea class="form-control" name="khdescription" id="khdescription">
 															</textarea>
 														</div>
@@ -202,7 +202,7 @@
 														</div>
 													</div>
 													<div class="form-group">
-													<label>ážšáž¼áž”áž—áž¶áž–</label>
+													<label>រូបភាព</label>
 												   		 <img src="<?php echo base_url(); ?>/public/style_front/images/bgslide.jpg" class="img-responsive" id="myimagedemo1"/>
 													</div>
 													</div><!-- /.tab-pane fade -->
@@ -433,6 +433,7 @@
 		<script>
 			<?php if($sliderid != null){ ?>
 				$.post("<?php echo site_url()?>admin/slide/actiongetslide/<?php echo $sliderid ?>", function(data){
+				document.title ="Update Slide";
 				$("#btnSave").attr("onclick","updateSlide("+data[0].sliderid+")");
 				$("#ordering").val(data[0].ordering);
 				$('#type option[value='+data[0].type+']').prop('selected',true);

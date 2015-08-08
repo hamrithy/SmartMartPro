@@ -138,12 +138,12 @@
 														<!-- Put Control Khmer here -->
 														<div class="form-group">
 															<input type="hidden" id="languageid" value="1" />
-															<label>áž…áŸ†ážŽáž„áž‡áž¾áž„<span class="required">*</span></label>
+															<label>ចំណងជើង<span class="required">*</span></label>
 															<input type="text" class="form-control" name="txtkhtitle" id="txtTitle" required />
 														</div>
 														
 														<div class="form-group">
-															<label>áž›áŸ†áž¢áž·áž�<span class="required">*</span></label>
+															<label>លម្អិត<span class="required">*</span></label>
 															<textarea class="form-control" name="txtkhdescription" id="txtDescription">
 																	
 															</textarea>

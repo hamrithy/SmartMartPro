@@ -58,6 +58,13 @@
 			    ->set_output(json_encode($result));
 		}
 
+		public function getcategoryupdate($id){
+			$result = $this->DaoCategory->getcategoryupdate($id);
+			$this->output
+			    ->set_content_type('application/json')
+			    ->set_output(json_encode($result));
+		}
+
 		public function getshowcategory($id){
 			$data['catid']= $id;
 			$this->load->view("admin-kh4it/addcategory", $data);

@@ -148,12 +148,12 @@
 														
 														<!-- Put Control Khmer here -->
 														<div class="form-group">
-															<label>áž…áŸ†ážŽáž„áž‡áž¾áž„<span class="required">*</span></label>
+															<label>ចំណងជើង<span class="required">*</span></label>
 															<input type="text" class="form-control" name="txtkhtitle" id="txtkhtitle" required />
 														</div>
 														
 														<div class="form-group">
-															<label>áž›áŸ†áž¢áž·áž�<span class="required">*</span></label>
+															<label>លម្អិត<span class="required">*</span></label>
 															<textarea class="form-control" name="txtkhdescription" id="txtkhdescription">
 																	
 															</textarea>
@@ -352,7 +352,8 @@
 		
 		<?php if($catid != null){ ?>
 			
-			$.post("<?php  echo site_url()?>admin/category/getcategory/<?php echo $catid ?>",function(data){
+			$.post("<?php  echo site_url()?>admin/category/getcategoryupdate/<?php echo $catid ?>",function(data){
+				document.title ="Update Category";
 				$("#btnaddcats").attr("onclick","frmcategoryupdate("+data[0].categoryid+")");
 				$("#txtorder").val(data[0].ordering);
 				$('#txtcategory option[value='+data[0].subof+']').prop('selected', true);

@@ -103,8 +103,8 @@
 							<thead class="the-box dark full">
 								<tr>
 									<th>Page ID</th>
-									<th>Title 1</th>
-									<th>Title 2</th>
+									<th>ចំណងជើង</th>
+									<th>Title</th>
 									<th>Posted By</th>
 									<th>Action</th>
 								</tr>
@@ -118,8 +118,9 @@
 									<td><?php echo $p->title2 ?></td>
 									<td><?php echo $p->username ?></td>
 									<td>
-										<a  href="<?php echo site_url()?>/admin/page/deletepage/<?php echo $p->pageid ?>" style="margin-right:3px" onclick="return confirm('Do you want to delete?');"  class="btn btn-danger">Delete</a>
-										<a  href="<?php  echo site_url()?>/admin/page/getpage/<?php  echo $p->pageid ?>"  class="btn btn-primary">Update</a>
+										<a  href="<?php echo site_url()?>admin/page/deletepage/<?php echo $p->pageid ?>" style="margin-right:3px" onclick="return confirm('Do you want to delete?');"  class="btn btn-danger">Delete</a>
+										<a  href="<?php  echo site_url()?>admin/page/getpage/<?php  echo $p->pageid ?>"  class="btn btn-primary">Update</a>
+										<a target="_blank" href="<?php  echo site_url()?>page/<?php  echo $p->title2 ?>"  class="btn btn-info">View</a>
 									</td>
 								</tr>
 							<?php } ?>

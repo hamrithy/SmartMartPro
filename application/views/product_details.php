@@ -117,7 +117,9 @@
                                 ============================================= -->
                                 <div class="si-share noborder clearfix">
                                     <span>Share:</span>
-                                    <div>
+                                    <!-- Go to www.addthis.com/dashboard to customize your tools -->
+                                    <div class="addthis_sharing_toolbox"></div>
+                                    <!-- <div>
                                         <a href="#" class="social-icon si-borderless si-facebook">
                                             <i class="icon-facebook"></i>
                                             <i class="icon-facebook"></i>
@@ -142,7 +144,7 @@
                                             <i class="icon-email3"></i>
                                             <i class="icon-email3"></i>
                                         </a>
-                                    </div>
+                                    </div> -->
                                 </div><!-- Product Single - Share End -->
 
                             </div>

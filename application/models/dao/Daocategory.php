@@ -77,6 +77,15 @@ class Daocategory extends CI_Model{
 		return $query->result();
 	}
 
+	public function getcategoryupdate($id){
+		$this->db->select('d.categoryid, d.title, d.languageid,d.description, c.ordering, c.subof');
+		$this->db->from('CATEGORYDETAIL d');
+		$this->db->join('CATEGORIES c', 'd.categoryid = c.categoryid');
+		$this->db->where('d.categoryid', $id);
+		$query = $this->db->get();
+		return $query->result();
+	}
+
 	public function updatecategory(Dtocategory $cat){
 		$this->db->trans_begin();
 		$category = array(
