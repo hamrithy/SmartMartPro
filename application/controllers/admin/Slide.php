@@ -15,7 +15,11 @@
 		}
 
 		public function addSlide(){
-			$this->load->view('admin-kh4it/addslide');
+			$this->load->model('dao/DaoPage');
+			$this->load->model('dao/DaoCategory');
+			$data["pages"] = $this->DaoPage->listPage();
+			$data["categories"] = $this->DaoCategory->showcategories();
+			$this->load->view('admin-kh4it/addslide', $data);
 		}
 
 		public function listSlides(){

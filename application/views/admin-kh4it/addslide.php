@@ -194,7 +194,7 @@
 																<input type="text" readonly="readonly"   class="form-control" id="khfile" name="khfile" onchange="myimagechange()">
 																
 																<span class="input-group-btn"> 
-																	<a type="button" class="btn btn-default btn-file" data-target="#myModal" href="javascript:;" data-toggle="modal">ážšáž»áž€ážšáž€...</a>	
+																	<a type="button" class="btn btn-default btn-file" data-target="#myModal" href="javascript:;" data-toggle="modal">រុករក...</a>	
 																</span>
 																
 															</div>
@@ -237,9 +237,29 @@
 										<input type="text" class="form-control" name="linkto" id="linkto" value="" required="required"/>
 									</div>
 									<div class="form-group">
-										<label>Choose Slide</label>
-										<select class="form-control" name="slide" id="slide">
-
+										<label>Choose​ Link to Page</label>
+										<select class="form-control" name="page" id="page" onchange="listlinkto()">
+											<?php 
+												echo '<option value="#">-------</option>';
+												if(count($pages)>0){
+													foreach($pages as $page){
+														echo '<option value="page/'.str_replace(" ","_",strtolower($page->title2)).'">'.$page->title2.'</option>';
+													}
+												}
+											?>
+										</select>
+									</div>												
+									<div class="form-group">
+										<label>OR Choose Link to Category</label>
+										<select class="form-control" name="ProductCategory" id="ProductCategory" onchange="listcatlinkto()">
+											<?php 
+												echo '<option value="#">-------</option>';
+												if(count($categories)>0){
+													foreach($categories as $category){
+														echo '<option value="product/bycate/'.$category->categoryid.'">'.$category->title.'</option>';
+													}
+												}
+											?>
 										</select>
 									</div>	
 									<div class="form-group">
@@ -389,6 +409,12 @@
 			filebrowserImageBrowseUrl : '<?php echo base_url(); ?>/public/responsivefilemanager/filemanager/dialog.php?type=1&editor=ckeditor&fldr=' }); 
 	</script>
 	<script>
+		function listlinkto(){
+				$("#linkto").val($("#page").val());
+			}
+		function listcatlinkto(){
+				$("#linkto").val($("#ProductCategory").val());
+			}
 		function addSlide(){
 			$("#frmSlide").submit(function(e){
 				e.preventDefault();
@@ -430,7 +456,8 @@
 			});
 		}
 		</script>
-		<script>
+		<script>	
+			
 			<?php if($sliderid != null){ ?>
 				$.post("<?php echo site_url()?>admin/slide/actiongetslide/<?php echo $sliderid ?>", function(data){
 				document.title ="Update Slide";
@@ -494,6 +521,8 @@
 
 				});
 			}
+
+			
 		</script>
 	</body>
 </html>
