@@ -80,11 +80,12 @@
                                 <!-- Product Single - Rating
                                 ============================================= -->
                                 <div class="product-rating">
-                                    <i class="icon-star3"></i>
+                                    <div class="rw-ui-container"></div>
+                                    <!-- <i class="icon-star3"></i>
                                     <i class="icon-star3"></i>
                                     <i class="icon-star3"></i>
                                     <i class="icon-star-half-full"></i>
-                                    <i class="icon-star-empty"></i>
+                                    <i class="icon-star-empty"></i> -->
                                 </div><!-- Product Single - Rating End -->
 
                                 <div class="clear"></div>
