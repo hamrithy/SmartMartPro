@@ -128,7 +128,6 @@
                        <script type="text/javascript">
                            $(function(){ 
                                 function formatData(value){
-                                    console.log("FORMAT DATA=",value);
                                     if(value!="" || value!=null){
                                         var thumbnailurl = value["thumbnailurl"].split(";");
                                         value['thumbnailurl'] = thumbnailurl[0];
@@ -141,11 +140,10 @@
 					                success: function(data){ 
 					                    $("#lstCategory").empty();
 					                    $("#tmplCategory").tmpl(data.lstCategory).appendTo("#lstCategory");
-					                     console.log("DATA:",data); 
+					                     
 					                },
 					                error: function(data){
 					                    console.log("ERROR...");
-					                    console.log(data);
 					                }
 					            });
 
@@ -154,7 +152,7 @@
 					                url: '<?php  echo site_url()?>product/lstRecentProduct',
 					                dataType: 'json',
 					                success: function(data){ 
-					                    console.log("DATA:",data); 
+					                    
                                         if(data.recentProducts.length>0){
                                             for(var i=0;i<data.recentProducts.length;i++){
                                                 formatData(data.recentProducts[i]);
@@ -165,7 +163,6 @@
 					                },
 					                error: function(data){
 					                    console.log("ERROR...");
-					                    console.log(data);
 					                }
 					            });
 
@@ -174,7 +171,7 @@
 					                url: '<?php  echo site_url()?>product/lstPopProduct',
 					                dataType: 'json',
 					                success: function(data){ 
-    					                console.log("DATA:",data); 
+    					                
                                         if(data.lstPopProduct.length>0){
                                             for(var i=0;i<data.lstPopProduct.length;i++){
                                                 formatData(data.lstPopProduct[i]);
@@ -185,7 +182,6 @@
 					                },
 					                error: function(data){
 					                    console.log("ERROR...");
-					                    console.log(data);
 					                }
 					            });
 				            });
