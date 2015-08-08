@@ -90,13 +90,14 @@
 			$this->load->view('products_cate', $data);
 		}
 		
-		public function search($search="",$offset=0){
+		public function search($offset=0){
 			$this->load->library('pagination');
 			$limit = 15;
-			$config['base_url'] = site_url().'product/search/'.$search;
-			$config['total_rows'] = 100;//$this->DaoProduct->getAllProductsCountByName($search);
+			$search = $this->input->post("txtSearch");
+			$config['base_url'] = site_url().'product/search';
+			$config['total_rows'] = $this->DaoProduct->getAllProductsCountByName($search);
 			$config['per_page'] = $limit; 
-			$config['uri_segment'] = 4;	
+			$config['uri_segment'] = 3;	
 			$config['full_tag_open'] = "<ul class='pagination'>";
 			$config['full_tag_close'] ="</ul>";
 			$config['num_tag_open'] = '<li>';
