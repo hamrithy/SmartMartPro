@@ -135,9 +135,9 @@
                             $slidersPartner = $this->sliders->getSlidesByType("partner");
                             foreach($slidersPartner as $slider){
                                 echo '<div class="oc-item" style="margin-right: 30px;">
-                                        <a href="javascript:;">
-                                            <img src="'.$slider->imageurl.'" alt="Clients">
-                                        </a>
+                                       
+                                            <img src="'.$slider->imageurl.'" alt="Clients" height="100px">
+                                       
                                     </div>';
                             }
                         ?>
