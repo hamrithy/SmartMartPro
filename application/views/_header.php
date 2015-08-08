@@ -12,12 +12,12 @@
             <!-- BEGIN TOP LINKS -->
             <div class="top-links">
                 <ul>
-                    <li><a href="#">USD</a>
+                    <!-- <li><a href="#">USD</a>
                         <ul>
                             <li><a href="#">KHR</a></li>
                             <li><a href="#">USD</a></li>
                         </ul>
-                    </li>
+                    </li> -->
                     <li><a href="javascript:;"><?php echo lang('lang_abbr') ?></a>
                         <ul>
                             <li><a href="<?php echo base_url('language/khmer')?>"><img src="<?php echo base_url('public/style_front/images/icons/flags/khmer.png')?>" alt="Khmer"> KH</a></li>
@@ -30,7 +30,7 @@
                         <?php   }else{ ?>
                                     <a href="<?php echo site_url('admin/dashboard')?>"><strong><?php echo $this->encryption->decrypt($this->session->userdata("username"));?></strong></a>
                         <?php   } ?>
-                        <div class="top-link-section">
+                        <!-- <div class="top-link-section">
                             <form id="top-login" role="form">
                                 <div class="input-group" id="top-login-username">
                                     <span class="input-group-addon"><i class="icon-user"></i></span>
@@ -45,7 +45,7 @@
                               </label>
                               <button class="btn btn-danger btn-block" type="submit">Sign in</button>
                           </form>
-                      </div>
+                      </div> -->
                   </li>
               </ul>
           </div>
