@@ -53,7 +53,7 @@
                                                     <h4><a href="'.site_url().'product/detail/'.$product->productid.'/'.$product->categoryid.'">'.$product->title.'</a></h4>
                                                 </div>
                                                 <ul class="entry-meta">
-                                                    <li class="color">$29.99</li>
+                                                    <li class="color">$ '.$product->price.'</li>
                                                     <li><i class="icon-star3"></i> <i class="icon-star3"></i> <i class="icon-star3"></i> <i class="icon-star3"></i> <i class="icon-star-half-full"></i></li>
                                                 </ul>
                                             </div>
@@ -83,7 +83,7 @@
                                                     <h4><a href="'.site_url().'product/detail/'.$product->productid.'/'.$product->categoryid.'">'.$product->title.'</a></h4>
                                                 </div>
                                                 <ul class="entry-meta">
-                                                    <li class="color">$29.99</li>
+                                                    <li class="color">$ '.$product->price.'</li>
                                                     <li><i class="icon-star3"></i> <i class="icon-star3"></i> <i class="icon-star3"></i> <i class="icon-star3"></i> <i class="icon-star-half-full"></i></li>
                                                 </ul>
                                             </div>
@@ -113,7 +113,7 @@
                                                     <h4><a href="'.site_url().'product/detail/'.$product->productid.'/'.$product->categoryid.'">'.$product->title.'</a></h4>
                                                 </div>
                                                 <ul class="entry-meta">
-                                                    <li class="color">$29.99</li>
+                                                    <li class="color">$ '.$product->price.'</li>
                                                     <li><i class="icon-star3"></i> <i class="icon-star3"></i> <i class="icon-star3"></i> <i class="icon-star3"></i> <i class="icon-star-half-full"></i></li>
                                                 </ul>
                                             </div>
