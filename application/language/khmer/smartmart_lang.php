@@ -3,8 +3,8 @@
 $lang['hello']= 'សួស្តី';
 $lang['home']= 'ទំព័រដើម';
 $lang['product']= 'ផលិតផល';
-$lang['graduation']= 'Graduation';
-$lang['gift']= 'Gift';
+$lang['graduation']= 'បញ្ចប់ការសិក្សា';
+$lang['gift']= 'កាដូរ';
 $lang['information']= 'ពត៌មាន';
 $lang['contact']= 'ទំនាក់ទំនង';
 $lang['lang_abbr'] = "kh";
