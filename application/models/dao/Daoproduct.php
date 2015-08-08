@@ -216,7 +216,8 @@ class DaoProduct extends CI_Model{
 		$this->db->join('CATEGORIES c', 'p.categoryid = c.categoryid');
 		$this->db->join('CATEGORYDETAIL cd', 'cd.categoryid = c.categoryid');
 		$this->db->where('cd.languageid',lang('lang_id'));
-		$this->db->where('p.categoryid', $cateid );
+		/*$this->db->where('p.categoryid', $cateid );*/
+		$this->db->where('(p.categoryid = '.$cateid.' OR p.categoryid IN (SELECT subof FROM CATEGORIES WHERE categoryid = '.$cateid.'))');
 		$this->db->where('p.productid <>', $proid);
 		$this->db->join('USERS u', 'p.userid = u.userid');
 		$this->db->limit($limit);

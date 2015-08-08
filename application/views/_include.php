@@ -36,3 +36,8 @@
         var language = '<?php echo $this->input->cookie('LANGUAGE'); ?>';
         language = (language==null || language == '') ? 'english' : language;
     </script>
+    <style>
+        .iproduct .product-image, .iproduct .product-image a, .iproduct .product-image img {
+            height: 350px;
+        }
+    </style>

@@ -202,7 +202,9 @@
 
 <!-- Footer Scripts
 ============================================= -->
+<script type="text/javascript" src="<?php echo base_url('public/style_front/js/jquery.tmpl.min.js');?>"></script>
 <script type="text/javascript" src="<?php echo base_url('public/style_front/js/functions.js');?>"></script>
+
 
 <script type="text/javascript">(function(d, t, e, m){
     

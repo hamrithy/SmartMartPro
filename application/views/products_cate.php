@@ -113,7 +113,7 @@
        
        
         	  
-              <script src="http://ajax.aspnetcdn.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js"></script>
+              
                             
                            
                        <script type="text/javascript">

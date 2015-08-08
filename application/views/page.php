@@ -26,9 +26,6 @@
     <script type="text/javascript" src="<?php echo base_url('public/style_front/js/plugins.js') ?>"></script>
     <!-- END EXTERNAL JQUERY.js AND PLUGINS.js -->
 
-   
-    <script src="http://ajax.aspnetcdn.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js"></script>
-
     <!-- BEGIN WEBSITE INFORMATION AND SEO INFORMATION -->
     <title>SmartMart | <?php echo $PAGE->title?></title>
     <meta name="description" content='<?php echo $PAGE->description;?>'>
