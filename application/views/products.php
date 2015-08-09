@@ -56,10 +56,10 @@
 								    //  for($i=0; $i<count($thumnailurl); $i++){
 								    // 	echo  '<a href="#"><img src="'.$thumnailurl[$i].'" alt="'.$v->title.'"></a>';
 								    //   }
-								    	if($thumnailurl[0] != null) {
+								    	if(count($thumnailurl)>0) {
 								     		echo  '<a href="'.site_url().'product/detail/'.$v->productid.'/'.$v->categoryid.'"><img src="'.$thumnailurl[0].'" alt="'.$v->title.'"></a>';
 								    	} 
-										if($thumnailurl[1] != null) {
+										if(count($thumnailurl)>1) {
 								     		echo  '<a href="'.site_url().'product/detail/'.$v->productid.'/'.$v->categoryid.'"><img src="'.$thumnailurl[1].'" alt="'.$v->title.'"></a>';
 								    	}
 								    ?>
