@@ -15,31 +15,26 @@
 
                             <img src="<?php echo base_url('public/style_front/images/footer-widget-logo.png')?>" alt="" class="footer-logo">
 
-                            <p>We believe in <strong>Simple</strong>, <strong>Creative</strong> &amp; <strong>Flexible</strong> Design Standards.
-                            Sale available on selected Designer Brands that include Apparels, Footwear, Fashion Accessories & Watches.
-                            </p>
-
-                           
+                            <p><?php echo lang('canvas'); ?></p>
 
                         </div>
 
                     </div>
 
                     <div class="col_half col_last">
-
                         <div class="widget clearfix">
-                            <h4>Contact Us</h4>
+                            <h4><?php echo lang('contact_us'); ?></h4>
 
                             <div style="background: url('<?php echo base_url('public/style_front/images/world-map.png')?>') no-repeat center center; background-size: 100%;">
                                 <address>
-                                    <strong>Headquarters:</strong><br>
-                                    American Intercon Institute<br>
-                                    217ABCD, Mao Tse Tong Blvd., <br>
-                                    Khan Chamkamorn Phnom Penh, Cambodia<br>
+                                    <strong><?php echo lang('headquarter'); ?>:</strong><br>
+                                    <?php echo lang('american_intercon_institute') ?><br>
+                                    <?php echo lang('street') ?>., <br>
+                                    <?php echo lang('address') ?><br>
                                 </address>
-                                <abbr title="Phone Number"><strong>Phone:</strong></abbr> (855) 12 345 678<br>
-                                <abbr title="Fax"><strong>Fax:</strong></abbr> (855) 12 345 678<br>
-                                <abbr title="Email Address"><strong>Email:</strong></abbr> info@domain.com
+                                <abbr title="Phone Number"><strong><?php echo lang('call') ?>:</strong></abbr> (855) 12 345 678<br>
+                                <abbr title="Fax"><strong><?php echo lang('fax') ?>:</strong></abbr> (855) 12 345 678<br>
+                                <abbr title="Email Address"><strong><?php echo lang('email') ?>:</strong></abbr> info@domain.com
                             </div>
                         </div>
 
@@ -133,8 +128,8 @@
             <div class="container clearfix">
 
                 <div class="col_half">
-                    Copyrights &copy; 2015 All Rights Reserved by TSD<br>
-                    <div class="copyright-links"><a href="#">Terms of Use</a> / <a href="#">Privacy Policy</a></div>
+                    <?php echo lang('copy_right'); ?><br>
+                    <div class="copyright-links"><a href="#"><?php echo lang('term_of_use'); ?></a> / <a href="#"><?php echo lang('privacy_policy'); ?></a></div>
                 </div>
 
                 <div class="col_half col_last tright">

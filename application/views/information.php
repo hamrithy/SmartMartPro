@@ -20,11 +20,11 @@
         <section id="page-title">
 
             <div class="container clearfix">
-                <h1>Information</h1>
-                <span>Our Latest News</span>
+                <h1><?php echo lang('information'); ?></h1>
+                <span><?php echo lang('latest_news'); ?></span>
                 <ol class="breadcrumb">
-                    <li><a href="<?php echo site_url("")?>">Home</a></li>
-                    <li class="active">Information</li>
+                    <li><a href="<?php echo site_url("")?>"><?php echo lang('home'); ?></a></li>
+                    <li class="active"><?php echo lang('information'); ?></li>
                 </ol>
             </div>
 

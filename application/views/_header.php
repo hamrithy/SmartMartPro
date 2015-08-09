@@ -4,7 +4,7 @@
     <div class="container clearfix">
         <!-- BEGIN TOP BAR LEFT INFORMATION -->
         <div class="col_half nobottommargin hidden-xs">
-            <p class="nobottommargin"><strong>Call:</strong> +855 (0)10 8182 289 | <strong>Email:</strong> info@tsdsolution.com</p>
+            <p class="nobottommargin"><strong><?php echo lang('call'); ?>:</strong> +855 (0)10 8182 289 | <strong><?php echo lang('email'); ?>:</strong> info@tsdsolution.com</p>
         </div>
         <!-- BEGIN TOP BAR RIGHT INFORMATION -->
         <div class="col_half col_last fright nobottommargin">
@@ -20,13 +20,13 @@
                     </li> -->
                     <li><a href="javascript:;"><?php echo lang('lang_abbr') ?></a>
                         <ul>
-                            <li><a href="<?php echo base_url('language/khmer')?>"><img src="<?php echo base_url('public/style_front/images/icons/flags/khmer.png')?>" alt="Khmer"> KH</a></li>
-                            <li><a href="<?php echo base_url('language/english')?>"><img src="<?php echo base_url('public/style_front/images/icons/flags/english.png')?>" alt="English"> EN</a></li>
+                            <li><a href="<?php echo base_url('language/khmer')?>"><img src="<?php echo base_url('public/style_front/images/icons/flags/khmer.png')?>" alt="Khmer"> <?php echo lang('kh'); ?></a></li>
+                            <li><a href="<?php echo base_url('language/english')?>"><img src="<?php echo base_url('public/style_front/images/icons/flags/english.png')?>" alt="English"> <?php echo lang('en'); ?></a></li>
                         </ul>
                     </li>
                     <li>
                         <?php   if(!$this->session->userdata("logged_in")){ ?>
-                                    <a href="<?php echo site_url('admin/auth')?>">Login</a>
+                                    <a href="<?php echo site_url('admin/auth')?>"><?php echo lang('login'); ?></a>
                         <?php   }else{ ?>
                                     <a href="<?php echo site_url('admin/dashboard')?>"><strong><?php echo $this->encryption->decrypt($this->session->userdata("username"));?></strong></a>
                         <?php   } ?>
@@ -74,22 +74,22 @@
             <li>
                 <i class="i-medium i-circled i-bordered icon-thumbs-up2 nomargin"></i>
                 <div class="he-text">
-                    Trusted Products
-                    <span>100% Guaranteed</span>
+                    <?php echo lang('trusted_products'); ?>
+                    <span><?php echo lang('100_guaranteed'); ?></span>
                 </div>
             </li>
             <li>
                 <i class="i-medium i-circled i-bordered icon-truck2 nomargin"></i>
                 <div class="he-text">
-                    Special For Students
-                    <span>for $5 or more</span>
+                    <?php echo lang('special_for_students'); ?>
+                    <span><?php echo lang('for_5_or_more'); ?></span>
                 </div>
             </li>
             <li>
                 <i class="i-medium i-circled i-bordered icon-undo nomargin"></i>
                 <div class="he-text">
-                    30-Day Returns
-                    <span>Completely Free</span>
+                    <?php echo lang('30_days_return'); ?>
+                    <span><?php echo lang('completely_free'); ?></span>
                 </div>
             </li>
         </ul>

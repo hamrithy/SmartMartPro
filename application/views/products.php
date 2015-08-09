@@ -20,11 +20,11 @@
         <section id="page-title">
 
             <div class="container clearfix">
-                <h1>Products</h1>
-                <span>Start Buying your Favourite Products</span>
+                <h1><?php echo lang('product'); ?></h1>
+                <span><?php echo lang('start_yours'); ?></span>
                 <ol class="breadcrumb">
-                    <li><a href="<?php echo site_url('')?>">Home</a></li>
-                    <li class="active">Products</li>
+                    <li><a href="<?php echo site_url('')?>"><?php echo lang('home'); ?></a></li>
+                    <li class="active"><?php echo lang('product'); ?></li>
                 </ol>
             </div>
 

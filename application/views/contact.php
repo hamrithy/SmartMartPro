@@ -20,11 +20,11 @@
         <section id="page-title">
 
             <div class="container clearfix">
-                <h1>Contact</h1>
-                <span>Get in Touch with Us</span>
+                <h1><?php echo lang('contact_us') ?></h1>
+                <span><?php echo lang('get_in_touch'); ?></span>
                 <ol class="breadcrumb">
-                    <li><a href="<?php echo site_url('')?>">Home</a></li>
-                    <li class="active">Contact</li>
+                    <li><a href="<?php echo site_url('')?>"><?php echo lang('home'); ?></a></li>
+                    <li class="active"><?php echo lang('contact_us'); ?></li>
                 </ol>
             </div>
 
@@ -47,7 +47,7 @@
                     ============================================= -->
                     <div class="postcontent nobottommargin">
 
-                        <h3>Send us an Email</h3>
+                        <h3><?php echo lang('send_mail'); ?></h3>
 
                         <div id="contact-form-result" data-notify-type="success" data-notify-msg="<i class=icon-ok-sign></i> Your Email Sent Successfully!"></div>
 
@@ -56,31 +56,31 @@
                             <div class="form-process"></div>
 
                             <div class="col_one_third">
-                                <label for="template-contactform-name">Name <small>*</small></label>
+                                <label for="template-contactform-name"><?php echo lang('name'); ?> <small>*</small></label>
                                 <input type="text" id="txtName" name="txtName" value="" class="sm-form-control required" />
                             </div>
 
                             <div class="col_one_third">
-                                <label for="template-contactform-email">Email <small>*</small></label>
+                                <label for="template-contactform-email"><?php echo lang('email'); ?> <small>*</small></label>
                                 <input type="email" id="txtEmail" name="txtEmail" value="" class="required email sm-form-control" />
                             </div>
 
                             <div class="col_one_third col_last">
-                                <label for="template-contactform-phone">Phone</label>
+                                <label for="template-contactform-phone"><?php echo lang('call'); ?></label>
                                 <input type="text" id="txtPhone" name="txtPhone" value="" class="required sm-form-control" />
                             </div>
 
                             <div class="clear"></div>
 
                             <div class="col_full">
-                                <label for="template-contactform-subject">Subject <small>*</small></label>
+                                <label for="template-contactform-subject"><?php echo lang('subject'); ?> <small>*</small></label>
                                 <input type="text" id="txtSubject" name="txtSubject" value="" class="required sm-form-control" />
                             </div>
 
                             <div class="clear"></div>
 
                             <div class="col_full">
-                                <label for="template-contactform-message">Message <small>*</small></label>
+                                <label for="template-contactform-message"><?php echo lang('message'); ?> <small>*</small></label>
                                 <input type="text" class="required sm-form-control" id="txtMessage" name="txtMessage" rows="6" cols="30"/>
                             </div>
 
@@ -89,7 +89,7 @@
                             </div>
 
                             <div class="col_full">
-                                <button class="button button-3d nomargin" type="submit" id="template-contactform-submit" name="template-contactform-submit" value="submit">Send Message</button>
+                                <button class="button button-3d nomargin" type="submit" id="template-contactform-submit" name="template-contactform-submit" value="submit"><?php echo lang('send'); ?></button>
                             </div>
 
                         </form>
@@ -101,13 +101,13 @@
                     <div class="sidebar col_last nobottommargin">
 
                         <address>
-                            <strong>Headquarters:</strong><br>
-                            795 Folsom Ave, Suite 600<br>
-                            San Francisco, CA 94107<br>
+                            <strong><?php echo lang('headquarter'); ?>:</strong><br>
+                            <?php echo lang('street'); ?><br>
+                            <?php echo lang('address'); ?><br>
                         </address>
-                        <abbr title="Phone Number"><strong>Phone:</strong></abbr> (91) 8547 632521<br>
+                        <abbr title="Phone Number"><strong><?php echo lang('call'); ?>:</strong></abbr> (91) 8547 632521<br>
                         <abbr title="Fax"><strong>Fax:</strong></abbr> (91) 11 4752 1433<br>
-                        <abbr title="Email Address"><strong>Email:</strong></abbr> info@canvas.com
+                        <abbr title="Email Address"><strong><?php echo lang('email'); ?>:</strong></abbr> info@canvas.com
 
                         <div class="widget noborder notoppadding">
 

@@ -23,9 +23,9 @@
 
                 <div class="promo parallax promo-full bottommargin-lg" style="background-image: url('<?php echo base_url('public/style_front/images/parallax/3.jpg')?>)';" data-stellar-background-ratio="0.4">
                     <div class="container clearfix">
-                        <h3>Get <span>30%</span> off on orders of $29 or more. Use Coupon: <span>SHOP30</span></h3>
-                        <span>Sale available on selected Designer Brands that include Apparels, Footwear, Fashion Accessories &amp; Watches.</span>
-                        <a href="javascript:;" class="button button-xlarge button-rounded">Start Shopping</a>
+                        <h3><?php echo lang('get'); ?> <span>30%</span> <?php echo lang('off_order'); ?>: <span><?php echo lang('shop_30'); ?></span></h3>
+                        <span><?php echo lang('sale_available'); ?>.</span>
+                        <a href="javascript:;" class="button button-xlarge button-rounded"><?php echo lang('start_shopping'); ?></a>
                     </div>
                 </div>
 
@@ -38,7 +38,7 @@
                     <div class="col_one_third nobottommargin">
 
                         <div class="fancy-title title-border">
-                            <h4>Recently Arrived</h4>
+                            <h4><?php echo lang('recent_post'); ?></h4>
                         </div>
 
                         <div>
@@ -68,7 +68,7 @@
                     <div class="col_one_third nobottommargin">
 
                         <div class="fancy-title title-border">
-                            <h4>Popular Products</h4>
+                            <h4><?php echo lang('popular_products'); ?></h4>
                         </div>
 
                         <div>
@@ -98,7 +98,7 @@
                     <div class="col_one_third nobottommargin col_last">
 
                         <div class="fancy-title title-border">
-                            <h4>Recommended for You</h4>
+                            <h4><?php echo lang('recomended_for_you'); ?></h4>
                         </div>
 
                         <div>
