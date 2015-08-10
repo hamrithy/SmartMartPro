@@ -30,6 +30,23 @@
     <title>SmartMart | TSD Template</title>
     <meta name="description" content="SmartMart Home | TSD Template">
     <meta name="viewport" content="width=device-width, initial-scale=1"> 
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@publisher_handle">
+    <meta name="twitter:title" content="Page Title">
+    <meta name="twitter:description" content="Page description less than 200 characters">
+    <meta name="twitter:creator" content="@author_handle">
+    <!-- Twitter Summary card images must be at least 120x120px -->
+    <meta name="twitter:image" content="http://www.example.com/image.jpg">
+
+    <!-- Open Graph data -->
+    <meta property="og:title" content="Title Here" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="http://www.example.com/" />
+    <meta property="og:image" content="http://example.com/image.jpg" />
+    <meta property="og:description" content="Description Here" /> 
+    <meta property="og:site_name" content="Site Name, i.e. Moz" />
+    <meta property="fb:admins" content="Facebook numeric ID" />
     <!-- END INFORMATION AND SEO INFORMATION -->
 
     <script>
@@ -37,7 +54,7 @@
         language = (language==null || language == '') ? 'english' : language;
     </script>
     <style>
-        .iproduct .product-image, .iproduct .product-image a, .iproduct .product-image img {
+        .iproduct .product-image{
             height: 350px;
         }
     </style>
