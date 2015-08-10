@@ -17,6 +17,7 @@
 
         <!-- Page Title
         ============================================= -->
+       	<!--
         <section id="page-title">
 
             <div class="container clearfix">
@@ -28,7 +29,9 @@
                 </ol>
             </div>
 
-        </section><!-- #page-title end -->
+        </section>
+        -->
+        <!-- #page-title end -->
 
         <!-- Content
         ============================================= -->
@@ -75,7 +78,16 @@
 
                                 <!-- Product Single - Price
                                 ============================================= -->
-                                <div class="product-price">  <ins>$ <?php echo $v->price ?></ins></div><!-- Product Single - Price End -->
+                                <div id="product-title" style="float:left">
+                               		 <h3><?php echo $v->title ?></h3>
+                                </div>
+                                <div class="product-price" style="float:right">
+                                			<ins>$ <?php echo $v->price ?></ins>
+                                </div>
+                                
+                                <div style="clear:both"></div>
+                                
+                                
 
                                 <!-- Product Single - Rating
                                 ============================================= -->
@@ -149,50 +161,31 @@
 
                             </div>
 
-                            <div class="col_one_fifth col_last">
-<!-- 
-                                <a href="#" title="Brand Logo" class="hidden-xs"><img class="image_fade" src="<?php echo base_url('public/style_front/images/shop/brand.jpg')?>" alt="Brand Logo"></a>
- -->
-                                <div class="divider divider-center"><i class="icon-circle-blank"></i></div>
+							<?php  } ?>
+	                       <div class="col_one_fifth col_last">.
+                            
+                            			
+                            	<div class="widget clearfix">
+                                	<div class="recent-process form-process"></div>
+                                	<h4>Recent Items</h4>
+                                	<div id="post-list-footer" class="lstRecentProducts">
 
-                                <div class="feature-box fbox-plain fbox-dark fbox-small">
-                                    <div class="fbox-icon">
-                                        <i class="icon-thumbs-up2"></i>
-                                    </div>
-                                    <h3>100% Original</h3>
-                                    <p class="notopmargin">We guarantee you the sale of Original Brands.</p>
-                                </div>
 
-                                <div class="feature-box fbox-plain fbox-dark fbox-small">
-                                    <div class="fbox-icon">
-                                        <i class="icon-credit-cards"></i>
-                                    </div>
-                                    <h3>Payment Options</h3>
-                                    <p class="notopmargin">We accept Visa, MasterCard and American Express.</p>
-                                </div>
 
-                                <div class="feature-box fbox-plain fbox-dark fbox-small">
-                                    <div class="fbox-icon">
-                                        <i class="icon-truck2"></i>
-                                    </div>
-                                    <h3>Free Shipping</h3>
-                                    <p class="notopmargin">Free Delivery to 100+ Locations on orders above $40.</p>
-                                </div>
 
-                                <div class="feature-box fbox-plain fbox-dark fbox-small">
-                                    <div class="fbox-icon">
-                                        <i class="icon-undo"></i>
-                                    </div>
-                                    <h3>30-Days Returns</h3>
-                                    <p class="notopmargin">Return or exchange items purchased within 30 days.</p>
-                                </div>
+
+
+                               		 </div>
+
+                           		 </div>
+                            
 
                             </div>
 
 
                         </div>
 
-						<?php  } ?>
+						
 				
                     </div>
 
@@ -280,6 +273,53 @@
         <!-- END FOOTER SECTION -->
         
        
+       					<script type="text/javascript">
+		       				  $(function(){ 
+		       					function formatData(value){
+                                    if(value!="" || value!=null){
+                                        var thumbnailurl = value["thumbnailurl"].split(";");
+                                        value['thumbnailurl'] = thumbnailurl[0];
+                                    }
+                                };
+		       							 $('.recent-process').fadeIn();
+		                                $.ajax({
+		                                    type: "POST",
+		                                    url: '<?php  echo site_url()?>product/lstRecentProduct',
+		                                    dataType: 'json',
+		                                    success: function(data){ 
+		                                        if(data.recentProducts.length>0){
+		                                            for(var i=0;i<data.recentProducts.length;i++){
+		                                                formatData(data.recentProducts[i]);
+		                                            }
+		                                            $(".lstRecentProducts").empty();
+		                                            $("#tmplRecentProducts").tmpl(data.recentProducts).appendTo(".lstRecentProducts");
+		                                        }
+		                                        $('.recent-process').fadeOut();
+		                                    },
+		                                    error: function(data){
+		                                        console.log("ERROR...");
+		                                        $('.recent-process').fadeOut();
+		                                    }
+		                                });
+		       				  });
+                        </script>
+                              
+                         <script type="text/x-jquery-tmpl" id="tmplRecentProducts">
+                             <div class="spost clearfix">
+                                        <div class="entry-image">
+                                            <a href="<?php echo site_url()?>product/detail/{{= productid }}/{{= categoryid }}"><img src="{{= thumbnailurl }}" alt="{{= title }}"></a>
+                                        </div>
+                                        <div class="entry-c">
+                                            <div class="entry-title">
+                                                <h4><a href="<?php echo site_url()?>product/detail/{{= productid }}/{{= categoryid }}">{{= title }}</a></h4>
+                                            </div>
+                                            <ul class="entry-meta">
+                                                <li class="color">$ {{= price }}</li>
+                                                <li><i class="icon-star3"></i> <i class="icon-star3"></i> <i class="icon-star3"></i> <i class="icon-star3"></i> <i class="icon-star-half-full"></i></li>
+                                            </ul>
+                                        </div>
+                            </div>
+                        </script>        
        				 
                             
 </body>
