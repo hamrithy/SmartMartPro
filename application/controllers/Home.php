@@ -14,9 +14,5 @@
 			$data["recommends"] = $this->DaoProduct->getRecommendProductsByLanguage(4);
 			$this->load->view('index', $data);
 		}
-
-		public function rating(){
-			$this->load->view('rating');
-		}
 	}
 ?>
