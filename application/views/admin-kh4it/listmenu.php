@@ -102,6 +102,7 @@
 						<table class="table table-striped table-hover" id="datatable-example">
 							<thead class="the-box dark full">
 								<tr>
+									<th>ID</th>
 									<th>Title</th>
 									<th>Linkto</th>							
 									<th>Ordering</th>
@@ -113,9 +114,10 @@
 						
 							<?php foreach($menus as $menu){ ?>
 								<tr>
+									<td><?php  echo $menu->menuid ?></td>
 									<td><?php echo $menu->title; ?></td>
 									<td><?php echo $menu->linkto; ?></td>
-									<td><?php echo $menu->ordering; ?></td>						
+									<td style="width: 5%;"><input type="number" min="0" step="1" value="<?php echo $menu->ordering; ?>" id="txtordering<?php  echo $menu->menuid ?>" onchange="mychangeorder(<?php  echo $menu->menuid ?>)"/></td>						
 									<td><?php echo $menu->suboftitle; ?></td>
 									<td>
 										<a  href="javascript:;" style="margin-right:3px" id="btnDelete" data="<?php echo $menu->menuid ?>" class="btn btn-danger">Delete</a>
@@ -241,6 +243,22 @@
 				});
 			})
 		});
+
+		function mychangeorder(id){
+			$("#frmWaiting").modal('show');
+			$.post("<?php echo site_url()?>admin/menu/updateordermenu",{
+				ordering : $("#txtordering"+id+"").val() ,
+				menuid : id
+			}, function(data){
+				$("#getTxt").html("<h5>You have been update successfully.</h5>");
+						setTimeout(function(){ 
+							//location.href= "<?php  echo site_url('admin/category')?>";
+ 							$("#frmWaiting").modal('hide');
+						}, 1000);
+			})
+			
+		}
+
 	</script>
 	</body>
 </html>

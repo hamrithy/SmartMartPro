@@ -68,6 +68,16 @@
 			$this->load->view("admin-kh4it/addmenu", $data);
 		}
 
+		public function updateordermenu(){
+			$this->load->model('dao/DaoMenu');
+			$this->load->model('dto/DtoMenu');
+
+			$this->DtoMenu->setOrdering($this->input->post('ordering'));
+			$this->DtoMenu->setMenuid($this->input->post('menuid'));
+			$result = $this->DaoMenu->updateOrderMenu($this->DtoMenu);
+			echo json_encode($result);
+		}
+
 		public function updatemenupro(){
 			$this->load->model('dao/DaoMenu');
 			$this->load->model('dto/DtoMenu');

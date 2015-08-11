@@ -68,6 +68,14 @@ class DaoMenu extends CI_Model{
 		}
 	}
 
+	public function updateOrderMenu(DtoMenu $menus){
+		$data = array(
+				'ordering'	=> $menus->getOrdering()
+		);
+		$this->db->where('menuid', $menus->getMenuid());
+		return $this->db->update('MENUS', $data);
+	}
+
 	public function deleteMenu($menuid){
 		try{
 			$this->db->trans_begin();
