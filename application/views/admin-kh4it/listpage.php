@@ -103,7 +103,7 @@
 							<thead class="the-box dark full">
 								<tr>
 									<th>Page ID</th>
-									<th>ចំណងជើង</th>
+									
 									<th>Title</th>
 									<th>Posted By</th>
 									<th>Action</th>
@@ -114,13 +114,13 @@
 							<?php foreach ($listPage as $p){ ?>
 								<tr>
 									<td><?php echo $p->pageid ?></td>
-									<td><?php echo $p->title1 ?></td>
-									<td><?php echo $p->title2 ?></td>
+									
+									<td><?php echo $p->title ?></td>
 									<td><?php echo $p->username ?></td>
 									<td>
 										<a  href="<?php echo site_url()?>admin/page/deletepage/<?php echo $p->pageid ?>" style="margin-right:3px" onclick="return confirm('Do you want to delete?');"  class="btn btn-danger">Delete</a>
 										<a  href="<?php  echo site_url()?>admin/page/getpage/<?php  echo $p->pageid ?>"  class="btn btn-primary">Update</a>
-										<a target="_blank" href="<?php  echo site_url()?>page/<?php  echo $p->title2 ?>"  class="btn btn-info">View</a>
+										<a target="_blank" href="<?php  echo site_url()?>page/<?php  echo $p->pageid ?>"  class="btn btn-info">View</a>
 									</td>
 								</tr>
 							<?php } ?>

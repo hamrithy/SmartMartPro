@@ -8,10 +8,10 @@
 	        $this->load->model("dao/DaoPage");
 		}
 
-		public function index($pageName){
-			$data['PAGE_NAME']  = $pageName;
-			$data['TITLE'] = $pageName;
-			$data['PAGE'] = $this->DaoPage->getPageByName($pageName);
+		public function index($pageid){
+			//$data['PAGE_NAME']  = $pageName;
+			//$data['TITLE'] = $pageName;
+			$data['PAGE'] = $this->DaoPage->getPageById($pageid);
 			if($data['PAGE']==null){
 				redirect('page_no_found');
 			}

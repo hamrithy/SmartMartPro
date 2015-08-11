@@ -64,8 +64,8 @@
 
         <!-- BEGIN LOGO-->
         <div id="logo">
-            <a href="index.html" class="standard-logo" data-dark-logo="images/logo-dark.png"><img src="<?php echo base_url('public/style_front/images/logo.png')?>" alt="Canvas Logo"></a>
-            <a href="index.html" class="retina-logo" data-dark-logo="images/logo-dark@2x.png"><img src="<?php echo base_url('public/style_front/images/logo@2x.png')?>" alt="Canvas Logo"></a>
+            <a href="<?php echo site_url()?>" class="standard-logo" data-dark-logo="images/logo-dark.png"><img src="<?php echo base_url('public/style_front/images/logo.png')?>" alt="Canvas Logo"></a>
+            <a href="<?php echo site_url()?>" class="retina-logo" data-dark-logo="images/logo-dark@2x.png"><img src="<?php echo base_url('public/style_front/images/logo@2x.png')?>" alt="Canvas Logo"></a>
         </div>
         <!-- END LOGO -->
 

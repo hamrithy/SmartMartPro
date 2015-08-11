@@ -33,11 +33,11 @@ class DaoPage extends CI_Model{
 	
 	
 	public function listPage(){
-		$this->db->select('p.pageid , pd1.title title1 , pd2.title title2 , u.userid , u.username');
+		$this->db->select('p.pageid , pd1.title , u.userid , u.username');
 		$this->db->from('PAGES p');
 		$this->db->join('USERS u', 'p.userid = u.userid');
-		$this->db->join('PAGEDETAIL pd1', 'p.pageid = pd1.pageid AND pd1.languageid=1');
-		$this->db->join('PAGEDETAIL pd2', 'p.pageid = pd2.pageid AND pd2.languageid=2');
+		$this->db->join('PAGEDETAIL pd1', 'p.pageid = pd1.pageid');
+		$this->db->where('pd1.languageid', 2);
 		$this->db->order_by("pageid", "desc");
 		$query = $this->db->get();
 		return $query->result();
@@ -61,6 +61,17 @@ class DaoPage extends CI_Model{
 				AND A.pageid = (SELECT pageid FROM PAGEDETAIL WHERE replace(LOWER(title),' ','_') = ? LIMIT 1)
 				LIMIT 1"; 
 		$query = $this->db->query($sql, array(lang('lang_id'), str_replace(" ","_",strtolower($pageName))));
+		return $query->row();
+	}
+
+	public function getPageById($pageid){
+		$sql = "SELECT A.pageid, A.userid, A.seotitle, A.seodescription, B.title, B.description, C.username
+				FROM PAGES A
+				JOIN PAGEDETAIL B ON A.pageid=B.pageid
+				JOIN USERS C ON A.userid=C.userid
+				WHERE B.languageid =?
+				AND A.pageid =? LIMIT 1"; 
+		$query = $this->db->query($sql, array(lang('lang_id'), $pageid ));
 		return $query->row();
 	}
 	
