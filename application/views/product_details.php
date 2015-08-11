@@ -304,6 +304,7 @@
 		       				  });
                         </script>
                               
+                              
                          <script type="text/x-jquery-tmpl" id="tmplRecentProducts">
                              <div class="spost clearfix">
                                         <div class="entry-image">
