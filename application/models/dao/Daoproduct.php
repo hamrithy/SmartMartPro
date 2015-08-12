@@ -84,8 +84,9 @@ class DaoProduct extends CI_Model{
 			$this->db->trans_rollback();
 			return FALSE;
 		}else{
+			
 			$this->db->trans_commit();
-			return TRUE;
+			return $productID;
 		}
 	}
 	

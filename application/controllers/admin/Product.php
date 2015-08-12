@@ -5,6 +5,7 @@
 
 		public function __construct(){
 			parent::__construct();
+			$this->load->library("Facebook");
 			$this->load->model("dto/DtoProduct");
 			$this->load->model("dao/DaoProduct");
 		}
@@ -14,6 +15,7 @@
 		}
 		
 		public function addProduct(){
+			//var_dump($this->facebook->get_user());
 			$this->load->view("admin-kh4it/addproduct");
 		}
 		
@@ -43,6 +45,24 @@
 			$this->DtoProduct->setSeodescription($this->input->post("SEODescription"));
 			$this->DtoProduct->setProductDetails($this->input->post("ProductDetails"));			
 			$result = $this->DaoProduct->addNewProduct($this->DtoProduct);
+			if($result!=false && $result>0){
+				$productDetails = $this->input->post("ProductDetails");
+				$thumbnailurl = explode(";", $this->input->post("Thumbnailurl"));
+				//var_dump($this->facebook->get_user());
+				$data = array(
+							"name"    => $productDetails[1]["title"],
+							//"link"    => 'http://smartmart.kh4it.com/product/detail/'.$this->DtoProduct->getCategoryid().'/'.$result,
+							"link"    => site_url().'product/detail/'.$this->DtoProduct->getCategoryid().'/'.$result,
+							"caption" => $productDetails[1]["title"],
+							"message" => "Product Name: ". $productDetails[1]["title"].
+                           				 "\nDescriptions: ". strip_tags($productDetails[1]["description"]). 
+                           				 "\nPrice : ".$this->DtoProduct->getPrice(). " $ ",
+							"picture" => (count($thumbnailurl)>0) ? $thumbnailurl[0] : '',
+							//"picture" => "http://smartmart.kh4it.com/public/upload/Products/1.jpg" 
+					);
+				$this->facebook->post($data);
+				$result = TRUE;
+			}
 			echo json_encode($result);
 		}
 		
@@ -63,6 +83,20 @@
 			$this->DtoProduct->setProductDetails($this->input->post("ProductDetails"));
 			$result = $this->DaoProduct->updateProduct($this->DtoProduct);
 			echo json_encode($result);
+		}
+
+		public function test(){
+			$this->load->library("Facebook");
+			//echo '<a href="' . $this->facebook->login_url() . '">Login</a>';
+			var_dump($this->facebook->get_user());
+				$data = array(
+							"name"    => "AAA",
+							"link"    => "http://smartmart.kh4it.com/product/detail/84/9",
+							"caption" => "AAA",
+							"message" => "AAA",                        				 
+							"picture" => "http://smartmart.kh4it.com/public/upload/Products/1.jpg"
+					);
+			$this->facebook->post($data);
 		}
 	}	
 ?>

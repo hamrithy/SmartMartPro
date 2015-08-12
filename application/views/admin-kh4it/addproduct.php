@@ -428,7 +428,8 @@
 					console.log("SUCCESSDATA:",data);
 				},
 				error: function(data){
-					console.log("SUCCESSDATA:",data);
+					console.log("ERROR:",data);
+					$("#frmWaiting").modal('hide');
 				}
 			});
 		
