@@ -231,21 +231,14 @@
                                     <div class="product-desc center">
                                         <div class="product-title"><h3><a href="<?php echo site_url()?>product/detail/<?php echo $v->productid.'/'.$v->categoryid?>"><?php echo $v->title ?></a></h3></div>
                                         <div class="product-price"> <ins>$ <?php echo $v->price ?></ins></div>
-
                                     </div>
                                 </div>
                             </div>
-
                            <?php } ?>
-
                         </div>
-
                         <script type="text/javascript">
-
                             jQuery(document).ready(function($) {
-
                                 var ocProduct = $("#oc-product");
-
                                 ocProduct.owlCarousel({
                                     margin: 30,
                                     nav: true,
@@ -259,24 +252,15 @@
                                         992:{ items:4 }
                                     }
                                 });
-
                             });
-
                         </script>
-
                     </div>
-
                 </div>
-
             </div>
-
         </section><!-- #content end -->
-
         <!-- BEGGIN FOOTER SECTION -->
         <?php $this->load->view('_footer'); ?>
-        <!-- END FOOTER SECTION -->
-        
-       
+        <!-- END FOOTER SECTION -->      
        					<script type="text/javascript">
 		       				  $(function(){ 
 		       					function formatData(value){
@@ -327,15 +311,12 @@
         <script>
          rate();
         function rate(){
-               <?php
-            if($rate != 0){
-             ?>
 
-             for (var i = <?php echo $rate; ?>; i >= 0; i--) {
+            $.post("<?php echo site_url() ?>product/checkrating/<?php echo $proid; ?>",function(data){
+                for (var i = data; i >= 0; i--) {
                     $('.rate-btn-'+i).addClass('rate-btn-hover');
                 };
-             <?php } ?>
-             
+            });  
         }
             $(function(){ 
             $('.rate-btn').hover(function(){
@@ -351,13 +332,14 @@
                 for (var i = therate; i >= 1; i--) {
                     $('.rate-btn-'+i).removeClass('rate-btn-hover');
                 };
-                rate();
-            })
+                
+            });
             $('.rate-btn').click(function(){    
                 var therate = $(this).attr('id');
                 $('.rate-btn').removeClass('rate-btn-active');
                 for (var i = therate; i >= 1; i--) {
                     $('.rate-btn-'+i).addClass('rate-btn-active');
+
                 };
                 $.ajax({
                     type : "POST",
@@ -370,10 +352,9 @@
                         rate();
                     }
                 });
-             
+                
             });
         });
-        </script>     
-                           
+        </script>                 
 </body>
 </html>

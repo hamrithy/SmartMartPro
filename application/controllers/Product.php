@@ -58,9 +58,16 @@
 			$data["page"] = "Product";
 			$data["getProduct"] = $this->DaoProduct->lstProduct(lang('lang_id'),$id);
 			$data["lstRelateProduct"] = $this->DaoProduct->lstRelatedProduct(20,$id,$cateid);
-			$data['rate'] = $this->DaoRate->checkRate($id); 
+			//$data['rate'] = $this->DaoRate->checkRate($id); 
 			$data['proid'] = $id;
 			$this->load->view("product_details",$data);
+		}
+
+		public function checkrating($id){
+			$result = $this->DaoRate->checkRate($id); 
+			$this->output
+			    ->set_content_type('application/json')
+			    ->set_output(json_encode($result));
 		}
 		
 		public function byCate($cateid,$offset=0){
