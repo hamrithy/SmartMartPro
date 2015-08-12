@@ -91,18 +91,28 @@
 
                                 <!-- Product Single - Rating
                                 ============================================= -->
-                                <div class="product-rating">
+                       <!--          <div class="product-rating">
                                     <div class="rw-ui-container"></div>
-                                    <!-- <i class="icon-star3"></i>
+                                    <i class="icon-star3"></i>
                                     <i class="icon-star3"></i>
                                     <i class="icon-star3"></i>
                                     <i class="icon-star-half-full"></i>
-                                    <i class="icon-star-empty"></i> -->
-                                </div><!-- Product Single - Rating End -->
+                                    <i class="icon-star-empty"></i>
+                                </div> -->
+                                    <br/>
+                                  
+                                    <div class="rate-ex2-cnt">
+                                        <div id="1" class="rate-btn-1 rate-btn"></div>
+                                        <div id="2" class="rate-btn-2 rate-btn"></div>
+                                        <div id="3" class="rate-btn-3 rate-btn"></div>
+                                        <div id="4" class="rate-btn-4 rate-btn"></div>
+                                        <div id="5" class="rate-btn-5 rate-btn"></div>
+                                    </div>
+                         
 
                                 <div class="clear"></div>
                                 <div class="line"></div>
-
+                                 <br/>
                                 <!-- Product Single - Quantity & Cart Button
                                 ============================================= -->
                                
@@ -221,13 +231,7 @@
                                     <div class="product-desc center">
                                         <div class="product-title"><h3><a href="<?php echo site_url()?>product/detail/<?php echo $v->productid.'/'.$v->categoryid?>"><?php echo $v->title ?></a></h3></div>
                                         <div class="product-price"> <ins>$ <?php echo $v->price ?></ins></div>
-                                        <div class="product-rating">
-                                            <i class="icon-star3"></i>
-                                            <i class="icon-star3"></i>
-                                            <i class="icon-star3"></i>
-                                            <i class="icon-star3"></i>
-                                            <i class="icon-star-half-full"></i>
-                                        </div>
+
                                     </div>
                                 </div>
                             </div>
@@ -316,12 +320,60 @@
                                             </div>
                                             <ul class="entry-meta">
                                                 <li class="color">$ {{= price }}</li>
-                                                <li><i class="icon-star3"></i> <i class="icon-star3"></i> <i class="icon-star3"></i> <i class="icon-star3"></i> <i class="icon-star-half-full"></i></li>
                                             </ul>
                                         </div>
                             </div>
-                        </script>        
-       				 
-                            
+                        </script> 
+        <script>
+         rate();
+        function rate(){
+               <?php
+            if($rate != 0){
+             ?>
+
+             for (var i = <?php echo $rate; ?>; i >= 0; i--) {
+                    $('.rate-btn-'+i).addClass('rate-btn-hover');
+                };
+             <?php } ?>
+             
+        }
+            $(function(){ 
+            $('.rate-btn').hover(function(){
+                $('.rate-btn').removeClass('rate-btn-hover');
+                var therate = $(this).attr('id');
+                for (var i = therate; i >= 1; i--) {
+                    $('.rate-btn-'+i).addClass('rate-btn-hover');
+                };
+            });
+            $('.rate-btn').mouseleave(function(){
+                 $('.rate-btn').removeClass('rate-btn-hover');
+                var therate = $(this).attr('id');
+                for (var i = therate; i >= 1; i--) {
+                    $('.rate-btn-'+i).removeClass('rate-btn-hover');
+                };
+                rate();
+            })
+            $('.rate-btn').click(function(){    
+                var therate = $(this).attr('id');
+                $('.rate-btn').removeClass('rate-btn-active');
+                for (var i = therate; i >= 1; i--) {
+                    $('.rate-btn-'+i).addClass('rate-btn-active');
+                };
+                $.ajax({
+                    type : "POST",
+                    url : "<?php echo site_url() ?>product/rating",
+                    data: {
+                        "productid": <?php echo $proid; ?>,
+                        "ratenumber": therate
+                    },
+                    success:function(){
+                        rate();
+                    }
+                });
+             
+            });
+        });
+        </script>     
+                           
 </body>
 </html>

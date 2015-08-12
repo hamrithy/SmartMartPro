@@ -7,6 +7,8 @@
 			parent::__construct();
 			$this->load->model("dto/DtoProduct");
 			$this->load->model("dao/DaoProduct");
+			$this->load->model('dto/DtoRate');
+			$this->load->model('dao/DaoRate');	
 		}
 
 		public function index(){
@@ -56,6 +58,8 @@
 			$data["page"] = "Product";
 			$data["getProduct"] = $this->DaoProduct->lstProduct(lang('lang_id'),$id);
 			$data["lstRelateProduct"] = $this->DaoProduct->lstRelatedProduct(20,$id,$cateid);
+			$data['rate'] = $this->DaoRate->checkRate($id); 
+			$data['proid'] = $id;
 			$this->load->view("product_details",$data);
 		}
 		
@@ -144,7 +148,16 @@
 			$data["getProduct"] = $this->DaoProduct->lstProduct(lang('lang_id'),$id);
 			$this->load->view('shop-item', $data);
 		}
-		
+
+		public function rating(){
+			$this->DtoRate->setIpaddress($_SERVER['REMOTE_ADDR']);
+			$this->DtoRate->setProductid($this->input->post('productid'));
+			$this->DtoRate->setRatenumber($this->input->post('ratenumber'));
+			$result = $this->DaoRate->rate($this->DtoRate);
+			$this->output
+				->set_content_type('application/json')
+				->set_output(json_encode($result));
+		}
 	}
 
 ?>

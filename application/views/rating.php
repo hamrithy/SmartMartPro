@@ -13,7 +13,7 @@
     <body>
     <div class="tuto-cnt">
 
-        <div class="rate-ex1-cnt">
+        <div class="rate-ex3-cnt" style="width:250px;">
             <div id="1" class="rate-btn-1 rate-btn"></div>
             <div id="2" class="rate-btn-2 rate-btn"></div>
             <div id="3" class="rate-btn-3 rate-btn"></div>

@@ -14,18 +14,20 @@
     <link rel="stylesheet" href="<?php echo base_url('public/style_front/css/animate.css') ?>" type="text/css" />
     <link rel="stylesheet" href="<?php echo base_url('public/style_front/css/magnific-popup.css') ?>" type="text/css" />
     <link rel="stylesheet" href="<?php echo base_url('public/style_front/css/responsive.css') ?>" type="text/css" />
+    <link type="text/css" rel="stylesheet" href="<?php echo base_url('public/style_front/css/stylerating.css') ?>">
+    <link type="text/css" rel="stylesheet" href="<?php echo base_url('public/style_front/css/example.css') ?>">
     <!-- END EXTERNAL STYTLESHEET -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <!--[if lt IE 9]>
     	<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
         <![endif]-->
-
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <!-- BEGIN EXTERNAL JQUERY.js AND PLUGINS.js
     ============================================= -->
     <script type="text/javascript" src="<?php echo base_url('public/style_front/js/jquery.js') ?>"></script>
     <script type="text/javascript" src="<?php echo base_url('public/style_front/js/plugins.js') ?>"></script>
     <!-- END EXTERNAL JQUERY.js AND PLUGINS.js -->
-
+    
     <!-- BEGIN WEBSITE INFORMATION AND SEO INFORMATION -->
     <title>SmartMart | TSD Template</title>
     <meta name="description" content="SmartMart Home | TSD Template">
