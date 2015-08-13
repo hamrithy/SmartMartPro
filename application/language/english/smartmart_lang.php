@@ -16,8 +16,8 @@ $lang['completely_free'] = 'Completely Free';
 $lang['for_5_or_more'] = 'For $5 or more';
 $lang['100_guaranteed'] = '100% Guaranteed';
 $lang['admin'] = 'ADMIN';
-$lang['kh'] = 'KH';
-$lang['en'] = 'EN';
+$lang['kh'] = 'ខ្មែរ';
+$lang['en'] = 'English';
 
 
 $lang['signin'] = 'SIGN IN';
@@ -34,7 +34,7 @@ $lang['browse_video'] = 'Browse Video';
 $lang['recently_arrived'] = 'Recently Arrived';
 $lang['popular_product'] = 'Popular Products';
 $lang['recommended_for_you'] = 'Recommended For You';
-$lang['copy_right'] = 'Copyrights � 2015 All Rights Reserved by TSD';
+$lang['copy_right'] = 'Copyrights © 2015 All Rights Reserved by TSD';
 $lang['term_of_use'] = 'Term of Use';
 $lang['privacy_policy'] = 'Privacy Policy';
 

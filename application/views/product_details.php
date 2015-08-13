@@ -86,21 +86,7 @@
                                 </div>
                                 
                                 <div style="clear:both"></div>
-                                
-                                
-
-                                <!-- Product Single - Rating
-                                ============================================= -->
-                       <!--          <div class="product-rating">
-                                    <div class="rw-ui-container"></div>
-                                    <i class="icon-star3"></i>
-                                    <i class="icon-star3"></i>
-                                    <i class="icon-star3"></i>
-                                    <i class="icon-star-half-full"></i>
-                                    <i class="icon-star-empty"></i>
-                                </div> -->
-                                    <br/>
-                                  
+                                 <div style="float:right">
                                     <div class="rate-ex2-cnt">
                                         <div id="1" class="rate-btn-1 rate-btn"></div>
                                         <div id="2" class="rate-btn-2 rate-btn"></div>
@@ -108,7 +94,7 @@
                                         <div id="4" class="rate-btn-4 rate-btn"></div>
                                         <div id="5" class="rate-btn-5 rate-btn"></div>
                                     </div>
-                         
+                                </div>
 
                                 <div class="clear"></div>
                                 <div class="line"></div>
