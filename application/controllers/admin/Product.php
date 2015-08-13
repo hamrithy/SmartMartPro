@@ -15,12 +15,13 @@
 		}
 		
 		public function addProduct(){
-			//var_dump($this->facebook->get_user());
+			if($this->facebook->get_user()==false){
+				redirect($this->facebook->login_url());
+			}
 			$this->load->view("admin-kh4it/addproduct");
 		}
 		
 		public function listProduct(){
-			
 			$data["lstProduct"] = $this->DaoProduct->lstProduct(2,0);
 			$this->load->view('admin-kh4it/listproduct', $data);
 		}
@@ -48,7 +49,7 @@
 			if($result!=false && $result>0){
 				$productDetails = $this->input->post("ProductDetails");
 				$thumbnailurl = explode(";", $this->input->post("Thumbnailurl"));
-				//var_dump($this->facebook->get_user());
+				/*var_dump($this->facebook->get_user());*/
 				$data = array(
 							"name"    => $productDetails[1]["title"],
 							//"link"    => 'http://smartmart.kh4it.com/product/detail/'.$this->DtoProduct->getCategoryid().'/'.$result,
@@ -87,7 +88,7 @@
 
 		public function test(){
 			$this->load->library("Facebook");
-			//echo '<a href="' . $this->facebook->login_url() . '">Login</a>';
+			echo '<a href="' . $this->facebook->login_url() . '">Login</a>';
 			var_dump($this->facebook->get_user());
 				$data = array(
 							"name"    => "AAA",
@@ -96,7 +97,7 @@
 							"message" => "AAA",                        				 
 							"picture" => "http://smartmart.kh4it.com/public/upload/Products/1.jpg"
 					);
-			$this->facebook->post($data);
+			//$this->facebook->post($data);
 		}
 	}	
 ?>
