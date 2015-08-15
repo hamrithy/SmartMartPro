@@ -1,7 +1,7 @@
 <?php
 
-$apiKey = '9084de3d533812184a53480e583e6fd8-us5'; // Your MailChimp API Key
-$listId = '69350e983d'; // Your MailChimp List ID
+$apiKey = '57d0b70753e77ec05bb4396ebba0a09f-us11'; // Your MailChimp API Key
+$listId = '6cd4260491'; // Your MailChimp List ID
 $double_optin=false;
 $send_welcome=false;
 $email_type = 'html';

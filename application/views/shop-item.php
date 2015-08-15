@@ -29,13 +29,13 @@
                         </div>
                         <div class="col_half nobottommargin col_last product-desc">
                             <div class="product-price"><ins>$ <?php echo $v->price ?></ins></div>
-                            <div class="product-rating">
+                           <!--  <div class="product-rating">
                                 <i class="icon-star3"></i>
                                 <i class="icon-star3"></i>
                                 <i class="icon-star3"></i>
                                 <i class="icon-star-half-full"></i>
                                 <i class="icon-star-empty"></i>
-                            </div>
+                            </div> -->
                           
                             <!-- Product Single - Quantity & Cart Button
                             ============================================= -->

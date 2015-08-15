@@ -65,7 +65,7 @@
                     <div class="widget subscribe-widget clearfix">
                         <h5><strong>Subscribe</strong> to Our Newsletter to get Important News, Amazing Offers &amp; Inside Scoops:</h5>
                         <div id="widget-subscribe-form-result" data-notify-type="success" data-notify-msg=""></div>
-                        <form id="widget-subscribe-form" action="include/subscribe.php" role="form" method="post" class="nobottommargin">
+                        <form id="widget-subscribe-form" action="<?php echo site_url();?>contact/subscribe" role="form" method="post" class="nobottommargin">
                             <div class="input-group divcenter">
                                 <span class="input-group-addon"><i class="icon-email2"></i></span>
                                 <input type="email" id="widget-subscribe-form-email" name="widget-subscribe-form-email" class="form-control required email" placeholder="Enter your Email">
