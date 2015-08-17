@@ -260,7 +260,7 @@
 			filebrowserImageBrowseUrl : '<?php echo base_url(); ?>/public/responsivefilemanager/filemanager/dialog.php?type=1&editor=ckeditor&fldr=' }); 
 	</script>
 	<script>
-		<?php if($pageid != null){ ?>
+		<?php if(isset($pageid)){ ?>
 			 $.post("<?php echo site_url() ?>admin/page/showpage/<?php echo $pageid ?>", function(data){
 			 	document.title ="Update Page";
 			 	$('#btnSave').attr("onclick","updatePage("+data[0].pageid+")");

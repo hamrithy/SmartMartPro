@@ -458,7 +458,7 @@
 		</script>
 		<script>	
 			
-			<?php if($sliderid != null){ ?>
+			<?php if(isset($sliderid)){ ?>
 				$.post("<?php echo site_url()?>admin/slide/actiongetslide/<?php echo $sliderid ?>", function(data){
 				document.title ="Update Slide";
 				$("#btnSave").attr("onclick","updateSlide("+data[0].sliderid+")");

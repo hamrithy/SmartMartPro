@@ -350,7 +350,7 @@
 	<script>
 
 		
-		<?php if($catid != null){ ?>
+		<?php if(isset($catid)){ ?>
 			
 			$.post("<?php  echo site_url()?>admin/category/getcategoryupdate/<?php echo $catid ?>",function(data){
 				document.title ="Update Category";

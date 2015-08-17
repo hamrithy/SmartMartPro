@@ -70,13 +70,13 @@
                                 <div class="product-desc center">
                                     <div class="product-title"><h3><a href="<?php echo site_url()?>product/detail/<?php echo $v->productid.'/'.$v->categoryid ?>"><?php echo $v->title?></a></h3></div>
                                     <div class="product-price"> <ins>$<?php echo $v->price?></ins></div>
-                                    <div class="product-rating">
+                                   <!--  <div class="product-rating">
                                         <i class="icon-star3"></i>
                                         <i class="icon-star3"></i>
                                         <i class="icon-star3"></i>
                                         <i class="icon-star3"></i>
                                         <i class="icon-star-half-full"></i>
-                                    </div>
+                                    </div> -->
                                 </div>
                             </div>	
 							
