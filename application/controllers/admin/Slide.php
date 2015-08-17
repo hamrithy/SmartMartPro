@@ -42,6 +42,10 @@
 		}
 
 		public function actionShowSlide($id){
+			$this->load->model('dao/DaoPage');
+			$this->load->model('dao/DaoCategory');
+			$data["pages"] = $this->DaoPage->listPage();
+			$data["categories"] = $this->DaoCategory->showcategories();
 			$data['sliderid'] = $id;
 			$this->load->view('admin-kh4it/addslide', $data);
 		}
@@ -55,6 +59,7 @@
 
 		public function actionUpdateSlider(){
 			$this->DtoSlide->setSlideid($this->input->post('sliderid'));
+			$this->DtoSlide->setUserid($this->encryption->decrypt($this->session->userdata('userid')));
 			$this->DtoSlide->setType($this->input->post('type'));
 			$this->DtoSlide->setOrdering($this->input->post('ordering'));
 			$this->DtoSlide->setLinkto($this->input->post('linkto'));

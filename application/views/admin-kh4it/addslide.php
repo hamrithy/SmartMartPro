@@ -230,11 +230,11 @@
 									
 									<div class="form-group">
 										<label>Odering<span class="required">*</span></label>
-										<input type="text" class="form-control" name="ordering" id="ordering" value="" required="required"/>
+										<input type="text" class="form-control" name="ordering" id="ordering" value="0" required="required"/>
 									</div>
 										<div class="form-group">
 										<label>Linkto<span class="required">*</span></label>
-										<input type="text" class="form-control" name="linkto" id="linkto" value="" required="required"/>
+										<input type="text" class="form-control" name="linkto" id="linkto" value="#" required="required"/>
 									</div>
 									<div class="form-group">
 										<label>Choose​ Link to Page</label>
@@ -243,7 +243,7 @@
 												echo '<option value="#">-------</option>';
 												if(count($pages)>0){
 													foreach($pages as $page){
-														echo '<option value="page/'.str_replace(" ","_",strtolower($page->title2)).'">'.$page->title2.'</option>';
+														echo '<option value="'.site_url().'page/'.$page->pageid.'">'.$page->title.'</option>';
 													}
 												}
 											?>
@@ -256,7 +256,7 @@
 												echo '<option value="#">-------</option>';
 												if(count($categories)>0){
 													foreach($categories as $category){
-														echo '<option value="product/bycate/'.$category->categoryid.'">'.$category->title.'</option>';
+														echo '<option value="'.site_url().'product/bycate/'.$category->categoryid.'">'.$category->title.'</option>';
 													}
 												}
 											?>
@@ -426,7 +426,7 @@
 					data: {
 						type: $("#type").val(),
 						ordering: $("#ordering").val(),
-						linkto: $("linkto").val(),
+						linkto: $("#linkto").val(),
 						SliderDetail:[
 							{
 									"languageid": "2",

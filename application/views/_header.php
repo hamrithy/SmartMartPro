@@ -132,11 +132,11 @@
                                         home = true;
                                         current = 'current';
                                     }
-                                    if(currentURL=="<?php echo site_url()?>"+value.linkto && home==false) {
+                                    if(currentURL==""+value.linkto && home==false) {
                                         current = 'current';
                                     }
                                     str += '<li class="mega-menu sub-menu '+current+'"  id="MAIN">'+
-                                                '<a href="<?php echo site_url()?>'+value.linkto+'">'+
+                                                '<a href="'+value.linkto+'">'+
                                                     '<div id="MENUID" class="'+value.menuid+'">'+value.title+'</div>'+
                                                     '<span>'+value.description+'</span>'+
                                                 '</a>';

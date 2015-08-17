@@ -189,7 +189,7 @@
 												echo '<option value="#">-------</option>';
 												if(count($pages)>0){
 													foreach($pages as $page){
-														echo '<option value="page/'.$page->pageid.'">'.$page->title.'</option>';
+														echo '<option value="'.site_url().'page/'.$page->pageid.'">'.$page->title.'</option>';
 													}
 												}
 											?>
@@ -202,7 +202,7 @@
 												echo '<option value="#">-------</option>';
 												if(count($categories)>0){
 													foreach($categories as $category){
-														echo '<option value="product/bycate/'.$category->categoryid.'">'.$category->title.'</option>';
+														echo '<option value="'.site_url().'product/bycate/'.$category->categoryid.'">'.$category->title.'</option>';
 													}
 												}
 											?>
