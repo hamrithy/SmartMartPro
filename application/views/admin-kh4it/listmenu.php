@@ -223,24 +223,31 @@
 		$(function(){
 			$(document).on('click','#btnDelete', function(){
 				var _this = $(this);
-				$.ajax({
-					url: '<?php echo site_url()?>admin/menu/deletemenu',
-					type: "POST",
-					dataType: "json",
-					data:{
-						id: _this.attr("data")
-					},
-					success: function(data){
-						if(data.SUCCESS==true){
-							_this.parents("tr").remove();
-						}else{
-							alert("You can not delete that menu.");
+				var c= confirm("Do you want to delete?");
+				if(c==true){
+					$.ajax({
+						url: '<?php echo site_url()?>admin/menu/deletemenu',
+						type: "POST",
+						dataType: "json",
+						data:{
+							id: _this.attr("data")
+						},
+						success: function(data){
+							if(data.SUCCESS==true){
+								_this.parents("tr").remove();
+							}else{
+								alert("You can not delete that menu.");
+							}
+						},
+						error: function(data){
+							alert("That menu cannot delete.");
 						}
-					},
-					error: function(data){
-						alert("That menu cannot delete.");
-					}
-				});
+					});
+				}
+
+				
+
+
 			})
 		});
 
