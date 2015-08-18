@@ -507,7 +507,8 @@ $config['proxy_ips'] = '';
 
 $config['facebook']['api_id'] = '900627506698839';
 $config['facebook']['app_secret'] = '292204d319aef7ee7dde693f84a60f6e';
-$config['facebook']['redirect_url'] = $config['base_url'].'admin/product/addproduct';
+$config['facebook']['page_id'] = '775329102582353';
+$config['facebook']['redirect_url'] = 'http://localhost/smartmartpro/admin/product/addproduct';
 $config['facebook']['permissions'] = array(
   'manage_pages',
   'publish_actions',

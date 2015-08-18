@@ -87,7 +87,7 @@ class Facebook {
     if ( $this->session) {
       
       try {
-        $page_id = '775329102582353';
+        $page_id = $this->ci->config->item('redirect_url', 'facebook');
         // get page access token
         $access_token = (new FacebookRequest( $this->session, 'GET', '/' . $page_id,  array( 'fields' => 'access_token' ) ))
                           ->execute()->getGraphObject()->asArray();
