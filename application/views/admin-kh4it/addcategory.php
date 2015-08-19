@@ -183,7 +183,7 @@
 									
 									<div class="form-group">
 										<label>Ordering<span class="required">*</span></label>
-										<input type="text" class="form-control" name="txtorder" id="txtorder" value="" required="required"/>
+										<input type="text" class="form-control" name="txtorder" id="txtorder" value="0" required="required"/>
 									</div>									
 									<div class="form-group">
 										<button type="submit" id="btnaddcats" class="btn btn-success" onclick="addcategorypro()">Save</button>

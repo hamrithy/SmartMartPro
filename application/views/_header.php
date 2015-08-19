@@ -116,7 +116,7 @@
                         var menus = eval('<?php $this->menus->getAllMenus()?>');
                         if(menus!=null || menus!=""){
                             var str = '';
-                            var strLevel1 = '<div class="mega-menu-content style-2 col-4 clearfix">';
+                            var strLevel1 = '';
                             var strLevel2 = '';
                             var countLevel1 = 0;
                             var countLevel2 = 0;
@@ -124,10 +124,12 @@
                             var menuidLevel1;
                             var home = false;
                             var currentURL = (window.location)+"";
+                            var site_url = '<?php echo site_url(); ?>';
                             currentURL = currentURL.replace("#","");
                             $.each(menus,function(key,value){
                                 var current = '';
                                 if(value.level=="0"){
+                                    strLevel1 = '<div class="mega-menu-content style-2 col-4 clearfix">';
                                     if(base_url==currentURL && home==false){
                                         home = true;
                                         current = 'current';
@@ -135,7 +137,7 @@
                                     if(currentURL==""+value.linkto && home==false) {
                                         current = 'current';
                                     }
-                                    str += '<li class="mega-menu sub-menu '+current+'"  id="MAIN">'+
+                                    str += '<li class="mega-menu sub-menu'+current+'"  id="MAIN">'+
                                                 '<a href="'+value.linkto+'">'+
                                                     '<div id="MENUID" class="'+value.menuid+'">'+value.title+'</div>'+
                                                     '<span>'+value.description+'</span>'+
