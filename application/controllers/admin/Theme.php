@@ -35,9 +35,22 @@
 			$this->load->view('admin-kh4it/theme-editor', $data);
 		}
 
+		public function showlangfile($folder, $fname){
+			$path_to_view = get_lang_path($folder, $fname);
+			$files = read_file(''.$path_to_view .'');
+			$filename = $folder."/".$fname .".php";
+			$data= array("filename" => $filename, "files" => $files, "filepath" => $fname, "langs" => $folder );
+			$this->load->view('admin-kh4it/theme-editor', $data);
+		}
+
 		public function edittheme($fname){
 			$datafile = $this->input->post('code');
-			$path_to_view = get_view_path($fname); 
+			if(isset($_POST['langfile'])){
+				$folder = $this->input->post('langfile');
+				$path_to_view = get_lang_path($folder, $fname);
+			}else{
+				$path_to_view = get_view_path($fname); 
+			}			
 
 			if ( ! write_file(''. $path_to_view .'', $datafile))
 			{

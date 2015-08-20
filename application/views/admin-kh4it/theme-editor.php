@@ -127,7 +127,8 @@
 									<div class="form-group">
 										<label id="title-editor">File Name : <?php echo $filename; ?></label>
 									</div>
-									<div class="form-group">
+									
+									<div class="form-grup">
 										<textarea id="code" name="code"><?php echo $files; ?></textarea>
     									
 									</div>
@@ -135,6 +136,9 @@
 										
 										<input class="btn btn-success" type="submit" value="Update File"/>
 									</div>
+									<?php if(isset($langs)){ ?>
+									<input type="hidden" name="langfile" value="<?php echo $langs  ?>"/>
+									<?php } ?>
 								</div><!-- /.col-sm-8 -->
 								<div class="col-sm-2">
 										<label>FrontEnd Page</label>					
@@ -148,7 +152,9 @@
 										<p><a href="<?php  echo site_url()?>/admin/theme/showfile/contact">contact.php</a></p>
 										<p><a href="<?php  echo site_url()?>/admin/theme/showfile/product_details">product_details.php</a></p>
 										<p><a href="<?php  echo site_url()?>/admin/theme/showfile/products">products.php</a></p>
-										
+										<label>Language Files</label>
+										<p><a href="<?php  echo site_url()?>/admin/theme/showlangfile/khmer/smartmart_lang">khmer.php</a></p>
+										<p><a href="<?php  echo site_url()?>/admin/theme/showlangfile/english/smartmart_lang">english.php</a></p>
 										
 										<!-- <label>Backend Page</label>	
 										<p><a href="<?php  echo site_url()?>/admin/theme/showfilestyle/screen">stylesheet.css</a></p>
@@ -276,6 +282,8 @@
 		        }
 		      }
 		    });
+
+		     
 		  </script>
 		
 	</body>

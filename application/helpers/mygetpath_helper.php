@@ -9,6 +9,11 @@ if ( ! function_exists('get_view_path'))
 		    $target_file=APPPATH.'views/'.$view_name.'.php';
 		    if(file_exists($target_file)) return $target_file;
 		}
+
+	function get_lang_path($folder, $filename){
+		$target_file=APPPATH.'language/'.$folder.'/'.$filename.'.php';
+		if(file_exists($target_file)) return $target_file;
+	}
 }
 
 ?>

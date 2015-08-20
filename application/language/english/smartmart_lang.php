@@ -1,4 +1,5 @@
-<?php	defined('BASEPATH') OR exit('No direct script access allowed');
+
+<?php defined('BASEPATH') OR exit('No direct script access allowed');
 $lang['hello']= 'Hello';
 $lang['home']= 'Home';
 $lang['graduation']= 'GRADUATION';
@@ -6,7 +7,7 @@ $lang['gift']= 'GIFT';
 $lang['information']= 'INFORMATION';
 $lang['contact']= 'CONTACT US';
 $lang['email'] = 'Email';
-$lang['call'] = 'Call';
+$lang['call'] = 'Call097';
 $lang['login'] = 'LOGIN';
 $lang['trusted_products'] = 'Trusted Products';
 $lang['special_for_students'] = 'Special for Students';
@@ -62,7 +63,7 @@ $lang['lang_id'] = '2';
 $lang['get'] = 'Get';
 $lang['off_order'] = 'off on orders of $29 or more. Use Coupon';
 $lang['shop_30'] = 'SHOP30';
-$lang['sale_available'] = 'Sale available on selected Designer Brands that include Apparels, Footwear, Fashion Accessories &amp; Watches.';
+$lang['sale_available'] = 'Sale available on selected Designer Brands that include Apparels, Footwear, Fashion Accessories & Watches.';
 $lang['start_shopping'] = 'START SHOPING';
 
 $lang['get_in_touch'] = 'Get in Touch With Us';
