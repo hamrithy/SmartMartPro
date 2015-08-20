@@ -163,7 +163,7 @@
 									
 									<div class="form-group">
 										<label>Price<span class="required">*</span></label>
-										<input type="text" class="form-control" name="txtprice" id="txtprice"  required="required"/>
+										<input type="text" class="form-control" name="txtprice" id="txtprice"/>
 									</div>
 									
 								
