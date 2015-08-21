@@ -126,12 +126,12 @@
 														
 														<!-- Put Control Khmer here -->
 														<div class="form-group">
-															<label>ចំណងជើង<span class="required">*</span></label>
+															<label>áž…áŸ†ážŽáž„áž‡áž¾áž„<span class="required">*</span></label>
 															<input type="text" class="form-control" name="txtkhtitle" id="txtkhtitle" required />
 														</div>
 														
 														<div class="form-group">
-															<label>លំអិត</label>
+															<label>áž›áŸ†áž¢áž·áž�</label>
 															<textarea class="form-control" name="txtkhdescription" id="txtkhdescription">
 																	
 															</textarea>
@@ -163,7 +163,7 @@
 									
 									<div class="form-group">
 										<label>Price<span class="required">*</span></label>
-										<input type="text" class="form-control" name="txtprice" id="txtprice"  required="required"/>
+										<input type="text" class="form-control" name="txtprice" id="txtprice"/>
 									</div>
 									
 								
@@ -191,11 +191,12 @@
 											var first = true;
 											var count = 0;
 											function myimagechange(){
+												$("#imgsample").hide();
 												//$("#myimagedemo").attr("src", $("#txtfile").val());
 												$('tbody').append('<tr>'+
 																	'<td>'+
 																		'<div class="form-group">'+
-												    						'<img src="'+$("#txtfile").val()+'" class="img-responsive" id="myimagedemo"​​ style="width:30%;"/>'+
+												    						'<img src="'+$("#txtfile").val()+'" class="img-responsive" id="myimagedemo"â€‹â€‹ style="width:30%;"/>'+
 																		'</div>'+
 																	'</td>'+
 																	'<td>'+
@@ -243,6 +244,7 @@
 										</tbody>
 									</table>
 									
+									<img id="imgsample" src="<?php echo base_url()?>/public/style_front/images/sample.jpg">
 									
 									
 								</div><!-- /.col-sm-4 -->
