@@ -268,7 +268,7 @@
 		      theme: "eclipse",
 		      autoCloseTags: true,
 		      matchBrackets: true,
-		      mode: "application/x-httpd-php",
+		      mode: "htmlmixed",
 		      indentUnit: 4,
 		      indentWithTabs: true,
 		      matchTags: {bothTags: true},

@@ -1,4 +1,3 @@
-
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
 $lang['hello']= 'Hello';
 $lang['home']= 'Home';
@@ -7,7 +6,7 @@ $lang['gift']= 'GIFT';
 $lang['information']= 'INFORMATION';
 $lang['contact']= 'CONTACT US';
 $lang['email'] = 'Email';
-$lang['call'] = 'Call097';
+$lang['call'] = 'Call';
 $lang['login'] = 'LOGIN';
 $lang['trusted_products'] = 'Trusted Products';
 $lang['special_for_students'] = 'Special for Students';

@@ -63,7 +63,7 @@
                     </div> -->
 
                     <div class="widget subscribe-widget clearfix">
-                        <h5><strong>Subscribe</strong> to Our Newsletter to get Important News, Amazing Offers &amp; Inside Scoops:</h5>
+                        <h5><strong>Subscribe</strong> to Our Newsletter to get Important News, Amazing Offers & Inside Scoops:</h5>
                         <div id="widget-subscribe-form-result" data-notify-type="success" data-notify-msg=""></div>
                         <form id="widget-subscribe-form" action="<?php echo site_url();?>contact/subscribe" role="form" method="post" class="nobottommargin">
                             <div class="input-group divcenter">
@@ -177,7 +177,7 @@
 
                     <div class="clear"></div>
 
-                    <i class="icon-envelope2"></i> info@tsdsolution.com <span class="middot">&middot;</span> <i class="icon-headphones"></i> +855 (0)10 818 289 <span class="middot">&middot;</span> <i class="icon-skype2"></i> Contact TSD On Skype
+                    <i class="icon-envelope2"></i> info@tsdsolution.com <span class="middot">·</span> <i class="icon-headphones"></i> +855 (0)10 818 289 <span class="middot">·</span> <i class="icon-skype2"></i> Contact TSD On Skype
                 </div>
 
             </div>
@@ -234,4 +234,3 @@
 
     <!-- Go to www.addthis.com/dashboard to customize your tools -->
 <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5291b47f21c49656" async="async"></script>
-

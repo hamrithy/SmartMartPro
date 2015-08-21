@@ -44,7 +44,7 @@
 		}
 
 		public function edittheme($fname){
-			$datafile = $this->input->post('code');
+			$datafile = $_POST['code'];
 			if(isset($_POST['langfile'])){
 				$folder = $this->input->post('langfile');
 				$path_to_view = get_lang_path($folder, $fname);
