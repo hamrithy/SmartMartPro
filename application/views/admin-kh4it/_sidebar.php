@@ -171,6 +171,7 @@
 								  </div>
 									<div class="collapse" id="accordion-1-child-10">
 									  <div class="panel-body">
+									  <i ></i>&nbsp;<a href="<?php echo site_url("admin/logo/");?>">Logo Settings</a><br><br>
 										<i ></i>&nbsp;<a href="<?php echo site_url("admin/theme/");?>">Theme Editor</a><br><br>
 										
 										
