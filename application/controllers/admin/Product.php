@@ -15,9 +15,9 @@
 		}
 		
 		public function addProduct(){
-			/*if($this->facebook->get_user()==false){
+			if($this->facebook->get_user()==false){
 				redirect($this->facebook->login_url());
-			}*/
+			}
 			$this->load->view("admin-kh4it/addproduct");
 		}
 		
@@ -46,10 +46,10 @@
 			$this->DtoProduct->setSeodescription($this->input->post("SEODescription"));
 			$this->DtoProduct->setProductDetails($this->input->post("ProductDetails"));			
 			$result = $this->DaoProduct->addNewProduct($this->DtoProduct);
-			/*if($result!=false && $result>0){
+			if($result!=false && $result>0){
 				$productDetails = $this->input->post("ProductDetails");
 				$thumbnailurl = explode(";", $this->input->post("Thumbnailurl"));
-				//var_dump($this->facebook->get_user());
+				/*var_dump($this->facebook->get_user());*/
 				$data = array(
 							"name"    => $productDetails[1]["title"],
 							//"link"    => 'http://smartmart.kh4it.com/product/detail/'.$this->DtoProduct->getCategoryid().'/'.$result,
@@ -63,7 +63,7 @@
 					);
 				$this->facebook->post($data);
 				$result = TRUE;
-			}*/
+			}
 			echo json_encode($result);
 		}
 		
