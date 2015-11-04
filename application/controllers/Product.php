@@ -1,103 +1,170 @@
 <?php
 	defined('BASEPATH') OR exit('No direct script access allowed');
 
-	class Product extends ADMIN_Controller{
+	class Product extends CI_Controller{
 
 		public function __construct(){
 			parent::__construct();
-			$this->load->library("Facebook");
 			$this->load->model("dto/DtoProduct");
 			$this->load->model("dao/DaoProduct");
+			$this->load->model('dto/DtoRate');
+			$this->load->model('dao/DaoRate');	
 		}
-		
+
 		public function index(){
 			$this->listProduct();
 		}
+
+		public function findProductById($id){
+			$this->load->view("product_details");
+		}			
 		
-		public function addProduct(){
-			/*if($this->facebook->get_user()==false){
-				redirect($this->facebook->login_url());
-			}*/
-			$this->load->view("admin-kh4it/addproduct");
+		public function listProduct($offset=0){
+			$this->load->library('pagination');
+			$limit = 15;
+			$config['base_url'] = site_url().'product/listProduct';
+			$config['total_rows'] = $this->DaoProduct->getAllProductCount();
+			$config['per_page'] = $limit; 
+			$config['uri_segment'] = 3;	
+			$config['full_tag_open'] = "<ul class='pagination'>";
+			$config['full_tag_close'] ="</ul>";
+			$config['num_tag_open'] = '<li>';
+			$config['num_tag_close'] = '</li>';
+			$config['cur_tag_open'] = "<li class='disabled'><li class='active'><a href='#'>";
+			$config['cur_tag_close'] = "<span class='sr-only'></span></a></li>";
+			$config["next_link"] = "Next";
+			$config['next_tag_open'] = "<li>";
+			$config['next_tagl_close'] = "</li>";
+			$config["prev_link"] = "Previous";
+			$config['prev_tag_open'] = "<li>";
+			$config['prev_tagl_close'] = "</li>";
+			$config['last_link'] = 'Last';
+			$config['first_link'] = 'First';
+			$config['first_tag_open'] = "<li>";
+			$config['first_tagl_close'] = "</li>";
+			$config['last_tag_open'] = "<li>";
+			$config['last_tagl_close'] = "</li>";
+			$config["num_links"]  = 6;
+
+			$this->pagination->initialize($config); 
+
+			$data["lstProduct"] = $this->DaoProduct->listProducts($limit,$offset);
+			$this->load->view('products', $data);
 		}
 		
-		public function listProduct(){
-			$data["lstProduct"] = $this->DaoProduct->lstProduct(2,0);
-			$this->load->view('admin-kh4it/listproduct', $data);
-		}
-		
-		public function getShowProduct($productid){
-			$data["proid"]= $productid;
-			$this->load->view("admin-kh4it/addproduct", $data);
-		}
-		
-		public function getProduct($productid){
-			$result = $this->DaoProduct->getProduct($productid);
-			$this->output->set_content_type('application/json')->set_output(json_encode($result));
-		}
-		
-		public function addProductPro(){
-			$this->DtoProduct->setCategoryid($this->input->post("CategoryID"));
-			$this->DtoProduct->setPrice($this->input->post("price"));
-			$this->DtoProduct->setRecommend($this->input->post("recommend"));
-			$this->DtoProduct->setThumbnailurl($this->input->post("Thumbnailurl"));
-			$this->DtoProduct->setUserid($this->encryption->decrypt($this->session->userdata("userid")));
-			$this->DtoProduct->setSeotitle($this->input->post("SEOTitle"));
-			$this->DtoProduct->setSeodescription($this->input->post("SEODescription"));
-			$this->DtoProduct->setProductDetails($this->input->post("ProductDetails"));			
-			$result = $this->DaoProduct->addNewProduct($this->DtoProduct);
-			/*if($result!=false && $result>0){
-				$productDetails = $this->input->post("ProductDetails");
-				$thumbnailurl = explode(";", $this->input->post("Thumbnailurl"));
-				//var_dump($this->facebook->get_user());
-				$data = array(
-							"name"    => $productDetails[1]["title"],
-							//"link"    => 'http://smartmart.kh4it.com/product/detail/'.$this->DtoProduct->getCategoryid().'/'.$result,
-							"link"    => site_url().'product/detail/'.$this->DtoProduct->getCategoryid().'/'.$result,
-							"caption" => $productDetails[1]["title"],
-							"message" => "Product Name: ". $productDetails[1]["title"].
-                           				 "\nDescriptions: ". strip_tags($productDetails[1]["description"]). 
-                           				 "\nPrice : ".$this->DtoProduct->getPrice(). " $ ",
-							"picture" => (count($thumbnailurl)>0) ? $thumbnailurl[0] : '',
-							//"picture" => "http://smartmart.kh4it.com/public/upload/Products/1.jpg" 
-					);
-				$this->facebook->post($data);
-				$result = TRUE;
-			}*/
-			echo json_encode($result);
-		}
-		
-		public function deleteProduct($productid){
-			$this->DaoProduct->deleteProduct($productid);
-			redirect("admin/product");
-		}
-		
-		public function updateProductPro(){
-			$this->DtoProduct->setProductid($this->input->post("txtproductid"));
-			$this->DtoProduct->setCategoryid($this->input->post("CategoryID"));
-			$this->DtoProduct->setThumbnailurl($this->input->post("Thumbnailurl"));
-			$this->DtoProduct->setPrice($this->input->post("price"));
-			$this->DtoProduct->setRecommend($this->input->post("recommend"));
-			$this->DtoProduct->setUserid($this->encryption->decrypt($this->session->userdata("userid")));
-			$this->DtoProduct->setSeotitle($this->input->post("SEOTitle"));
-			$this->DtoProduct->setSeodescription($this->input->post("SEODescription"));
-			$this->DtoProduct->setProductDetails($this->input->post("ProductDetails"));
-			$result = $this->DaoProduct->updateProduct($this->DtoProduct);
-			echo json_encode($result);
+		public function detail($id,$cateid){
+			$this->DaoProduct->increaseCount($id);
+			$data["title"] = "Product Details";
+			$data["page"] = "Product";
+			$data["getProduct"] = $this->DaoProduct->lstProduct(lang('lang_id'),$id);
+			$data["lstRelateProduct"] = $this->DaoProduct->lstRelatedProduct(20,$id,$cateid);
+			//$data['rate'] = $this->DaoRate->checkRate($id); 
+			$data['proid'] = $id;
+			$this->load->view("product_details",$data);
 		}
 
-		public function test(){
-			$this->load->library("Facebook");
-			echo '<a href="' . $this->facebook->login_url() . '">Login</a>';
-			var_dump($this->facebook->get_user());
-				$data = array(
-							"name"    => "AAA",
-							"link"    => "http://smartmart.kh4it.com/product/detail/84/9",
-							"caption" => "AAA",
-							"message" => "AAA",                        				 
-							"picture" => "http://smartmart.kh4it.com/public/upload/Products/1.jpg"
-					);
-			//$this->facebook->post($data);
+		public function checkrating($id){
+			$result = $this->DaoRate->checkRate($id); 
+			$this->output
+			    ->set_content_type('application/json')
+			    ->set_output(json_encode($result));
 		}
-	}	
+		
+		public function byCate($cateid,$offset=0){
+			$this->load->library('pagination');
+			$limit = 15;
+			$config['base_url'] = site_url().'product/byCate/'.$cateid;
+			$config['total_rows'] = $this->DaoProduct->getAllProductCount($cateid);
+			$config['per_page'] = $limit; 
+			$config['uri_segment'] = 4;	
+			$config['full_tag_open'] = "<ul class='pagination'>";
+			$config['full_tag_close'] ="</ul>";
+			$config['num_tag_open'] = '<li>';
+			$config['num_tag_close'] = '</li>';
+			$config['cur_tag_open'] = "<li class='disabled'><li class='active'><a href='#'>";
+			$config['cur_tag_close'] = "<span class='sr-only'></span></a></li>";
+			$config["next_link"] = "Next";
+			$config['next_tag_open'] = "<li>";
+			$config['next_tagl_close'] = "</li>";
+			$config["prev_link"] = "Previous";
+			$config['prev_tag_open'] = "<li>";
+			$config['prev_tagl_close'] = "</li>";
+			$config['last_link'] = 'Last';
+			$config['first_link'] = 'First';
+			$config['first_tag_open'] = "<li>";
+			$config['first_tagl_close'] = "</li>";
+			$config['last_tag_open'] = "<li>";
+			$config['last_tagl_close'] = "</li>";
+			$config["num_links"]  = 6;
+			$this->pagination->initialize($config); 
+			$data["lstProduct"] = $this->DaoProduct->lstProductByCate($cateid,$limit,$offset);
+			$this->load->view('products_cate', $data);
+		}
+		
+		public function search($offset=0){
+			$this->load->library('pagination');
+			$limit = 15;
+			$search = $this->input->post("txtSearch");
+			$config['base_url'] = site_url().'product/search';
+			$config['total_rows'] = $this->DaoProduct->getAllProductsCountByName($search);
+			$config['per_page'] = $limit; 
+			$config['uri_segment'] = 3;	
+			$config['full_tag_open'] = "<ul class='pagination'>";
+			$config['full_tag_close'] ="</ul>";
+			$config['num_tag_open'] = '<li>';
+			$config['num_tag_close'] = '</li>';
+			$config['cur_tag_open'] = "<li class='disabled'><li class='active'><a href='#'>";
+			$config['cur_tag_close'] = "<span class='sr-only'></span></a></li>";
+			$config["next_link"] = "Next";
+			$config['next_tag_open'] = "<li>";
+			$config['next_tagl_close'] = "</li>";
+			$config["prev_link"] = "Previous";
+			$config['prev_tag_open'] = "<li>";
+			$config['prev_tagl_close'] = "</li>";
+			$config['last_link'] = 'Last';
+			$config['first_link'] = 'First';
+			$config['first_tag_open'] = "<li>";
+			$config['first_tagl_close'] = "</li>";
+			$config['last_tag_open'] = "<li>";
+			$config['last_tagl_close'] = "</li>";
+			$config["num_links"]  = 6;
+			$this->pagination->initialize($config);
+			$data["lstProduct"] = $this->DaoProduct->lstProductByName($search,$limit,$offset);
+			$this->load->view('products_search', $data);
+		}
+		
+		
+		public function lstRecentProduct(){
+			$data["recentProducts"] = $this->DaoProduct->lstRecentProduct(5);
+			echo json_encode($data);
+		}
+		
+		public function lstPopProduct(){
+			$data["lstPopProduct"] = $this->DaoProduct->getPopularProduct(5);
+			echo json_encode($data);
+		}
+		
+		public function lstRelateProduct($cateid){
+			$data["lstRelateProduct"] = $this->DaoProduct->lstRelatedProduct(20,$cateid);
+			echo json_encode($data);
+		}
+		public function shopitem($id,$cateid){
+			$this->DaoProduct->increaseCount($id);
+			$data["title"] = "Product Details";
+			$data["page"] = "Product";
+			$data["getProduct"] = $this->DaoProduct->lstProduct(lang('lang_id'),$id);
+			$this->load->view('shop-item', $data);
+		}
+
+		public function rating(){
+			$this->DtoRate->setIpaddress($_SERVER['REMOTE_ADDR']);
+			$this->DtoRate->setProductid($this->input->post('productid'));
+			$this->DtoRate->setRatenumber($this->input->post('ratenumber'));
+			$result = $this->DaoRate->rate($this->DtoRate);
+			$this->output
+				->set_content_type('application/json')
+				->set_output(json_encode($result));
+		}
+	}
+
 ?>
