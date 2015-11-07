@@ -396,7 +396,7 @@
 			$.ajax({
 				type: "POST",
 				url: $("form#frmAddProduct").attr("action"),
-				dataType: 'json',
+// 				dataType: 'json',
 				data: {
 					txtproductid : $("#txtproductid").val(),
 					CategoryID: $("#listCategory").val(),
@@ -418,15 +418,16 @@
 						}
 					]
 				},success: function(data){
-					if(data==true){
+// 					if(data==true){
  						$("#getTxt").html("<h5>You have been "+action+" successfully.</h5>");
 						setTimeout(function(){ 
+							$("#frmWaiting").modal('hide');
+							$("#frmWaiting").modal('hide');
 							location.href= "<?php  echo site_url('admin/product')?>";
- 							$("#frmWaiting").modal('hide');
 						}, 1000);
-					}else{
-						alert("You have not been  "+action+" successfully.");
-					}
+// 					}else{
+// 						alert("You have not been  "+action+" successfully.");
+// 					}
 					console.log("SUCCESSDATA:",data);
 				},
 				error: function(data){
