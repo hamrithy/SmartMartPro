@@ -86,7 +86,7 @@ class DaoProduct extends CI_Model{
 		}else{
 			
 			$this->db->trans_commit();
-			return $productID;
+			return TRUE;
 		}
 	}
 	
