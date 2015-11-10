@@ -21,13 +21,13 @@
 
                 <?php $this->load->view('_slide'); ?>
 
-                <div class="promo parallax promo-full bottommargin-lg" style="background-image: url('<?php echo base_url('public/style_front/images/parallax/3.jpg')?>)';" data-stellar-background-ratio="0.4">
+<!--                <div class="promo parallax promo-full bottommargin-lg" style="background-image: url('<?php echo base_url('public/style_front/images/parallax/3.jpg')?>)';" data-stellar-background-ratio="0.4">
                     <div class="container clearfix">
                         <h3><?php echo lang('get'); ?> <span>30%</span> <?php echo lang('off_order'); ?>: <span><?php echo lang('shop_30'); ?></span></h3>
                         <span><?php echo lang('sale_available'); ?>.</span>
                         <a href="javascript:;" class="button button-xlarge button-rounded"><?php echo lang('start_shopping'); ?></a>
                     </div>
-                </div>
+                </div>-->
 
                 <div class="container clearfix">
 
@@ -169,7 +169,7 @@
 
                 </div>
 
-                <div class="si-sticky si-sticky-right hidden-sm hidden-xs">
+                <!--<div class="si-sticky si-sticky-right hidden-sm hidden-xs">
                     <a href="javascript:;" class="social-icon si-colored si-facebook" data-animate="bounceInRight">
                         <i class="icon-facebook"></i>
                         <i class="icon-facebook"></i>
@@ -194,7 +194,7 @@
                         <i class="icon-rss"></i>
                         <i class="icon-rss"></i>
                     </a>
-                </div>
+                </div>-->
 
             </div>
 

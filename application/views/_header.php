@@ -4,7 +4,7 @@
     <div class="container clearfix">
         <!-- BEGIN TOP BAR LEFT INFORMATION -->
         <div class="col_half nobottommargin hidden-xs">
-            <p class="nobottommargin"><strong><?php echo lang('call'); ?>:</strong> +855 (0)10 8182 289 | <strong><?php echo lang('email'); ?>:</strong> info@tsdsolution.com</p>
+            <!-- <p class="nobottommargin"><strong><?php echo lang('call'); ?>:</strong> +855 (0)10 8182 289 | <strong><?php echo lang('email'); ?>:</strong> info@tsdsolution.com</p> -->
         </div>
         <!-- BEGIN TOP BAR RIGHT INFORMATION -->
         <div class="col_half col_last fright nobottommargin">
@@ -72,7 +72,7 @@
         <!-- END LOGO -->
 
         <!-- BEGIN EXTRAS INFORMATION -->
-        <ul class="header-extras">
+       <!--  <ul class="header-extras">
             <li>
                 <i class="i-medium i-circled i-bordered icon-thumbs-up2 nomargin"></i>
                 <div class="he-text">
@@ -94,7 +94,7 @@
                     <span><?php echo lang('completely_free'); ?></span>
                 </div>
             </li>
-        </ul>
+        </ul> -->
         <!-- END EXTRAS INFORMATION -->
 
     </div>

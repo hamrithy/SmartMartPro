@@ -113,10 +113,23 @@ class Daocategory extends CI_Model{
 	
 	
 	public function lstCategory($langid){
-		$this->db->select('c.categoryid , c.title');
+		$this->db->select('c.categoryid , c.title, cc.ordering, cc.subof');
 		$this->db->from('CATEGORYDETAIL c');
+		$this->db->join('CATEGORIES cc', 'c.categoryid = cc.categoryid', 'LEFT');
 		$this->db->where('c.languageid',$langid);
-		$this->db->order_by('c.categoryid', 'desc');
+		$this->db->where('cc.subof is null');
+		$this->db->order_by('c.title');
+		$query = $this->db->get();
+		return $query->result();
+	}
+	
+	public function getSubCategory($langid, $categoryId){
+		$this->db->select('c.categoryid, c.title');
+		$this->db->from('CATEGORYDETAIL c');
+		$this->db->join('CATEGORIES cc', 'c.categoryid = cc.categoryid', 'LEFT');
+		$this->db->where('c.languageid', $langid);
+		$this->db->where('cc.subof', $categoryId);
+		$this->db->order_by('cc.ordering');
 		$query = $this->db->get();
 		return $query->result();
 	}

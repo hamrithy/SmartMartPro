@@ -9,7 +9,7 @@
 
                 <div class="col_two_third">
 
-                    <div class="col_half">
+                   <!-- <div class="col_half">
 
                         <div class="widget clearfix">
 
@@ -38,6 +38,28 @@
                             </div>
                         </div>
 
+                    </div>-->
+                    <div>
+                        <h4>Contact Us</h4>
+                            <p>
+                                Mao Tse Tong Campus (Main Office):<br /> 
+                                #217ABCD Mao Tse Tong Blvd, Phnom Penh,<br /> 
+                                Tel: (855) 77 777 531 / (855) 11 899 822<br />
+                            </p>
+                            
+                            <p>
+                                Toul Kork Campus: #26, St. 289, Toul Kork, Phnom Penh,
+                                Tel: (855) 77 235 553<br />
+                            </p>
+                            <p>
+                            Chak Angre Campus: 
+                            #824, St. National Road #2, 
+                            Sangkat Chak Angre, Khan Mean Chey, Phnom Penh, <br />
+                            Tel: (855) 92 666 729<br />
+                            </p>
+                            
+                            Email: interconsmartmart@gmail.com <br /> 
+
                     </div>
 
                 </div>
@@ -63,8 +85,16 @@
                     </div> -->
 
                     <div class="widget subscribe-widget clearfix">
-                        <h5><strong>Subscribe</strong> to Our Newsletter to get Important News, Amazing Offers & Inside Scoops:</h5>
-                        <div id="widget-subscribe-form-result" data-notify-type="success" data-notify-msg=""></div>
+                        <div>
+                            <h4><strong>Store Hour</strong></h4>
+                            <p>
+                                Monday – Friday: 07:00 am – 06:30 pm <br />
+                                Saturday: 07:00 am – 05:00 pm <br />
+                                Sunday: Closed
+    
+                            </p>
+                        </div>
+                        <!--<div id="widget-subscribe-form-result" data-notify-type="success" data-notify-msg=""></div>
                         <form id="widget-subscribe-form" action="<?php echo site_url();?>contact/subscribe" role="form" method="post" class="nobottommargin">
                             <div class="input-group divcenter">
                                 <span class="input-group-addon"><i class="icon-email2"></i></span>
@@ -73,7 +103,7 @@
                                     <button class="btn btn-success" type="submit">Subscribe</button>
                                 </span>
                             </div>
-                        </form>
+                        </form>-->
                         <script type="text/javascript">
                             $("#widget-subscribe-form").validate({
                                 submitHandler: function(form) {
@@ -97,18 +127,18 @@
                         <div class="row">
 
                             <div class="col-md-6 clearfix bottommargin-sm">
-                                <a href="#" class="social-icon si-dark si-colored si-facebook nobottommargin" style="margin-right: 10px;">
+                                <a href="https://www.facebook.com/SM.RetailServices" class="social-icon si-dark si-colored si-facebook nobottommargin" style="margin-right: 10px;">
                                     <i class="icon-facebook"></i>
                                     <i class="icon-facebook"></i>
                                 </a>
-                                <a href="#"><small style="display: block; margin-top: 3px;"><strong>Like us</strong><br>on Facebook</small></a>
+                                <a href="https://www.facebook.com/SM.RetailServices"><small style="display: block; margin-top: 3px;"><strong>Like us</strong><br>on Facebook</small></a>
                             </div>
                             <div class="col-md-6 clearfix">
-                                <a href="#" class="social-icon si-dark si-colored si-rss nobottommargin" style="margin-right: 10px;">
+                                <a href="https://www.facebook.com/SM.RetailServices" class="social-icon si-dark si-colored si-rss nobottommargin" style="margin-right: 10px;">
                                     <i class="icon-rss"></i>
                                     <i class="icon-rss"></i>
                                 </a>
-                                <a href="#"><small style="display: block; margin-top: 3px;"><strong>Subscribe</strong><br>to RSS Feeds</small></a>
+                                <a href="https://www.facebook.com/SM.RetailServices"><small style="display: block; margin-top: 3px;"><strong>Subscribe</strong><br>to RSS Feeds</small></a>
                             </div>
 
                         </div>
@@ -129,10 +159,10 @@
 
                 <div class="col_half">
                     <?php echo lang('copy_right'); ?><br>
-                    <div class="copyright-links"><a href="#"><?php echo lang('term_of_use'); ?></a> / <a href="#"><?php echo lang('privacy_policy'); ?></a></div>
+                    <!--<div class="copyright-links"><a href="#"><?php echo lang('term_of_use'); ?></a> / <a href="#"><?php echo lang('privacy_policy'); ?></a></div>-->
                 </div>
 
-                <div class="col_half col_last tright">
+                <!--<div class="col_half col_last tright">
                     <div class="fright clearfix">
                         <a href="#" class="social-icon si-small si-borderless si-facebook">
                             <i class="icon-facebook"></i>
@@ -178,7 +208,7 @@
                     <div class="clear"></div>
 
                     <i class="icon-envelope2"></i> info@tsdsolution.com <span class="middot">·</span> <i class="icon-headphones"></i> +855 (0)10 818 289 <span class="middot">·</span> <i class="icon-skype2"></i> Contact TSD On Skype
-                </div>
+                </div>-->
 
             </div>
 
